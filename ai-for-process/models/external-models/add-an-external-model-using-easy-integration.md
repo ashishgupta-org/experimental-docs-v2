@@ -82,7 +82,7 @@ For example: "Content-Type": "application/json"
 * **Variables:** In the Prompt Variables section, define any input variables that will be used within your request payload. These are used to bind dynamic input values to your payload structure.  
 For example: {{prompt}}, {{system.prompt}}
 
-* **Body**: Provide a sample JSON request body for invoking the model. Use the defined variable placeholders {{variableName}} (such as {{prompt}})  to bind input fields dynamically.
+* **Body**: Provide a sample JSON request body for invoking the model. Use the defined variable placeholders `{{variableName}}` (such as `{{prompt}}`)  to bind input fields dynamically.
 For example:
 
       ```
