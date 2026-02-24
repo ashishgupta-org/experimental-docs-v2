@@ -1351,7 +1351,7 @@ The following table summarizes the module-wise permissions and access levels for
   </tr>
 </table>
 
-<br>
+
 
 <table>
   <tr bgcolor="#ECECEC">
