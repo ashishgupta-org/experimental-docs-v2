@@ -56,7 +56,7 @@ Click the Deployments tab to see all deployments for the selected model, along w
     <td><b>Status</b></td>
     <td>
     The status of deployment: Deploying, Optimizing, Failed, Ready to Deploy, or Deployed.
-  </ul>
+  </td>
 </td>
     </tr>
           <td><b>Deployed By</b></td>
