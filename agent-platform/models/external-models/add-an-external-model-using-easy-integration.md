@@ -174,7 +174,7 @@ Steps to add Google Vertex AI models using easy integration:
 
 In the Add connection dialog, you can choose between two configuration methods:
 
-**Option A: Manual Setup**<br>
+**Option A: Manual Setup**<br />
 In the **Manual Setup** tab, configure the following:
 
 **Connection Details**:
