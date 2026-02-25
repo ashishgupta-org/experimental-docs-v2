@@ -74,7 +74,7 @@ Click the added node to open its properties dialog box. The General Settings for
 
    </td>
   <td>
-  Select the integration type: <strong>Synchronous</strong> or <strong>Asynchronous</strong>.<br <br />r>
+  Select the integration type: <strong>Synchronous</strong> or <strong>Asynchronous</strong>.<br />
 
   <strong>Synchronous</strong>: Waits for a response before proceeding.
   <ul>
