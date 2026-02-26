@@ -13,7 +13,7 @@ Establishes a new conversation session for a specific user with the Agentic App.
 
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `/apps/<AppID>/environments/<EnvName>/sessions` |
 | Content-type | application/json |
 | Authorization Header | x-api-key: `API-KEY>` |
@@ -24,7 +24,7 @@ Establishes a new conversation session for a specific user with the Agentic App.
 
 
 | Fields | Description |
-| --- | --- |
+|:------ |:------ |
 | AppID | Unique Identifier for the app. |
 | EnvName | Name of the environment to be used for the agent. |
 
@@ -34,7 +34,7 @@ Establishes a new conversation session for a specific user with the Agentic App.
 
 
 | Fields | Description |
-| --- | --- |
+|:------ |:------ |
 | sessionIdentity | This is an array of objects with a `type` and `value` used to identify or create sessions and manage user session mappings. The three supported identifier types are: The objects can be of three types: <ol> <li>userReference (highest priority)</li> <li>sessionReference</li> <li>sessionIdentity(lowest priority)</li> Refer to <a href="../overview/">this</a> for a detailed description. </ol> |
 | source(optional) | <p>Identifies the system from which the API request is initiated. This field enables better analytics, monitoring, and observability by indicating what triggered the agentic app execution. This field is available as a filter in the session logs.</p>If not provided, the platform automatically assigns the default value.</p> <p>Recommended Values:</p> <ul> <li>AP: This is the default value. Used when the sourcefield isn't explicitly passed.</li> <li>AIS-AA: AI for Service - Agent Assist</li> <li>AIS-QM: AI for Service - Quality Module</li> <li>AIS-CC: AI for Service - Contact Center</li> <li>AP-PG: Agent Platform - Playground</li> <li>AP-ES: Agent Platform - Evaluation Studio</li> <li>AIW: AI for Work</li> <li>AIP: AI for Process</li> <li>MP: Agent Platform - Marketplace</li> </ul> |
 
@@ -165,7 +165,7 @@ Lists sessions for the selected app and environment. Supports optional filters s
 
 
 | Method | GET |
-| --- | --- |
+|:------ |:------ |
 | Base URL | `https://<your-agent-platform-env>.com/aaa/api/v1/` |
 | Endpoint | `/apps/<AppID>/environments/<EnvName>/sessions/list` |
 | Content-type  | application/json |
@@ -177,7 +177,7 @@ Lists sessions for the selected app and environment. Supports optional filters s
 
 
 | Fields | Description |
-| --- | --- |
+|:------ |:------ |
 | AppID | Unique Identifier for the app. |
 | EnvName | The name of the environment in which the application will run. |
 
@@ -187,7 +187,7 @@ Lists sessions for the selected app and environment. Supports optional filters s
 
 
 | Fields | Description | Mandatory |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | startDate | Specifies the beginning of the date range for which sessions should be retrieved. | No |
 | endDate | Defines the end of the date range for sessions retrieval. | No |
 | offset | Indicates the number of records to skip before starting to return results. This field is primarily used for pagination. | No |
@@ -223,7 +223,7 @@ Lists sessions for the selected app and environment. Supports optional filters s
 
 
 | Fields | Description |
-| --- | --- |
+|:------ |:------ |
 | sessions | Details of the sessions |
 | pagination | Details related to pagination include the total number of matching sessions, the Index of the last item returned in this response, and whether more sessions are available beyond the current result. |
 
@@ -257,7 +257,7 @@ Fetches the details of a given session. You must provide either a *sessionId* or
 
 
 | Method | GET |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `/apps/<AppID>/environments/<EnvName>/sessions?sessionId={sessionId}` <p> `/apps/<AppID>/environments/<EnvName>/sessions?sessionReference={sessionReference}` |
 | Content-type | application/json |
 | Authorization Header | x-api-key:`<API-KEY>` |
@@ -268,7 +268,7 @@ Fetches the details of a given session. You must provide either a *sessionId* or
 
 
 | Fields | Description |
-| --- | --- |
+|:------ |:------ |
 | AppID | Unique Identifier for the app. |
 | EnvName | The name of the environment in which the application will run. |
 
@@ -278,7 +278,7 @@ Fetches the details of a given session. You must provide either a *sessionId* or
 
 
 | Fields | Description | Required |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | sessionId | Unique Identifier for the session. | Optional(One of two is required ) |
 | sessionReference | The reference associated with the session | Optional (one of the two is required) |
 
@@ -320,7 +320,7 @@ Terminates a given session. It also deletes the associated session-specific memo
 
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `/apps/<AppID>/environments/<EnvName>/sessions/terminate` |
 | Content-type | application/json |
 | Authorization Header | x-api-key: `<API-KEY>` |
@@ -331,7 +331,7 @@ Terminates a given session. It also deletes the associated session-specific memo
 
 
 | Fields | Description |
-| --- | --- |
+|:------ |:------ |
 | AppID | Unique Identifier for the app. |
 | EnvName | The name of the environment in which the application will run. |
 
@@ -341,7 +341,7 @@ Terminates a given session. It also deletes the associated session-specific memo
 
 
 | Fields | Description | Mandatory |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | sessionIdentity | Provide the sessionReference or sessionId to uniquely identify the session to be terminated. | Yes |
 
 

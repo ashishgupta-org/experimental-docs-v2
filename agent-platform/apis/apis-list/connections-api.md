@@ -20,14 +20,14 @@ https://{host}/api/public
 ### Common Request Headers
 
 | Header | Required | Description |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | `x-api-key` | Yes | API key for authentication |
 | `Content-Type` | Yes | `application/json` |
 
 ## API List
 
 | API | Description | Method | Endpoint |
-| --- | ----------- | ------ | -------- |
+|:------ | ----------- | ------ | -------- |
 | [List All Connections](#list-all-connections) | Retrieves all configured connections | GET | `/connections` |
 | [Get Connection by ID](#get-connection-by-id) | Retrieves a specific connection | GET | `/connections/{connectionId}` |
 | [Create Connection](#create-connection) | Creates a new connection | POST | `/connections` |
@@ -39,13 +39,13 @@ Retrieves a list of all configured connections with optional filtering.
 
 
 | Method | Endpoint |
-| --- | --- |
+|:------ |:------ |
 | GET | `https://{{host}}/api/public/connections` |
 
 #### Query Parameters
 
 | Parameter | Required | Type | Description |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | `provider` | No | String | Filter by provider. Accepted values: `Open AI`, `Anthropic`, `Azure Open AI`, `API` |
 | `status` | No | String | Filter by status. Accepted values: `ACTIVE`, `INACTIVE` |
 | `limit` | No | Integer | Maximum number of results to return |
@@ -88,7 +88,7 @@ Retrieves the details of a specific connection using its unique identifier.
 
 
 | Method | Endpoint |
-| --- | --- |
+|:------ |:------ |
 | GET | `https://{{host}}/api/public/connections/{connectionId}` |
 
 
@@ -96,7 +96,7 @@ Retrieves the details of a specific connection using its unique identifier.
 
 
 | Parameter | Required | Type | Description |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | `connectionId` | Yes | String | The unique identifier of the connection |
 
 
@@ -135,7 +135,7 @@ Creates a new connection to an external model provider. Supports creation of Cus
 
 
 | Method | Endpoint |
-| --- | --- |
+|:------ |:------ |
 | POST | `https://{{host}}/api/public/connections` |
 
 
@@ -143,7 +143,7 @@ Creates a new connection to an external model provider. Supports creation of Cus
 
 
 | Parameter | Required | Type | Description |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | `provider` | Yes | String | The provider type. Accepted values: `API`, `Open AI`, `Azure Open AI`, or `Anthropic` |
 | `connectionName` | Yes | String | Display name for the connection |
 | `model` | Conditional | String | Model identifier. Required for `Open AI`, `Azure Open AI`, and `Anthropic `providers |
@@ -222,7 +222,7 @@ curl --location '{{BASE_URL}}/api/public/connections' \
 
 
 | Field | Required | Type | Description |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | `fields.BASE_URL` | Yes | String | Base URL of the API endpoint |
 | `fields.API_KEY` | Yes | String | API key for authentication |
 | `fields.MODEL_NAME` | Yes | String | Model name |
@@ -271,7 +271,7 @@ curl --location '{{BASE_URL}}/api/public/connections' \
 **Custom API Fields (`provider: "API"`)**
 
 | Field | Required | Type | Description |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | `fields.BASE_URL` | Yes | String | Base URL of the API endpoint |
 | `fields.API_KEY` | Yes | String | API key for authentication |
 | `fields.MODEL_NAME` | Yes | String | Model name |
@@ -303,7 +303,7 @@ curl --location 'https://{{host}}/api/public/connections' \
 
 
 | Field | Required | Type | Description |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | `fields.API_KEY` | Yes | String | Your OpenAI API key |
 
 
@@ -335,7 +335,7 @@ curl --location 'https://{{host}}/api/public/connections' \
 
 
 | Field | Required | Type | Description |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | `fields.API_KEY` | Yes | String | Your Azure OpenAI API key |
 | `fields.api_version` | Yes | String | API version (for example, `2024-08-01-preview`) |
 | `fields.your_resource_name` | Yes | String | Your Azure resource name |
@@ -368,7 +368,7 @@ curl --location 'https://{{host}}/api/public/connections' \
 
 
 | Field | Required | Type | Description |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | `fields.API_KEY` | Yes | String | Your Anthropic API key |
 
 
@@ -401,7 +401,7 @@ Updates the configuration of an existing connection. Supported only for external
 
 
 | Method | Endpoint |
-| --- | --- |
+|:------ |:------ |
 | PATCH | `https://{{host}}/api/public/connections/{connectionId}` |
 
 
@@ -409,7 +409,7 @@ Updates the configuration of an existing connection. Supported only for external
 
 
 | Parameter | Required | Type | Description |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | `connectionId` | Yes | String | The unique identifier of the connection |
 
 
@@ -431,7 +431,7 @@ curl --location --request PATCH 'https://{{host}}/api/public/connections/{{conne
 
 
 | Parameter | Required | Type | Description |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | `fields` | Yes | Object | Updated configuration field, API_KEY |
 
 

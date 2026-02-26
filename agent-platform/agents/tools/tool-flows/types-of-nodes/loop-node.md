@@ -162,7 +162,7 @@ After running the workflow, use the Debug panel to inspect loop behavior, debug 
   <tr>
    <td><strong>Loop input is missing or empty</strong>
    </td>
-   <td>Input list is undefined or resolves to <code>null</code>/empty
+   <td>Input list is undefined or resolves to `null`/empty
    </td>
    <td>Ensure the Loop Input Source is set to a valid array (for example, `{{inputs.items}}`. Verify it in the Debug Log.
    </td>

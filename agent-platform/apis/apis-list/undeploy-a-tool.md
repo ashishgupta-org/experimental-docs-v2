@@ -8,7 +8,7 @@ The API response includes the tool ID, dock status ID and the tool undeployment 
 
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/tools/:{<em>toolId</em>}/undeploy` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -20,7 +20,7 @@ To use the API, you will need an API key. [Learn more](../../apis/overview.md#ho
 ## Path Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/` | String | Required |
 | toolId | The unique identifier of the tool being undeployed. | String | Required |
 
@@ -50,7 +50,7 @@ No parameters are passed.
 ## Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | dockStatusId | The unique identifier for tracking the tool undeployment status. | String |
 | toolId | The unique identifier of the tool being undeployed. | String |
 | jobType | The type of job being performed (“<em>TOOLS</em>”). | String |

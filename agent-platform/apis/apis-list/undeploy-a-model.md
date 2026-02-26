@@ -6,7 +6,7 @@ This API undeploys a model from the environment. The API response includes the m
 
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint |  `https://{host}/api/public/models/:{<i>modelId</i>}/undeploy` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -18,7 +18,7 @@ To use the API, you will need an API key. [Learn more](../../apis/overview.md#ho
 ## Path Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/` | String | Required |
 | modelId | The unique identifier of the model to deploy. | String | Required |
 
@@ -48,7 +48,7 @@ No parameters are passed.
 ## Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | dockStatusId | The unique identifier to track the model undeployment status. | String |
 | modelId | The unique identifier for the model. | String |
 | jobType | Type of job being performed (“<em>MODELS</em>”). | String |

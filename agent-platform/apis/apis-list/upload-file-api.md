@@ -33,7 +33,7 @@ This method directly calls the endpoint and returns the `fileId` and `fileURL` i
 
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/files` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -41,7 +41,7 @@ This method directly calls the endpoint and returns the `fileId` and `fileURL` i
 ### Path Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/`. | String | Required |
 
 ### Sample Request
@@ -56,7 +56,7 @@ curl --location 'https://{host}/api/public/files'
 ### Body Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | file | The file being uploaded. | File | Required |
 | fileContext | The context of the file (for example, `bulkImport`). | String | Required |
 
@@ -72,7 +72,7 @@ curl --location 'https://{host}/api/public/files'
 ### Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | url | The URL to access the uploaded file. | String |
 | fileId | Unique identifier for the uploaded file | String |
 
@@ -89,7 +89,7 @@ This method requires the following three APIs to upload a large file:
 This API starts the upload process, returning a `session ID`. The file is split into chunks linked to this ID, which are then merged and uploaded through other APIs.
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `http://{host}/api/public/files/session/start` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -97,7 +97,7 @@ This API starts the upload process, returning a `session ID`. The file is split 
 #### Path Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai` | String | Required |
 
 #### Sample Request
@@ -118,7 +118,7 @@ curl --location 'https://{host}/api/public/files/session/start'
 #### Body Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | fileContext | The context of the file (for example, `bulkImport`). | String | Required |
 | totalChunks | The total number of chunks created for the file upload. | Number | Required |
 | fileExtension | The file extension based on the file type. | String | Required |
@@ -137,7 +137,7 @@ curl --location 'https://{host}/api/public/files/session/start'
 #### Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | sessionId | The file upload `session id`. | String |
 | expirationDate | The date and time of the session expiration. | Date |
 
@@ -146,7 +146,7 @@ curl --location 'https://{host}/api/public/files/session/start'
 The API uploads the file in multiple chunks. The `session ID` from the [Start Session](./upload-file-api.md#start-session-api) API must be used in this step.
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/files/session/{sessionId}` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -154,7 +154,7 @@ The API uploads the file in multiple chunks. The `session ID` from the [Start Se
 #### Path Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai` | String | Required |
 | sessionId | The file upload `session id` fetched from the Start Session API. | String | Required |
 
@@ -171,7 +171,7 @@ curl --location 'https://{host}/api/public/files/session/14xxxxxd-0xx4-4xxf-axx1
 #### Body Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | file | The file being uploaded. | File | Required |
 | chunkNumber | The uploaded chunk number. | Number | Required |
 
@@ -187,7 +187,7 @@ curl --location 'https://{host}/api/public/files/session/14xxxxxd-0xx4-4xxf-axx1
 #### Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | chunkNumber | The uploaded chunk number. | Number |
 | sessionId | The file upload `session id`. | String |
 
@@ -196,7 +196,7 @@ curl --location 'https://{host}/api/public/files/session/14xxxxxd-0xx4-4xxf-axx1
 This API merges the uploaded chunks and finalizes the process using the `session Id` from the [Start Session](./upload-file-api.md#start-session-api) API. It returns the `file URL` and `file ID`. Missing chunk numbers are identified after the merge.
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/files/session/{sessionid}/complete` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -204,7 +204,7 @@ This API merges the uploaded chunks and finalizes the process using the `session
 #### Path Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-pxxxxxxxm.kxxe.ai` | String | Required |
 | sessionID | The file upload `session ID`. | String | Required |
 
@@ -231,6 +231,6 @@ No parameters are passed.
 #### Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | url | The uploaded file’s URL. | String |
 | fileId | The file ID of the uploaded file. | String |

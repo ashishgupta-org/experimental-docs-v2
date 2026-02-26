@@ -6,7 +6,7 @@ This API allows users to track the status of ongoing or completed jobs related t
 
 
 | Method | GET |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/dock-status/{<i>dockStatusId</i>}` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -19,7 +19,7 @@ To use the API, you will need an API key. [Learn more](../../apis/overview.md#ho
 ## QPath Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/` | String | Required |
 | dockStatusId | The dock status ID that's received in the response. | String | Required |
 
@@ -49,7 +49,7 @@ No parameters are passed.
 ## Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | SAMPLE VALUE(S) |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | <b>_id</b> | The unique identifier for the dock status. | String | ds-c6xxxxx5-dxxd-5xxf-9xxd-0xxxxx6xxxx8 |
 | <b>toolId</b> | The unique identifier for the tool. | String | a-8xxxxxbe-6xxe-5xx1-8xxc-bxxxxxx80xx6 |
 | <b>jobType</b> | Type of job being performed. | String | <em>TOOLS</em>, <em>MODELS</em>, or <em>GUARDRAILS</em> |
