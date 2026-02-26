@@ -7,7 +7,7 @@ This API deploys an open-source or fine-tuned model in the ***Ready to Deploy***
 The API response includes the **model ID** and the **model deployment status**. After receiving the response, use the `dockStatusId` to call the [Get Dock Status API](../apis-list/get-dock-status.md)  and verify the successful deployment of the model.
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/models/:{<i>modelId</i>}/deploy?modelType={<i>modelType</i>}` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -19,7 +19,7 @@ To use the API, you will need an API key. [Learn more](../../apis/overview.md#ho
 ## Query Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL | ENUM VALUES |
-| --- | --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/`. | String | Required | N/A |
 | modelId | The model ID to deploy. | String | Required | N/A |
 | modelType | Type of model being deployed. | String | Required | ["openSource", "fineTune"] |
@@ -95,7 +95,7 @@ The following deployment parameters can be configured and passed in the body:
 **General Parameters**
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL | ENUM VALUES |
-| --- | --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |:------ |
 | name | Name of the model to deploy. | String | Required | N/A |
 | isDeployedPreviously | Indicates if the model was deployed before. | Boolean | Optional | [true, false] |
 
@@ -104,7 +104,7 @@ The following deployment parameters can be configured and passed in the body:
 
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL | ENUM VALUES |
-| --- | --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |:------ |
 | temperature | Controls randomness of output. | Float | Required | 0-2 |
 | maxTokens | Maximum tokens allowed. | Int | Required | 0-512 |
 | topP | Controls nucleus sampling. | Float | Required | 0-1 |
@@ -116,7 +116,7 @@ The following deployment parameters can be configured and passed in the body:
 
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL | RANGE |
-| --- | --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |:------ |
 | maxBatchSize | Maximum batch size. | Int | Optional | 1-256 |
 | minReplicas | Minimum replicas. | Int | Optional | 1-10 |
 | maxReplicas | Maximum replicas. | Int | Optional | 1-50 |
@@ -128,7 +128,7 @@ The following deployment parameters can be configured and passed in the body:
 
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL | ENUM VALUES |
-| --- | --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |:------ |
 | deviceType | Device type for deployment. | String | Required | ["g4dn.xlarge", "g5.xlarge", "g5.2xlarge", "g6e.xlarge", "g4dn.12xlarge", "g5.12xlarge", "g5.48xlarge", "g4dn.metal"] |
 | optimizationInfo | Optimization details. | Object | Optional | N/A |
 | optimizationType | Type of optimization. | String | Optional | ["ctranslate2", "vllm"] |
@@ -149,7 +149,7 @@ The following deployment parameters can be configured and passed in the body:
 ## Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | <b>dockStatusId</b> | The unique identifier for tracking the model deployment. | String |
 | <b>modelId</b> | The model that was deployed. | String |
 | <b>jobType</b> | Specifies the type of job (for example, "<em>MODELS</em>"). | String |

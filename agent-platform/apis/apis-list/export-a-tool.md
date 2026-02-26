@@ -9,7 +9,7 @@ When an export request is initiated, the API triggers the export process and ret
 Additionally, the response provides a **download URL**. Copy and paste this URL into a browser or API client to download the exported tool file.
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/tools/:{toolId}/export?flowId={callflowId}` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -31,7 +31,7 @@ To use the API, you will need an API key. [Learn more](../../apis/overview.md#ho
 
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, ` https://agent-platform.domain.ai/` | String | Required |
 | toolId | The tool ID of the tool being exported. | String | Required |
 | callflowId | The callflow ID for the deployed tool. | String | Required |
@@ -67,7 +67,7 @@ No parameters are passed.
 ## Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | dockStatusId | The unique identifier to track the status of the tool export process. | String |
 | toolId | The unique identifier for the tool. | String |
 | jobType | The type of job being performed. | String |

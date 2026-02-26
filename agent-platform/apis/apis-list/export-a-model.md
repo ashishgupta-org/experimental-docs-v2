@@ -7,7 +7,7 @@ This API exports a trained AI model from the system. Once initiated, the export 
 Additionally, the response provides a **download URL**. Copy and paste this URL into a browser or API client to download the exported model’s file.
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/models/:{<em>modelId</em>}/export` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -19,7 +19,7 @@ To use the API, you will need an API key. [Learn more](../../apis/overview.md#ho
 ## Path Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/` | String | Required |
 | modelId | The unique identifier of the model you want to export. | String | Required |
 
@@ -60,7 +60,7 @@ No parameters are passed.
 
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | dockStatusId | The unique identifier to track the status of action. For example: import, export, deploy, etc. | String |
 | modelId | The unique identifier for the model. | String |
 | jobType | Type of job being performed. | String |

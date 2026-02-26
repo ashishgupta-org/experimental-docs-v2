@@ -8,7 +8,7 @@ The API response includes the **tool ID** and the **tool deployment status**. Af
 
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/tools/:{<em>toolId</em>}/deploy` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -20,7 +20,7 @@ To use the API, you will need an API key. [Learn more](../../apis/overview.md#ho
 ## Path Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/` | String | Required |
 | toolId | The unique identifier of the tool being deployed. | String | Required |
 
@@ -38,7 +38,7 @@ curl --location 'https://{host}/api/public/tools/a-0xxxxxxxxxxxxxxxxxxe/deploy'
 ## Body Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | isAsync | Indicates if the deployment is asynchronous (true) or synchronous (false). | Boolean | Required |
 
 
@@ -61,7 +61,7 @@ curl --location 'https://{host}/api/public/tools/a-0xxxxxxxxxxxxxxxxxxe/deploy'
 
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | dockStatusId | The unique identifier for tracking the tool deployment. | String |
 | toolId | The unique identifier of the tool being deployed. | String |
 | jobType | The type of job being performed (“<em>TOOLS</em>”). | String |

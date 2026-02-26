@@ -11,7 +11,7 @@ To import a tool, follow the steps below:
 3. **Track import Status**: The API response returns a `dockStatusId` that helps monitor the import progress using the [Get Dock Status API](../apis-list/get-dock-status.md).
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/tools/import` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -23,7 +23,7 @@ To use the API, you will need an API key. [Learn more](../../apis/overview.md#ho
 ## Query Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/` | String | Required |
 
 ## Sample Request
@@ -43,7 +43,7 @@ curl --location 'https://{host}/api/public/tools/import'
 ## Body Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | toolDataFileId | The `file ID` for the tool data file. | String | Required |
 | flowDataFileId | The `file ID` for the flow data file. | String | Required |
 | envVariablesFileId | The` file ID `for the environment variables | String | Optional |
@@ -64,7 +64,7 @@ curl --location 'https://{host}/api/public/tools/import'
 ## Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | SAMPLE VALUE |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | dockStatusId | The unique identifier to track the status of the import action. | String | Example: ds-cxxxxxx5-dxxd-5xxf-9xxd-0xxxxx6c5xx8 |
 | toolId | The unique identifier for the tool. | String | Example: a-8xxxxxxe-6xxe-5xx1-8xxc-b3xxxxx80xx6 |
 | jobType | The type of job being performed. | String | <em>TOOLS</em> |

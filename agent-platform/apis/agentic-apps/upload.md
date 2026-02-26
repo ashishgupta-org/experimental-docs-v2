@@ -7,7 +7,7 @@
 Uploads a file as an attachment to a session. 
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `/apps/<AppID>/environments/<EnvName>/attachments/upload` |
 | Content-type | multipart/form-data |
 | Authorization Header | x-api-key: `<API-KEY>` |
@@ -16,7 +16,7 @@ Uploads a file as an attachment to a session.
 
 
 | Fields | Description |
-| --- | --- |
+|:------ |:------ |
 | AppID | Unique Identifier for the app. |
 | EnvName | Name of the environment to be used for the agent. |
 
@@ -26,7 +26,7 @@ Uploads a file as an attachment to a session.
 
 
 | Fields | Description | Mandatory |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | File | The actual file to be uploaded. | Yes |
 | userReference | User reference | Yes |
 | uploadType | Specifies the context of the upload. Set this to ‘runtime’. | Yes |
@@ -70,7 +70,7 @@ Deletes an uploaded file.
 
 
 | Method | DELETE |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `/apps/<AppID>/environments/<EnvName>/attachments/<fileId>` |
 | Content-type | multipart/form-data |
 | Authorization Header | x-api-key: `<API-KEY>` |
@@ -80,7 +80,7 @@ Deletes an uploaded file.
 
 
 | Fields | Description |
-| --- | --- |
+|:------ |:------ |
 | AppID | Unique Identifier for the app. |
 | EnvName | Name of the environment to be used for the agent. |
 | fileId | Unique identifier of the file to be deleted. |
@@ -90,7 +90,7 @@ Deletes an uploaded file.
 
 
 | Fields | Description | Mandatory |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | sessionId | Unique Identifier of the session | No |
 | sessionReference | Reference associated with the session | No |
 
