@@ -135,10 +135,8 @@ The key features for customizing the data in the page include:
 * **Time Selection Filter**: Required to analyze script runs data for a specific period in the past or current day. [Learn more](../monitoring/monitoring-custom-scripts.md#time-based-filtering).
 * **Filter By Option**: An optional multi-field, multi-level filter for targeted analysis of runs and logs. [Learn more](../monitoring/monitoring-custom-scripts.md#columns-filtering).
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>In the <b>All Runs</b> section, all column fields except <b>Executed On</b> can be used as filters.</li>
-<li>In the <b>Logs</b> section, all column fields except <i>Timestamp</i> can be used as filters.</li></ul></p></div>
+<Note><ul><li>In the <b>All Runs</b> section, all column fields except <b>Executed On</b> can be used as filters.</li>
+<li>In the <b>Logs</b> section, all column fields except <i>Timestamp</i> can be used as filters.</li></ul></Note>
 
 ### All Runs Section
 
@@ -216,9 +214,7 @@ This section displays a dynamic table with the following log-level data:
 
 Use the time selection dropdown (displayed as "Custom") at the top-right of the page to view and monitor script runs/logs within a specific past period or the current day. This allows you to focus on specific runs to track changes or perform targeted debugging.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Data is displayed only if the selected script’s runs were executed during the selected period.</p></div>
+<Note>Data is displayed only if the selected script’s runs were executed during the selected period.</Note>
 
 [Learn more](../monitoring/audit-logs.md#time-based-audit-logs) about the calendar widget.
 
@@ -256,9 +252,7 @@ Filter customization streamlines tracking and debugging of script runs at a deta
 
 
  
-    <div class="admonition note">
-    <p class="admonition-title">Note</p>
-    <p>You can enter multiple values in the <b>Enter Value</b> field by pressing the <i>Tab</i> key after each entry. The system will filter data based on all the entered values. </p></div>
+    <Note>You can enter multiple values in the <b>Enter Value</b> field by pressing the <i>Tab</i> key after each entry. The system will filter data based on all the entered values. </Note>
 
 
     ![multiple filters](./images/apply-multiple-filters.png "multiple filters")
@@ -354,9 +348,7 @@ Additionally, the same logs are also captured in stdout in the following format:
 <LOG_LEVEL> :: <LOG_MESSAGE>
 ```
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The above log format can be modified as required.</p></div>
+<Note>The above log format can be modified as required.</Note>
 
 A sample script and its output, which uses the `korelogger` library in Python, are given below:
 
@@ -435,9 +427,7 @@ Each log entry is organized using the following identifying markers for tracking
 
 Log messages and levels are available as `log.message` and `log.level` in the attributes field.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The structure of the attributes field can be modified as required.</p></div>
+<Note>The structure of the attributes field can be modified as required.</Note>
 
 
 ## Export Runs and Logs Data
@@ -482,6 +472,4 @@ The export schema files include the dashboard data organized in the following fo
 
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Each user’s export process is implemented separately, ensuring that one user's cancellations or adjustments do not interfere with another user’s export pipeline.</p></div>
+<Note>Each user’s export process is implemented separately, ensuring that one user's cancellations or adjustments do not interfere with another user’s export pipeline.</Note>

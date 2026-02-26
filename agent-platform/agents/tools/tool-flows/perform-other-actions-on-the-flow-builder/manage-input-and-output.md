@@ -88,17 +88,13 @@ Steps to add output variables:
 
 4. In the **Type** field, select a data type from the drop-down list - **String**, **Number**, **JSON** or **Boolean**. This allows you to generate data in the defined type as the output parameter from a tool, making it compatible with downstream systems.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>The <b>Import</b> button is enabled when the required information is provided.</li>
+<Note><ul><li>The <b>Import</b> button is enabled when the required information is provided.</li>
 <li>AI node models and guardrail configurations may not be available in the current account. Reconfigure them before running the tool.</li>
 <li>If a type mismatch occurs, the endpoint still succeeds but includes a warning in the response along with the key name and the nature of the mismatch.</li>
-<li>If one or more keys fail validation, the response includes warnings for the failed keys and outputs for the valid ones.</li></ul></p></div>
+<li>If one or more keys fail validation, the response includes warnings for the failed keys and outputs for the valid ones.</li></ul></Note>
 
 <ol start="5"><li>Click <b>Save</b>.</li>
 
 The output variable is displayed on the Output tab of the <b>Manage Input & Output</b> dialog.</ol>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can also add an output variable in the End node using the <b>Add a Key</b> option on the node's interface.</p></div>
+<Note>You can also add an output variable in the End node using the <b>Add a Key</b> option on the node's interface.</Note>

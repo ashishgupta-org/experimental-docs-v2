@@ -10,9 +10,7 @@ When importing a tool version to a parent tool, the imported flow definition bec
 
 Once the import is complete, the tool flow canvas is updated with the latest configuration changes.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Users with only <b>Viewer</b> permissions can't import a tool.</p></div>
+<Note>Users with only <b>Viewer</b> permissions can't import a tool.</Note>
 
 ## Best Practices
 
@@ -50,12 +48,10 @@ Providing the following information is optional:
 * **App definition file**: Upload the required **app_definition.json** file, which includes general information about the tool version and guardrails
 * **Environment variable file**: Upload the required **env_variables.json** file, which includes the environment variables set for the tool. 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>The <b>Import</b> button is enabled when the required information is provided.</li>
+<Note><ul><li>The <b>Import</b> button is enabled when the required information is provided.</li>
 <li>AI node models and guardrail configurations may not be available in the current account. Reconfigure them before running the tool.</li>
 <li>The model name from the original tool is imported as a placeholder into the AI node's <b>Select Model</b> field. Later, you can assign a value from the available options.</li>
-<li>The values for <b>System Prompt</b>, <b>Prompt</b>, <b>Timeout</b>, and <b>Hyperparameters</b> are imported for the AI node.</li></ul></p></div>
+<li>The values for <b>System Prompt</b>, <b>Prompt</b>, <b>Timeout</b>, and <b>Hyperparameters</b> are imported for the AI node.</li></ul></Note>
 
 <ol start="5"><li>Click <b>Import</b>.</li>
 
@@ -72,13 +68,11 @@ Once the import is complete, the system will redirect you to the **Tool Flow** p
 The imported tool is listed under **All tools** and **My tools** on the **Tools** dashboard.
 
 
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p><ul><li>The status of the imported tool is set to <b>In Development</b>.</li>
+<Info><ul><li>The status of the imported tool is set to <b>In Development</b>.</li>
 <li>The node types, tool descriptions, input and output variables, scanners, and sync/async setup are kept intact during the import.</li>
 <li>If the AI node's model doesn't match any available models in the current account, the model field is kept empty, but all prompt definitions are imported.</li>
 <li>API keys are not transferred during the import process.</li>
-<li>The imported tool cannot be shared with other users.</li></p></div>
+<li>The imported tool cannot be shared with other users.</li></Info>
 
 **Failure Scenarios**
 

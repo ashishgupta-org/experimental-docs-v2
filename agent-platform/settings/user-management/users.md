@@ -97,13 +97,10 @@ The steps mentioned below, allow you to import users' data from a designated fil
 
 
 
-  <div class="admonition note">
-  <p class="admonition-title">Important</p>
-  <p><ul><li>Mandatory fields are marked with an asterisk (*).</li>
+  <Info><ul><li>Mandatory fields are marked with an asterisk (*).</li>
   <li>The column header names and order must match the fields in the uploaded file.</li>
   <li>Only <i>New</i>, <i>Update</i>, and <i>Delete</i> user statuses are accepted.</li>
-  <li>Invalid email IDs are not accepted.</li></ul></p> 
-</div>
+  <li>Invalid email IDs are not accepted.</li></ul></Info>
 
 * Ensure the column names and field mandates match your uploaded file and the sample file. Any mismatch results in an error.
 
@@ -131,10 +128,7 @@ The file may take a few minutes to import. You can track the progress in the dia
 
 Click **OK** to see the imported users on the dashboard. 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The imported users are assigned the <b>Viewer</b> system role by default, which you can change. <a href="../role-management/#system-defined-roles">Learn more</a>.</p> 
-</div>
+<Note>The imported users are assigned the <b>Viewer</b> system role by default, which you can change. <a href="../role-management/#system-defined-roles">Learn more</a>.</Note>
 
 
 ![imported entries](./images/imported-entries.png "imported entries")
@@ -187,11 +181,10 @@ The following window is displayed with the import date and time, the importing u
 
 The **Delete** feature removes a user you’re managing from your Platform account.
 
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Only users included as Admin in the system with the required permissions can access the <b>Settings</b> Console.</p>
-<p><ul><li>Deleting a user revokes their access and removes their data from your account. However, the user can still access their personal account on the Platform. To rejoin your account, you must invite them again via email.</li>
-<li>You cannot delete users if they have created and manage tools in your account. The user must first remove all active tools before they can be deleted.</li></ul></p></div>
+<Info>Only users included as Admin in the system with the required permissions can access the <b>Settings</b> Console.
+
+<ul><li>Deleting a user revokes their access and removes their data from your account. However, the user can still access their personal account on the Platform. To rejoin your account, you must invite them again via email.</li>
+<li>You cannot delete users if they have created and manage tools in your account. The user must first remove all active tools before they can be deleted.</li></ul></Info>
 
 **Steps to delete a user**
 
@@ -234,10 +227,7 @@ When a user's account and role assignments are permanently deleted, the user is 
 
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Using <b>Delete</b> removes the user permanently.</p>
-</div>
+<Note>Using <b>Delete</b> removes the user permanently.</Note>
 
 ## Search User 
 

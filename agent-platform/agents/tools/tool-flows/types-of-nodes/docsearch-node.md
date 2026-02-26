@@ -52,9 +52,7 @@ The integration of Search AI with the Platform involves setting up a Search AI a
 
 Follow the detailed steps [here](https://docs.kore.ai/xo/apis/automation/api-introduction/#creating-and-managing-jwt-apps-in-xo-platform) to complete the configuration.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To receive answers from Search AI, you must enable the <b><i>Answer Generation</i></b> option under the <b>API scopes</b> section.</p></div>
+<Note>To receive answers from Search AI, you must enable the <b><i>Answer Generation</i></b> option under the <b>API scopes</b> section.</Note>
 
 
 ## Step 2: Link the Search AI App in Agent Platform
@@ -94,9 +92,7 @@ After fetching the Search AI application credentials, configuring the source, an
 
 
 
-  <div class="admonition note">
-  <p class="admonition-title">Note</p>
-  <p>We support connections through Search AI. You must provide `https://platform.kore.ai` for the <b>Search AI URL</b> field.</p></div>
+  <Note>We support connections through Search AI. You must provide `https://platform.kore.ai` for the <b>Search AI URL</b> field.</Note>
 
 ## Step 3: Add and Configure a DocSearch Node
 
@@ -139,9 +135,7 @@ After fetching the Search AI application credentials, configuring the source, an
 
 
 
-   <div class="admonition note">
-   <p class="admonition-title">Note</p>
-   <p>Use search to look up and select the required connection.</p></div>
+   <Note>Use search to look up and select the required connection.</Note>
 
   To set up a new connection, click **+ New Connection**. It redirects you to the Platform Integrations page. Follow the steps mentioned [here](./docsearch-node.md#step-2-link-the-search-ai-app-in-agent-platform) to complete the integration.
 
@@ -151,10 +145,8 @@ After fetching the Search AI application credentials, configuring the source, an
 
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>If you do not provide any meta filters, the query is applied to all the documents uploaded to that connection.</li>
-<li>The filters can be a context variable in the flow depending on the builder’s requirement.</li></ul></p></div>
+<Note><ul><li>If you do not provide any meta filters, the query is applied to all the documents uploaded to that connection.</li>
+<li>The filters can be a context variable in the flow depending on the builder’s requirement.</li></ul></Note>
 
 <p><b>Managing Errors</b></p>
 

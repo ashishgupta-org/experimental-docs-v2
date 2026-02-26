@@ -56,10 +56,7 @@ To import and add a custom script, follow the steps below:
 
 
  
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To complete the configuration, perform each step in order without skipping any.</p>
-</div>
+<Note>To complete the configuration, perform each step in order without skipping any.</Note>
 
 ### Step 1: General Details
 
@@ -69,10 +66,7 @@ In the **General Details** window, follow these steps:
 2. Add a **Description** to define the purpose and capabilities of your custom script.
 3. Select **Base Language** (the language in which the script is imported and executed) and **Language Version**. The available options are **JavaScript 20.19.0** and **Python 3.10.15**. More versions will be supported soon.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The default version is auto-selected when you select the language.</p>
-</div>
+<Note>The default version is auto-selected when you select the language.</Note>
 
 <ol start="4"><li>To upload the script, click <b>Choose File</b> under <b>Project File</b>, then select the file from your local system.</li></ol>
 
@@ -88,17 +82,14 @@ In the **General Details** window, follow these steps:
 </p>
 </div>
 
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p><ul><li>The uploaded file must match the recommended project structure. Click <b>Download sample project</b> to access the <i>.zip</i> folder of the script definitions and follow its structure when uploading your file.</li>
+<Info><ul><li>The uploaded file must match the recommended project structure. Click <b>Download sample project</b> to access the <i>.zip</i> folder of the script definitions and follow its structure when uploading your file.</li>
 <li>The structure is different for different base languages. Ensure that the correct file structure is followed for the chosen language.</li>
 <li>The file naming convention should be followed to avoid any errors.</li>
 
 ![file naming convention error](./images/file-naming-convention.png "file naming convention error")
 
 </ul>
-</p>
-</div>
+</Info>
 
 **Key Considerations for File Validations**:
 
@@ -155,13 +146,10 @@ Configure **Runtime variables** (environment variables and execution timeout) to
 
  
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The following default environment variables are available:
+<Note>The following default environment variables are available:
 <ul><li><b>UPLOADS_DIR</b>: Read-only access to all files uploaded via the Public APIs. Use this to access data that was submitted to your account.</li>
 <li><b>WORKSPACE_DIR</b>: Read-write directory for your function's file operations. Any data your function needs to store or modify will be saved here.</li>
-<li>Both directories are accessible only while your container is deployed. Once undeployed, these storage locations will no longer be available.</li></ul></p>
-</div>
+<li>Both directories are accessible only while your container is deployed. Once undeployed, these storage locations will no longer be available.</li></ul></Note>
 
 <ol start="3"><li>Define the <b>Execution timeout</b> in seconds. The allowed range is <b>30 to 600 seconds</b>.</li>
 <p><b>Why Script Timeout?</b></p>
@@ -181,11 +169,8 @@ On this page, you define scaling parameters (minimum and maximum replicas) and h
 1. Set limits for auto-scaling to ensure optimal performance by defining the following **Scaling parameters**:
     * **Min and Max Replicas**: Defines the minimum and maximum number of pods per service that can be created for the service to handle increased load. 
 
-       <div class="admonition note">
-       <p class="admonition-title">Note</p>
-       <p><ul><li>The allowed range for both parameters is between 1 and 10.</li>
-       <li>The default value is 1.</li></ul></p>
-       </div>
+       <Note><ul><li>The allowed range for both parameters is between 1 and 10.</li>
+       <li>The default value is 1.</li></ul></Note>
 
      * **Min replica** should be lower than or equal to the **Max Replica**.
      * **Average Compute Utilization**: A metric based on which scaling of the service happens. Indicates average compute utilization in percentage per pod. The **default value is 75**, and the **allowed range is between 1 and 100**. This metric is disabled when **Min replica** and **Max replica** are the same.
@@ -302,11 +287,8 @@ Downloads the *.Zip* folder of the project to the user’s local system. To expo
 
 To see when **Export** is available, please refer to the table [here](../manage-custom-scripts/custom-scripts.md#information-on-script-deployment-statuses).
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>You can view the status of the export while it is in progress, upon completion, or if it fails.</li>
-<li>You can cancel an export in progress.</li></ul></p>
-</div>
+<Note><ul><li>You can view the status of the export while it is in progress, upon completion, or if it fails.</li>
+<li>You can cancel an export in progress.</li></ul></Note>
 
 #### Undeploy the Script
 
@@ -358,11 +340,8 @@ After a custom script is undeployed, a confirmation email with the subject line 
 
 This action permanently deletes a deployed script, including its configurations and definitions, from the system.
 
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p><ul><li>You cannot delete a deployed script.</li>
-<li>Once a script is deleted, its data and configurations cannot be restored.</li></ul></p>
-</div>
+<Info><ul><li>You cannot delete a deployed script.</li>
+<li>Once a script is deleted, its data and configurations cannot be restored.</li></ul></Info>
 
 To delete, follow the steps below on the **Manage Custom Scripts** page:
 
@@ -413,10 +392,7 @@ After redeployment, the **Overview** page is updated with the latest deployment 
 
 The configuration details of the latest deployed version of a script can be viewed on the **Overview** page. To view this page, click the required script on the **Manage Custom Scripts** page. 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can view this page for all the statuses of a deployed script.</p>
-</div>
+<Note>You can view this page for all the statuses of a deployed script.</Note>
 
 The information available on this page includes the configurations you have set for the following:
 
@@ -476,10 +452,7 @@ To edit the deployed/undeployed script’s name, click the **Edit** icon. In the
 
  
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Please follow the suggested naming convention to avoid errors.</p>
-</div>
+<Note>Please follow the suggested naming convention to avoid errors.</Note>
 
 
 ![naming convention](./images/naming-convention.png "naming convention")
@@ -558,10 +531,7 @@ Deployment history information is displayed based on the status as follows:
 
 The **Endpoint** page displays code viewers of the activated endpoint for the deployed script in different formats. This allows users to easily copy the code in their preferred format and integrate it into their applications. 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The code is view-only and cannot be edited.</p>
-</div>
+<Note>The code is view-only and cannot be edited.</Note>
 
 The available formats include:
 
@@ -603,10 +573,7 @@ To [deploy the script](../manage-custom-scripts/custom-scripts.md#import-and-dep
 
 The Platform provides secure access to deployed scripts through authenticated requests. You must create an API key to manage access to a deployed script’s endpoint across the platform. 
  
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can create API keys for a script regardless of its <a href="#view-deployed-scripts-and-their-statuses">deployment status</a>. The keys can be used once the script is successfully deployed.</p>
-</div>
+<Note>You can create API keys for a script regardless of its <a href="#view-deployed-scripts-and-their-statuses">deployment status</a>. The keys can be used once the script is successfully deployed.</Note>
 
 ### Create an API Key
 
@@ -637,11 +604,8 @@ To add an API secret key, follow these steps:
 
 </ol>  
  
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p><ul><li>Your secret API key is shown only once when generated. Save the key in a safe location. Do not share it or expose it in browsers or other client-side code.</li>
-<li>If you lose a secret key, a new one must be generated.</li></ul></p>
-</div>
+<Info><ul><li>Your secret API key is shown only once when generated. Save the key in a safe location. Do not share it or expose it in browsers or other client-side code.</li>
+<li>If you lose a secret key, a new one must be generated.</li></ul></Info>
 
 A success message is displayed once the API key is generated. The added API Key is listed on the page.
 
@@ -665,10 +629,7 @@ To delete an API key, follow the steps below:
 
 A success message is displayed, and the API key is removed from the list. 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A deleted API key becomes invalid and can no longer be used to access the script on the platform.</p>
-</div>
+<Note>A deleted API key becomes invalid and can no longer be used to access the script on the platform.</Note>
 
 ### Search API Key
 

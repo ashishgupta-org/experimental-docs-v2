@@ -31,10 +31,7 @@ The All runs tab provides the following information for each tool run:
     * **Agentic App** - The name of the Agentic App used to run the tool.
     * **API Key**: The API key name used to execute the tool. (This is the name provided in the API keys page when you created a new API key. If you didn't provide a name, the system uses the default name ‘*Secret Key*’. You can have multiple API keys for a single tool).
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When there is a nested (multi-level) tool calling, the immediate tool (parent) is displayed as the source.</p>
-</div>
+<Note>When there is a nested (multi-level) tool calling, the immediate tool (parent) is displayed as the source.</Note>
 
 You can also see the following metrics on the top of the page: 
 

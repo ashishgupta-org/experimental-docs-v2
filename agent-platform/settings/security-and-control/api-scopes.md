@@ -150,10 +150,7 @@ To edit an API app, follow the steps below:
 
          * Click **Delete** in the confirmation window.
             
-            <div class="admonition warning">
-            <p class="admonition-title">Caution</p>
-            <p>The key you are deleting will no longer function if it is in use. You must generate a new key.</p>
-             </div>
+            <Danger>The key you are deleting will no longer function if it is in use. You must generate a new key.</Danger>
 
             The deleted key is removed from the app in the **API Keys** section and is no longer associated with the app.  
 

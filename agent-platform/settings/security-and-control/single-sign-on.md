@@ -11,9 +11,7 @@ SSO is a powerful option for organizations looking to balance convenience and se
 * **Improved User Experience**: Reduces the need for multiple logins into an account.
 * **Centralized Access Control**: Admins can monitor and enforce security policies across all applications more efficiently.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Only account owners and admins can enable/disable SSO from the <b>Settings</b> console.</p></div>
+<Note>Only account owners and admins can enable/disable SSO from the <b>Settings</b> console.</Note>
 
 The Platform supports SSO for the following protocols and providers:
 | <strong>Protocol</strong> | <strong>Provider</strong> |
@@ -51,9 +49,7 @@ If SSO is already configured, the **Single sign-on** setup page is displayed.
 
 Depending on your company's security requirements, you can enable SSO for your account users. Enabling SSO includes selecting the protocol and IDP and providing the [parameters](../security-and-control/single-sign-on.md#configuration-parameters) to integrate with the IDP service.
 
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>If you already have the required parameters for Okta, move directly to Step 18.</p></div>
+<Info>If you already have the required parameters for Okta, move directly to Step 18.</Info>
 
 ### Configuration Parameters
 
@@ -120,9 +116,7 @@ To configure SSO using SAML and Okta, follow the steps below:
 2. Select the **Enable SSO** tab.
 3. Select **SAML** for **Sign-on protocol** and **Okta** for **SSO provider**.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you already have the required parameters for Okta, move directly to Step 18.</p></div>
+<Note>If you already have the required parameters for Okta, move directly to Step 18.</Note>
 
 <ol start="4"><li>Login to the <a href="https://developer.okta.com/login/">Okta developer portal</a>.</li>
 <li>On the dashboard, click <b>Applications</b> on the left menu.</li>
@@ -171,9 +165,7 @@ To configure SSO using SAML and Okta, follow the steps below:
 <li>Paste the value into the <b>Certificate</b> field on the Platform’s SSO setup page.</li>
 To add a new certificate, click <b>+ Add new</b>.</ol>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When multiple certificates are provided, the system uses the latest one. If the latest certificate is invalid, it automatically switches to other available certificates.</p></div>
+<Note>When multiple certificates are provided, the system uses the latest one. If the latest certificate is invalid, it automatically switches to other available certificates.</Note>
 
 <ol start="18"><li>Click <b>Save</b>.
 Once SSO for Okta is complete, the system will redirect to the <b>Okta Sign in</b> page for the Platform account authentication.</li></ol>
@@ -210,9 +202,7 @@ To configure SSO using SAML and Onelogin, follow the steps below:
 </li>
 <li>In the <b>X.509 Certificate</b> section, copy the certificate data and then paste it into the <b>X.509 Certificate</b> field on the Platform’s SSO setup page.</li>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Copy data after the <b>BEGIN CERTIFICATE</b> header and before the <b>END CERTIFICATE</b> footer.</p></div>
+<Note>Copy data after the <b>BEGIN CERTIFICATE</b> header and before the <b>END CERTIFICATE</b> footer.</Note>
 
 To add a new certificate, click <b>+Add new</b>.
 
@@ -220,9 +210,7 @@ To add a new certificate, click <b>+Add new</b>.
 
 </ol>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When multiple certificates are provided, the system uses the latest one. If the latest certificate is invalid, it automatically switches to other available certificates.</p></div>
+<Note>When multiple certificates are provided, the system uses the latest one. If the latest certificate is invalid, it automatically switches to other available certificates.</Note>
 
 <ol start="11"><li>Copy the following field values from the Platform’s SSO setup page into the relevant fields in Onelogin:</li>
 
@@ -245,10 +233,7 @@ To configure and enable SSO using SAML for other IDPs of your choice, follow the
 
 To add a new certificate, click **+Add new**.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When multiple certificates are provided, the system uses the latest one. If the latest certificate is invalid, it automatically switches to other available certificates.
-</p></div>
+<Note>When multiple certificates are provided, the system uses the latest one. If the latest certificate is invalid, it automatically switches to other available certificates.</Note>
 
 <ol start="6"><li>Copy and paste <b>ACS url for SP initiated SAML flow</b> and <b>ACS url for IDP initiated SAML flow</b> values from the Platform into the relevant app fields within the IDP’s developer portal.</li>
 <li>Click <b>Save</b>.</li></ol>
@@ -323,9 +308,7 @@ To configure SSO using OpenId Connect and Google, follow the steps below:
 3. Select **OpenId Connect** for **Sign-on protocol** and **Sign in with Google** to **Configure SSO for OpenId connect**.
 4. Click **Save**.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>No further configuration is needed. Users will be authenticated using their Google account’s username and password.</p></div>
+<Note>No further configuration is needed. Users will be authenticated using their Google account’s username and password.</Note>
 
 ## Disable SSO
 

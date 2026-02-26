@@ -66,10 +66,7 @@ In this document, you will learn how to add Integration Nodes to your flows, con
 
 * Click the added node to open its properties dialog box. The **General Settings** for the node are displayed.
 
-    <div class="admonition note">
-    <p class="admonition-title">Note</p>
-    <p>The node uses the service provider’s name by default. You can rename the node if needed.</p>
-    </div>
+    <Note>The node uses the service provider’s name by default. You can rename the node if needed.</Note>
 
 * Enter or select inputs for the following fields:
      * <b>Node Name</b>: Enter an appropriate name for the node. For example, “<i>Ahrefslinkbuilder</i>” (Only letters and numbers are allowed).
@@ -81,10 +78,7 @@ In this document, you will learn how to add Integration Nodes to your flows, con
 
 * Click <b>Add Action</b> to add and configure the required actions or tasks from the service provider.
 
-    <div class="admonition note">
-    <p class="admonition-title">Note</p>
-    <p>Only one action can be added and configured at a time.</p>
-    </div>
+    <Note>Only one action can be added and configured at a time.</Note>
 
 
     ![click add action](./images/add-action-click.png "click add action")
@@ -99,9 +93,7 @@ In this document, you will learn how to add Integration Nodes to your flows, con
 
 * In the action settings window, add inputs for the action fields and click <b>Save</b>. These parameters define how the action is executed for the connection.
 
-    <div class="admonition note">
-    <p class="admonition-title">Note</p>
-    <p>The action parameters vary depending on the specific action and provider. See the tooltip for more information.</p></div>
+    <Note>The action parameters vary depending on the specific action and provider. See the tooltip for more information.</Note>
 
 
     ![action parameters](./images/action-parameters.png "action parameters")
@@ -145,10 +137,7 @@ Then, select another action in the **Change Action** window.
 
 
 
-<div class="admonition warning">
-<p class="admonition-title">Caution</p>
-<p>If you change or replace the existing action, any configuration changes made to the previous action will be lost.</p>
-</div>
+<Danger>If you change or replace the existing action, any configuration changes made to the previous action will be lost.</Danger>
 
 The new action replaces the existing one for the connection. Please configure the action parameters for this action to work properly.
 
@@ -226,10 +215,7 @@ This step is required because the **Start node** must have at least one **output
 
 ### Step 3: Run the Flow
 
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p>Before running the flow, resolve the tool flow errors that appear when you click the <b>Warning</b> icon.</p>
-</div>
+<Info>Before running the flow, resolve the tool flow errors that appear when you click the <b>Warning</b> icon.</Info>
 
 
   ![errors](./images/check-errors.png "errors")
@@ -259,7 +245,4 @@ The **Debug** window generates the flow log and output from the inputs provided.
 
 The node’s output is stored in a context variable. You can access the variable using the following syntax: `{{context.steps.IntegrationNodeName.output}}`
 
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p>The Platform can automatically recognize variables and outputs. To do so, type "`context.steps.`" and you will see available variables and nodes, including the nodes' outputs.</p>
-</div>
+<Info>The Platform can automatically recognize variables and outputs. To do so, type "`context.steps.`" and you will see available variables and nodes, including the nodes' outputs.</Info>

@@ -31,10 +31,7 @@ Tool templates are the foundation for building AI tools. They provide a structur
 
 The **Tools Library Marketplace** offers more than 50 prebuilt tool templates for the following categories and AI tasks the associated LLM should perform:
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The Platform integrates with the XO Platform marketplace.</p>
-</div>
+<Note>The Platform integrates with the XO Platform marketplace.</Note>
 
 **Categories**
 
@@ -177,10 +174,7 @@ Once you install a tool template, you can access its prebuilt flow and modify it
 
   The prebuilt flow is displayed on the canvas.
 
-   <div class="admonition note">
-   <p class="admonition-title">Note</p>
-   <p>Appropriate canvas-level errors are displayed (in the error log) with a fresh installation of templates since models won't be connected in Gen AI nodes, the API nodes will be empty, etc. You can view and fix the errors by clicking the <b>warning</b> icon.</p>
-   </div>
+   <Note>Appropriate canvas-level errors are displayed (in the error log) with a fresh installation of templates since models won't be connected in Gen AI nodes, the API nodes will be empty, etc. You can view and fix the errors by clicking the <b>warning</b> icon.</Note>
 
 
    ![canvas level errors](./images/canvas-level-errors.png "canvas level errors")
@@ -213,6 +207,4 @@ To delete a tool template, follow the steps below:
 
   
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Deleting the tool is irreversible and removes all the associated data.</p></div>
+<Note>Deleting the tool is irreversible and removes all the associated data.</Note>

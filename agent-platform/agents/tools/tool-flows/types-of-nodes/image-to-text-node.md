@@ -38,10 +38,7 @@ In this document, you will learn how to add the node to your flows, configure it
 
 ## Add and Configure an Image to Text Node
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Before proceeding, you must add an external LLM to your account.</p>
-</div>
+<Note>Before proceeding, you must add an external LLM to your account.</Note>
 
 ### Step 1: Open Flow Builder
 
@@ -69,10 +66,7 @@ In this document, you will learn how to add the node to your flows, configure it
      * <b>Node Name</b>: Enter an appropriate name for the node. For example, “<i>InsuranceEvaluation</i>.”
      * Select a model from the list of configured models.
 
-       <div class="admonition note">
-       <p class="admonition-title">Note</p>
-       <p>Only the <b>OpenAI (gpt-4o and gpt-4o-mini)</b> and <b>Anthropic (Claude Sonnet Vision)</b> models are supported.</p>
-       </div>
+       <Note>Only the <b>OpenAI (gpt-4o and gpt-4o-mini)</b> and <b>Anthropic (Claude Sonnet Vision)</b> models are supported.</Note>
 
     * Provide the `File URL` of the public repository where your image file exists or is returned by the Upload File API at the tool endpoint.
 

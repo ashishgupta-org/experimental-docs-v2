@@ -13,11 +13,8 @@ The Platform supports 120+ integrations with different authorization types. To e
 * **Bearer**: Use a bearer token in the request header, usually within an OAuth2 workflow, to access protected resources. The server validates the token before granting access.
 * **Basic Auth**: Authenticate using username and password in the request header. Credentials are sent with each request. Supported for ServiceNow, Freshdesk, Snowflake, Amplitude, and Mixpanel integrations.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>Other authentication methods for certain integrations include: <b>Basic</b>, <b>Basic with JWT</b>, <b>OAuth1</b>, and <b>custom authentication</b> defined by the service provider.</li>
-<li>Some providers may support <b>multiple authentication methods</b>, allowing flexibility based on your integration needs.</li></ul></p>
-</div>
+<Note><ul><li>Other authentication methods for certain integrations include: <b>Basic</b>, <b>Basic with JWT</b>, <b>OAuth1</b>, and <b>custom authentication</b> defined by the service provider.</li>
+<li>Some providers may support <b>multiple authentication methods</b>, allowing flexibility based on your integration needs.</li></ul></Note>
 
 ## Access Integrations
 
@@ -229,10 +226,7 @@ The following third-party integrations are available on the Platform:
 
 To add a connection and configure an integration, follow the steps below:
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can also add a connection directly from the <b>Integration node</b> on the Tool Flow canvas. <a href="../../../ai-agents/tools/tool-flows/types-of-nodes/integration-node/">Learn more</a>.</p>
-</div>
+<Note>You can also add a connection directly from the <b>Integration node</b> on the Tool Flow canvas. <a href="../../../ai-agents/tools/tool-flows/types-of-nodes/integration-node/">Learn more</a>.</Note>
 
 1. [Access](../integrations/about-integrations.md#access-integrations) **Integrations**.
 2. The next steps depend on whether you are setting up a connection for the first time or want to use an existing connection. <br />
@@ -259,10 +253,7 @@ To add a connection and configure an integration, follow the steps below:
     * **Authorization Details** 
         * Configure the required authorization details in this section to securely connect to the tool and access external services. A provider may support more than one auth type. In this case, you must select the authentication type you want to set up for the integration, such as *OAuth2*, *Bearer Token*, *Basic Auth*, or *API*.
 
-        <div class="admonition note">
-        <p class="admonition-title">Note</p>
-        <p>You are allowed to select only one auth type for a connection.</p>
-        </div>
+        <Note>You are allowed to select only one auth type for a connection.</Note>
 
         * The **Pre-authorize the integration** option is auto-selected, indicating that you must provide authentication credentials to interact with the tool or service. You can select the preferred authentication method, such as *OAuth2*, *Bearer*, or *Basic Auth*, from the available options to configure the credentials. 
 
@@ -304,10 +295,7 @@ To add a connection and configure an integration, follow the steps below:
 
 
 
-      <div class="admonition note">
-      <p class="admonition-title">Note</p>
-      <p>For other Authentication types, such as OAuth1, retrieve the required values from the admin console of your account on the provider’s site to configure the integration.</p>
-      </div>
+      <Note>For other Authentication types, such as OAuth1, retrieve the required values from the admin console of your account on the provider’s site to configure the integration.</Note>
 
       **Basic Auth**
 
@@ -322,10 +310,7 @@ To add a connection and configure an integration, follow the steps below:
 
 
 <ol start="5"><li>Click <b>Save</b> after successfully testing the connection.</li>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <b>Save</b> button will not appear until all required inputs have been provided.</p>
-</div></ol>
+<Note>The <b>Save</b> button will not appear until all required inputs have been provided.</Note></ol>
 
 A success message appears after setup.
 
@@ -389,10 +374,7 @@ Once you click the integration in the **Connected** section, the list of configu
 
 To edit the configuration for a connection, follow the steps below:
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You cannot modify the connection name.</p>
-</div>
+<Note>You cannot modify the connection name.</Note>
 
 1. [Access](../integrations/about-integrations.md#access-integrations) **Integrations** → Click **Connected** → Select a connection.
 2. For the connection, click the **Ellipses** icon → Select **Edit**.
@@ -425,9 +407,7 @@ To delete an integration, follow the steps below:
 
 3. Click **Delete**.
 
-  <div class="admonition warning">
-  <p class="admonition-title">Caution</p>
-  <p>This action is irreversible and will remove all associations of the connection from the the Platform.</p></div>
+  <Danger>This action is irreversible and will remove all associations of the connection from the the Platform.</Danger>
 
   ![delete connection](./images/delete-connection.png "delete connection")
 

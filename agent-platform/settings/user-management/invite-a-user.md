@@ -20,9 +20,7 @@ To invite a user, follow the steps below:
 
 </li>
  
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>System-defined and custom roles available in the inviter’s account can be assigned. <a href="../role-management/">Learn more</a> about roles and permissions.</p></div></ol>
+<Note>System-defined and custom roles available in the inviter’s account can be assigned. <a href="../role-management/">Learn more</a> about roles and permissions.</Note></ol>
 
 <ol start="6"><li>To invite multiple users, click <b>+ Add another member</b>. Then, follow steps 4 and 5.
 
@@ -62,7 +60,5 @@ Please note the following when adding an email address:
 
 You’ll see a success message when the invite is sent. If it fails, check the highlighted email addresses and try again.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>Users receive an email invitation to join your account, which expires 15 days after it's sent.</li>
-<li>Until the recipient accepts your invitation to join, the user status is set to <b><i>Inactive</i></b>. Once the invitation is accepted, the status changes to <b><i>Active</i></b>.</li></ul></p></div>
+<Note><ul><li>Users receive an email invitation to join your account, which expires 15 days after it's sent.</li>
+<li>Until the recipient accepts your invitation to join, the user status is set to <b><i>Inactive</i></b>. Once the invitation is accepted, the status changes to <b><i>Active</i></b>.</li></ul></Note>

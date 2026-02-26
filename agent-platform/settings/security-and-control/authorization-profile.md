@@ -101,10 +101,7 @@ If the mandatory fields are left blank, validation error messages appear, as sho
 </li>
 <li>(Optional) Click <b>+ Add Additional Field</b> to add additional fields for authorization. See the <a href="#add-additional-field">Add Additional Field</a> section.</li></ol>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If the default <b>Username</b> and <b>Password</b> fields do not meet your authorization requirements, you can add <b>custom fields</b> using additional fields or authorization IDP form fields to the authorization process. For example, if a <b>PIN code</b> is required in addition to the standard login fields, you can include it as an extra input for the end user.</p>
-</div>
+<Note>If the default <b>Username</b> and <b>Password</b> fields do not meet your authorization requirements, you can add <b>custom fields</b> using additional fields or authorization IDP form fields to the authorization process. For example, if a <b>PIN code</b> is required in addition to the standard login fields, you can include it as an extra input for the end user.</Note>
     
 <ol start="7"><li>(Optional step to be executed only when you select <b><i>OAuth V2</i></b> as the Authorization type) Click <b>+ Add Authorization Field</b> to add additional auth fields to your profile. This is required For more information, see the <a href="#add-authorization-field">Add Authorization Field</a> section.</li>
 <li>Click <b>Save new Auth</b>.</li>
@@ -119,10 +116,7 @@ A success message is displayed, and the new auth profile is added to the **Autho
 
 To configure the OAuth2 profile, define the fields described in the table below:
 
- <div class="admonition note">
-    <p class="admonition-title">Note</p>
-    <p>Except for <b>Scope</b>, <b>Description</b>, <b>Refresh Token URL</b>, <b>Additional fields</b>, <b>Authorization fields</b>, and <b>Auth Error Status Code</b>, all the fields are mandatory.</p>
-    </div>
+ <Note>Except for <b>Scope</b>, <b>Description</b>, <b>Refresh Token URL</b>, <b>Additional fields</b>, <b>Authorization fields</b>, and <b>Auth Error Status Code</b>, all the fields are mandatory.</Note>
 
 | FIELD NAME | DESCRIPTION | MANDATE | AUTH TYPE |
 |:------ |:------ |:------ |:------ |
@@ -249,10 +243,7 @@ You can either edit the configured values of an auth profile or delete it from t
 
    A success message appears when the auth profile information is updated.
 
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p>The <b>Authorization Type</b> and <b>Name</b> fields cannot be edited, but all other parameters can be modified.</p>
-</div>
+<Info>The <b>Authorization Type</b> and <b>Name</b> fields cannot be edited, but all other parameters can be modified.</Info>
 
 ### Delete
 
@@ -268,7 +259,4 @@ To delete an Auth profile, follow the steps below:
 
    A success message is displayed, and the profile is removed from the **Authorization profile** page.
 
-<div class="admonition warning">
-<p class="admonition-title">Caution</p>
-<p>Deleted profiles cannot be recovered. Proceed with caution.</p>
-</div>
+<Danger>Deleted profiles cannot be recovered. Proceed with caution.</Danger>

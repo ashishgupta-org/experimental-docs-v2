@@ -66,9 +66,7 @@ For detailed statistics on each status for the selected date/date range, see the
 
 For detailed statistics on the total events and the runs executed by each node, see the **Nodes Execution** widget. [Learn more](../analytics/tools-analytics-dashboard.md#nodes-execution).
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Hover over the "<b><i>i</i></b>" icon to view the information summary for the metric.</p></div>
+<Note>Hover over the "<b><i>i</i></b>" icon to view the information summary for the metric.</Note>
 
 
 ![info icon](./images/info-icon.png "info icon")
@@ -122,15 +120,11 @@ The following widget-level filters apply exclusively to [tool-specific metrics](
 
 * **Tool Name**: Select the deployed tool from the list to see the associated analytics data.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If two tools with the same name are deployed at different times, they appear in the list with their respective deployment timestamps.</p></div>
+<Note>If two tools with the same name are deployed at different times, they appear in the list with their respective deployment timestamps.</Note>
 
 <ul><li><b>Tool Version</b>: Choose the deployed tool’s version from the list. If your account contains multiple versions of the same tool, this feature provides targeted data for a specific version, such as testing or production.</li></ul>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If no versions exist for a tool, the dropdown list is empty. By default, data for all tool versions is displayed unless a specific version is selected.</p></div>
+<Note>If no versions exist for a tool, the dropdown list is empty. By default, data for all tool versions is displayed unless a specific version is selected.</Note>
 
 ## Tool Performance Data Widgets
 
@@ -156,10 +150,8 @@ This widget features two dynamic graphs illustrating successful and failed reque
 
 
 
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p><ul><li>The widget shows data only for the duration that the tool was deployed in your account. For instance, if Tool A was active for 4 days last week and undeployed for the next 3 days, selecting a 7-day view will display data solely for those 4 active days and the associated request times.</li>
-<li>The graph will show curves only when requests are processed by the tool. If no requests are processed during an hour or day, no data points will appear.</li></ul></p></div>
+<Info><ul><li>The widget shows data only for the duration that the tool was deployed in your account. For instance, if Tool A was active for 4 days last week and undeployed for the next 3 days, selecting a 7-day view will display data solely for those 4 active days and the associated request times.</li>
+<li>The graph will show curves only when requests are processed by the tool. If no requests are processed during an hour or day, no data points will appear.</li></ul></Info>
 
 **Best Practices**
 
@@ -203,9 +195,7 @@ You can do the following to analyze tool performance:
 
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The system calculates the ART for all requests within each hour (hourly ART). It then combines the hourly ART for all hours daily to determine the Daily ART. Finally, the Daily ART values for the selected date range are aggregated to compute the overall ART.</p></div>
+<Note>The system calculates the ART for all requests within each hour (hourly ART). It then combines the hourly ART for all hours daily to determine the Daily ART. Finally, the Daily ART values for the selected date range are aggregated to compute the overall ART.</Note>
 
 **Generic**
 
@@ -261,10 +251,8 @@ The widget-level filters include the following:
 * [Global timeline filter](../analytics/tools-analytics-dashboard.md#global-timeline-filters)
 * [Tool Performance Filters](../analytics/tools-analytics-dashboard.md#tool-performance-filters)
 
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p><ul><li>Changes made to the filters in the expanded view of a widget do not affect the main dashboard or the global filters.</li>
-<li>Hover over the required data point to view widget analytics data.</li></ul></p></div>
+<Info><ul><li>Changes made to the filters in the expanded view of a widget do not affect the main dashboard or the global filters.</li>
+<li>Hover over the required data point to view widget analytics data.</li></ul></Info>
 
 To expand a widget, hover over the top-right corner of the widget, and click the **Double-arrow** icon.
 

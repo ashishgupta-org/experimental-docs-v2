@@ -57,10 +57,7 @@ You can add audio input in one of the following ways:
 
 
 
-   <div class="admonition note">
-   <p class="admonition-title">Note</p>
-   <p>Uploading audio files as input variables is <b>not supported</b> only URLs are supported.</p>
-   </div>
+   <Note>Uploading audio files as input variables is <b>not supported</b> only URLs are supported.</Note>
 
 ### Supported Audio Formats
 
@@ -74,10 +71,7 @@ The following audio file formats are supported by the node:
 * Wav
 * Mpeg
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Using other formats will result in a system error.</p>
-</div>
+<Note>Using other formats will result in a system error.</Note>
 
 ### Audio File Size Limits
 
@@ -122,10 +116,7 @@ Metrics include:
 
 ## Add and Configure an Audio to Text Node
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Before proceeding, you must add an external LLM to your account.</p>
-</div>
+<Note>Before proceeding, you must add an external LLM to your account.</Note>
 
 
 ### Step 1: Open Flow Builder

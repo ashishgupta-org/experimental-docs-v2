@@ -80,9 +80,7 @@ To select and deploy a model, follow these steps:
 <li>Click <b>Deploy</b>.</li></ol>
 
       
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You will be charged for deployment and inferencing-related costs for each open-source model. </p></div> 
+<Note>You will be charged for deployment and inferencing-related costs for each open-source model. </Note> 
 
 If you have selected optimization, the model optimization starts, and the status changes to “Optimization”. If not, the model is deployed. After deployment, the status changes to "Deployed." You can now use this model across the Platform and externally.
 

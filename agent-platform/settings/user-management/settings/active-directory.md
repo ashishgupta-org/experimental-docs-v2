@@ -4,10 +4,7 @@ By configuring Active Directory import, you can seamlessly bring your organizati
 
 Moreover, the automatic synchronization (auto sync) feature ensures that Settings always has the most up-to-date user information, even reflecting deleted and modified records in the Active Directory.
 
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>An Active Directory professional with the necessary technical expertise should handle the auto sync process.</p>
-</div>
+<Info>An Active Directory professional with the necessary technical expertise should handle the auto sync process.</Info>
 
 **Key Steps for Configuring Active Directory Import**
 
@@ -24,11 +21,8 @@ Moreover, the automatic synchronization (auto sync) feature ensures that Setting
 4. Click the **Configure Directory** button in the **Configure sync with directory** section.
 5. Complete the setup by following the steps below in the **Configure Directory** window:
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul><li>The left panel gives you complete control over the configuration process. Completed steps are marked by a check, and steps in progress are indicated by a dot, offering a clear and intuitive visual guide.</li>
-<li>To complete the configuration, perform each step in order without skipping any.</li></ul>
-</div>
+<Note><ul><li>The left panel gives you complete control over the configuration process. Completed steps are marked by a check, and steps in progress are indicated by a dot, offering a clear and intuitive visual guide.</li>
+<li>To complete the configuration, perform each step in order without skipping any.</li></ul></Note>
 
 ### Step 1: Set up the Connection
 
@@ -99,10 +93,7 @@ To remove a field, click the **Delete** icon as shown below.
 
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Deleting a custom field is allowed only if you have added multiple fields.</p>
-</div>
+<Note>Deleting a custom field is allowed only if you have added multiple fields.</Note>
 
 <ol start="4"><li>Next, define the rules and sync criteria to import specific users from your Active Directory server. To do this, click the <b>Manage Inclusion & Exclusion Rules</b> tab.</li>
 <li>Under <b>Inclusion Rules</b>, you can sync specific users from your Active Directory Server by defining criteria or filters using profile parameters. Enter the rule expression using the user profile parameters in the <b>Rule Definition</b> textbox according to the LDAP filter syntax mentioned <a href="https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx">here</a>.</li>
@@ -125,10 +116,7 @@ To set an **Exclusion Rules**, follow the steps below:
 2. Select the entry to enable the exclusion rule.
 3. Click **Next** to proceed. 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All mandatory fields must be filled in before you can proceed to the next step. Deleting a custom field is allowed only if you have added multiple fields.</p>
-</div>
+<Note>All mandatory fields must be filled in before you can proceed to the next step. Deleting a custom field is allowed only if you have added multiple fields.</Note>
 
 
 ![add exclusion](./images/add-exclusion.png "add exclusion")
@@ -143,10 +131,7 @@ To finish configuring your directory, schedule auto sync for your Active Directo
 
 Auto sync will ensure that any changes in Active Directory, such as user additions or deletions, are automatically reflected on the Platform.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When Auto Sync is disabled, you must manually initiate Active Directory sync by clicking the <b>Sync Now</b> button under <b>Configure Sync with Directory</b>.</p>
-</div>
+<Note>When Auto Sync is disabled, you must manually initiate Active Directory sync by clicking the <b>Sync Now</b> button under <b>Configure Sync with Directory</b>.</Note>
 
 To enable and configure auto sync, follow the steps below:
 
@@ -156,10 +141,7 @@ To enable and configure auto sync, follow the steps below:
 
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can run AD-Sync anytime by choosing the run now option on the settings page.</p>
-</div>
+<Note>You can run AD-Sync anytime by choosing the run now option on the settings page.</Note>
 
 <ol start="2"><li>Select the following sync fields:</li></ol>
 
@@ -194,10 +176,7 @@ When you set up Active Directory sync for the first time, the following options 
 * **Reset**: Resets the Active Directory sync configurations but retains the last sync data on the Platform.
 * **Sync Status**: This information summary displays the date of last sync, the total number of users and organization units synchronized, and any errors/issues encountered during the process. 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Even if auto sync is turned off, you can click on the <b>Change</b> link in the sync status to access and schedule an auto sync on the configuration page.</p>
-</div>
+<Note>Even if auto sync is turned off, you can click on the <b>Change</b> link in the sync status to access and schedule an auto sync on the configuration page.</Note>
 
 
 ![configure sync with directory](./images/configure-sync-with-directory.png "configure sync with directory")

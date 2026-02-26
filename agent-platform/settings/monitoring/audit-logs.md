@@ -22,10 +22,8 @@ You can specify a **current** or **past period** to view the logs and have compl
 
 Additionally, you can set **custom filters** based on a specific category, event, or user value to view only the required audit logs. [Learn more](./audit-logs.md#steps-to-add-a-custom-filter).
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>The <b>IP Address</b> is fetched from the user’s current network.</li>
-<li><b>User ID</b>, <b>Role ID</b>, <b>Model ID</b>, <b>Tool ID</b>, <b>Guardrail ID</b>, <b>Integration ID</b>, and <b>Experiment ID</b> pertain to the unique identifier associated with the module’s entity in the system.</li></ul></p></div>
+<Note><ul><li>The <b>IP Address</b> is fetched from the user’s current network.</li>
+<li><b>User ID</b>, <b>Role ID</b>, <b>Model ID</b>, <b>Tool ID</b>, <b>Guardrail ID</b>, <b>Integration ID</b>, and <b>Experiment ID</b> pertain to the unique identifier associated with the module’s entity in the system.</li></ul></Note>
 
 ## Account-Level Audit Logs
 
@@ -243,9 +241,7 @@ This customization helps you focus on relevant audit logs, making it easier to t
 
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When you use "<b>Is Equal To</b>," the audit logs only show entries that match the specified value. Conversely, when you use "<b>Is Not Equal To</b>," the logs display all entries except those that match the specified value.</p></div>
+<Note>When you use "<b>Is Equal To</b>," the audit logs only show entries that match the specified value. Conversely, when you use "<b>Is Not Equal To</b>," the logs display all entries except those that match the specified value.</Note>
 
 For example, applying the filter <b>Event Is Equal To Role Created</b>, as shown below, displays only the logs for the role creation event.
 
@@ -286,11 +282,9 @@ By combining filters, you can precisely focus on and analyze the audit log entri
 
 When adding multiple filters to refine your audit log queries, you can use the **AND** or **OR** operators in multiple filtering steps effectively. 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Consistency in operator usage is required for each filtering step. This means you need to use either the AND operator or the OR operator throughout all criteria.
+<Note>Consistency in operator usage is required for each filtering step. This means you need to use either the AND operator or the OR operator throughout all criteria.
 
-Both operators cannot be used together.</p></div>
+Both operators cannot be used together.</Note>
 
 
 ![mutually exclusive operators](./images/operators-mutually-exclusive.png "mutually exclusive operators")
@@ -321,9 +315,7 @@ You can view and monitor audit logs within a specific period with the time selec
 
 Time selection is available for past and current time periods, including the ones listed below:
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><b>Last 30 Days</b> is the default selection, which displays logs for the past 30 days from the current date.</p></div>
+<Note><b>Last 30 Days</b> is the default selection, which displays logs for the past 30 days from the current date.</Note>
 
 * **All Time**: Displays logs since the time the account was created.
 * **Today**: Includes audit logs generated on the current day.

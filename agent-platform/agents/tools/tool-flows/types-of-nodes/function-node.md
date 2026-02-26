@@ -272,10 +272,7 @@ Selecting **Custom Function** invokes a function from an imported and deployed s
 
 To select a custom script deployed in your account, follow the steps below:
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The deployed scripts are listed under <b>Settings</b> > <b>Manage custom scripts</b>. <a href="../../../../../settings/monitoring/monitoring-custom-scripts/">Learn more</a>.</p>
-</div>
+<Note>The deployed scripts are listed under <b>Settings</b> > <b>Manage custom scripts</b>. <a href="../../../../../settings/monitoring/monitoring-custom-scripts/">Learn more</a>.</Note>
 
 1. Select the **Custom function** option for the **Function** node.
 2. Select a deployed script from the list to invoke its function by specifying the **Script name**. 
@@ -309,17 +306,14 @@ To select a function the node must execute, follow the steps below:
 
  
 
-    <div class="admonition note">
-    <p class="admonition-title">Note</p>
-    <p><ul><li>All the functions defined in the main file are automatically listed in the dropdown.</li>
+    <Note><ul><li>All the functions defined in the main file are automatically listed in the dropdown.</li>
     <li>Only one function can be selected at a time.</li>
     <li>Functions from undeployed or draft script versions cannot be selected. Only deployed scripts are supported.</li>
     <li>You can look up a specific function using the <b>search</b> option.</li>
 
     ![search function](./images/search-function.png "search function")
 
-</ul></p>
-    </div>
+</ul></Note>
  
  
 When you select a function, the **Input Arguments** section appears. Arguments are automatically detected from the script and filled in the UI for you if specified in the function. If not, you must add values for each input parameter defined in the function, as discussed below.
@@ -328,10 +322,7 @@ When you select a function, the **Input Arguments** section appears. Arguments a
 
 The next step is to map input arguments of the selected function to static or dynamic values based on the selected data type, as discussed below.
 
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p>By default, all arguments passed to the function are currently sent as 'string'. If your function requires other data types, please select the required type from the data type dropdown list in the <b>Input Arguments</b> section. The supported types include <i>String</i>, <i>Number</i>, <i>JSON</i>, and <i>Boolean</i>.</p>
-</div>
+<Info>By default, all arguments passed to the function are currently sent as 'string'. If your function requires other data types, please select the required type from the data type dropdown list in the <b>Input Arguments</b> section. The supported types include <i>String</i>, <i>Number</i>, <i>JSON</i>, and <i>Boolean</i>.</Info>
 
 
    ![select data type](./images/data-type-dropdown.png "select data type")
@@ -361,13 +352,10 @@ The next step is to map input arguments of the selected function to static or dy
 
 
 
-    <div class="admonition note">
-    <p class="admonition-title">Note</p>
-    <p><ul><li>When double curly braces `{{` are typed in the value field, suggestions for context objects appear.</li>
+    <Note><ul><li>When double curly braces `{{` are typed in the value field, suggestions for context objects appear.</li>
     <li>These suggestions list all context objects available for the flow in a list.</li>
     <li>You can also search from the list to select.</li>
-    <li>The <b>Add</b> button lets you dynamically pass arguments to your function. The coding language must support additional arguments, and these should be defined at the function parameter level. If the function does not support additional arguments, the operation may fail.</li></ul></p>
-    </div>
+    <li>The <b>Add</b> button lets you dynamically pass arguments to your function. The coding language must support additional arguments, and these should be defined at the function parameter level. If the function does not support additional arguments, the operation may fail.</li></ul></Note>
 
 * Input argument mapping is required for deployment. You can test the function and tool, but you cannot deploy until the mapping errors shown below are fixed. 
 
@@ -461,10 +449,7 @@ After adding and configuring the node as mentioned [here](../types-of-nodes/func
 
 To run the flow for static inputs, follow the steps below:
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In this case, you do not need to add input variables using the <b>Start</b> node.</p>
-</div>
+<Note>In this case, you do not need to add input variables using the <b>Start</b> node.</Note>
 
 1. Manually enter the required static input arguments and their values in the script editor. [Learn more](../types-of-nodes/function-node.md#define-static-input-variables).
 2. Click the **Run Flow** button at the top-right corner of the flow builder.
@@ -489,14 +474,12 @@ To run the flow for dynamic inputs, follow the steps below:
 
 Once you define the input variables, you must [add the output variable(s)](../types-of-nodes/function-node.md#step-2-add-the-output-variable) and [run the flow](../types-of-nodes/function-node.md#step-3-run-the-tool-flow).
 
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p><ul><li>You can use the <b>Start</b> node’s input variables as context variables in the script editor to accept dynamic values and generate the output. To refer to the input variable, follow the syntax mentioned <a href="#syntaxes-for-the-context-input">here</a>.</li>
+<Info><ul><li>You can use the <b>Start</b> node’s input variables as context variables in the script editor to accept dynamic values and generate the output. To refer to the input variable, follow the syntax mentioned <a href="#syntaxes-for-the-context-input">here</a>.</li>
 <li>Once you run the node’s flow, the result gets stored in the output variable of the <b>Start</b> node. Additionally, this key is mapped to the <b>End</b> node, where you can define its value.</li>
 
 ![end node key](./images/output-variable-start-node.png "end node key")
 
-</ul></p></div>
+</ul></Info>
 
 ### Step 2: Add the Output Variable
 
@@ -548,10 +531,7 @@ The node’s output is stored in a context variable. You can access the variable
 
 For example, `<em>context.steps.Bankingnode.output</em>`
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The Platform can automatically recognize variables and outputs. To do so, type "`context.steps.`" and you will see the available variables, nodes, and node outputs.</p>
-</div>
+<Note>The Platform can automatically recognize variables and outputs. To do so, type "`context.steps.`" and you will see the available variables, nodes, and node outputs.</Note>
 
 ## Import, Export, and Share a Tool with Function Node
 

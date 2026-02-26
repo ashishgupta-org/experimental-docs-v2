@@ -99,11 +99,9 @@ The key features for customizing the model traces data include:
 
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>By default, all the columns are visible in the table.</li>
+<Note><ul><li>By default, all the columns are visible in the table.</li>
 <li>You can adjust visibility for 8 columns in open-source and fine-tuned models and 7 columns for other model types.</li>
-<li>The <b>Deployment Type</b> filter is available only for open-source and fine-tuned models, not for external or custom API types.</li></ul></p></div>
+<li>The <b>Deployment Type</b> filter is available only for open-source and fine-tuned models, not for external or custom API types.</li></ul></Note>
 
 <ul><li><b>Export Data</b>: Click <b>Export</b> to generate a <i>CSV</i> file of your model traces records based on the selected date range and filters. Note that all eight columns in the table are prepared and exported, irrespective of the applied visibility filter.</li>
 
@@ -178,9 +176,7 @@ The UI summarizes key metrics for the selected period, offering actionable insig
 * **Failure Rate**: Indicates the number of requests/runs that failed with an error code or were not serviced by the model out of the total requests sent since deployment. For example, if 5 requests failed out of 100, the failure rate displayed is 5%.
 * **Hosting Credits**: Displays the credits consumed in your account by the deployed model based on its usage. Please see the pricing details [here](../../../settings/billing/managing-usage-limits.md). This metric allows for a comparison of credit consumption against actual model usage.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Hosting Credits apply only to the Platform’s open-source and fine-tuned models and are not displayed for external models.</p></div>
+<Note>Hosting Credits apply only to the Platform’s open-source and fine-tuned models and are not displayed for external models.</Note>
 
 
 ![hosting credits](./images/hosting-credits.png "hosting credits")
@@ -191,10 +187,8 @@ The UI summarizes key metrics for the selected period, offering actionable insig
 
 Use the time selection filter to view and monitor model traces across runs within a specific period. This allows you to focus on requests within a set time-frame to track changes or perform targeted debugging.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li><b>Last 30 Days</b> is the default selection, which displays data for the past 30 days from the current date.</li>
-<li>Data is displayed only if requests/runs were executed by the selected model during the selected period.</li></ul></p></div>
+<Note><ul><li><b>Last 30 Days</b> is the default selection, which displays data for the past 30 days from the current date.</li>
+<li>Data is displayed only if requests/runs were executed by the selected model during the selected period.</li></ul></Note>
 
 Time selection is available for the past and current period, including the ones listed below:
 
@@ -339,9 +333,7 @@ Clicking on a run/request record on the UI opens the detailed **Traces** window 
 * Plain text is the default display format.
 * Enabling JSON mode allows you to access the JSON view of the input in the editor. This view provides the complete response/request payload sent to the model, including additional keys and details not visible in plain text format.
 
-    <div class="admonition note">
-    <p class="admonition-title">Note</p>
-    <p>The model name shown in the code editor includes the deployment version for open-source and fine-tuned models, and the connection name for externally hosted models.</p></div>
+    <Note>The model name shown in the code editor includes the deployment version for open-source and fine-tuned models, and the connection name for externally hosted models.</Note>
 
 * The text and JSON code cannot be modified in the editor.
 

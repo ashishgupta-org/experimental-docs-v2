@@ -10,9 +10,7 @@ When you import an tool as a version, you must upload all the following files:
 
 ## Steps to Import a Tool
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To import a tool as a version, the parent tools must be deployed in your account.</p></div>
+<Note>To import a tool as a version, the parent tools must be deployed in your account.</Note>
 
 To import a tool as a version, follow the steps below:
 
@@ -32,33 +30,25 @@ To import a tool as a version, follow the steps below:
 
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Backing up automatically exports and saves the .zip package of the tool definition files to the designated location when the import is initiated. If you choose not to back up/export the tool configurations, unselect the back-up option and proceed to the next step.</p></div>
+<Note>Backing up automatically exports and saves the .zip package of the tool definition files to the designated location when the import is initiated. If you choose not to back up/export the tool configurations, unselect the back-up option and proceed to the next step.</Note>
 
 <ol start="6"><li>Click <b>Import</b> in the confirmation dialog.</li>
 <li>In the <b>Import Tool</b> window, upload the required JSON files and click <b>Import</b>.</li></ol>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><i>Tool Name</i> is not required since the current version’s name is assigned.</p></div>
+<Note><i>Tool Name</i> is not required since the current version’s name is assigned.</Note>
 
 The imported tool is validated, and if no errors exist, the tool is imported successfully.
 
 The imported version is added under the parent tool.
 
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p><ul><li>The status of the parent tool is set to "<b>In Development</b>.”</li>
-<li><b>Updated on</b> reflects the date the version was imported.</li></ul></p></div>
+<Info><ul><li>The status of the parent tool is set to In Development</li>
+<li><b>Updated on</b> reflects the date the version was imported.</li></ul></Info>
 
 ## Conflicting Environment Variables
 
 When importing environment variables during tool version import, conflicts may arise between those of the parent tool and the imported version. If neither tool has environment variables, no conflicts occur.
 
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Verify the environment variables before importing. For conflicting values, the existing ones are retained if not changed.</p></div>
+<Info>Verify the environment variables before importing. For conflicting values, the existing ones are retained if not changed.</Info>
 
 You must resolve conflicting variables by either keeping the existing value (of the version being replaced) or replacing them (with values from the imported tool) to ensure a smooth import process.
 

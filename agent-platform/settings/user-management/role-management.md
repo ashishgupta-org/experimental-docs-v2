@@ -383,10 +383,7 @@ To look up a system or custom role, follow the steps below:
 
 You can perform the following actions on the [system-generated roles](./role-management.md#system-defined-roles).
 
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>System roles cannot be created, modified, or deleted since the role and its permissions are pre-defined in the system. However, they can be duplicated as <b>Custom Roles</b> and modified.</p>
-</div>
+<Info>System roles cannot be created, modified, or deleted since the role and its permissions are pre-defined in the system. However, they can be duplicated as <b>Custom Roles</b> and modified.</Info>
 
 #### View Role Information
 
@@ -415,11 +412,8 @@ The following information is displayed:
 
 If you want to add a custom role by copying the scope and permissions of a system role, you can use the Duplicate functionality. This feature automatically duplicates the system role, copying its name, role type, and permission/access configurations, and creates it as a custom role. You can then modify, delete, or duplicate this custom role to create multiple copies and add module-wise permissions/access for each.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>The changes you make to the duplicate role do not apply to the original system role.</li>
-<li>The Last Updated On value is displayed for duplicate roles and shows the date and time when the duplicate was created.</li></ul></p>
-</div>
+<Note><ul><li>The changes you make to the duplicate role do not apply to the original system role.</li>
+<li>The Last Updated On value is displayed for duplicate roles and shows the date and time when the duplicate was created.</li></ul></Note>
 
 **Steps to Create a Duplicate Role**
 
@@ -611,11 +605,8 @@ The new custom role is created and listed on the **Role Management** dashboard.
 
 You can modify the role name, description, and access levels for account type or tool type roles’ permissions on the Settings console.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>The system does not allow changing the <b>Role Type</b> once it is set. You must create a new custom role to assign a different role type.</li>
-<li>When a custom role is updated, it changes the permissions for the assigned users.</li></ul></p>
-</div>
+<Note><ul><li>The system does not allow changing the <b>Role Type</b> once it is set. You must create a new custom role to assign a different role type.</li>
+<li>When a custom role is updated, it changes the permissions for the assigned users.</li></ul></Note>
 
 To update a role, follow the steps below:
 
@@ -633,10 +624,7 @@ To update a role, follow the steps below:
     * Role Description
     * Access: Select either *Custom*, *Full*, or *View*.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You cannot reset the access levels for module-wise Permissions in the <b>Enable/disable tool access</b> section.</p>
-</div> 
+<Note>You cannot reset the access levels for module-wise Permissions in the <b>Enable/disable tool access</b> section.</Note> 
 
 <ol start="5"><li>Click <b>Update</b>.</li>
 
@@ -655,10 +643,7 @@ A success message is displayed upon completing the role edit, and the updated ro
 
 You can delete a custom role if you want to permanently remove it from the system and unassign it from users.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can only delete one role at a time. Bulk delete is not supported.</p>
-</div> 
+<Note>You can only delete one role at a time. Bulk delete is not supported.</Note> 
 
 **Prerequisite**
 

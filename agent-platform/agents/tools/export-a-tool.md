@@ -16,9 +16,7 @@ The [exported package](#exported-information) preserves the following tool confi
 
 To maintain security, sensitive information such as **API keys**, **sharing permissions**, **tool endpoint**, and **audit logs** are excluded from the exported package.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Users with only <b>Viewer</b> permissions cannot export an tool.</p></div>
+<Note>Users with only <b>Viewer</b> permissions cannot export an tool.</Note>
 
 ## Steps to Export a Tool
 
@@ -48,10 +46,7 @@ The export process begins, and a success message is displayed after the tool val
 
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Once export begins, the selected version cannot be changed.
-</p></div>
+<Note>Once export begins, the selected version cannot be changed.</Note>
 
 ## Exported Information
 
