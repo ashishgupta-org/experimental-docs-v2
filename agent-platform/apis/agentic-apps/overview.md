@@ -57,7 +57,7 @@ Session resolution follows a **priority-based approach** to determine how a sess
 
 
 | Identifier | Priority | Purpose |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | sessionId | Highest | Used only to retrieve an existing session. This identifier cannot be used to create new sessions. If a `userReference` is provided, it is validated against the session owner for security purposes. |
 | sessionReference | Medium | Attempts to find an existing session with the given sessionReference. <ul> <li>If a session with the given sessionReference exists, it's retrieved.</li> <li>If no session is found, a new session is created using the sessionReference.</li> <li>If both sessionReference and userReference are provided, the userReference is validated to ensure it matches the session owner.</li> <li>If only sessionReference is provided, the session owner is automatically mapped as the user.</li> <li>When creating a new session, if no user mapping exists, the sessionReference is used as the userReference for the new session. </li> </ul> |
 | userReference | Lowest | Always creates a new session associated with the specified user. Does not check for existing sessions. |

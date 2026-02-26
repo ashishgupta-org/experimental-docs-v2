@@ -17,7 +17,7 @@ To use the API, you will need an API key. [Learn more](../../apis/overview.md#ho
 The **Import Model - Start Session API** is executed in this step. The API initializes the import session and returns a `Session Id` in the response which is used in the next two steps of the import process.
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/files/session/start` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -25,7 +25,7 @@ The **Import Model - Start Session API** is executed in this step. The API initi
 ### Path Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/` | String | Required |
 
 ### Sample Request
@@ -47,7 +47,7 @@ curl --location 'https://{host}/api/public/files/session/start'
 ### Body Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | fileContext | Context of the file (for example, model/dataset). | String | Required |
 | totalChunks | The number of chunks the file is divided into. | Integer | Required |
 | fileExtension | The extension of the file (for example, tar). | String | Required |
@@ -68,7 +68,7 @@ curl --location 'https://{host}/api/public/files/session/start'
 ### Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | sessionId | The unique identifier of the import session. | String |
 | expirationDate | The expiration date of the session. | Date |
 | modelId | The unique identifier of the model. | String |
@@ -78,7 +78,7 @@ curl --location 'https://{host}/api/public/files/session/start'
 The **Import Model - Chunk Upload** API uploads a file chunk for model import. The `sessionId` from the [Start Import Session API](./import-a-model.md#start-import-session) must be used here to upload the file in incrementing chunks identified by a unique `chunkNumber`.
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/files/session/{sessionId}` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -86,7 +86,7 @@ The **Import Model - Chunk Upload** API uploads a file chunk for model import. T
 ### Path Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/` | String | Required |
 | sessionId | The `Session Id` from the start import session API. | String | Required |
 
@@ -104,7 +104,7 @@ curl --location 'https://{host}/api/public/files/session/5cxxxxxb-5xx5-4xxa-bxx1
 ### Body Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | file | The file being uploaded. | File | Required |
 | chunkNumber | The uploaded chunk number. | Number | Required |
 
@@ -120,7 +120,7 @@ curl --location 'https://{host}/api/public/files/session/5cxxxxxb-5xx5-4xxa-bxx1
 ### Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | chunkNumber | The uploaded chunk number. | Number |
 | sessionId | The model import `Session Id`. | String |
 
@@ -130,7 +130,7 @@ The **Import Model- Complete** API completes the model import process after all 
 
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/files/session/{sessionId}/complete` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -139,7 +139,7 @@ The **Import Model- Complete** API completes the model import process after all 
 ### Path Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/` | String | Required |
 | sessionId | The `Session Id` from the Start Import Session API. | String | Required |
 
@@ -169,7 +169,7 @@ No parameters are passed.
 ### Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | dockstatusId | The unique identifier to track the status of model import. | String |
 | modelId | The unique identifier of the model being imported. | String |
 | jobType | Type of job being performed, <em>MODEL</em> | String |

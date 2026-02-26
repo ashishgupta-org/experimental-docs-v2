@@ -10,7 +10,7 @@ Sends input to the Agentic app within a specific session and retrieves the respo
 
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `/apps/<AppID>/environments/<EnvName>/runs/execute` |
 | Content-type | application/json |
 | Authorization Header | x-api-key: `<API-KEY>` |
@@ -21,7 +21,7 @@ Sends input to the Agentic app within a specific session and retrieves the respo
 
 
 | Fields | Description |
-| --- | --- |
+|:------ |:------ |
 | AppID | Unique Identifier for the app. |
 | EnvName | Name of the environment to be used for the agent. |
 
@@ -257,7 +257,7 @@ Returns the agent's response to the query along with the session details.
 
 
 | Field | Description |
-| --- | --- |
+|:------ |:------ |
 | messageId | Unique identifier for the response message |
 | output | Array of agent responses. Each object includes: <p> - type: "text" <p> - content: agent's response |
 | Artifacts | Array of responses from the tools in the order of execution. For example, if tool 1 was executed followed by tool 2, artifacts[0] will contain the response from tool 1 and artifacts[1] will contain the response from tool 2. <p> Note that the response from a tool is updated in this array only if the ‘Include tool response in artifacts’ flag is enabled in the corresponding tool. Learn More. |
@@ -572,7 +572,7 @@ Key Configurations:
 
 
 | debugMode | Streaming Enabled? | Behavior |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | `thoughts` | No | Thoughts are received as part of the response as an array. |
 | `thoughts` | Yes | The thoughts and responses are sent back as separate events |
 
@@ -925,7 +925,7 @@ Returns the status and response of a run. It is useful for asynchronous runs.
 
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `/apps/<AppID>/environments/<EnvName>/runs/<runId>/status` |
 | Content-type  | application/json |
 | Authorization Header | x-api-key: `<API-KEY>` |
@@ -936,7 +936,7 @@ Returns the status and response of a run. It is useful for asynchronous runs.
 
 
 | Fields | Description |
-| --- | --- |
+|:------ |:------ |
 | AppID | Unique Identifier for the app. |
 | EnvName | Name of the environment to be used for the agent. |
 | RunID | Unique identifier of the run |
@@ -947,7 +947,7 @@ Returns the status and response of a run. It is useful for asynchronous runs.
 
 
 | Fields | Description |
-| --- | --- |
+|:------ |:------ |
 | sessionIdentity | This is an array of objects with a `type` and `value` used to identify or create sessions and manage user session mappings. The three supported identifier types are: The objects can be of three types: <ol> <li>userReference (highest priority)</li> <li>sessionReference</li> <li>sessionIdentity(lowest priority)</li> Refer to this for a detailed description. <p> This is useful for verifying the context and permissions on the run. </ol> |
 
 

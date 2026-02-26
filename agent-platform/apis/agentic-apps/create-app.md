@@ -6,7 +6,7 @@ Provides an endpoint to create a new Agentic App.
 
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://<platform-domain.com>/api/public/apps/createApp` |
 | Content-type | application/json |
 | Authorization Header | x-api-key: `<API-KEY>` |
@@ -17,7 +17,7 @@ Provides an endpoint to create a new Agentic App.
 
 
 | Fields | Description | Mandatory |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | accountid | Account Id to be used for app creation. | Yes |
 | userid | Unique user Id to be used for app creation. | Yes |
 
@@ -27,7 +27,7 @@ Provides an endpoint to create a new Agentic App.
 
 
 | Fields | Description | Mandatory |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | name | Unique name of the app to be created | Yes |
 | description | Brief description of the purpose of the app. | Yes |
 | appIcon | Details of the icon to be used for the app. Use the following fields to describe the app icon. If this field isn't provided, a random icon is used for the app. <ul> <li>name (required, string): Identifier for the logo to be used as the app icon; allowed values are “logo1-logo10.”</li> <li>type(required, string): Must always be set to "logo."</li> <li>color(required, string): Hexadecimal color code for the icon. Example: #RRGGBB. </li> </ul> | No |
@@ -112,7 +112,7 @@ Where ERROR_CODE is one of the following.
 
 
 | HTTP Status | Error Code | Description |
-| --- | --- | --- |
+|:------ |:------ |:------ |
 | 400 | VALIDATION_ERROR | One or more request parameters are invalid. |
 | 400 | INVALID_APP_ICON | App icon name, type, or color is invalid. When this error occurs, a random icon is added to the app. |
 | 400 | INVALID_NAME_FORMAT | App name contains special characters or an invalid format. |

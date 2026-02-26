@@ -7,7 +7,7 @@ This API enables users to import configurations, datasets, or updates into an ex
 After triggering the import, the response returns a `dockStatusId`. Use this ID to call the [Get Dock Status API](../apis-list/get-dock-status.md) and verify the status of the tool import process.
 
 | Method | POST |
-| --- | --- |
+|:------ |:------ |
 | Endpoint | `https://{host}/api/public/tools/:{toolId}/import` |
 | Content Type | application/json |
 | Authorization | `X-api-key` - The API key used for authentication. |
@@ -19,7 +19,7 @@ To use the API, you will need an API key. [Learn more](../../apis/overview.md#ho
 ## Query Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | host | The environment URL. For example, `https://agent-platform.domain.ai/` | String | Required |
 | toolId | The tool ID of the tool being imported | String | Required |
 
@@ -39,7 +39,7 @@ curl --location 'https://{host}/api/public/tools/a-fbxxxxxf4-20x5-58xb-8b94-00xx
 ## Body Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | REQUIRED/OPTIONAL |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | toolDataFileId | The identifier for the tool data file being imported. | String | Required |
 | flowDataFileId | The identifier for the flow data file. | String | Required |
 | envVariablesFileId | The identifier for the environment variables file. | String | Required |
@@ -59,7 +59,7 @@ curl --location 'https://{host}/api/public/tools/a-fbxxxxxf4-20x5-58xb-8b94-00xx
 ## Response Parameters
 
 | PARAMETER | DESCRIPTION | TYPE | SAMPLE VALUE |
-| --- | --- | --- | --- |
+|:------ |:------ |:------ |:------ |
 | dockStatusId | The unique identifier to track the status of action. for example import, export, deploy, etc. | String | for example, ds-c6xxxxx5-dxxd-5xxf-9xxd-0xxxxx6xxxx8 |
 | toolId | The unique identifier for the tool. | String | for example, a-8xxxxxbe-6xxe-5xx1-8xxc-bxxxxxx80xx6 |
 | jobType | The type of job being performed. | String | <em>TOOLS</em> |
