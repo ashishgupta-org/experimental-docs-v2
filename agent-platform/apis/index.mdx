@@ -34,16 +34,18 @@ Public APIs require an API key for authentication and authorization. The account
 
 An API key serves as a unique identifier for the client or application accessing the API, ensuring security and access control. It helps:
 
-* Authenticate requests – Verify the identity of the client.
-* Control access – Restrict API usage based on permissions or rate limits.
-* Monitor usage – Track API calls for analytics, billing, or debugging.
-* Prevent abuse – Protect against unauthorized or excessive use.
+* Authenticate requests - Verify the identity of the client.
+* Control access - Restrict API usage based on permissions or rate limits.
+* Monitor usage - Track API calls for analytics, billing, or debugging.
+* Prevent abuse - Protect against unauthorized or excessive use.
 
 API keys are typically included in request headers or parameters to validate access.
 
 <Note> Each API key includes created on and last used dates to track its usage history. </Note>
 
 #### How to Create the API Key
+
+{/* AG: TBD */}
 
 1. [Login](../getting-started/sign-up-sign-in.md) to the Platform and [access](../administration/overview#access-settings-console) the Settings Console.
 2. On the left menu, click **Security & Control** > **API Scopes**.
@@ -59,9 +61,10 @@ Below is a list of important terms used across the API documentation.
 * **Environment (envName)**: Refers to a deployment environment for the app. The environment name must match the exact name as configured in the application.
 * **Session (sessionId)**: A unique ID representing a single conversation between a user and the agent. Sessions allow multi-turn conversations by preserving context.
 * **Session Identity**: Used to reference a session or user. You can refer to the session in one or more of the following ways:
-    * sessionId: The unique, platform-generated ID for the session.
-    * sessionReference: A custom session identifier. If not set, it defaults to the userReference. This can be the session identifier for the application from which the Agentic App API is invoked.
-    * userReference: A unique identifier from your system that ties all sessions to a specific user. This must be unique to your system. It's a crucial identifier.
+
+    * `sessionId`: The unique, platform-generated ID for the session.
+    * `sessionReference`: A custom session identifier. If not set, it defaults to the userReference. This can be the session identifier for the application from which the Agentic App API is invoked.
+    * `userReference`: A unique identifier from your system that ties all sessions to a specific user. This must be unique to your system. It's a crucial identifier.
 
     Refer to [Session Resolution Steps](#session-resolution-process) for more information.
 
@@ -69,15 +72,15 @@ Below is a list of important terms used across the API documentation.
 
 ## Session Resolution Process
 
-Each session is uniquely identified by **sessionId**. **sessionReference** is used as a secondary way to refer to the session. It can be particularly useful when the app invoking Agentic App APIs needs to maintain its own session tracking. Each session is owned by a user, identified by a system-generated **`userId`**, which is typically derived from the provided **`userReference`**.
+Each session is uniquely identified by `sessionId`, `sessionReference` is used as a secondary way to refer to the session. It can be particularly useful when the app invoking Agentic App APIs needs to maintain its own session tracking. Each session is owned by a user, identified by a system-generated **`userId`**, which is typically derived from the provided **`userReference`**.
 
 Session resolution follows a **priority-based approach** to determine how a session is created or reused. When more than one identifier is provided as input, the platform checks them in order of priority, starting with the highest. The session is resolved using the first identifier that matches. If no match is found, the platform moves on to the next identifier in the input.
 
 | Identifier | Priority | Purpose |
 |:------ |:------ |:------ |
-| sessionId | Highest | Used only to retrieve an existing session. This identifier cannot be used to create new sessions. If a `userReference` is provided, it is validated against the session owner for security purposes. |
-| sessionReference | Medium | Attempts to find an existing session with the given sessionReference. <ul> <li>If a session with the given sessionReference exists, it's retrieved.</li> <li>If no session is found, a new session is created using the sessionReference.</li> <li>If both sessionReference and userReference are provided, the userReference is validated to ensure it matches the session owner.</li> <li>If only sessionReference is provided, the session owner is automatically mapped as the user.</li> <li>When creating a new session, if no user mapping exists, the sessionReference is used as the userReference for the new session. </li> </ul> |
-| userReference | Lowest | Always creates a new session associated with the specified user. Does not check for existing sessions. |
+| `sessionId` | Highest | Used only to retrieve an existing session. This identifier cannot be used to create new sessions. If a `userReference` is provided, it is validated against the session owner for security purposes. |
+| `sessionReference` | Medium | Attempts to find an existing session with the given sessionReference. <ul> <li>If a session with the given sessionReference exists, it's retrieved.</li> <li>If no session is found, a new session is created using the sessionReference.</li> <li>If both sessionReference and userReference are provided, the userReference is validated to ensure it matches the session owner.</li> <li>If only sessionReference is provided, the session owner is automatically mapped as the user.</li> <li>When creating a new session, if no user mapping exists, the sessionReference is used as the userReference for the new session. </li> </ul> |
+| `userReference` | Lowest | Always creates a new session associated with the specified user. Does not check for existing sessions. |
 
 The above session resolution steps are summarized using the flow chart below.
 
