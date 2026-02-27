@@ -267,11 +267,7 @@ The table below summarizes the available columns along with their supported oper
 | Is Not Equals To |
 | Contains |
 
-<ol start="5"><li>Click <b>Apply</b>.</li>
-
-![apply filter](./images/apply-filter-model-traces.png "apply filter")
-
-</ol>
+5. Click <b>Apply</b>.
 
 The UI displays all the relevant model traces' records that align with the applied filter(s). The number of filters you have applied is displayed on the **Filter** icon.
 

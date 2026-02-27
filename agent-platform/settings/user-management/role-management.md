@@ -626,11 +626,7 @@ To update a role, follow the steps below:
 
 <Note>You cannot reset the access levels for module-wise Permissions in the <b>Enable/disable tool access</b> section.</Note> 
 
-<ol start="5"><li>Click <b>Update</b>.</li>
-
-![update role window](./images/update-role-window.png "update role window")
-
-</ol>
+5. Click <b>Update</b>.
 
 A success message is displayed upon completing the role edit, and the updated role details appear on the dashboard.
 

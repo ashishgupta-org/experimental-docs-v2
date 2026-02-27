@@ -309,8 +309,7 @@ To add a connection and configure an integration, follow the steps below:
 
 
 
-<ol start="5"><li>Click <b>Save</b> after successfully testing the connection.</li>
-<Note>The <b>Save</b> button will not appear until all required inputs have been provided.</Note></ol>
+5. Click <b>Save</b> after successfully testing the connection.
 
 A success message appears after setup.
 

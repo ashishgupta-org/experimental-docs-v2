@@ -150,7 +150,7 @@ To modify the parameters for an action, follow the steps below:
 ![edit action](./images/edit-action.png "edit action")
 
 </ol>
-<ol start="2"><li>Modify the required values and click <b>Save</b>.</li></ol>
+2. Modify the required values and click <b>Save</b>.
 
 ### View the JSON Code
 
