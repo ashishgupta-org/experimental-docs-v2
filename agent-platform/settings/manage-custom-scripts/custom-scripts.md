@@ -70,20 +70,16 @@ In the **General Details** window, follow these steps:
 
 4. To upload the script, click <b>Choose File</b> under <b>Project File</b>, then select the file from your local system.
 
-<Note><ul><li>Supported file formats include `.zip`, `.gz`, and `.tar`.</li>
-<li>The max file size is 1 GB. Larger files result in a validation error.</li>
-<li>Click <b>Validate</b> to check the file for errors.</li> </ul></Note>
-
-<Info><ul><li>The uploaded file must match the recommended project structure. Click <b>Download sample project</b> to access the <i>.zip</i> folder of the script definitions and follow its structure when uploading your file.</li>
-<li>The structure is different for different base languages. Ensure that the correct file structure is followed for the chosen language.</li>
-<li>The file naming convention should be followed to avoid any errors.</li>
+* Supported file formats include `.zip`, `.gz`, and `.tar`.
+* The max file size is 1 GB. Larger files result in a validation error.
+* Click <b>Validate</b> to check the file for errors.
+* The uploaded file must match the recommended project structure. Click <b>Download sample project</b> to access the archive of the script definitions and follow its structure when uploading your file.
+* The structure is different for different base languages. Ensure that the correct file structure is followed for the chosen language.
+* The file naming convention should be followed to avoid any errors.
 
 ![file naming convention error](./images/file-naming-convention.png "file naming convention error")
 
-</ul>
-</Info>
-
-**Key Considerations for File Validations**:
+**Key Considerations for File Validations**
 
 * Validation checks confirm if the file matches the sample project structure.
 * Errors during validation are displayed via messages.

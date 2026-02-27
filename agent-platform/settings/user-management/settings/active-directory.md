@@ -28,16 +28,12 @@ Moreover, the automatic synchronization (auto sync) feature ensures that Setting
 
 1. Configure the Active Directory connection by providing the following mandatory fields:
 
-    <ul><li><b>Host Name</b>: The domain's hostname or IP address where Active Directory services run.</li>
-    <li><b>Server Port</b>: The network port number used by the domain host to communicate over the network.</li>
-    <li><b>Base DN</b>: The server location for users and groups in a domain.</li>
-    <li><b>User ID</b>: The identity used to log into the Active Directory.</li>
-    <li><b>Password</b>: The password used to log into the Active Directory.</li>
-    <li><b>(Optional) SSL</b>: Enable this option to secure communications over the web, particularly for services and applications that interact with Active Directory via HTTPS.</li>
-
-    ![configure ad connection](./images/configure-ad-connection.png "configure ad connection")
-
-    </ul>
+    * <b>Host Name</b>: The domain's hostname or IP address where Active Directory services run.
+    * <b>Server Port</b>: The network port number used by the domain host to communicate over the network.
+    * <b>Base DN</b>: The server location for users and groups in a domain.
+    * <b>User ID</b>: The identity used to log into the Active Directory.
+    * <b>Password</b>: The password used to log into the Active Directory.
+    * <b>(Optional) SSL</b>: Enable this option to secure communications over the web, particularly for services and applications that interact with Active Directory via HTTPS.
 
 2. Click <b>Next</b> to confirm the credentials before proceeding. If validation errors occur, they will be displayed on the screen so you can correct them before continuing.
 
