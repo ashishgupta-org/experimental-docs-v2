@@ -54,7 +54,8 @@
                       "/agent-platform/tools/nodes",
                       "/agent-platform/tools/code",
                       "/agent-platform/tools/mcp",
-                      "/agent-platform/tools/calling"
+                      "/agent-platform/tools/calling",
+                      "/agent-platform/tools/context-object"
                     ]
                   },
                   "/agent-platform/knowledge/index",
