@@ -29,12 +29,12 @@
               {
                 "group": "Building Agents",
                 "pages": [
+                  "/agent-platform/agents/agentic-apps/create-an-app",
                   {
                     "group": "Agents",
                     "pages": [
-                      "/agent-platform/agents/index",
-                      "/agent-platform/agents/create",
-                      "/agent-platform/agents/instructions"
+                      "/agent-platform/agents/create-an-agent",
+                      "/agent-platform/agents/agent-management"
                     ]
                   },
                   {
@@ -133,7 +133,7 @@
             ]
           },
           {
-            "tab": "AI for Work",
+           "tab": "AI for Work",
             "pages": [
               "/ai-for-work/index",
               "/ai-for-work/getting-started",
