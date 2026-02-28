@@ -58,7 +58,8 @@
                     ]
                   },
                   "/agent-platform/knowledge/index",
-                  "/agent-platform/memory"
+                  "/agent-platform/memory",
+                  "/agent-platform/agents/agentic-apps/settings/index"
                 ]
               },
               {
