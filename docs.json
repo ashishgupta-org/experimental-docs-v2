@@ -126,10 +126,18 @@
              {
                 "group": "References",
                 "pages": [
+                  {
+                "group": "Business Solutions",
+                "pages": [
+                  "/agent-platform/agents/ai-for-service",
+                  "/agent-platform/agents/ai-for-work"
+                ]
+              },
                   "/agent-platform/agents/agentic-apps/marketplace",
                   "/agent-platform/administration/manage-datasets",
                   "/agent-platform/administration/integrations",
-                  "/agent-platform/apis/index"
+                  "/agent-platform/apis/index",
+                  "/agent-platform/howto/index"
                 ]
               }
             ]
