@@ -156,7 +156,8 @@
                   "/ai-for-work/custom-agents/enterprise-knowledge",
                   "/ai-for-work/pre-built-agents",
                   "/ai-for-work/custom-agents",
-                  "/ai-for-work/custom-agents/agent-management/"
+                  "/ai-for-work/custom-agents/agent-management/",
+                  "/ai-for-work/getting-started/marketplace"
                 ]
               },
               {
@@ -171,8 +172,11 @@
               {
                 "group": "Administration",
                 "pages": [
-                  "/ai-for-work/administration",
-                  "/ai-for-work/security"
+                  "/ai-for-work/administration/account-and-workspace",
+                  "/ai-for-work/administration/user-management",
+                  "/ai-for-work/administration/security-and-control",
+                  "/ai-for-work/administration/audit-log",
+                  "/ai-for-work/integration/amazon-q"
                 ]
               }
             ]
