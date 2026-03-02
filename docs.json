@@ -33,7 +33,7 @@
                   {
                     "group": "Agents",
                     "pages": [
-                      "/agent-platform/agents/index",
+                      "/agent-platform/agents",
                       "/agent-platform/agents/create-an-agent",
                       "/agent-platform/agents/agent-management"
                     ]
@@ -50,7 +50,7 @@
                   {
                     "group": "Tools",
                     "pages": [
-                      "/agent-platform/tools/index",
+                      "/agent-platform/tools",
                       "/agent-platform/tools/workflow",
                       "/agent-platform/tools/nodes",
                       "/agent-platform/tools/code",
