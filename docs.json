@@ -187,9 +187,10 @@
             "pages": [
               "/ai-for-service/index",
               "/ai-for-service/getting-started",
-              "ai-for-service/getting-started/glossary/concepts-and-terminology",
+              "/ai-for-service/flows/create-and-manage-flows",
               "/ai-for-service/release-notes/index",
-              "/ai-for-service/getting-started/upgrade-guide",                
+              "/ai-for-service/getting-started/upgrade-guide",
+              "/ai-for-service/getting-started/glossary/concepts-and-terminology",                
               {
                 "group": "MODULES",
                 "pages": [
