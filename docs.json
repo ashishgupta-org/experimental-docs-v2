@@ -188,7 +188,8 @@
               "/ai-for-service/index",
               "/ai-for-service/getting-started",
               "ai-for-service/getting-started/glossary/concepts-and-terminology",
-              "/ai-for-service/release-notes/index",                
+              "/ai-for-service/release-notes/index",
+              "/ai-for-service/getting-started/upgrade-guide",                
               {
                 "group": "MODULES",
                 "pages": [
