@@ -24,7 +24,7 @@ The AI Agent should already know the flight details from the previous intent —
 | **Follow-up intent detection** | The current context helps identify the next intent. For example, *What are the extra charges?* resolves to *What are the charges for a Premium Economy seat?* if the user just asked about Premium Economy benefits. |
 | **Sharing entity values** | Entity values from one intent pre-populate entities in another. For example, *Destination City* from *Check Flight Status* pre-fills *City Name* in *Check Weather*. |
 
----
+
 
 ## Implementation
 
@@ -50,7 +50,7 @@ Context management involves four steps:
 - The intent name is emitted as a context tag when execution starts.
 - Add extra tags from the **NLP Properties** tab of the dialog task.
 
-![set dialog tasks](../images/set-dialog-task.png)
+![set dialog tasks](/ai-for-service/automation/intelligence/images/set-dialog-task.png)
 
 - Emit tags from any JavaScript location (script node, advanced prompts, run-a-script) using `contextTags.add("value")`.
 
@@ -59,7 +59,7 @@ Context management involves four steps:
 - The task name is emitted as a context tag when execution starts.
 - Add extra tags under **More Options** or **General Settings**.
 
-![set alert tasks](../images/set-alert-tasks.png)
+![set alert tasks](/ai-for-service/automation/intelligence/images/set-alert-tasks.png)
 
 - Emit tags from pre-processors or post-processors using `contextTags.add("value")`.
 
@@ -68,14 +68,14 @@ Context management involves four steps:
 - Entity values are emitted based on the **Auto emit the entity values captured** toggle.
 - Add extra tags per entity node.
 
-![add entity tags](../images/add-entity-tag.png)
+![add entity tags](/ai-for-service/automation/intelligence/images/add-entity-tag.png)
 
 #### Knowledge Graph
 
 - Node and term names are emitted as context tags for all mandatory and optional terms in a qualified path.
 - Add extra tags per term from the term's **Settings** page.
 
-![add KG tags](../images/add-kg-tags.png)
+![add KG tags](/ai-for-service/automation/intelligence/images/add-kg-tags.png)
 
 - Emit tags from advanced prompts using `contextTags.add("value")`.
 
@@ -89,7 +89,7 @@ Intent preconditions define when an intent or FAQ becomes available for detectio
 
 - Add one or more preconditions to make a dialog intent available only in the right context.
 
-![dialog task preconditions](../images/dialog-tasks-preconditions.png)
+![dialog task preconditions](/ai-for-service/automation/intelligence/images/dialog-tasks-preconditions.png)
 
 - Intents with preconditions are treated as sub-intents and follow [Linked Task Exception](sub-intents-and-follow-up-intents.md#linked-task-exceptions) behavior.
 
@@ -97,13 +97,13 @@ Intent preconditions define when an intent or FAQ becomes available for detectio
 
 - Add one or more preconditions to make a task available only in the right context.
 
-![input preconditions](../images/input-preconditions.png)
+![input preconditions](/ai-for-service/automation/intelligence/images/input-preconditions.png)
 
 #### Knowledge Graph
 
 - Define preconditions per term in the Knowledge Graph.
 
-![define intent preconditions](../images/define-intent-preconditions.png)
+![define intent preconditions](/ai-for-service/automation/intelligence/images/define-intent-preconditions.png)
 
 - A path is qualified only if its term preconditions are met.
 
@@ -113,7 +113,7 @@ Intent preconditions define when an intent or FAQ becomes available for detectio
 
 #### Tasks
 
-Define rules for contextually relevant intent detection using output context tags (similar to traits). [Learn more](../natural-language/training/traits.md)
+Define rules for contextually relevant intent detection using output context tags (similar to traits). [Learn more](/ai-for-service/automation/natural-language/training/traits)
 
 #### Knowledge Graph
 
@@ -122,7 +122,7 @@ Enable context tags to qualify paths in the Knowledge Graph:
 1. Go to **Build > Natural Language > NLU Config > Knowledge Graph**.
 2. Set **Qualify Contextual Paths** to **Yes**.
 
-![qualify contextual paths](../images/qualify-contextual-paths-window.png)
+![qualify contextual paths](/ai-for-service/automation/intelligence/images/qualify-contextual-paths-window.png)
 
 ---
 
@@ -140,3 +140,5 @@ Use context tags to customize dialog flows:
 |---|---|
 | Current context tags | `context.currentTags.tags` |
 | Previous context tags | `context.historicTags[0].tags` |
+
+---
