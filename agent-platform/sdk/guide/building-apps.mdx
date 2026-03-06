@@ -1,20 +1,34 @@
+---
+title: "Building Applications"
+description: "A step-by-step guide to assembling multi-agent AI applications with the AgenticAI Core SDK, from defining agents to launching the server."
+---
+
 # Building Applications
 
-A comprehensive guide to building multi-agent AI applications with AgenticAI Core SDK.
+This guide walks you through building a multi-agent application with the AgenticAI Core SDK. You'll define agents, tools, memory stores, and an orchestrator, then launch the application server.
 
-## Overview
+## Prerequisites
 
-Building an application with AgenticAI Core involves three main phases:
+- AgenticAI Core SDK installed and configured.
+- A configured LLM provider connection (OpenAI, Anthropic, or Azure OpenAI).
+- Python 3.8+ with `async`/`await` support.
 
-1. **Design** - Define your application structure
-2. **Configure** - Set up agents, tools, and resources
-3. **Deploy** - Start and run your application
+## Application components
 
-## Step-by-Step Guide
+| Component           | Purpose                                                      | Guide                                                              |
+|---------------------|--------------------------------------------------------------|--------------------------------------------------------------------|
+| `App`               | Top-level container for all components.                      | This guide                                                         |
+| `Agent`             | Autonomous unit that handles tasks.                          | [Creating Agents](/agent-platform/sdk/guide/creating-agents)       |
+| `Tool`              | Function an agent can invoke.                                | [Working with Tools](/agent-platform/sdk/guide/working-with-tools) |
+| `MemoryStore`       | Persistent data store scoped to users, sessions, or the app. | [Memory Stores](/agent-platform/sdk/guide/memory-stores)           |
+| `AppConfigurations` | Streaming, attachments, filler messages.                     | This guide                                                         |
+| Orchestrator        | Routes messages between agents and users.                    | [Custom Orchestration](/agent-platform/sdk/guide/orchestration)    |
 
-### 1. Define Your Application
+## Build the application
 
-Start by creating an `App` instance:
+### 1. Define the application
+
+Create an `App` instance with a name and orchestration type:
 
 ```python
 from agenticai_core.designtime.models import App, OrchestratorType
@@ -26,11 +40,11 @@ app = App(
 )
 ```
 
-### 2. Create Agents
+### 2. Create agents
 
-Define the agents that will handle different aspects of your application:
+Define agents for each domain or function in your application:
 
-```python
+```python expandable=true
 from agenticai_core.designtime.models import Agent
 from agenticai_core.designtime.models.llm_model import LlmModel, LlmModelConfig
 from agenticai_core.designtime.models.prompt import Prompt
@@ -57,11 +71,13 @@ support_agent = Agent(
 )
 ```
 
-### 3. Define Tools
+See [Creating Agents](/agent-platform/sdk/guide/creating-agents) for roles, sub-types, and prompt configuration.
 
-Create tools that agents can use:
+### 3. Define tools
 
-```python
+Register tools using the `@Tool.register` decorator. Agents can invoke them during task execution:
+
+```python expandable=true
 from agenticai_core.designtime.models.tool import Tool
 
 @Tool.register(
@@ -83,11 +99,13 @@ def create_ticket(title: str, description: str) -> dict:
     return {"ticket_id": ticket_id, "status": "created"}
 ```
 
-### 4. Set Up Memory Stores
+See [Working with Tools](/agent-platform/sdk/guide/working-with-tools) for custom, inline, and library tool types.
 
-Configure persistent storage:
+### 4. Set up memory stores
 
-```python
+Configure persistent storage for conversation state, user preferences, or application-wide data:
+
+```python expandable=true
 from agenticai_core.designtime.models.memory_store import (
     MemoryStore, Namespace, NamespaceType,
     RetentionPolicy, RetentionPeriod, Scope
@@ -122,11 +140,13 @@ conversation_memory = MemoryStore(
 )
 ```
 
-### 5. Configure Advanced Features
+See [Memory Stores](/agent-platform/sdk/guide/memory-stores) for scopes, retention policies, and namespaces.
 
-Set up application-wide settings:
+### 5. Configure advanced features
 
-```python
+Set application-wide settings such as streaming, file attachments, and filler messages:
+
+```python expandable=true
 from agenticai_core.designtime.models.app_configuration import (
     AppConfigurations, FillerMessages, FillerMessageMode, StaticConfig
 )
@@ -155,9 +175,9 @@ config = AppConfigurations(
 )
 ```
 
-### 6. Assemble Your Application
+### 6. Assemble the application
 
-Bring all components together:
+Combine all components into the `App` instance:
 
 ```python
 app = App(
@@ -170,21 +190,21 @@ app = App(
 )
 ```
 
-### 7. Implement Custom Orchestrator
+### 7. Implement the orchestrator
 
-Create orchestration logic:
+Subclass `AbstractOrchestrator` to define routing logic:
 
-```python
+```python expandable=true
 from agenticai_core.runtime.agents.abstract_orchestrator import AbstractOrchestrator
 
 class CustomerServiceOrchestrator(AbstractOrchestrator):
     def __init__(self, agents):
         super().__init__(name="CustomerServiceOrchestrator", agents=agents)
-    
+
     def route(self, request):
         """Route requests to appropriate agents."""
         user_message = request.get("message", "").lower()
-        
+
         # Simple routing logic
         if "billing" in user_message or "payment" in user_message:
             return "BillingAgent"
@@ -194,9 +214,11 @@ class CustomerServiceOrchestrator(AbstractOrchestrator):
             return "SupportAgent"
 ```
 
-### 8. Start Your Application
+See [Custom Orchestration](/agent-platform/sdk/guide/orchestration) for message handling, routing strategies, and memory-aware orchestration.
 
-Launch the MCP server:
+### 8. Start the application
+
+Launch the MCP server with your orchestrator:
 
 ```python
 from agenticai_core.designtime.models.tool import ToolsRegistry
@@ -209,9 +231,9 @@ if __name__ == "__main__":
     )
 ```
 
-## Complete Example
+## Complete example
 
-```python
+```python expandable=true
 from agenticai_core.designtime.models import App, Agent, OrchestratorType
 from agenticai_core.designtime.models.llm_model import LlmModel, LlmModelConfig
 from agenticai_core.designtime.models.prompt import Prompt
@@ -263,45 +285,9 @@ if __name__ == "__main__":
     )
 ```
 
-## Best Practices
+## Best practices
 
-### Agent Design
-
-- Keep agents focused on specific domains
-- Provide clear, detailed descriptions
-- Include comprehensive prompts with examples
-
-### Tool Design
-
-- Make tools atomic and single-purpose
-- Provide detailed descriptions for LLM understanding
-- Handle errors gracefully with meaningful messages
-
-### Memory Management
-
-- Use appropriate scopes for different data types
-- Set sensible retention policies
-- Define clear schemas for strict validation
-
-### Orchestration
-
-- Implement robust routing logic
-- Handle edge cases gracefully
-- Maintain conversation context
-
-## Next Steps
-
-- [Creating Agents](creating-agents.md) - Deep dive into agent configuration
-- [Working with Tools](working-with-tools.md) - Advanced tool patterns
-- [Memory Stores](memory-stores.md) - Memory management guide
-- [Custom Orchestration](orchestration.md) - Advanced orchestration
-
-<hr/>
-
-**Related Resources**
-
-- 📖 [API Reference](../api/index.md)
-
-<!--
-- 💬 [GitHub Discussions]
--->
+- **Agent design**: Keep agents focused on specific domains. Write detailed descriptions — the orchestrator uses them for routing. Include prompt guidelines and examples.
+- **Tool design**: Make tools single-purpose with clear descriptions. Handle errors and return meaningful messages.
+- **Memory management**: Choose the right scope (`USER_SPECIFIC`, `SESSION_LEVEL`, or `APPLICATION_WIDE`). Define schemas for strict validation in production. Set retention policies that match actual data lifetime.
+- **Orchestration**: Implement a `route_to_user` fallback for unmatched queries. Maintain context across conversation turns using memory stores.
