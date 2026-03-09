@@ -288,6 +288,7 @@
                     "group": "Quality AI",
                     "pages": [
                       "/ai-for-service/quality",
+                      "/ai-for-service/quality-ai/analyze",
                       "ai-for-service/quality-ai/coaching",
                       "/ai-for-service/quality-ai/configurations"
                     ]
