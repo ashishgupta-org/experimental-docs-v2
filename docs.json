@@ -191,7 +191,7 @@
               "/ai-for-service/getting-started",
               "/ai-for-service/flows/create-and-manage-flows",
               "/ai-for-service/release-notes",
-              "/ai-for-service/getting-started/upgrade-guide"               
+              "/ai-for-service/getting-started/upgrade-guide",
               {
                 "group": "MODULES",
                 "pages": [
