@@ -63,7 +63,15 @@
                   "/agent-platform/memory",
                   "/agent-platform/agents/agentic-apps/settings",
                   "/agent-platform/deploy/diagnostics",
-                  "/agent-platform/agents/agentic-apps/simulation-and-testing"
+                  "/agent-platform/agents/agentic-apps/simulation-and-testing",
+                  {
+                    "group": "Deployment",
+                    "pages": [
+                      "/agent-platform/deploy-apps",
+                      "/agent-platform/deploy/diagnostics",
+                      "/agent-platform/deploy/import-export"
+                    ]
+                  }
                 ]
               },
               {
@@ -94,20 +102,7 @@
                       "/agent-platform/evaluation/agentic-evaluation"
                     ]
                   },
-                  "/agent-platform/guardrails"
-                ]
-              },
-              {
-                "group": "Operations",
-                "pages": [
-                  {
-                    "group": "Deployment",
-                    "pages": [
-                      "/agent-platform/deploy-apps",
-                      "/agent-platform/deploy/diagnostics",
-                      "/agent-platform/deploy/import-export"
-                    ]
-                  },
+                  "/agent-platform/guardrails",
                   "/agent-platform/analytics"
                 ]
               },
@@ -140,7 +135,8 @@
                   "/agent-platform/administration/manage-datasets",
                   "/agent-platform/administration/integrations",
                   "/agent-platform/apis",
-                  "/agent-platform/sdk-overview"
+                  "/agent-platform/sdk-overview",
+                  "agent-platform/how-to-guides"
                 ]
               }
             ]
