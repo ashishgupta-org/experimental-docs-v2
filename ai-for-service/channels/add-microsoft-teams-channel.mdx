@@ -3,8 +3,6 @@ title: Adding the Microsoft Teams & Copilot Channel
 sidebarTitle: Adding the Microsoft Teams & Copilot Channel
 ---
 
-# Adding the Microsoft Teams & Copilot Channel
-
 To set up Microsoft Teams & Copilot as a channel, a Bot Channel Service must be registered in Azure, and a webhook must be enabled to allow the platform to receive messages.
 
 ## Step 1: Create an Azure Bot
@@ -14,43 +12,43 @@ To set up Microsoft Teams & Copilot as a channel, a Bot Channel Service must be 
 3. Fill in the required details and click **Review + Create**.
 4. On the next page, review the details and check for the **Validation** status. Click **Create** to proceed.
 5. Associate the Azure Bot with a **Microsoft App ID** and **Password**. You can choose the default option: **Auto create App Id and password**. You can also choose to **Create a new Microsoft App ID** or **Use existing app registration**. For more information, see [Microsoft Bot Framework documentation](https://docs.microsoft.com/en-gb/azure/bot-service/bot-service-resources-bot-framework-faq?view=azure-bot-service-4.0#app-registration).
-![Create an Azure Bot](../images/create-azure.png)
+![Create an Azure Bot](/ai-for-service/channels/images/create-azure.png)
 
 ## Step 2: Configure the Resource
 
 1. After the deployment is completed, in the **Deployment details** section, click the bot name.
-![Configure the Resource](../images/azure-resource1.jpg)
+![Configure the Resource](/ai-for-service/channels/images/azure-resource1.jpg)
 
 2. In the Platform, go to the MS Teams + Copilot channel configuration page and copy the **webhook URL**.
 
 3. Paste the URL in the Messaging endpoint field on the Configurations module in Azure portal.
 
 4. Click **Apply** to save the entered value.
-![Configure the Resource](../images/azure-configuration.png)
+![Configure the Resource](/ai-for-service/channels/images/azure-configuration.png)
 
 ## Step 3: Configure App Id and Password
 
 1. On the **Configurations** tab, click the **Manage** option next to the **Microsoft App ID** field.
-![Microsoft App ID](../images/azure-app.png)
+![Microsoft App ID](/ai-for-service/channels/images/azure-app.png)
 
 2. On **Certificates & secrets** page, click the **+ New client secret** option, provide the necessary details, and then click the **Add** option to create a new client secret.
 3. Copy the **Value** of the new client secret and provide it in the **App Password** field present on the **Configurations** tab of the Platform.
-![Microsoft App ID](../images/azure-client.png)
+![Microsoft App ID](/ai-for-service/channels/images/azure-client.png)
 
 4. Close the **Certificates and secrets** section to return the **Configuration** section of the resource using the breadcrumbs. Make a note of the Microsoft App Id in the Azure Bot configurations page and provide it in the Configuration tab of this window.
-![Microsoft App ID](../images/azure-certificate.png)
+![Microsoft App ID](/ai-for-service/channels/images/azure-certificate.png)
 
 ## Step 4: Enable Microsoft Teams Channel & Microsoft 365 (For Copilot)
 
 1. Go to the **Channels** section from the menu and select the **Microsoft Teams** and **Microsoft 365** channel listed under the Available Channels.
-![Microsoft Teams Channel ](../images/teams-channels.png)
+![Microsoft Teams Channel ](/ai-for-service/channels/images/teams-channels.png)
 
 2. Review the channel information and click the **Save** to complete the channel setup.
 
 ## Step 5: Publish Your App in Platform
 
 1. On the platform, select the assistant, and then go to the **Channels & Flows** > **Channels** > **Digital** > **All** menu.
-![Configure Microsoft Teams Channel](../images/teams-channel.png)
+![Configure Microsoft Teams Channel](/ai-for-service/channels/images/teams-channel.png)
 
 2. On the **Configuration** tab, enter the following details:
     * **App Tenant ID**: The app tenant ID.
@@ -75,16 +73,16 @@ To set up Microsoft Teams & Copilot as a channel, a Bot Channel Service must be 
 1. Open the [Microsoft Teams Developer Portal](https://teams.microsoft.com/v2/).
 
 2. Click **Create New App** to begin setting up your Teams application.
-![complete process](../images/teams-portal1.png)
+![complete process](/ai-for-service/channels/images/teams-portal1.png)
 
 3. Enter the app name and select the version.
-![complete process](../images/teams-portal2.png)
+![complete process](/ai-for-service/channels/images/teams-portal2.png)
 
 4. Enter the required App Details. Ensure that the Microsoft App ID entered here is the same as the App ID configured in Azure and the Platform, maintaining consistency across all systems. This prevent errors during zip file creation. For Application (Client) ID, enter the Microsoft App ID associated with your bot’s channel configuration.
-    ![complete process](../images/teams-portal3.png)
+    ![complete process](/ai-for-service/channels/images/teams-portal3.png)
 
 5. Navigate to App Features > Bot. Select the **Enter a bot ID**, enter the Microsoft App ID and enable all required scopes.
-![complete process](../images/teams-portal4.png)
+![complete process](/ai-for-service/channels/images/teams-portal4.png)
 
 ### For Microsoft Teams & Copilot
 
@@ -95,15 +93,15 @@ You can also upload a custom image for your agent by naming the file **color.png
 ## Step 7: Uploading the app
 
 1. Open App Package Editor. It displays manifest.json, color.png, and outline.png. After verifying the details, download the ZIP package.
-![complete process](../images/teams-portal5.png)
+![complete process](/ai-for-service/channels/images/teams-portal5.png)
 
 7. **Upload the App into Teams**: Go to Teams > Apps > Manage your Apps. Click **Upload an app** and select the ZIP package downloaded in the previous step. This will upload your custom Teams app to your tenant.
-![complete process](../images/teams-portal6.png)
+![complete process](/ai-for-service/channels/images/teams-portal6.png)
 
 8. **Add and Test the App**.
 Click Add to install the app/agent. Open the app within Teams (or Copilot) and verify that all bot interactions and features are working as expected.
-![complete process](../images/teams-add.png)
-![complete process](../images/teams-portal7.png)
+![complete process](/ai-for-service/channels/images/teams-add.png)
+![complete process](/ai-for-service/channels/images/teams-portal7.png)
 
 ## MS Teams Chat Features
 
@@ -212,17 +210,17 @@ if(channelActionMetadata){
 
     channel_action: delete_message
 
-![Update or Delete Message](../images/update-delete5.png)
+![Update or Delete Message](/ai-for-service/channels/images/update-delete5.png)
 
-![Update or Delete Message](../images/update-delete6.png)
+![Update or Delete Message](/ai-for-service/channels/images/update-delete6.png)
 
-![Update or Delete Message](../images/update-delete2.png)
+![Update or Delete Message](/ai-for-service/channels/images/update-delete2.png)
 
-![Update or Delete Message](../images/update-delete1.png)
+![Update or Delete Message](/ai-for-service/channels/images/update-delete1.png)
 
-![Update or Delete Message](../images/update-delete3.png)
+![Update or Delete Message](/ai-for-service/channels/images/update-delete3.png)
 
-![Update or Delete Message](../images/update-delete4.png)
+![Update or Delete Message](/ai-for-service/channels/images/update-delete4.png)
 
 ### Typing Indicator
 

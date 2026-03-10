@@ -3,8 +3,6 @@ title: Email
 sidebarTitle: Email
 ---
 
-# Email
-
 Email is a communication channel through which customers can send inquiries, feedback, or requests to the customer service team for resolution or assistance. It allows for asynchronous communication, maintains a record of interactions, and efficiently handles customer inquiries. By adding the email channel to your AI Agent, end users can interact with it using any standard email client, such as *Microsoft Outlook* or *Yahoo*.
 
 The email channel offers the following functionalities:
@@ -19,10 +17,10 @@ The email channel offers the following functionalities:
 You can use the Kore.ai Email domain or create your custom Email Domain to configure your email addresses.
 
 To configure the email domains, go to **Flows & Channels** > **Channels** > **Digital** > **All** > **Email**.
-![Email Icon](../images/email-digital-page.png)
+![Email Icon](/ai-for-service/channels/images/email-digital-page.png)
 
 To manage the channel session settings, click settings (gear icon) on the Email channel page.
-![Email Settings](../images/email-settings.png)
+![Email Settings](/ai-for-service/channels/images/email-settings.png)
 
 ## Session Creation Settings
 
@@ -30,7 +28,7 @@ To manage the channel session settings, click settings (gear icon) on the Email 
 
 **Thread-Based Sessions**: When enabled, the platform creates sessions based on email thread reference headers. Replies within the same thread continue the existing session, while new threads always start fresh sessions. When users or agents add recipients mid-thread, the platform maintains the existing email thread and preserves conversation context. This option is only available when Channel-Based Sessions is enabled.
 
-![Email Settings](../images/email-session-settings.png)
+![Email Settings](/ai-for-service/channels/images/email-session-settings.png)
 
 ## Kore.ai Email Domain
 
@@ -41,14 +39,14 @@ With the capabilities of the experience flow, we can efficiently route incoming 
 Any reply email managed by either the Human Agent or the AI Agent is directly sent to the end customer. To maintain transparency and accountability, the customer contact center domain is included in the BCC (Blind Carbon Copy) field and the Reply-to field. This configuration ensures that communication remains open and accessible to all relevant parties.
 
 Whenever the customer responds to the email thread, it is directed back to the customer contact center domain. From there, it is seamlessly forwarded to the Kore domain, ensuring a continuous and efficient communication loop.
-![Email Flow](../images/email-flow.png)
+![Email Flow](/ai-for-service/channels/images/email-flow.png)
 
 ### Create a Kore Domain Email Address
 
 Steps to create an email address in the Kore domain:
 
 1. Click the **+ New Email Address**.
-    ![+ New Email Address](../images/new-kore-email.png)
+    ![+ New Email Address](/ai-for-service/channels/images/new-kore-email.png)
 
 2. Enter the following details.
     1. Email Address
@@ -56,20 +54,20 @@ Steps to create an email address in the Kore domain:
     3. Choose whether to use the custom email for inbound, outbound, or both under **Additional Settings**.
     4. Choose whether you want to send a contact card to all users as a part of the introduction message under **Send contact card (.VCF)**.
     5. Under the Enable Channel section, select **Yes** to enable the channel.
-        ![Email Configuration](../images/kore-email-configuration.png)
+        ![Email Configuration](/ai-for-service/channels/images/kore-email-configuration.png)
 
     6. Turn on the **Email Template Design (Optional)** toggle to configure the header and footer of the emails that are sent via the configured email address, and do the following:
         1. Click **Edit Header** and **Edit Footer** to configure the header and footer details.
-            ![Email Template Design](../images/email-template-design.png)
+            ![Email Template Design](/ai-for-service/channels/images/email-template-design.png)
 
         2. In the **Edit** window, change the header and footer details, and click **Save**.
 
     7. Click **Preview** to see a preview of the Email template.
-        ![Email Template Preview](../images/email-template-preview.png)
+        ![Email Template Preview](/ai-for-service/channels/images/email-template-preview.png)
 
 3. Click **Save.**
 4. A success message is displayed and the email address is created.
-    ![Email Address Created](../images/kore-email-created.png)
+    ![Email Address Created](/ai-for-service/channels/images/kore-email-created.png)
 
     <Note>    The option to link a flow directly from the Email Channels list is excluded. Users would need to return to the Experience Flows section, locate the linked flow, and publish it again for any changes to take effect. This option is omitted to maintain a consistent user experience and avoid unnecessary steps.</Note>
 ### Publish Kore Domain Email Addresses
@@ -77,16 +75,16 @@ Steps to create an email address in the Kore domain:
 Steps to publish email addresses in the Kore domain:
 
 1. Go to **Deploy** > **Deploy Management** > **Publish**.
-    ![Publish Page](../images/publish-page.png)
+    ![Publish Page](/ai-for-service/channels/images/publish-page.png)
 
 2. Select the email address under channels and click **Proceed**.
-    ![Select Email](../images/select-email.png)
+    ![Select Email](/ai-for-service/channels/images/select-email.png)
 
 3. Enter the Comments and click **Confirm**.
-    ![Comments](../images/comments-publish.png)
+    ![Comments](/ai-for-service/channels/images/comments-publish.png)
 
 4. A success message is displayed and the email address is published.
-    ![Email Address Published](../images/email-published.png)
+    ![Email Address Published](/ai-for-service/channels/images/email-published.png)
 
 ## Custom Email Domain
 
@@ -103,7 +101,7 @@ Follow these steps to set up a standard custom domain and add an email ID to it.
 1. Navigate to **Flows & Channels** > **Channels** > **Digital** > **All** > **Email**.
 2. Click **+ New Domain** and select **Custom Domain**.
 3. Enter the **Domain Name**. Select the domain type as Standard, and click **Create**.
-![Standard Custom Domain](../images/email-stddomain.png)
+![Standard Custom Domain](/ai-for-service/channels/images/email-stddomain.png)
 
 4. The domain created a success message is displayed.
 
@@ -123,22 +121,22 @@ Follow these steps to set up a standard custom domain and add an email ID to it.
     6. Choose whether to use the custom email for inbound, outbound, or both under **Additional Settings**.
     7. Choose whether you want to send a contact card to all users as a part of the introduction message under **Send contact card (.VCF)**.
     8. Under the Enable Channel section, select **Yes** to enable the channel.
-        ![Email Configuration](../images/custom-email-config.png)
+        ![Email Configuration](/ai-for-service/channels/images/custom-email-config.png)
 
     9. Turn on the **Email Template Design (Optional)** toggle to configure the header and footer of the emails that are sent via the configured email address, and do the following:
         1. Click **Edit Header** and **Edit Footer** to configure the header and footer details.
-            ![Email Template Design](../images/email-template-design.png)
+            ![Email Template Design](/ai-for-service/channels/images/email-template-design.png)
 
         2. In the **Edit** window, change the header and footer details, and click **Save**.
-            ![Edit Header-Footer](../images/edit-window-change-header-footer.png)
+            ![Edit Header-Footer](/ai-for-service/channels/images/edit-window-change-header-footer.png)
 
-            ![Save Header-Footer](../images/edit-window-click save.png)
+            ![Save Header-Footer](/ai-for-service/channels/images/edit-window-click save.png)
 
     9. Click **Preview** to see a preview of the Email template.
-        ![Template Preview](../images/custom-template-preview.png)
+        ![Template Preview](/ai-for-service/channels/images/custom-template-preview.png)
 
 3. Click the **Test Connection** to verify the domain ownership. A success message is displayed.
-    ![Test Connection](../images/test-connection.png)
+    ![Test Connection](/ai-for-service/channels/images/test-connection.png)
 
 4. Click **Save**.
 
@@ -158,39 +156,39 @@ Upon receiving a new interaction, the system checks the incoming email address a
 Steps to Configure Email Blocklist:
 
 1. Click the **Email Blocklist** tab and turn on the **Enable Email Blocklist** toggle.
-    ![Email Blocklist Tab](../images/email-blocklist-tab.png)
+    ![Email Blocklist Tab](/ai-for-service/channels/images/email-blocklist-tab.png)
 
 2. You can add email addresses manually or using bulk upload.
     1. **Manual entry**:
         1. Enter the email address in the search dialog box and click **Add**.
-            ![Manual Entry](../images/manual-blocklist-upload.png)
+            ![Manual Entry](/ai-for-service/channels/images/manual-blocklist-upload.png)
 
             <Note>            The search box can be used to find existing email addresses or to add a new one.</Note>
         2. The email address is updated successfully.
-            ![Manual Entry Updated](../images/manual-blocklist-updated.png)
+            ![Manual Entry Updated](/ai-for-service/channels/images/manual-blocklist-updated.png)
 
     2. **Bulk Upload**:
         1. Click **Bulk Upload**.
-            ![Bulk Upload Button](../images/bulk-upload-button.png)
+            ![Bulk Upload Button](/ai-for-service/channels/images/bulk-upload-button.png)
 
         2. A pop-up window is displayed. Click **Select a CSV file to Upload** and upload the CSV file. You can download a sample CSV file by clicking **Download sample CSV file**.
-            ![Select CSV File](../images/select-csv.png)
+            ![Select CSV File](/ai-for-service/channels/images/select-csv.png)
 
         3. The upload progress is displayed.
-            ![Upload Progress](../images/upload-progress.png)
+            ![Upload Progress](/ai-for-service/channels/images/upload-progress.png)
 
         4. On completion, map the CSV file fields with system fields.
-            ![Map Fields](../images/map-fields.png)
+            ![Map Fields](/ai-for-service/channels/images/map-fields.png)
 
             <Note>            If the CSV file contains only one column, field mapping is not required and will not be displayed.</Note>
         5. Click **Validate**.
-            ![Validate](../images/validate.png)
+            ![Validate](/ai-for-service/channels/images/validate.png)
 
         6. The details of the mapped contacts, duplicates, and errors (if any) are displayed. Click **Save**.
-            ![Save Button](../images/save-mapped-fields.png)
+            ![Save Button](/ai-for-service/channels/images/save-mapped-fields.png)
 
         7. A success message is displayed and the email blocklist is updated.
-            ![Bulk Blocklist Updated](../images/bulk-upload-button.png)
+            ![Bulk Blocklist Updated](/ai-for-service/channels/images/bulk-upload-button.png)
 
 ### Advanced Custom Domain
 
@@ -219,7 +217,7 @@ Generate and Configure DKIM for this domain by providing your own private key. T
 1. Navigate to **Flows & Channels** > **Channels** > **Digital** > **All** > **Email**.
 2. Click **+ New Domain** and select **Custom Domain**.
 3. Enter the **Domain Name**. Select the domain type Advanced, then click **Create**.
-![Advanced Custom Domain](../images/email-advdomain.png)
+![Advanced Custom Domain](/ai-for-service/channels/images/email-advdomain.png)
 
 4. On the verification tab, enter the **DKIM Private Key**, **Selector Name**, and click **Verify Domain**.
 
@@ -229,24 +227,24 @@ Generate and Configure DKIM for this domain by providing your own private key. T
 
     **Example**: If your selector is "ses2024" and the domain is "example.com," the DNS record would be: `ses2024._domainkey[.example.com]`.
 
-    ![Advanced Custom Domain](../images/email-custom-dkim.png)
+    ![Advanced Custom Domain](/ai-for-service/channels/images/email-custom-dkim.png)
 
 5. The Verification in Progress message is displayed.
-![Advanced Custom Domain](../images/email-vip.png)
+![Advanced Custom Domain](/ai-for-service/channels/images/email-vip.png)
 
 6. Click **Confirm**. You can navigate to the Email Channels page to check the latest status. This might take up to 72 hours. The status can be one of the following:
     * **Pending**: DNS records not yet detected.
     * **Success**: DKIM successfully verified.
     * **Failed**: DNS records incorrect or missing.
     * **Temporary Failure**: DNS issues, will retry automatically.
-    ![Advanced Custom Domain](../images/email-domain.png)
+    ![Advanced Custom Domain](/ai-for-service/channels/images/email-domain.png)
 
 #### Step 3: Complete Configuration
 
 After successful DKIM verification, follow these steps:
 
 1. On the Email Channel page, click **Complete Configuration** for a domain.
-![Advanced Custom Domain](../images/email-custom-config-new.png)
+![Advanced Custom Domain](/ai-for-service/channels/images/email-custom-config-new.png)
 
 2. Click **+ New Email ID** to add an email to the domain.
 3. Enter the **Display Name**, add the **Email ID**  from which emails have to be forwarded or sent, and select the **Usage**.
@@ -278,17 +276,17 @@ Generate and Configure DKIM for this domain by providing your own private key. T
 
         **Example**: If your selector is "ses2024" and the domain is "example.com," the DNS record would be: `ses2024._domainkey[.example.com](http://.example.com)`
 
-        ![Microsoft Exchange](../images/msexchange1.png)
+        ![Microsoft Exchange](/ai-for-service/channels/images/msexchange1.png)
 
 4. The Verification in Progress message is displayed.
-![Microsoft Exchange](../images/msexchange2.png)
+![Microsoft Exchange](/ai-for-service/channels/images/msexchange2.png)
 
 5. Click **Confirm**. You can navigate to the Email Channels page to check the latest status. This might take up to 72 hours. The status can be one of the following:
     * **Pending**: DNS records not yet detected.
     * **Success**: DKIM successfully verified.
     * **Failed**: DNS records are incorrect or missing.
     * **Temporary Failure**: DNS issues, will retry automatically.
-    ![Microsoft Exchange](../images/msexchange3.png)
+    ![Microsoft Exchange](/ai-for-service/channels/images/msexchange3.png)
 
 ### Step 3: Microsoft 365 Setup Instructions for Integration
 
@@ -325,7 +323,7 @@ Generate and Configure DKIM for this domain by providing your own private key. T
     * `User.Read`
     * `User.Read.All`
 
-    ![Microsoft Exchange](../images/msexchange4.png)
+    ![Microsoft Exchange](/ai-for-service/channels/images/msexchange4.png)
 
 5. Click **Add permissions**.
 6. **Important**: Click **Grant admin consent for [Your Organization]**.
@@ -355,19 +353,19 @@ After successful domain verification, follow these steps:
 
 1. On the Email Channel page, click **Complete Configuration** for a domain.
 2. On the Configuration tab, enter **Client ID**, **Client Secret Key**, **Tenant ID**, and enable the channel.
-![Microsoft Exchange](../images/msexchange5.png)
+![Microsoft Exchange](/ai-for-service/channels/images/msexchange5.png)
 
 3. Click **+New Group** and enter the **Group Name** that you would like to subscribe to via the Graph API. You can add up to 50 domains and 50 email addresses per domain.
-![Microsoft Exchange](../images/msexchange6.png)
+![Microsoft Exchange](/ai-for-service/channels/images/msexchange6.png)
 
 4. Click **Sync** to fetch all the email id of the group.
-![Microsoft Exchange](../images/msexchange7.png)
+![Microsoft Exchange](/ai-for-service/channels/images/msexchange7.png)
 
 5. Click **Save**. The configuration saved message is displayed.
-![Microsoft Exchange](../images/msexchange8.png)
+![Microsoft Exchange](/ai-for-service/channels/images/msexchange8.png)
 
 6. Click **Edit** to sync up the emails of a group or to add.
-![Microsoft Exchange](../images/msexchange9.png)
+![Microsoft Exchange](/ai-for-service/channels/images/msexchange9.png)
 
 **Test Your Configuration**
 

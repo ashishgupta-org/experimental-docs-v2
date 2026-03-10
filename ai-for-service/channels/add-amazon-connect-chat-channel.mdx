@@ -3,9 +3,6 @@ title: Amazon Connect Chat
 sidebarTitle: Amazon Connect Chat
 ---
 
-
-# Amazon Connect Chat
-
 This article describes the integration process of Amazon Connect Chat with the Platform.
 
 ## Step 1: Create and Configure AWS Lambda for Amazon Connect Integration
@@ -285,7 +282,7 @@ Create a subscription so SNS can forward messages to the Platform via HTTPS.
 
 **Reference Snapshot**
 
-![Amazon Connect Chat](../images/aws-flow.png)
+![Amazon Connect Chat](/ai-for-service/channels/images/aws-flow.png)
 
 ### 3.1: Open Flow Builder
 
@@ -333,7 +330,7 @@ The screenshot shows a simple flow sequence: `Entry → Set logging behavior →
 1. Log in to your AWS Console.
 2. Navigate to the **Amazon Connect** service.
 3. The AWS Region is displayed in the upper-right corner of the console (for example, `us-east-1`).
-![Amazon Connect Chat](../images/retrieve-aws-region.png)
+![Amazon Connect Chat](/ai-for-service/channels/images/retrieve-aws-region.png)
 
 ### 4.2 Steps to Retrieve AWS Access Key ID and Secret
 
@@ -344,16 +341,16 @@ The screenshot shows a simple flow sequence: `Entry → Set logging behavior →
 5. Click the **Security Credentials** tab for that user.
 6. Either create a new access key or use existing credentials if available.
 
-![Amazon Connect Chat](../images/aws-access-key.png)
-![Amazon Connect Chat](../images/aws-access-key2.png)
-![Amazon Connect Chat](../images/aws-access-key3.png)
+![Amazon Connect Chat](/ai-for-service/channels/images/aws-access-key.png)
+![Amazon Connect Chat](/ai-for-service/channels/images/aws-access-key2.png)
+![Amazon Connect Chat](/ai-for-service/channels/images/aws-access-key3.png)
 
 ## Step 5: Configure the Amazon Connect Chat Channel within the Platform
 
 1. Login to the Platform.
 2. Go to **Channels & Flows** > **Channels** > **Digital** > **All** and select **Amazon Connect Chat**. The channel setup window opens.
 3. Click **Next** or select the **Configurations** tab.
-![Amazon Connect Chat](../images/aws-platform.png)
+![Amazon Connect Chat](/ai-for-service/channels/images/aws-platform.png)
 
 4. Provide the following details you configured within Amazon Connect Chat:
     * **AWS Region**: Enter the AWS region where your Amazon Connect instance is hosted.

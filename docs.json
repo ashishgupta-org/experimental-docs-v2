@@ -189,7 +189,7 @@
               "/ai-for-service/release-notes",
               "/ai-for-service/getting-started/upgrade-guide",
               {
-                "group": "MODULES",
+                "group": "Modules",
                 "pages": [
                   { 
                     "group": "Automation AI",
@@ -291,15 +291,14 @@
                 ]
               },
               {
-                "group": "BUILDING",
+                "group": "Platform Services",
                 "pages": [
-                  "/ai-for-service/flows",
                   "/ai-for-service/channels",
                   "/ai-for-service/integrations"
                 ]
               },
               {
-                "group": "OPERATIONS",
+                "group": "References",
                 "pages": [
                   "/ai-for-service/administration"
                 ]

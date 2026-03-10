@@ -3,8 +3,6 @@ title: Adding the Google Assistant channel
 sidebarTitle: Adding the Google Assistant channel
 ---
 
-# Adding the Google Assistant channel
-
 <Note>The Google Assistant Conversational Actions will be deprecated on June 13, 2023. For details, see [Conversational Actions sunset](https://developers.google.com/assistant/ca-sunset/).</Note>
 
 ## Requirements
@@ -25,14 +23,14 @@ Google Assistant as a channel should ideally be enabled for AI Agents that are s
 3. After your project is created, you are redirected to the project’s **Get Started** page.
 4. On this page, you must select a category for your project. Select the project category as _Custom_ and click **Next**.
 5. After your category is selected, you must select a project template. Scroll down to the bottom of the page and select _Click here to build your Action using DialogFlow_, this will redirect you to the project’s overview page.
-![google assistant](../images/google_assistant.png)
+![google assistant](/ai-for-service/channels/images/google_assistant.png)
 
 6. Click the **Modify languages in Settings** option to update the languages in which your actions are displayed.
 7. Go back by clicking on the **Overview** tab on top of the page.
 8. Now click **Decide how your Action is invoked** under the **Quick Setup**. This opens up the **Develop** tab.
 9. Now proceed to the **Invocation** option on the left pane. Provide a name that users use to invoke your actions.
 10. Click **Save** on the top-left of the page. You may review other options available.
-![provide name](../images/google_assistant1.png)
+![provide name](/ai-for-service/channels/images/google_assistant1.png)
 
 ## Step 2: Define Actions
 
@@ -45,7 +43,7 @@ Google Assistant as a channel should ideally be enabled for AI Agents that are s
 5. Select **Default Fallback Intent** to open the intent details and go to the end of the page. Under the **Fulfillment** section, turn on the toggle to **Enable webhook call for this intent** option. Click **Save** to update your changes.
 6. Go back to the **Intents** on the left pane, select **Default Welcome Intent** to open the intent details, and go to the end of the page. Under the **Fulfillment** section, turn on the toggle to **Enable webhook call for this intent** option.
 7. Click **Save** to update your changes.
-![enable google assistant](../images/google_assistant2.png)
+![enable google assistant](/ai-for-service/channels/images/google_assistant2.png)
 
 ## Step 3: Enable Fulfillment
 
@@ -55,7 +53,7 @@ Google Assistant as a channel should ideally be enabled for AI Agents that are s
     * From the **Configurations** tab of the Google Assistant channel page on the builder, copy the **Access Token**. This token must be added as a header key in the Dialogflow Fulfillment screen.
     * Under the **Webhook** option of the **Fulfillment** section, add the key as **Access-token** and update the copied access token as the value for this key.
 2. Go to the end of the page and click **Save**.
-![enable fulfillment](../images/google_assistant3.png)
+![enable fulfillment](/ai-for-service/channels/images/google_assistant3.png)
 
 ## Step 4: Test using Simulator
 
@@ -69,7 +67,7 @@ Google Assistant as a channel should ideally be enabled for AI Agents that are s
 
 1. In the XO Platform, Go to **Channels & Flows** > **Channels** > **Digital** > **All** > **Google Assistant**.
 2. Go to the **Configuration** tab, select Yes and Save your change to enable the channel.
-![deploy google assistant](../images/google_assistant4.png)
+![deploy google assistant](/ai-for-service/channels/images/google_assistant4.png)
 
 After enabling the channel and verifying all the configurations, you can optionally publish the assistant for the new channel. Learn more about[ Publishing your App](../deploy/publishing-bot.md).
 

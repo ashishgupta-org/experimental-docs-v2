@@ -3,8 +3,6 @@ title: RCS Business Messaging
 sidebarTitle: RCS Business Messaging
 ---
 
-# RCS Business Messaging
-
 **RCS Business Messaging** is the evolution of mobile messaging, increasing and improving the ways in which people and businesses communicate. It provides brands with the opportunity to increase their engagement with customers by making use of business messaging using assistants and artificial intelligence (AI). **Google RBM** allows companies to send visually rich messages that encourage customers to interact.
 
 Below are the steps involved in setting up the channel on Kore.ai and launching the agent on RBM: (This channel support was introduced in ver7.1 of the platform)
@@ -32,12 +30,12 @@ To request access to enable Google RCS Business messaging as a channel
 
 1. **Create App, Enable Event and Publish the assistant** – This is required for the platform to receive a notification when a new user opts into talking to the bot via Google RCS.
     * **Create an App** on the Kore.ai XO Platform **App Settings** > **Dev Tools** > **API Scopes** > **New**  platform from **API Extensions** > **API Scopes** and enable the following scope: “_RCS Message Events_”.
-    ![create rcs app](../images/rcs.png)
+    ![create rcs app](/ai-for-service/channels/images/rcs.png)
 
     * From **Natural Language** > **Default Conversation** > **Event Handlers**, configure the following events:
         * RCS Opt-In: action to be taken once the user Opts-in for the RCS Messaging,
         * RCS Opt-Out: action to be taken when the user Opts-out of the RCS Messaging.
-        ![rcs messaging](../images/rcs1.png)
+        ![rcs messaging](/ai-for-service/channels/images/rcs1.png)
 
     * **Publish** the channel.
 2. Trigger opt-in and/or broadcast requests:

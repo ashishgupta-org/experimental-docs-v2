@@ -3,8 +3,6 @@ title: Add the Syniverse Channel
 sidebarTitle: Add the Syniverse Channel
 ---
 
-# Add the Syniverse Channel
-
 To set up Syniverse as a channel, the developer needs to associate the AI Agent with a Syniverse app, set up a subscription, and enable the delivery events for this app. This document explains the steps to add the Syniverse as a channel to your AI Agent.
 
 ## Create an App
@@ -13,10 +11,10 @@ To create the Syniverse app, follow the steps below:
 
 1. Log in to the [Syniverse developer portal](https://developer.syniverse.com/) and navigate to the **Applications** section.
 2. Click **Create New** if you want to create your first app. If you want to access existing apps, click **Your App**.
-![Syniverse channel](../images/Syniverse1.png)
+![Syniverse channel](/ai-for-service/channels/images/Syniverse1.png)
 
 3. In the **Create App** screen, enter the app name, description, select account, and click **Save**.
-![Syniverse app](../images/Syniverse2.png)
+![Syniverse app](/ai-for-service/channels/images/Syniverse2.png)
 
 ## Capture Auth Keys
 
@@ -24,17 +22,17 @@ Once you create an app, to capture Auth keys, follow the steps below:
 
 1. Navigate to the created app in the **Applications** section and open the app.
 2. Use the **Auth Keys** (see the following screenshot) to complete the configuration in the Kore.ai platform and send the SMS via AI Agent.
-![Syniverse Auth Keys](../images/Syniverse3.png)
+![Syniverse Auth Keys](/ai-for-service/channels/images/Syniverse3.png)
 
 ## Delivery Configurations
 
 The next step is to configure how messages will be delivered via the Webhook URL configured on the XO Platform for Syniverse. To set up the delivery configurations, follow the steps below:
 
 1. Navigate to the **Event Manager** on the top menu bar and select **Delivery Configurations**.
-![Syniverse Delivery Configuration](../images/Syniverse4.png)
+![Syniverse Delivery Configuration](/ai-for-service/channels/images/Syniverse4.png)
 
 2.  If you want to use an existing delivery configuration to set up the app’s webhook URL, select one of the configurations from the displayed table (see the following screenshot), else, click **New Delivery Configuration**.
-![Syniverse webhook URL](../images/Syniverse5.png)
+![Syniverse webhook URL](/ai-for-service/channels/images/Syniverse5.png)
 
 3. In the **Create Delivery Configuration** pop-up, enter the following values:
     * Provide a **Delivery Configuration Name**.
@@ -47,10 +45,10 @@ The next step is to configure how messages will be delivered via the Webhook URL
 To set up subscriptions, follow the steps below:
 
 1. Navigate to the **Event Manager** on the top menu bar and select **Subscriptions**.
-![Syniverse subscriptions](../images/Syniverse6.png)
+![Syniverse subscriptions](/ai-for-service/channels/images/Syniverse6.png)
 
 2.  If there are existing subscriptions, select one from the table to set up the event subscription (see the following screenshot), else, click **New Subscription**.
-![Syniverse channel](../images/Syniverse7.png)
+![Syniverse channel](/ai-for-service/channels/images/Syniverse7.png)
 
 3. In the **New Topic Subscription** pop-up, enter the following values:
     * **Topic**: Select **SCG Message** from the drop-down.
@@ -67,10 +65,10 @@ To ensure that messages flow between the two systems, you should obtain the **Se
 
 1. Navigate to the **Voice and Messaging Console** on the top menu bar of your Syniverse Developer Portal account, and double click **Sender ID** from the **Messaging Accounts** in the left Navigation Menu. Click **+Purchase or Migrate Sender Address** button to purchase a new Sender ID.
 2. Scroll down to **Alias**, and copy the value.
-![Syniverse Messaging Accounts](../images/Syniverse8.png)
+![Syniverse Messaging Accounts](/ai-for-service/channels/images/Syniverse8.png)
 
 3. Paste this value in the **Syniverse** **Configurations** panel of the Kore.ai platform.
- ![enable Syniverse channel](../images/Syniverse8.png)
+ ![enable Syniverse channel](/ai-for-service/channels/images/Syniverse8.png)
 
 4. Select **_Yes_** for **Enable Channel**.
 5. Click **Save**.

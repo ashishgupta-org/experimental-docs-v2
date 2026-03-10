@@ -3,8 +3,6 @@ title: Adding the Cisco Webex Teams
 sidebarTitle: Adding the Cisco Webex Teams
 ---
 
-# Adding the Cisco Webex Teams
-
 To add the Cisco Webex Teams (formerly Cisco Webex) channel to your AI Agent, the developer must create a dedicated AI Agent app and an integration app in Cisco Webex Teams.
 
 Adding the Cisco Webex Teams channel to your Kore.ai assistant is a four-step process to allow end-users to interact with it using their _Webex_ accounts.
@@ -15,12 +13,12 @@ To create an App from within Cisco Webex Teams, please follow the steps below:
 
 1. [Log in to the Cisco Webex Developer Portal](https://developer.webex.com/) and proceed to the **Start Building Apps** page or to the **My Webex Apps** page.
 2. Click the **Create a New App** option and choose the **Create an App** option.
-![cisco webex app](../images/cisco.png)
+![cisco webex app](/ai-for-service/channels/images/cisco.png)
 
 3. Provide all the required information to create the app and click on **Add Bot**.
 4. This step will create a _Bot User_ and an _Access Token_ is also generated for accessing this app.
 5. Make a note of the **Bot Username** and **Access Token** from this page.
-![access token](../images/cisco1.png)
+![access token](/ai-for-service/channels/images/cisco1.png)
 
 ## Step 2: Enable the Cisco Webex Team channel from the XO Platform
 
@@ -42,7 +40,7 @@ To create an App from within Cisco Webex Teams, please follow the steps below:
 
       For more information, read [Cisco’s documentation](https://developer.webex.com/docs/integrations)
 
-      ![cisco client secret](../images/cisco2.png)
+      ![cisco client secret](/ai-for-service/channels/images/cisco2.png)
 
 <Note>  The Redirect URI now includes the **_streamid_** in the API request to identify the AI Agent being accessed. When an incoming request is qualified with this identifier, it helps with traceability, troubleshooting, and remediation at the network level during anomalies like malicious calls or unusual app activity.</Note>
 
@@ -51,7 +49,7 @@ To create an App from within Cisco Webex Teams, please follow the steps below:
 1. In the XO Platform, on the Channel Configuration page, enter the Post URL where you want Webex **Client ID** and **Client Secret** noted in the previous step.
 2. **Enable Channel** to complete the configuration.
 3. **Save** the configuration.
-![enable cisco channel](../images/cisco3.png)
+![enable cisco channel](/ai-for-service/channels/images/cisco3.png)
 
 After enabling the channel and verifying all the configurations, you can optionally publish the assistant for the new channel. Learn more about[ Publishing your App](../deploy/publishing-bot.md).
 

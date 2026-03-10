@@ -3,8 +3,6 @@ title: Adding the Sunshine Conversations Channel
 sidebarTitle: Adding the Sunshine Conversations Channel
 ---
 
-# Adding the Sunshine Conversations Channel
-
 AI Agents built on the Kore.ai Platform can be deployed on the **Sunshine Conversations** platform. This channel integration supports conversations with AI Agents and provides a seamless hand-off to agents on **Zendesk**.
 
 ## Authorizing the Kore.ai Integration to Sunshine Conversations
@@ -14,7 +12,7 @@ To enable the integration, you need to provide authorization using your Zendesk 
 1. Log into the Kore.ai XO Platform.
 2. Navigate to **Channels & Flows** > **Channels** > **Digital** > **All** > **Sunshine Conversations** Channel.
 3. Click the **Authorize** button under **Configurations** on the **Sunshine Conversations** panel.
-    ![Sunshine Channel](../images/Sunshine-1.png)
+    ![Sunshine Channel](/ai-for-service/channels/images/Sunshine-1.png)
 
 4. On the **Zendesk subdomain** page, provide the subdomain and click **Sign in**.
 5. On the Zendesk sign-in page, provide your login credentials and click **Sign in**.
@@ -94,7 +92,7 @@ Sunshine Conversations templates are pre-defined structures you can use to send 
 
 To trigger various message templates, you must use a specific JavaScript format in the **Bot Responses** section of the **Message Node** in a Dialog Task. Below are the supported templates along with their sample code formats:
 
-* **Compound Message**: Combines multiple elements like text, images, buttons, and quick replies to create an engaging and informative message. [See example](https://docs.smooch.io/guide/template-messages/#compound-message){:target="_blank"}.
+* **Compound Message**: Combines multiple elements like text, images, buttons, and quick replies to create an engaging and informative message. [See example](https://docs.smooch.io/guide/template-messages/#compound-message).
 
     ```js
     var message = {
@@ -120,7 +118,7 @@ To trigger various message templates, you must use a specific JavaScript format 
 
     ```
 
-* **Carousel Message**: Allows you to send a series of cards that users can swipe through. Each card can contain an image, title, subtitle, and buttons for further actions. [See example](https://docs.smooch.io/guide/template-messages/#carousel-message){:target="_blank"}.
+* **Carousel Message**: Allows you to send a series of cards that users can swipe through. Each card can contain an image, title, subtitle, and buttons for further actions. [See example](https://docs.smooch.io/guide/template-messages/#carousel-message) .
 
     ```js
     var message = {
@@ -167,7 +165,7 @@ To trigger various message templates, you must use a specific JavaScript format 
     print(JSON.stringify(message));
     ```
 
-* **File Message**: Allows you to send a file to the user. This can be useful for sharing documents, PDFs, images, or other types of files. [See example](https://docs.smooch.io/guide/template-messages/#file-message){:target="_blank"}.
+* **File Message**: Allows you to send a file to the user. This can be useful for sharing documents, PDFs, images, or other types of files. [See example](https://docs.smooch.io/guide/template-messages/#file-message) .
 
     ```js
     var message =
@@ -181,7 +179,7 @@ To trigger various message templates, you must use a specific JavaScript format 
     print(JSON.stringify(message))
     ```
 
-* **Form Message**: Allows you to collect information from users through a structured form. This can include text fields, dropdown menus, radio buttons, and more. [See example](https://docs.smooch.io/guide/template-messages/#form-message){:target="_blank"}.
+* **Form Message**: Allows you to collect information from users through a structured form. This can include text fields, dropdown menus, radio buttons, and more. [See example](https://docs.smooch.io/guide/template-messages/#form-message) .
 
     ```js
     var message =
@@ -195,7 +193,7 @@ To trigger various message templates, you must use a specific JavaScript format 
     print(JSON.stringify(message))
     ```
 
-* **Quick Reply**: Provides users with predefined response options that they can select with a single tap. This can streamline interactions and guide users towards specific actions. [See example](https://docs.smooch.io/guide/template-messages/#quick-reply){:target="_blank"}.
+* **Quick Reply**: Provides users with predefined response options that they can select with a single tap. This can streamline interactions and guide users towards specific actions. [See example](https://docs.smooch.io/guide/template-messages/#quick-reply) .
 
     ```js
     var message =
@@ -222,7 +220,7 @@ To trigger various message templates, you must use a specific JavaScript format 
     print(JSON.stringify(message))
     ```
 
-* **Location Request**: Allows you to request the user’s location. This can be useful for services that require location information, such as finding the nearest store or providing location-based services. [See example](https://docs.smooch.io/guide/template-messages/#location-request){:target="_blank"}.
+* **Location Request**: Allows you to request the user’s location. This can be useful for services that require location information, such as finding the nearest store or providing location-based services. [See example](https://docs.smooch.io/guide/template-messages/#location-request) .
 
     ```js
     var message =
@@ -245,8 +243,8 @@ To trigger various message templates, you must use a specific JavaScript format 
 
 ### Create a Template
 
-To learn how to create a template, click [here](https://docs.smooch.io/guide/template-messages/#creating-a-template){:target="_blank"}.
+To learn how to create a template, click [here](https://docs.smooch.io/guide/template-messages/#creating-a-template) .
 
 ### Send a Template
 
-Once you create a template, you can send it to a user. [Learn more](https://docs.smooch.io/guide/template-messages/#sending-a-template-message){:target="_blank"}.
+Once you create a template, you can send it to a user. [Learn more](https://docs.smooch.io/guide/template-messages/#sending-a-template-message) .

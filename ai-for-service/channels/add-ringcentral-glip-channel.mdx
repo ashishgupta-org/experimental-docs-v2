@@ -3,8 +3,6 @@ title: Adding Glip by RingCentral as a Channel
 sidebarTitle: Adding Glip by RingCentral as a Channel
 ---
 
-# Adding Glip by RingCentral as a Channel
-
 The Kore.ai XO Platform now allows you to add **Glip by RingCentral** as a messaging channel to your AI Agents.
 
 With the **Glip** integration, you can achieve the following:
@@ -47,10 +45,10 @@ To enable Glip as a channel for your Kore.ai Assistant, you must create an appli
 1. Log in to the **RingCentral Developer Console**.
 2. Click the **Console** button on the top left.
 3. In the **Apps** section, click **Create App**.
-![RingCentral developer Console](../images/ringcentral_glip1.png)
+![RingCentral developer Console](/ai-for-service/channels/images/ringcentral_glip1.png)
 
 4. Select **REST API App** under **App Type** to call the **RingCentral REST API**.
-![RingCentral REST API](../images/ringcentral_glip2.png)
+![RingCentral REST API](/ai-for-service/channels/images/ringcentral_glip2.png)
 
 5. Click **Next**.
 
@@ -61,17 +59,17 @@ To enable Glip as a channel for your Kore.ai Assistant, you must create an appli
     * App Description (optional)
     * Primary Contact
     * Select the relevant option for **Do you intend to promote this app in the RingCentral App Gallery?**
-![app properties](../images/ringcentral_glip2.png)
+![app properties](/ai-for-service/channels/images/ringcentral_glip2.png)
 
 8. (Optional) In the **App Card panel**, enter the values for the given fields to configure how your application will be presented within our App Gallery.
 
 9. In the **Auth** panel, enter the values for the following fields to select the authentication method your app will use:
     * Select **3-legged OAuth flow authorization code**.
     * Select **Server-side web app (most common)** or **Client-side web app** based on your app type for **From what type of app will you be calling the API?**
-    ![OAuth flow](../images/ringcentral_glip4.png)
+    ![OAuth flow](/ai-for-service/channels/images/ringcentral_glip4.png)
 
     * On the Kore.ai XO Platform, copy the **OAuth Redirect URI** under the **Configurations** tab in the **RingCentral Glip** window.
-    ![ringcentral glip configuration](../images/ringcentral_glip5.png)
+    ![ringcentral glip configuration](/ai-for-service/channels/images/ringcentral_glip5.png)
 
     * Paste the copied **OAuth Redirect URI** link in the **Auth** panel.
 
@@ -81,14 +79,14 @@ To enable Glip as a channel for your Kore.ai Assistant, you must create an appli
 10. In the Security panel, to define the permissions to associate with the app, follow the steps below:
 
 11. Select the **Webhook Subscriptions**, **Read Accounts**, and **Team Messaging** permissions from the dropdown list.
-![webhook subscriptions](../images/ringcentral_glip6.png)
+![webhook subscriptions](/ai-for-service/channels/images/ringcentral_glip6.png)
 
 12. Click Create. Your App is created successfully and the system redirects to the **App Dashboard** page.
 
 If you do not have a **Sandbox Account** to test your app in the Sandbox environment, follow the steps below:
 
 * In the following dialog window, click **Next**.
- ![sandbox account](../images/ringcentral_glip7.png)
+ ![sandbox account](/ai-for-service/channels/images/ringcentral_glip7.png)
 
 * Setup the Password for your **Sandbox** Account.
 
@@ -99,10 +97,10 @@ If you do not have a **Sandbox Account** to test your app in the Sandbox environ
 After creating the app for the Sandbox/Production environment, you need to configure the app’s credentials on the Kore.ai XO Platform using the **_Client ID_** and **_Client Secret_** from the **RingCentral Glip Application Dashboard** to link the app. To set the credentials, follow the steps below:
 
 1. On the **RingCentral Developer Application** Dashboard, click **Credentials** on the left menu.
-![ringcentral developer application](../images/ringcentral_glip8.png)
+![ringcentral developer application](/ai-for-service/channels/images/ringcentral_glip8.png)
 
 2. Under **Application Credentials**, click the copy icons for the **_Client ID_** and **_Client Secret_** (tap on click to see first) fields.
-![application credentials](../images/ringcentral_glip9.png)
+![application credentials](/ai-for-service/channels/images/ringcentral_glip9.png)
 
 3. On the Kore.ai XO Platform, navigate to **Channels & Flows** > **Channels** > **Digital** > **All** and click **RingCentral Glip**.
 
@@ -110,7 +108,7 @@ After creating the app for the Sandbox/Production environment, you need to confi
 5. Paste the copied **_Client ID_** to the **Application Key** input field, and the **_Client Secret_** to the **_Application Secret_** input field.
 6. Click **Save**.
 
-    ![save  app](../images/ringcentral_glip11.png)
+    ![save  app](/ai-for-service/channels/images/ringcentral_glip11.png)
 
 ## Step 3: Authorize Extension (user) of your RingCentral Sandbox Account
 
@@ -119,11 +117,11 @@ The AI Agent on the Kore.ai XO Platform must be associated with the extension (u
 1. Log in to your RingCentral Sandbox account.
 2. Click the **Users** tab.
 3. Click **Users with Extension** on the left menu.
-4. Click **+Add User**.![user extension](../images/ringcentral_glip12.png)
+4. Click **+Add User**.![user extension](/ai-for-service/channels/images/ringcentral_glip12.png)
 5. On the **Add Users and Phones** dialog box, select **Add Users without Phone**, and follow the instructions on the page.
 6. Click **Unassigned Extensions** on the left menu.
 7. Click **Add Unassigned Ext**.
-![unassigned extension](../images/ringcentral_glip13.png)
+![unassigned extension](/ai-for-service/channels/images/ringcentral_glip13.png)
 8. On the **user profile information** page, enter all the required information.
 
     <Note>    Please provide a meaningful name like _Travel App_ or _HR Assistant_ to the AI Agent inside **Teams Messaging**.</Note>
@@ -137,7 +135,7 @@ The AI Agent on the Kore.ai XO Platform must be associated with the extension (u
 To access the admin portal from the Sandbox account screen and test the validation, follow the steps below:
 
 1. Go to the **Sandbox Account** section and click the [link](https://app.devtest.ringcentral.com/) in the **Team Messaging** section.
-![team messaging](../images/ringcentral_glip14.png)
+![team messaging](/ai-for-service/channels/images/ringcentral_glip14.png)
 2. Navigate to **Messages** on the left menu.
 3. In the **Direct Messages** section, click the **+** icon to start a new DM with the AI Agent.
 4. Find the AI Agent using either the name or email address you used in _Step 3_.
@@ -148,18 +146,18 @@ To access the admin portal from the Sandbox account screen and test the validati
 On the Kore.ai XO Platform, navigate to **RingCentral Glip** > **Configurations** and follow the steps below:
 
 1. In the **RingCentral Glip** window, click the **Authorize** button.
-![authorize app](../images/ringcentral_glip15.png)
+![authorize app](/ai-for-service/channels/images/ringcentral_glip15.png)
 
 2. In the **Sign-in** window, click **Continue as** to sign in with the existing user’s account, or click **Use Another Account**.
-![use another account](../images/ringcentral_glip16.png)
+![use another account](/ai-for-service/channels/images/ringcentral_glip16.png)
 
 3. Click **Authorize** on the **Access Request** page.
 4. Once the access token is obtained successfully, authorization is complete.
-![access request](../images/ringcentral_glip17.png)
+![access request](/ai-for-service/channels/images/ringcentral_glip17.png)
 
 5. On the Kore.ai XO Platform, select **_Yes_** for the **Enable Channel** option under the **RingCentral Glip** > **Configurations** tab.
 6. Click **Save** to enable the channel and Publish the AI Agent. [Learn more](../deploy/publishing-bot.md)
-![enable ringcentral](../images/ringcentral_glip18.png)
+![enable ringcentral](/ai-for-service/channels/images/ringcentral_glip18.png)
 
 ## Step 4: Test the Integration
 
@@ -169,7 +167,7 @@ Please follow the steps given [here](https://developers.ringcentral.com/guide/te
 
 Once your app is tested in the Sandbox environment and ready for production, follow the RingCentral app graduation process mentioned [here](https://developer.ringcentral.com/library/getting-started.html#ApplyForProduction) to apply for production after meeting all the graduation requirements for your app as shown below:
 
-![apply for production](../images/ringcentral_glip19.png)
+![apply for production](/ai-for-service/channels/images/ringcentral_glip19.png)
 
 Once your app is production ready, follow the steps below on the Kore.ai XO Platform:
 
