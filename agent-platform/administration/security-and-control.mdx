@@ -8,7 +8,7 @@ Configure authentication, authorization, encryption, API access control, and cus
 
 | Feature | Description |
 |---------|-------------|
-| [Single Sign-On (SSO)](#single-sign-on-sso) | Authenticate users through an external Identity Provider using SAML, WS-Federation, or OpenID Connect |
+| [Authentication Settings](#authentication-settings) | Authenticate users through an external Identity Provider using SAML, WS-Federation, or OpenID Connect |
 | [Authorization Profiles](#authorization-profiles) | Define how the Platform authenticates with external web services using OAuth and other token-based methods |
 | [Encryption Key Management](#encryption-key-management) | Configure platform-managed or bring-your-own-key (BYOK) encryption for account data |
 | [API Scopes](#api-scopes) | Create permission-limited API keys scoped to specific endpoints and integrations |
@@ -16,16 +16,17 @@ Configure authentication, authorization, encryption, API access control, and cus
 
 
 
-## Single Sign-On (SSO)
+## Authentication Settings
 
-Enable SSO to let users authenticate through an external Identity Provider (IDP) instead of the default sign-in flow. Only account owners and admins can enable or disable SSO.
+Authentication Settings lets administrators configure how users sign in to the Platform. You can enable Single Sign-On (SSO) to authenticate users through your organization's identity provider, and Multi-Factor Authentication (MFA) to add a second layer of verification for email/password sign-ins.
 
-| Benefit | Description |
-|---------|-------------|
-| Secure Access | Reduces password fatigue and phishing risk by centralizing credentials |
-| Centralized Management | Grant or revoke access across all accounts from one place |
-| Improved UX | Eliminates repeated logins within a session |
-| Access Control | Enforce security policies consistently across all applications |
+<Note>Only account owners and admins can configure Authentication Settings.</Note>
+
+### How SSO and MFA Work Together
+
+The Platform supports two authentication paths, and MFA scope adjusts automatically based on which path is active:
+
+
 
 ### Supported Protocols & Providers
 
