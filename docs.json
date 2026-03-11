@@ -319,8 +319,9 @@
                   { 
                     "group": "Workflows",
                     "pages": [
-                      "/ai-for-service/workflows/overview",
-                      "/ai-for-service/workflows/triggers-and-access"
+                      "/ai-for-process/workflows/overview",
+                      "/ai-for-process/workflows/triggers-and-access",
+                      "/ai-for-process/workflows/workflow-data-and-execution"
                     ]
                   },
                   "/ai-for-process/nodes",
@@ -328,7 +329,7 @@
                 ]
               },
               {
-                "group": "AI Models",
+                "group": "AI MODELS",
                 "pages": [
                   "/ai-for-process/models",
                   "/ai-for-process/prompts"
