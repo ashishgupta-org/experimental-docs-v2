@@ -310,8 +310,8 @@
             "tab": "AI for Process",
             "pages": [
               "/ai-for-process/index",
-              "/ai-for-process/getting-started",
               "/ai-for-process/concepts",
+              "/ai-for-process/getting-started",
               "/ai-for-process/release-notes/recent-updates",
               {
                 "group": "Building",
@@ -320,6 +320,7 @@
                     "group": "Workflows",
                     "pages": [
                       "/ai-for-process/workflows/overview",
+                      "/ai-for-process/workflows/workflow-builder",
                       "/ai-for-process/workflows/triggers-and-access",
                       "/ai-for-process/workflows/workflow-data-and-execution",
                       "/ai-for-process/workflows/monitor-and-debug"
