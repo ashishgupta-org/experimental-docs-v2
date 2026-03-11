@@ -294,6 +294,13 @@
                 "group": "Platform Services",
                 "pages": [
                   "/ai-for-service/channels",
+                {
+                  "group": "Integrations",
+                  "pages": [
+                  "/ai-for-service/integrations/overview",
+                  "/ai-for-service/contact-center/integrations/overview"
+                  ]
+                }, 
                   "/ai-for-service/integrations"
                 ]
               },
