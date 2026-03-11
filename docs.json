@@ -6,7 +6,7 @@
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
-  },
+	},
   "favicon": {
     "light": "/assets/favicon.png",
     "dark": "/assets/favicon.png"
@@ -314,7 +314,7 @@
               "/ai-for-process/concepts",
               "/ai-for-process/release-notes/recent-updates",
               {
-                "group": "BUILDING",
+                "group": "Building",
                 "pages": [
                   { 
                     "group": "Workflows",
@@ -330,16 +330,28 @@
                 ]
               },
               {
-                "group": "AI MODELS",
+                "group": "AI Models",
                 "pages": [
                   "/ai-for-process/models",
                   "/ai-for-process/prompts"
                 ]
               },
               {
-                "group": "OPERATIONS",
+                "group": "Platform Services",
                 "pages": [
                   "/ai-for-process/administration"
+                ]
+              },
+              {
+                "group": "Administration",
+                "pages": [
+                  "/ai-for-process/administration"
+                ]
+              },
+              {
+                "group": "References",
+                "pages": [
+                  "/ai-for-process/index"
                 ]
               }
             ]
@@ -439,6 +451,12 @@
     },
     "clarity": {
       "projectId": "vja4or1wun"
+    },
+   "logrocket": {
+      "appId": "ehyoae/koreaidocs"
+    },
+    "heap": {
+      "appId": "4257246426"
     }
   },
   "seo": {
