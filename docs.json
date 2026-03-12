@@ -327,6 +327,12 @@
                 ]
               },
               {
+                "group": "Administration",
+                "pages": [
+                  "/ai-for-service/administration"
+                ]
+              },
+              {
                 "group": "References",
                 "pages": [
                   "/ai-for-service/administration"
