@@ -354,7 +354,12 @@
                 "group": "AI Models",
                 "pages": [
                   "/ai-for-process/models",
+                  "/ai-for-process/models/external-models",
+                  "/ai-for-process/models/fine-tuned-model",
+                  "/ai-for-process/models/open-source-models",
+                  "/ai-for-process/models/supported-models",
                   "/ai-for-process/prompts"
+
                 ]
               },
               {
