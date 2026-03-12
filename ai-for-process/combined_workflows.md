@@ -1,820 +1,21 @@
-# About Triggers
 
-Triggers are an advanced automation feature in AI for Process that allows workflows to start automatically when specific events occur in connected applications. This enables true event-driven automation—workflows can run instantly without any manual action.
 
-Triggers are configured in the Start node. You can use triggers alone or together with the Scheduler.
 
-## How Triggers Work
 
-* A trigger listens for real-time events from an integrated third-party app.
-* When the event occurs (for example, a record is created, a status changes, or a threshold is reached), the workflow starts immediately.
-* Event data, including metadata and attachments, is passed into the workflow for downstream processing.
 
-## Prerequisites for Adding a Trigger
 
-To use triggers in a workflow:
 
-* Add the integration app to your workspace.
-* Set up the required connection and authentication profile.
-* Open your workflow in Flow Builder and access the **Start node**, where all triggers are configured.
 
-For detailed configuration steps, see [Start Node – Automate Workflow Initiation](../workflow-builder/types-of-nodes/start-node.md).
 
-<img src="../images/triggers.png" alt="Triggers" title="Add a trigger"/>
 
-## Trigger Payload and Attachments
 
-* Triggers can pass contextual data, metadata, and event-specific IDs.
-* Attachments are provided as temporary URLs (valid for 24 hours). Only one attachment is supported at a time.
-* Downstream nodes can reference trigger values as workflow variables.
 
-## Best Practices
 
-* Use clearly defined events to avoid unnecessary workflow runs.
-* Regularly validate integration connections to keep triggers active. 
-* Confirm payload fields before referencing them in conditions or expressions.
-* Monitor trigger activity to quickly identify inactive or failing triggers and take corrective actions.
 
-## Related Topics
 
-* [Start Node – Automate Workflow Initiation](../workflow-builder/types-of-nodes/start-node.md)
-* [Managing Nodes in a Workflow](../workflow-builder/manage-flow-nodes.md)
 
 
- 
-
-
-
-
-
-
-
-
-
-# About Workflow Monitor
-
- Workflow Monitor allows you to track and analyze your workflow's performance across multiple runs. It provides a comprehensive, time-based view of workflow activities, helping you optimize your AI operations.
-
-## Key Capabilities
-
-* **Performance Tracking**: Monitor your workflows across multiple runs, gaining valuable insights into response times, execution patterns, and overall efficiency.
-* **Dual-View Analytics**:
-    *  **All Runs**: Comprehensive data on all workflow instances, offering a holistic view of endpoint interactions.
-    *  **Model Runs**: Focused analytics on AI node executions, providing deeper insights into language model performance.
-*  **Detailed Metrics**: Access critical performance indicators, including total runs, average response times (P90 and P99), and failure rates, allowing for precise performance tuning.
-* **Triggers overview**: View and monitor event-based and schedule-based triggers for each workflow.
-* **Source information**: Identify what initiated each workflow run, such as a service or time-based trigger.
-
-## Best Practices
-
-* Regularly monitor the Workflow Monitor dashboard to track performance trends.
-* Use time-based searches to analyze specific periods of interest.
-* Combine multiple filters to further analyze particular scenarios.
-* Review detailed run information to understand the flow of data through your workflow and identify any potential issues.
-
-By effectively leveraging Workflow Monitor, you can ensure the optimal performance of your workflows and make data-driven decisions to improve your operations.
-
-
-# Accessing Workflow Monitor
-
-Steps to access the workflow monitor page:
-
-1. Log in to your AI for Process account.
-   
-2. On the **Workflows** page, click the desired workflow.  
-
-    Ensure that the status of the selected workflow is deployed. Workflow monitoring is only available for workflow deployed in production. Workflows that are in debugging or design phases aren't tracked here. 
-
-3. In the left navigation pane, click **Workflow runs**. The Workflow monitor page is displayed.  
-<img src="../images/agent_monitor_new.png" alt="Agent monitor dashboard" title="Agent monitor dashboard"/>
-
-4. Click one of the following tabs to see the data for the deployed workflows:
-    * **All runs**
-    * **Model runs**
-
-    For more information, see [Understanding Workflow Monitor](./understanding-the-workflow-monitor-interface.md).
-
-5. Click each row for detailed information on each workflow run or model run. A detailed view panel opens on the right.  
-
-    For more information, see [Viewing detailed run information](./understanding-the-workflow-monitor-interface.md#viewing-detailed-run-information).
-
-6. (Optional) To filter or search the list of runs or calls on the Workflow monitor page, see [Searching and filtering](./understanding-the-workflow-monitor-interface.md#searching-and-filtering-information).
-
-# Add Input/Output Scanners
-
-You can add input or output scanners to evaluate prompts or responses in your application. Input scanners assess inputs or prompts sent to the LLM node, while output scanners evaluate the responses received from the LLM.
-
-In the following steps, you will learn how to add an input scanner. The steps to add an output scanner are similar to those for an input scanner. You need to add input and output scanners separately based on your requirements.
-
-!!! note
-
-    Scanners must be deployed before you add or use them. [Learn more](./manage-guardrails.md).
-
-Steps to add a Scanner:
-
-1. Log in to your account.
-
-2. In the **Workflows** section, click the workflow to which you want to add the scanner. The Workflow page is displayed. 
-
-2. Click **Guardrails** in the left navigation pane. The Guardrails page is displayed.  
-<img src="./../images/navigate-to-guardrails.png" alt="Navigate to Guardrails" title="Navigate to Guardrails"/>
-
-3. In the Input Scanners section, click **Add Scanner**, select the required scanners from the pop-up list, and then click **Done**. 
-<img src="./../images/add_a_scanner.png" alt="Add Input Scanner" title="Add Input Scanner"/>
-
-    The selected scanners are added to the list.  
-    <img src="./../images/added-guardrails.png" alt="Scanner Added" title="Scanner Added"/>
-
-4. Click an added scanner to configure its settings, which vary depending on the scanner type.
-For example, **Toxicity** has "Threshold" and "End the flow if the risk score is above" settings, while **Regex** has "Enter patterns to ban", "End the flow if the risk score is above", and "Match type" settings.  
-<img src="./../images/toxicity-scanner-settings.png" alt="Configure Scanner's Settings" title="Configure Scanner's Settings"/>
-
-5. (Optional) To add more scanners, click the plus or **Add Scanner** icon. To remove an unused scanner, click the minus or **Remove Scanner** icon.  
-<img src="./../images/add-remove-scanners.png" alt="Remove Scanner" title="Remove Scanner"/>
-
-
-# Agentic Node 
-
-Agentic Node enables seamless integration of the Agentic App into the workflow. This allows you to trigger agent-driven actions and automate decision-making through the capabilities of an Agentic App. It helps combine the structured control of workflow design with the autonomous decision-making power of agentic apps.
-
-By leveraging existing Agentic Apps, it:
-
-* Encourages reusability of existing Agentic Apps.
-* Reduces redundant logic across workflows.
-* Improves maintainability and scalability of automation workflows.
-* Enhances collaboration among different AI agents.
-
-**Key Capabilities**
-
-* Integrate Agentic Apps Natively: Connect workflows to any Agentic App within the same workspace for unified automation and intelligence.
-* Contextual Data Exchange: Pass workflow inputs to the Agentic App and retrieve responses or generated outputs dynamically.
-
-
-## Common Use Cases
-
-Agentic App Node is most useful at a point in a workflow that involves decisions based on unstructured data or context. Some example use cases are listed below.
-
-* Incident Triage: In an incident workflow, the Agentic App Node can evaluate a newly created critical incident by receiving details such as the summary, category, impact, affected services, and similar past incidents. The Agentic App analyzes this input, identifies the probable root cause, and returns a structured response with recommended remediation steps.
-* Invoice Processing: In invoice automation workflows, the Agentic App Node can review invoice details, such as vendor, description, line items, total amount, and cost center, to automatically determine the appropriate expense category or approval path. It can also detect duplicates or identify stale invoices, returning a structured response that the workflow can use to trigger approvals, apply exceptions, or route the invoice for review
-
-
-## How It Works
-
-The Agentic App node enables seamless integration with the agentic apps to perform complex tasks within a workflow. In a workflow, the Agentic App Node acts as a bridge between the workflow and the agentic app, analyzing the task at hand, determining the optimal tools, and autonomously executing the next steps in the process. 
-
-When the workflow reaches the Agentic App Node, the input is passed to the Agentic app, which interprets it, decomposes the task if needed, performs the necessary processing, and returns the output for the following nodes in the workflow to use. This enables the workflow to handle complex tasks with greater intelligence and flexibility.
-
-Note that the Agentic App Node performs only one turn of communication per execution. For multi-step interactions, include additional Agentic App Nodes at the required points in the workflow.
-
-
-![Agentic App Node](images/agentic-app/overview.png "Agentic App Node")
-
-
-
-## Prerequisites
-
-* The Agentic App must be deployed.
-* The Agentic App must belong to the same workspace as the workflow. 
-* The user account used to configure the Agentic app in AI for Process must have access to the Agentic app. 
-
-
-## Add and Configure Agentic Node
-
-Setting up an API node in a workflow involves adding it to the appropriate location in the workflow and configuring its properties.
-
-Under Settings, provide the following details:
-
-* Node Name: Provide a unique identifier for the node. 
-* Click Add Agentic App, then select the Agentic app with which it should be linked.  All existing apps in the same workspace are automatically listed. 
-* Select the app and its deployment environment. 
-* Enter the inputs to be sent to the agentic app as a query. Learn more. 
-
-Under Connections, add the connections to the subsequent nodes after this node executes.
-
-* On Success > Go to Node: After the current node is successfully executed, go to the selected node in the flow to execute next. For example, you can further process the response from the Agentic App using a Function node. 
-* On Failure > Go to Node: Select the next node to which execution should be transferred in case the current node fails.
-
-
-## Passing input to the Agentic App
-
-You can pass input as text to the Agentic App. The text can include custom data or dynamic variables from the context object. Developers can also use both system variables and user-defined variables from the context object as input to the Agentic App. 
-
-For example, you can include a variable such as `{{context.inputKey}}` in the text prompt to pass its value directly to the Agentic App.
-
-
-## Handling Response from the Agentic App
-
-The output from the Agentic App is stored in the workflow’s context object, under the steps field, which tracks the execution state of each node by its unique name or ID. 
-
-For example, if the Agentic App Node is named IncidentTriageApp, its response can be accessed at:
-
-```
-{{context.steps.IncidentTriageApp.output}}.
-```
-
-**Note**
-
-* The response from the agentic app is async and may take time to appear in the context object, depending on how long the agent takes to complete the task. The workflow receives the output only after the Agentic App has fully finished execution.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# AI Nodes for Advanced LLM Capabilities
-
-AI nodes are multimodal components that utilize LLMs for specialized tasks, transforming workflows by supporting diverse file types. These nodes can process and generate various media formats, such as text, images, and audio, within a single workflow. Their adaptability enables developers to build dynamic systems that seamlessly handle and manipulate multiple data types.
-
-Each AI node processes inputs and generates responses, which can be integrated into broader workflows within the workflow. AI nodes are categorized into the following types:
-
-* **Text to Text Nodes**
-
-     * Process textual input and generate textual output based on the given instructions.
-     * Used for tasks like summarization, translation, content generation, and chatbot interactions.
-     * Example: AI-powered documentation assistants, automated report generation. [Learn more](../types-of-nodes/text-to-text-node.md).
-
-* **Text to Image Nodes**
-
-    * Convert textual descriptions into visual representations/relevant images based on the instructions and keywords you provide.
-    * Used for generating AI art, concept sketches, and synthetic images.
-    * Example: AI-driven design workflows, creative content generation. [Learn more](../types-of-nodes/text-to-image-node.md).
-
-* **Audio to Text Nodes** 
-
-    * Convert spoken words (in multiple languages) in an audio file into written text using text transcription. 
-    * Used in transcription, voice assistants, and speech analysis.
-    * Example: Automated meeting transcriptions, AI-driven voice command processing. [Learn more](../types-of-nodes/audio-to-text-node.md).
-
-* **Image to Text Nodes**
-
-    * Extract meaningful text from images.
-    * Used for OCR (Optical Character Recognition), image captioning, and content analysis.
-    * Example: AI-powered document scanners, and accessibility workflows. [Learn more](../types-of-nodes/image-to-text-node.md).
-
-
-
-# API Node - Automate API Calls
-
-The API Node enables you to seamlessly connect your workflow to external systems and fetch real-time data by making REST or SOAP API calls. Whether you're enriching customer records, retrieving transaction status, or pushing updates, the API node helps you integrate third-party services directly into your workflow logic. With support for both synchronous and asynchronous operations, the node offers flexibility for a wide range of automation needs.
-
-## Key Capabilities
-
-* **Connect to External Systems**: Use REST or SOAP protocols to integrate with services like CRMs, ERPs, payment gateways, or third-party platforms.
-* **Synchronous & Asynchronous Modes**: Wait for a response before proceeding, or run the API call in the background and continue the workflow.
-* **Flexible Authorization Options**: Use pre-authorized tokens or request user-level authorization during execution.
-* **Support for Headers & Payloads**: Add custom headers and body formats (JSON, XML, Form URL Encoded, or raw custom data).
-* **Request & Response Testing**: Preview API responses before finalizing the setup.
-* **Dynamic Timeouts**: Configure how long the node should wait for a response.
-
-## Common Use Cases
-
-* **Data Enrichment**: Fetch user, order, or product details from an external system.
-* **Document Retrieval**: Pull attachments or metadata from a third-party storage service.
-* **Webhook Integration**: Trigger a downstream system based on workflow decisions.
-* **Approval Checks**: Perform identity verification, fraud checks, or compliance validation via external APIs.
-* **Notifications or Updates**: Send alerts or update external dashboards from within the workflow.
-
-## How It Works
-
-The API Node enables seamless integration with external services by sending and processing API requests. It allows you to configure the request method, endpoint, authentication, headers, and payload, then routes the workflow based on the response (success or failure). You can test and validate the API call directly within the flow to ensure proper functionality.
-
- <img src="../images/api_node_how_it_works.jpg" alt="API node" title="API node"/>
-
-
-## Add and Configure an API Node
-
-Setting up an API node in a workflow involves adding the node at the appropriate location in the flow and configuring various node properties.
-
-Steps to add and configure the node:
-
-### Step 1: Open Workflow Builder
-
-* Log in to your account.
-
-* Select your workflow → Click **Go to Flow**.
-
-### Step 2: Add the API Node
-
-* In the flow builder, click the “**+**” icon on any existing node on the canvas and select **API** from the pop-up menu. 
-* Alternatively, drag the **API** node from the Assets panel onto the canvas.
-
-### Step 3: Configure the Node
-
-Click the added node to open its properties dialog box. The General Settings for the node are displayed.  
-<img src="./../images/api-node-general-settings.png" alt="Go to Flow Canvas" title="Go to Flow Canvas"/>
-
-**General Settings**
-
-<table>
-  <tr>
-   <td><strong>Field</strong></td>
-   <td><strong>Description</strong></td>
-  </tr>
-  <tr>
-   <td>Node Name
-
-   </td>
-   <td>Enter an appropriate name for the node.
-
-   </td>
-  </tr>
-  <tr>
-   <td>Type
-
-   </td>
-   <td>Select the API type from the drop-down: <strong>REST</strong> or <strong>SOAP</strong>.
-
-   </td>
-  </tr>
-  <tr>
-   <td>Integration Type
-
-   </td>
-  <td>
-  Select the integration type: <strong>Synchronous</strong> or <strong>Asynchronous</strong>.
-
-  <strong>Synchronous</strong>: Waits for a response before proceeding.
-  <ul>
-    <li>
-      <strong>Synchronous Timeout</strong>: Range: <strong>5 to 180 seconds</strong> (default: <strong>60 seconds</strong>). 
-      Triggers a timeout if the response is not received within the set time.
-    </li>
-  </ul>
-
-  <strong>Asynchronous</strong>: Continues processing without waiting for response.
-  <ul>
-    <li>
-      <strong>Asynchronous Timeout:</strong> Range: <strong>30 to 300 seconds</strong> (default: <strong>60 seconds</strong>).
-    </li>
-    <li>
-      <strong>No timeout</strong>: Waits indefinitely for the response without triggering a timeout error. 
-      Useful for automating custom workflows like approvals and checks.
-    </li>
-  </ul>
-
-  <strong>Note</strong>: Ensure the "<strong>No timeout</strong>" setting is selected for both the API node and the workflow to avoid timeout errors.
-</td>
-  </tr>
-  <tr>
-   <td>Request Definition
-
-   </td>
-  <td>
-  Define the service request details to make the call and fetch the data. Click <strong>Define Request</strong> and enter or select the following details in the Edit Request dialog box:
-  <ul>
-    <li>Select the request type from the list.</li>
-    <li>Paste your API Endpoint URL or cURL in the text field.</li>
-    <li>
-      In the <strong>Auth</strong> section, select the required <strong>Auth Profile</strong> from the list of configured profiles. Next, provide the authorization details.
-      <ul>
-        <li>
-          <strong>Pre-authorize the Integration</strong>: Select this option if the authorization has already been completed in advance. This is suitable for API calls that do not require the end user to authenticate or provide credentials.
-          <strong>Example</strong>: Connecting to a service using a system-level token or client credentials that have already been authorized. In this case, the same credentials are used for all users.
-        </li>
-        <li>
-          <strong>Allow users to authorize the integration</strong>: Choose this option if each end user needs to dynamically authorize the integration at runtime. This is useful when user-specific credentials or tokens are required for access.
-          <strong>Example</strong>: Connecting to a third-party service like Google Drive, where each user must log in and grant access to their account. This ensures personalized access and respects individual user permissions.
-        </li>
-      </ul>
-    </li>
-    <li>In the <strong>Headers</strong> tab, specify the details of the Key and Value pair. For example, Key: Content-Type, Value: application/json</li>
-    <li>
-      The <strong>Body</strong> tab is displayed for all request types except GET. Select the body content type from the drop-down list:
-      <ul>
-        <li><strong>application/x-www-form-urlencoded</strong>: Allows file uploads through HTTP POST requests. Add key/value pairs encoded by the platform.</li>
-        <li><strong>application/json</strong>: Transmits data between servers and web applications using JSON format without processing.</li>
-        <li><strong>application/xml</strong>: Sends XML payload for SOAP services using POST methods, with the option to include node values.</li>
-        <li><strong>Custom</strong>: Allows sending request payload in non-standard formats, such as for handling blogs or custom variables.</li>
-      </ul>
-    </li>
-    <li>Click the <strong>Test</strong> button at the top-right corner of the dialog. The API response is displayed on the <strong>Response</strong> tab.</li>
-    <li>Click <strong>Save</strong> at the top-right corner of the dialog.</li>
-  </ul>
-</td>
-
-  </tr>
-</table>
-
-### Step 4: Add Connections
-
-Click the **Connections** icon in the left navigation and select **Go to Node** for success and failure conditions.
-
-<img src="./../images/api-node-connections.png" alt="API node Connections Properties" title="API node Connections Properties"/>
-
-* **On Success** > **Go to Node**: After the current node is successfully executed, go to a selected node in the flow to execute next. For example, you can process the data from this node into a Function node and then use it further. In this case, select the Function node. 
-* **On Failure** > **Go to Node**: If the execution of the current node fails, go to an appropriate node having a custom error message configured.
-
-### Step 5: Test the Flow
-
-Finally, test the flow and fix any issues found. Click the **Run Flow** button at the top-right corner of the flow builder and follow the onscreen instructions.
-
-
-!!! note
-    
-    Use the following syntax to access an API node using the context variable: 
-    ~~~
-    {{context.steps.Start.APINodeName}}
-    ~~~
-
-
-
-
-# Audio To Text Node - Make Voice Transcriptions Effortless
-
-The **Audio to Text** node is a powerful AI component that enables you to convert speech into written text within your automation flows. By leveraging Automatic Speech Recognition (ASR), this node processes audio inputs and generates accurate text outputs across multiple supported languages. Configuration options enable you to define input sources, specify output formats, and seamlessly integrate transcription into broader workflows, allowing for transcription as part of larger, multi-step processes such as call analysis, feedback collection, or content indexing.
-
-## Key Capabilities
-
-* **Automatic Speech Recognition (ASR)**: Converts spoken audio into accurate written text using OpenAI Whisper-1 for transcription. 
-
-* **Multilingual Transcription and Translation Support**: Supports transcription in multiple languages and translation into English. 
-
-* **Audio Input Handling**: Accepts audio files or audio URLs as input, making it suitable for both real-time and recorded speech processing.
-
-* **Large File Handling with Size Limits**: Supports audio files up to 25 MB. Larger files can be split at logical points to avoid mid-sentence breaks and ensure smooth, timely, and accurate transcriptions. 
-
-* **Text Output Generation**: Generates clean, structured text in multiple formats based on prompt instructions, ready for downstream use such as summarization, translation, or storage. 
-
-## Common Use Cases
-
-* **Meeting and Lecture Transcription**: Automatically convert meetings, interviews, or classroom sessions into searchable text. 
-
-* **Customer Support Automation**: Transcribe voice interactions to feed into chatbots or help desk workflows. 
-
-* **Subtitle and Caption Generation**: Generate accurate subtitles for video content across platforms. 
-
-* **Voice Command Processing**: Convert spoken commands into text for use in voice-enabled applications. 
-
-* **Audio-Based Translation**: Transcribe audio for translation into other languages as part of a multilingual workflow.
-
-
-## Example Use Case
-
-The **Audio to Text** node processes uploaded customer service call recordings and generates transcribed (and optionally translated) text based on configured parameters and output instructions. These transcriptions can be used to assess conversation quality, evaluate agent performance, and support audits or training efforts. By removing the need for manual transcription or external APIs, the node offers a faster, more efficient, and fully integrated solution for audio processing within your workflow.
-
-## How It Works
-
-The Audio to Text Node integrates seamlessly into your workflows, accepting audio inputs, whether as files or URLs from previous nodes and passing the transcribed text to subsequent nodes. You can configure parameters such as the processing model, translation preferences, timestamp inclusion, and prompt instructions to tailor the transcription process to your specific needs. The node supports both static and dynamic inputs via context variables, making it highly adaptable for a wide range of voice-driven automation scenarios.
-
-<img src="../images/how-audio-to-text-works.png" alt="how audio to text works" title="how audio to text works"/>
-
-In this document, you will learn how to add the node to your flow, configure it with audio inputs and transcription settings, manage outputs such as text or translated content, and test the results within your workflow.
-
-
-## Selection of the Audio File
-
-You can add audio input in one of the following ways:
-
-1. Manually select and upload an audio file in the allowed format.
-2. Configure the **Input variable** by selecting <b><i>Text</i></b> for **Type** in the following window when adding input variables for the node. [Learn more](../perform-other-actions-on-the-flow-builder/manage-input-and-output.md#adding-input-variables). 
-
-   You must provide the audio file URL when running the flow, as mentioned [here](../../../workflows/workflow-builder/types-of-nodes/audio-to-text-node.md#step-3-run-the-flow).
-
-   <img src="../images/select-text-input-type.png" alt="select text type input" title="select text type input"/>
-
-   <div class="admonition note">
-   <p class="admonition-title">Note</p>
-   <p>Uploading audio files as input variables is <b>not supported</b> only URLs are supported.</p>
-   </div>
-
-### Supported Audio Formats
-
-The following audio file formats are supported by the node:
-
-* M4a
-* Mp3
-* Webm
-* Mp4
-* Mpga
-* Wav
-* Mpeg
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Using other formats will result in a system error.</p>
-</div>
-
-### Audio File Size Limits
-
-* Maximum supported file size: **25 MB**.
-* For larger files, split them into **25 MB or smaller** segments and upload them to prevent input processing (transcription) and output generation delays.
-* Maintain context and avoid mid-sentence breaks when splitting files.
-
-### Processing Model
-
-AI for Process uses **OpenAI Whisper-1** for transcription.
-
-**Use Cases**
-
-This node is commonly used for:
-
-* Transcribing meetings, interviews, or lectures.
-* Automating customer service chatbots.
-* Generating subtitles for videos.
-* Voice command processing for applications.
-* Audio translation.
-
-### Translation
-
-* Transcribes and translates speech in non-English languages see [Open AI Whisper-supported language](https://platform.openai.com/docs/guides/speech-to-text#supported-languages) into English when enabled.
-* Inverse translation (English to other languages) isn't currently supported.
-
-
-### Important Considerations
-
-* Audio uploads and settings are handled by the [File Upload API]().
-
-* OpenAI Whisper automatically removes offensive and banned words during transcription. 
-* Performance tracking is available under **Settings** > **Model Analytics Dashboard** > **External Models** tab. [Learn more](../../../settings/monitoring/analytics/model-analytics-dashboard.md). 
-
-Metrics include:
-
-* **Minutes transcribed/Minutes of Audio** (total audio processed by the node) since the Whisper models are charged based on the minutes of the audio consumed.
-* **Input and output tokens** since the Whisper models usually support a small number of tokens, and tracking the counts is necessary. [Learn more](../../../settings/monitoring/analytics/model-analytics-dashboard.md#tokens).
-* Each model execution is logged on the **Model Traces** page, displaying summarized data for:
-    * **Input**, **Output**, and **Response Time**
-    * **Translation,** and **Timestamp**.  [Learn more](../../../settings/monitoring/analytics/model-traces.md).
-
-## Add and Configure an Audio to Text Node
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Before proceeding, you must add an external LLM to your account.</p>
-</div>
-
-
-### Step 1: Open Flow Builder
-
-* Log in → In AI for Process Modules top menu and click **Workflows**.
-
-    <img src="../images/access-workflows.png" alt="access workflows" title="access workflows"/>
-
-* Select your workflow and click **Go to Flow**.
-
-### Step 2: Add the Node
-
-* Click the "**+**" icon for **Audio to Text** under **AI** in the **Assets** panel. Alternatively, drag the node from the panel onto the canvas. You can also click **AI** in the pop-up menu and click **Audio to text**.
-    <img src="../images/select-audio-to-text.png" alt="add node" title="add node"/>
-
-### Step 3: Configure the Node
-
-* Click the added node to open its properties dialog box. The **General Settings** for the node are displayed.
-
-    <img src="../images/properties-dialog-audio-to-text.png" alt="properties dialog" title="properties dialog"/>
-
-* Enter or select the following **General Settings**:
-    * **Node Name**: Enter an appropriate name for the node. For example, “*CustomerSupportConversation*.”
-    * Provide the input variable that is set for the node for the **Audio File** field. [Learn more](../perform-other-actions-on-the-flow-builder/manage-input-and-output.md).
-    * Select a model from the list of configured models.
-    * (Optional) Turn on the toggle for the following to enable the respective feature:
-         * **Translation**: Translate other languages supported by the model to English.
-         * **Timestamps**: The date and time at which each dialog was spoken.
-    * Provide clear instructions you want the model to follow when processing the node in the **Prompt** field, such as specific questions or requests  
-    
-      You can use a hardcoded instruction like "<i>Use direct speech and highlight words related to problems and challenges in the voice/audio file</i>," when a static audio file URL input is provided in the Start node. 
-    
-      Alternatively, you can add dynamic prompt instructions referencing different audio file URLs from the Start node using the syntax: `{{context.steps.Start.variable_name}}`, where `variable_name` stores the audio file URL. 
-      
-      For example, if `ConversationFile` stores the audio file URL (passed dynamically during runtime), you can reference it in the prompt using the syntax `{{context.steps.Start.ConversationFile}}`.
-
-         <img src="../images/dynamic-prompt-example.png" alt="dynamic prompt example" title="dynamic prompt example"/>
-    
-      You may include simple instructions regarding the style of the transcription, correct words or proper nouns, in case the model couldn't figure out what the spoken word was, fix punctuations, add context, and more. 
-      
-      For example, `Use a clean verbatim transcription style by omitting filler words such as "um," "uh," or "you know." Correct any misheard or unclear words, especially product names, company names, and technical terms. Ensure proper punctuation and sentence casing to make the transcript easy to read. If a word is not clear, mark it as "inaudible" with a timestamp. Add short speaker labels (Customer: and Agent:) and make light contextual corrections for grammar and clarity without altering the original meaning.`
-
-    <Note>Whisper models process up to <b>224 tokens</b> in the input prompt and ignore any input exceeding this limit. </Note>
-                
-    <Note>When the Model isn't selected, the prompt details aren't provided, or both, the error message `Proper data needs to be provided in the LLM node` is displayed.</Note>
-
-    * **Response JSON schema**:  Define a JSON schema for structured responses. This step is optional and depends on the selected model.   
-    You can define a JSON schema to structure the model's response if the chosen model supports the response format. By default, if no schema is provided, the model will respond with plain text.
-    Supported JSON schema types include: `String`, `Boolean`, `Number`, `Integer`, `Object`, `Array`, `Enum`, and `anyOf`. Ensure the schema follows the standard outlined here: [Defining JSON schema](../perform-other-actions-on-the-flow-builder/defining-json.md).
-    If the schema is invalid or mismatched, errors will be logged, and you must resolve them before proceeding.  
-    For more information about how the model parses the response and separates keys from the content body, see: [Structured Response Parsing and Context Sharing in Workflows](../perform-other-actions-on-the-flow-builder/model_response_parsing.md).
-
-
-* Click the **Connections** icon and select the **Go to Node** for success and failure conditions. 
-   <img src="../images/connections-audio-to-text.png" alt="click connections" title="click connections"/>
-
-     * **On Success** > **Go to Node**: After the current node is successfully executed, go to a selected node in the flow to execute next, such as an AI node, Function node, Condition node, API node, or End node.
-     * **On Failure** > **Go to Node**: If the execution of the current node fails, go to the End node to display any custom error message from the **Audio to Text** node.
-
-* Finally, <a href="#step-3-run-the-flow">run the flow</a> and fix any issues found.
-
-## Test the Flow for the Node
-
-### Step 1: (Optional) Add Input Variable(s)
-
-* Click the **Input** tab of the **Start** node, and click **Add Input Variable** to configure the input for the flow’s test run. [Learn more](../perform-other-actions-on-the-flow-builder/manage-input-and-output.md#adding-input-variables).
-
-    <img src="../images/add-input-variable-audio-to-text.png" alt="add input variable" title="add input variable"/>
-
-* Select <b><i>Text</i></b> for the <b>Type</b> field in the <b>Enter input variable</b> window to define a text input variable.
-
-* Click **Save**.
-    
-    <img src="../images/select-text-type-input.png" alt="select text and save" title="select text and save"/>
-
-Add all the required input variables to run the flow in the **Input** section of the **Start** node.
-
-### Step 2: Add Output Variable(s)
-
-* Click the **Output** tab for the **Start** node.
-
-* Click **Add Output Variable**.
-    
-    <img src="../images/click-add-output-variable.png" alt="click add output variable" title="click add output variable"/>
-
-* Enter the value for <b>Name (key)</b> and select <b><i>String</i></b> for <b>Type</b> to generate the transcribed text output.
-
-* Click <b>Save</b>. <a href="../text-to-text-node/#access-the-ai-nodes-output" >Learn more</a> about accessing the node’s output.
-
-    <img src="../images/save-output-variable.png" alt="save output variable" title="save output variable"/>
-
-### Step 3: Run the Flow
-
-To run and test the flow, follow the steps below:
-
-* Click the **Run Flow** button at the top-right corner of the flow builder.
-
-    <img src="../images/click-run-button.png" alt="click run button" title="click run button"/>
-
-* (Optional) Add the value for **Input Variable** if you have configured it to test the flow. Otherwise, go directly to the next step.
-    
-    <img src="../images/gen-output-audio-to-text.png" alt="generate output" title="generate output"/>
-
-* Click <b>Generate Output</b>.
-
-  The **Debug** window generates the flow log and results, as shown below. [Learn more](../perform-other-actions-on-the-flow-builder/run-the-flow.md) about running the workflow.
-
-    <img src="../images/debug-window-audio-to-text.png" alt="debug window" title="debug window"/>
-
-
-# Condition Node - Automate Conditional Flows
-
-The Condition Node helps you control the flow of your workflow based on whether specific logical conditions are met. You can define rules using context variables, node outputs, or custom values to create dynamic branching.
-
-Based on whether conditions are met, the workflow follows different paths, giving you precise control over execution.
-
-The node can handle three types of conditions:
-
-* `If`: It directs the flow to a specific path if criteria (Node, Context, or Value) are met.
-* `Else`: It defines the fallback path that the flow follows when the IF condition isn't met .
-* `Else If`: It allows you to configure another set of criteria (Node, Context, or Value) to be met when the initial 'If' condition isn't satisfied.
-
-Whether you need a simple true/false evaluation or a more complex branching using AND, OR, or multiple ELSE IF checks, the Condition node enables precise control over decision logic.
-
-    <Note>Due to security reasons, a condition can be called a maximum of 10 times in a workflow. Exceeding this limit will result in an error.</Note>
-
-## Key Capabilities
-
-* Flexible Condition Types: Define `IF`, `ELSE IF`, and `ELSE` paths using context variables, static values, or output from previous steps.
-* `AND` or `OR` Logic: Combine multiple criteria for complex decision-making.
-* Multi-Branch Execution: Direct the flow to different downstream nodes based on the condition evaluation.
-* Context Variable Support: Easily reference values from earlier steps in the flow using `{{context.variable}}` and `{{context.steps.nodename.output}}`.
-* Inline Expression Support: Use Node, Context, or Value types directly in conditional expressions.
-
-## Common Use Cases
-
-* Route Based on Classification: Direct flow based on category, type, or priority (e.g., route a ticket if priority = `High`).
-* Fallback Logic: Use `ELSE` conditions to redirect the flow if no match is found.
-* Dynamic Node Triggering: Select which downstream actions to execute based on user inputs or computed data.
-* Validation Checks: Stop execution or branch if key data is missing or invalid.
-* Multi-Step Filtering: Combine multiple conditions for granular control (e.g., if country = US AND status = active).
-
-## How It Works
-
-The Condition Node dynamically controls workflow paths by evaluating data against user-defined rules. It checks inputs using comparison operators and routes execution based on whether conditions are met. The node can process context variables or previous node outputs, enabling adaptive flows and error handling.
-
-<img src="../images/condition_node_new.png" alt="Condition node" title="Condition node"/>
-
-In this document, you will learn how to set up a Condition Node in a workflow, including adding it at the appropriate location and configuring its properties.
-
-## Add and Configure a Condition Node
-
-### Step 1: Open Workflow Builder
-
-* Log in to your AI for Process account.
-
-* Select your workflow and click **Go to Flow**.
-
-### Step 2: Add the Condition Node
-
-* Click the `+` icon on an existing node and select Condition node.
-* Or drag the Condition node from the Assets panel onto the canvas.
-
-### Step 3: Configure the Node
-
-1. Click the added node to open its properties panel.
-2. Node Name: Enter a descriptive name
-3. Set IF Condition:
-    * Select a context variable: Enter `{{context.` → Choose a variable → Close with `}}`. For example: `{{context.ambiguous_sub_categories}}`.
-    * Choose an operator (e.g., Contains).
-    * Enter a value or another context variable. For example: `{{context.steps.Sub_Category_Detection.output}}`.
-    * (Optional) Combine multiple criteria using AND/OR.
-4. Set Routing:
-    * **Go To:** Select the node if the IF condition is met.
-    * **ELSE:** Select the node if the IF condition isn't met.
-
-       <img src="./../images/condition-node-settings-filled.png" alt="Condition Node's Settings" title="Condition Node's Settings"/>
-
-
-### Step 4: Test the Flow
-
-* Click Run Flow at the top-right of the builder.
-* Verify the flow behaves as expected and fix any errors.
-
-<Note>If a condition is true or false but has no connected node, the following error message is displayed: `Path not defined. Please check the flow.` </Note>
-
-
-# Configure a Workflow
-
-You can modify your workflow's general details, such as its name and description, asynchronous configuration, and environment variables. You can also undeploy, and delete the workflow if it's not in use.
-
-## Sync/Async Mode Setup
-
-You can set the sync/async mode configuration for the workflow endpoint. If you change the mode, you must redeploy the workflow. The key difference is that synchronous mode blocks the client until the response is received, while asynchronous mode allows the client to continue working while the integration processes the request.
-
-Steps to enable and configure the asynchronous mode:
-
-1. Log in → In AI for Process Modules top menu → Click **Workflows**.
-2. Select the workflow to modify its configuration. The Workflow page is displayed.
-3. Click **Configurations** in the left navigation and then click **Setup sync/async**.  
-<img src="../images/setup-sync-async.png" alt="Setup sync/async" title="Setup sync/async"/>
-
-4. The Sync/Async mode setup pop-up displays with async mode disabled by default.
-    * **Synchronous mode timeout**: The allowed range is 60 to 300 seconds (5 minutes). The default is 180 Seconds (3 minutes). The endpoint will trigger a timeout error if the request is not completed within the selected time frame.  
-<img src="../images/sync-mode-timeout.png" alt="Sync Mode Timeout" title="Sync Mode Timeout"/>
-
-    * **Asynchronous mode configuration**: Turn on the **Enable async** toggle and do the following:
-
-        1. Provide the URL of your external application to which messages are to be delivered. 
-        2. Enter the access token generated by the external application.
-        3. Set the Asynchronous mode timeout duration: 
-            * **Set timeout**: The allowed timeout range is 60 seconds to 600 seconds (10 minutes). The default is 180 Seconds (3 minutes). 
-            * **No timeout**: This allows the workflow to process the request without a time limit.  
-            <img src="../images/async-mode-configuration.png" alt="Async Mode Configuration" title="Async Mode Configuration"/>
-        4. Click **Save**.
-
-    !!! note 
-
-        Timeout precedence: Workflow timeout > Node timeout > Model timeout.
-
-4. If you have changed the mode, you must redeploy the workflow: Go to **Workflow endpoint** in the left navigation and click the **Deploy** button on the top-right corner of the page.
-
-## Manage Environment Variables
-
-You can define reusable values and configurations for the workflow using Environment variables. Those values
-can be used by different nodes in the workflow flow.
-
-### Add an Environment Variable
-
-Steps to add an environment variable:
-
-1. On the **Workflow** tab, select the workflow you want to modify the details. The Workflow page is displayed.
-
-2. Click **Configurations** in the left navigation and then select **Manage environment variables**.  
-<img src="../images/manage-environment-variables.png" alt="Manage Environment Variables" title="Manage Environment Variables"/>
-
-3. The **Create environment variable** dialog box is displayed. Click **Add** or **Add variable**.
-
-4. Specify the following information on the **Add variable** dialog box:  
-<img src="../images/add-variable.png" alt="Add a variable" title="Add a variable"/>
-
-    * **Variable name**: Provide a descriptive name for the variable.
-    * **Secure variable**: Use the toggle to enable security for the variable. (If you are enabling the security, read the onscreen information carefully to understand the impact.)
-    * **Value**: Enter the desired value for the variable.
-    * **Notes** (optional): Enter any notes about how the variable should be used or its purpose.
-
-5. Click **Save**. The created variable is listed on the **Create environment variable** dialog box.
-
-
-
-### Edit or Delete an Environment Variable
-
-Click the three dots icon corresponding to the Name of the variable to edit the details of the variable or Delete to delete a variable.
-
-<img src="../images/manage-a-variable.png" alt="Manage a Variable" title="Manage a Variable"/>
-
-## Undeploy the Workflow
-
-You can undeploy the workflow if it's no longer in use. Undeploying the workflow will result in an immediate disconnection from all active instances. Click **Proceed to undeploy** on the Configurations page and follow the on-screen instructions.
-
-## Delete the Workflow
-
-You can delete an undeployed workflow. Deleting the workflow will remove all the associated data. Click **Proceed to delete** on the Configurations page and follow the on-screen instructions.
-
+<!-- Documented in /ai-for-process/workflows/workflow-data-and-execution.mdx -->
 # Context Object - Structural Reference Guide
 
 The *Context Object* is the central runtime state container for any workflow execution within the platform.
@@ -1323,186 +524,9 @@ print(context['customData']['stage'])
 4. Use Script Nodes only when dynamic or computed context manipulation is required.
 
 
-# Create a New API Key for Workflow Access
-
-You can generate an API key for a workflow and share it with trusted users to enable secure access to your deployed workflow from external environments. It helps ensure that only authorized users from external systems can interact with the workflow.
-
-Steps to create an API key for your workflow:
-
-1. Log in to your AI for Process account.
-
-2. Select the required workflow from the list. 
-
-3. Click **API keys** in the left panel.  
-<img src="../images/create-new-api-key.png" alt="Create new API Key" title="Create new API Key"/>
-
-4. Click the **Create a new API** key button. The Create new API key dialog is displayed.  
-<img src="../images/generate-new-api-key.png" alt="Generate new API Key" title="Generate new API Key"/>
-
-5. Provide a descriptive name for the key and click **Generate key**. The newly generated API key is displayed in the dialog. Click **Copy and close** to save the key to your clipboard. You can now share this key with authorized users as needed.  
-<img src="../images/copy-and-close-api-key.png" alt="Copy and Close API Key" title="Copy and Close API Key"/>
-
-    !!! note
-        AI for Process won't show the API key again for security reasons. Keep the API key secure and confidential. Never share it with unauthorized users or expose it in client-side code or browsers.
-
-All generated API keys are listed in the API keys section for easy reference and management. 
-<img src="../images/api-keys-list.png" alt="API Keys List" title="API Keys List"/>
 
 
-# Create a New Version of the Flow
-
-You can save versions of your flows, restore older versions, and delete versions if needed. After you have deployed a flow, it will appear on the Workflow page with the status 'Deployed'.
-
-**Steps to create a new version of the flow**:
-
-1. Click the down arrow on the canvas header.
-
-    The **Flow versions** dialog is displayed.
-
-1. To save a version of the flow, click the **+ icon**.
-
-    <img src="./../images/create-a-new-version.png" alt="Create a New Version" title="Create a New Version"/>
-
-    The **Name the version** dialog is displayed.
-
-1. Enter a **Version name** and **Description** for the flow and click **Save**.
-
-    <img src="./../images/name-a-new-version-for-flow.png" alt="Name a New Version for Flow" title="Name a New Version for Flow"/>
-
-    The version you saved will be the current version. Any changes you make in the flow are auto-saved to the current version.
-
-    !!! note
-
-        In the **Flow versions** dialog, you can click the 3 dots icon beside the version name to restore or delete a version. When you restore a version, the current version goes down to the bottom of the list, and the restored version becomes the current version and is moved to the top of the list. If you want to edit a restored version, a new current version is created, and you can save this version with a new name. A deployed version can only be restored but cannot be deleted.
-
-
-# Create a Workflow
-
-You can create a new workflow to leverage models, build flows, and later deploy it as an endpoint. You can start the workflow creation journey from the Workflows page. The page also allows you to manage your existing workflows and view the workflows that have been shared with you by others.
-
-Steps to create a Workflow:
-
-1. Log in to your account.  
-1. On the **Workflows** page, select **Create new workflow**. The **New workflow** dialog box is displayed.
-
-    <img src="../images/workflow-description.png" alt="Create a workflow" title="Create a workflow"/>
-
-1. Enter a name and a brief description for the workflow and select **Create**. The workflow is created, and the **Workflow** option is displayed. You can start creating your workflow now.
-
-[:octicons-arrow-left-24: Back to AI node](../types-of-nodes/image-to-text-node.md#step-3-configure-the-node)
-
-# Defining JSON Schema
-
-You can refer to the following JSON schema format to define your schema:
-
-```
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "properties": {
-    "<property_name_1>": {
-      "type": "<data_type>", 
-      "description": "<description_of_the_property>"
-    },
-    "<property_name_2>": {
-      "type": "<data_type>",
-      "format": "<optional_format>", 
-      "enum": ["<value1>", "<value2>", "<value3>"], 
-      "description": "<description_of_the_property>"
-    }
-  },
-  "required": ["<required_property_1>", "<required_property_2>"]
-}
-```
-
-
-**Here is a step-by-step guide to help you define your JSON schema:**
-
-1. **Create the schema object:**
-    - Set `type: "object"` to specify the root level as an object type.
-    - Add a `properties` object to define all fields.
-2. **Define property names:**
-    - Create an object for each property, including `type` and `description`.
-    - Common types: `string`, `number`, `boolean`, `array`, `object`.
-    - For arrays, use `items` to define element types.
-3. **Set constraints:**
-    - Add a `required` array at each level, listing all required fields.
-4. **Handle special fields:**
-    - Use `enum` to restrict optional values.
-
-# Deploy a Workflow
-
-AI for Process supports both synchronous and asynchronous workflow deployment modes.
-
-!!! Note
-
-    Before deploying the workflow, you must fix any errors or warnings in the Workflow.
-
-## Synchronous Endpoint
-
-A synchronous endpoint handles requests and responses immediately and sequentially. The client waits for the server to process the request and return a response before proceeding. This approach is suitable for real-time operations requiring immediate response.
-
-## Asynchronous Push and Poll Endpoints
-
-Push endpoints actively send data to the client, while poll endpoints require the client to retrieve the data on their own. The key difference between asynchronous push and poll endpoints is how the response data is delivered to the client.
-
-### Asynchronous Push Endpoints
-
-* The integration "pushes" the response data to the client as soon as it becomes available.
-* This allows the client to receive updates in real-time or near real-time.
-* The client sets up a webhook or other mechanism to receive the pushed data.
-* Useful for integrations where the client needs to be notified of changes immediately.
-
-### Asynchronous Poll Endpoints
-
-* The client "polls" or periodically checks the integration to fetch the response data.
-* The client initiates the requests to retrieve the data on their schedule.
-* The client is responsible for checking for new data rather than waiting for it to be pushed.
-* Useful for integrations where the client only needs to check for updates at specific intervals.
-
-## Deploy a Workflow
-
-Steps to deploy a workflow:
-
-1. Log in → AI for Process.
-2. Click the **Workflows** tab on the top navigation bar, and select the workflow you want to deploy.
-3. Click **Workflow endpoint** in the left menu.
-4. The Workflow endpoint page is displayed. Click **Deploy**.  
-<img src="../images/agent_platform/tool_endpoint.png" alt="Deploy Button" title="Deploy Button"/>
-
-5. The workflow is deployed and the **Sync** and **Async poll** endpoints are generated.  
-<img src="../images/new_endpoint.png" alt="Sync Async Poll" title="Sync Async Poll"/>
-
-6. If you want to generate an Async push endpoint for the workflow, do the following:
-    1. Click the **Async push** tab and click **Enable**/**Settings**.  
-    <img src="../images/enable-settings.png" alt="Enable/Settings" title="Enable/Settings"/>
-
-    2. The **Sync/Async mode setup** pop-up displays with sync mode disabled by default.
-        * **Synchronous mode timeout**. The allowed range is 60 to 300 seconds (5 minutes). The default is 180 Seconds (3 minutes). The endpoint will trigger a timeout error if the request isn't completed within the selected time frame.  
-
-        * **Asynchronous mode configuration**: Turn on the **Enable async** toggle and do the following:
-
-            1. Provide the URL of your external application to which messages are to be delivered. 
-            2. Enter the access token generated by the external application.
-            3. Set the Asynchronous mode timeout duration: 
-                * **Set timeout**: The allowed timeout range is 60 seconds to 600 seconds (10 minutes). The default is 180 Seconds (3 minutes). 
-                * **No timeout**: This allows the workflow to process the request without a time limit.  
-                <img src="../images/async-mode-configuration.png" alt="Async Mode Configuration" title="Async Mode Configuration"/>
-           
-        !!! note
-
-            Timeout precedence: Workflow timeout > Node timeout > Model timeout.
-
-    4. Click **Save**. The async push endpoint is created.  
-    <img src="../images/async-push-endpoint.png" alt="Deploy Button" title="Deploy Button"/>
-
-## Redeploy a Workflow for the Changes in the Flow
-
-The Deployed version of your workflow's flow is accessible from the **Workflow** page. You can click the **View the Flow** button to view the flow in read-only mode.  
-<img src="../images/deployed-version.png" alt="Deployed Version" title="Deployed Version"/>
-
-You can change the in-development version of the flow. To redeploy the workflow with the updated flow, click the **Deploy** button at the top-right corner of the **Workflow endpoint** page. The redeployment doesn't change the workflow's endpoint.
-
+<!-- Documented in /ai-for-process/nodes.mdx -->
 # Doc Intelligence Node - Automate Data Extraction
 
 The Doc Intelligence Node enables document analysis and information extraction within workflows. It allows workflows to analyze documents using AI engines such as Docling, OpenAI, Anthropic, or Azure. Users can configure the node to process files from a static URL or workflow context variable, select the appropriate engine, and define engine-specific options to extract structured data or insights.
@@ -1630,6 +654,7 @@ This section describes the supported file types, models, and size limits for eac
 
 
 
+<!-- Documented in /ai-for-process/nodes.mdx -->
 # DocSearch Node – Power Your Flows with Context-Driven Search
 
 The DocSearch Node is a Retrieval-Augmented Generation (RAG)-powered component that enhances the real-time discovery and retrieval of information chunks from available resources through an established Search AI app connection. Indexed and high-quality content is fetched from your Sources repository, enabling fast, precise, and context-aware responses to user queries.
@@ -1788,6 +813,7 @@ To run and test the flow, follow the steps below:
 * [Run Workflow](../perform-other-actions-on-the-flow-builder/run-the-flow.md) - Run and test an workflow in real time.
 
 
+<!-- Documented in /ai-for-process/nodes.mdx -->
 # End Node - Automate Workflow Completion
 
 End nodes let you display the flow's outputs upon success or an error message in case of failure.
@@ -1911,6 +937,7 @@ The file information is displayed as follows:
 * [Configure a workflow](./configure-a-workflow.md) - Modify the workflow's details, configure settings, or undeploy and delete it if unused.
 
 
+<!-- Documented in /ai-for-process/workflows/overview.mdx -->
 # About Workflow
 
 Workflow allows you to build an AI agent using a simple drag-and-drop interface combined with smart code editing. Using workflow, developers can quickly create complex AI agents for various use cases, such as candidate evaluation, banking apps, content generation, and so on.
@@ -1922,6 +949,7 @@ After building the flow, you can test it to ensure the app functions as intended
 
 
 
+<!-- Documented in /ai-for-process/nodes.mdx -->
 # Function Node - Empower Workflows with Custom Code
 
 The Function node is a powerful component that enables you to extend your automation flows with custom business logic and data processing capabilities. By embedding JavaScript or Python code directly into your workflows, you can manipulate variables in ways that preset nodes can't achieve. Configuration options provide you the ability to specify input and output variables and write corresponding execution code.
@@ -2404,7 +1432,8 @@ When you share a workflow with another user within the same account, all configu
 
 * **Supported Libraries** - [Learn more](../types-of-nodes/script-libraries.md) about the list of supported libraries in the script editor of the Function node.
 
-﻿# Human Node – Pause for Review and Approval
+<!-- Documented in /ai-for-process/nodes.mdx -->
+# Human Node – Pause for Review and Approval
 
 The Human Node introduces a human-in-the-loop capability within automation workflows. It allows workflows to pause and incorporate human judgment into automated processes. Designated users can review, approve, or provide input before the workflow continues, ensuring critical steps are validated, decisions are accurate, and compliance requirements are met. This capability is especially useful when certain decisions cannot be automated and require manual validation, oversight, or confirmation.
 
@@ -2598,6 +1627,7 @@ You can access this data using context variables:
 * **In Parallel Branches** – When used in parallel branches, the branch merge will wait for the Human node to complete. This prevents the workflow from merging prematurely.
 
 
+<!-- Documented in /ai-for-process/nodes.mdx -->
 # Image to Text Node – Streamline Document Processing with OCR Automation
 
 The **Image to Text** node is a versatile multimodal component that enables you to extract information from images and generate text-based outputs within your automation flows. By processing uploaded images alongside user-defined prompts, the node can describe visuals, answer image-related questions, or extract embedded text. It leverages external LLM models such as OpenAI and Anthropic for advanced image interpretation and text generation, making it ideal for automating workflows that involve visual content analysis.
@@ -2882,6 +1912,7 @@ To cancel the import process during the conflicting environment variables resolu
 * [Deploy a Workflow](deploy-a-workflow.md)- Explore synchronous and asynchronous deployment methods for workflow integration.
 * [Configure a Workflow](configure-a-workflow.md)- Modify the workflow's details, configure settings, or undeploy and delete it if unused.
 
+<!-- Documented in /ai-for-process/inbox.mdx -->
 # Inbox – Review Human-in-the-Loop Workflow Requests
 
 The Inbox is a dedicated tab in the platform for managing Human-in-the-Loop (HITL) approval requests. It provides a centralized, easy-to-use interface that lets users view, process, and track all requests that require human decision-making during workflow execution.
@@ -2944,6 +1975,7 @@ To respond to a group request:
 After you take action, the request is removed from the Unassigned list for all group members. Its status updates automatically in both the **Inbox** and **Workflow Monitor**, and it can be viewed later under the appropriate status filter (such as *Expired*) in either the **Group** or **Personal** tab, depending on your configuration.
 
 
+<!-- Documented in /ai-for-process/nodes.mdx -->
 # Integration Node – Enhance Workflows with External Services
 
 The **Integration Node** is a powerful and flexible component that acts as a run-time engine for securely connecting to third-party services, enabling seamless data exchange and automation through configured actions and auto-generated JSON. It leverages pre-configured connections and authentication methods to serve as a bridge between your workflow and external platforms, supporting actions such as exporting data from a site or fetching broken back links within your automation without any coding effort.
@@ -3151,6 +2183,7 @@ The node’s output is stored in a context variable. You can access the variable
 
 
 
+<!-- Documented in /ai-for-process/nodes.mdx -->
 # Loop Node - Automate Repetitive Tasks in Your Workflow
 
 The Loop node enables you to repeat a set of steps for each item in a list, making it easy to handle tasks such as processing invoices, analyzing documents, or calling an API multiple times. It’s designed to help you automate repetitive actions, one item at a time.
@@ -3181,10 +2214,10 @@ By placing the Function and Text-to-Image nodes inside the Loop node, the workfl
 
 ## Common Use Cases
 
-* **Batch Processing**: Process multiple records, invoices, or documents in one run—for example, extracting fields from a list of invoices.
+* **Batch Processing**: Process multiple records, invoices, or documents in one run, for example extracting fields from a list of invoices.
 * **API Calls on Multiple Inputs**: Loop through a list of customer IDs to fetch data or enrich records using an external API.
 * **Bulk Notifications**: Send personalized messages or emails to a list of recipients, such as customers or employees.
-* **Conditional Execution**: Perform specific actions for each item based on dynamic conditions— for example, route based on status or priority.
+* **Conditional Execution**: Perform specific actions for each item based on dynamic conditions, for example route based on status or priority.
 * **Multi-step Approval or Review Flows**: Run data through sequential approval steps for each request or user submission.
 * **Report Generation**: Generate individual summaries or PDFs for each customer, product, or team in a dataset.
 * **Automated Testing**: Reuse a test flow across different input values or environments.
@@ -3349,6 +2382,7 @@ After running the workflow, use the Debug panel to inspect loop behavior, debug 
 
 
 
+<!-- Documented in /ai-for-process/workflows/workflow-builder.mdx -->
 # Manage Nodes in Workflow
 
 A flow consists of a sequence of nodes connected on the workflow builder canvas. You can easily add nodes to the canvas, connect them, rename, rearrange, and delete them as needed.
@@ -3778,7 +2812,8 @@ When a flow includes parallel branches, the Debug Logs panel helps you trace eac
 
 
 
-# Deploy and Manage Guardrails 
+<!-- Documented in /ai-for-process/nodes.mdx -->
+# Deploy and Manage Guardrails
 
 To use input and output scanners in AI for Process, you need to deploy them first. Once deployed, a scanner will be available across all your workflows on the platform.
 
@@ -3800,6 +2835,7 @@ Steps to deploy a scanner:
 
 
 
+<!-- Documented in /ai-for-process/workflows/workflow-builder.mdx -->
 # Manage Input and Output
 
 Workflows allow you to define input and output variables, which become accessible as context objects throughout the execution of the flow.
@@ -3889,6 +2925,7 @@ The output variable is displayed on the Output tab of the <b>Manage Input & Outp
 
 
 
+<!-- Documented in /ai-for-process/workflows/workflow-builder.mdx -->
 # Structured Response Parsing and Context Sharing in Workflows
 
 When given a defined schema, the model produces structured data suitable for reuse across workflow steps. The system automatically parses the response and stores key values in a shared context object, eliminating the need for manual handling and reducing redundancy. This method enables different nodes to "communicate" by accessing shared data—ideal for workflows that involve both text and image handling.
@@ -3958,6 +2995,7 @@ Each key is stored individually in the context, making it easy to trace, validat
 * **Precise data access**: Pull specific values directly into any node—such as the End node—without writing parsing logic or using function nodes. It’s fast, accurate, and efficient.
 
 
+<!-- Documented in /ai-for-process/nodes.mdx -->
 # Guardrails for Safety and Compliance
 
 Guardrails are safety measures that ensure AI-generated responses from large language models (LLMs) are appropriate and align with standards. You can deploy various guardrail models and use them to scan the inputs or prompts and output results. The scanners ensure responsible AI interactions while generating responses.
@@ -4006,6 +3044,7 @@ Supported Scanners:
 * Ensures LLM outputs remain aligned with the given input prompt.
 
 
+<!-- Documented in /ai-for-process/workflows/overview.mdx -->
 # About Workflows
 
 A workflow represents a structured, executable flow of tasks designed to automate a specific process. Each workflow follows a predefined sequence of steps and executes independently for each run, ensuring predictable, repeatable outcomes.
@@ -4057,6 +3096,7 @@ The platform offers features for end-to-end workflow implementation and maintena
 
 **Audit Logs:** View detailed audit logs for all workflow activities to support troubleshooting and ensure traceability with real-time event tracking. [Learn more](./workflow-audit-log.md).
 
+<!-- Documented in /ai-for-process/workflows/workflow-builder.mdx -->
 # Run Workflows
 
 You can run and test a workflow to see how it works in real time. When you run a workflow, it generates a context object and stores it temporarily at the node level, allowing you to monitor progress through the debug log.
@@ -4092,882 +3132,23 @@ The output includes key information such as the start and end times, the total t
 
 
 
-# List of Supported Libraries
-
-The following pre-existing libraries can be selected for use in the script editor of the [Function Node](./function-node.md).
-
-* [json](#json)
-* [enum](#enum)
-* **Numerical Libraries**: [numPy](#numpy), [pandas](#pandas), [collections](#collections), [math](#math), [cmath](#cmath), [statistics](#statistics), and [random](#statistics).
-* **String Manipulation Libraries**: [re](#re) and [textwrap](#textwrap).
-* **Date-time Libraries**: [datetime](#datetime), [time](#time), and [calendar](#calendar).
-* [Itertools](#itertools)
-
-<hr />
-
-The libraries mentioned above are imported and made available in the function node in the following formats:
-
-```
-import json
-import numpy
-import scipy
-import pandas
-import collections
-import math
-import cmath
-import statistics
-import random
-import enum
-import re
-import textwrap
-import datetime
-import time
-import calendar
-import itertools
-```
-<hr />
-
-## Functions of Supported Libraries
-
-### json
-
-```
-  "json": [
-        "JSONDecodeError",
-        "JSONDecoder",
-        "JSONEncoder",
-        "dumps",
-        "loads"
-    ]
-```
-
-### enum
-
-```
-"enum": [
-        "DynamicClassAttribute",
-        "Enum",
-        "Flag",
-        "IntEnum",
-        "IntFlag"
-    ]
-```
-<hr />
-
-## Numerical Libraries
-
-### numPy
-
-```
-"numpy": [
-        "abs",
-        "absolute",
-        "add",
-        "all",
-        "allclose",
-        "alltrue",
-        "amax",
-        "amin",
-        "angle",
-        "any",
-        "append",
-        "apply_along_axis",
-        "apply_over_axes",
-        "arange",
-        "arccos",
-        "arccosh",
-        "arcsin",
-        "arcsinh",
-        "arctan",
-        "arctan2",
-        "arctanh",
-        "argmax",
-        "argmin",
-        "argpartition",
-        "argsort",
-        "argwhere",
-        "around",
-        "array",
-        "array2string",
-        "array_equal",
-        "array_equiv",
-        "array_repr",
-        "array_split",
-        "array_str",
-        "asanyarray",
-        "asarray",
-        "asarray_chkfinite",
-        "ascontiguousarray",
-        "asfarray",
-        "asfortranarray",
-        "asmatrix",
-        "atleast_1d",
-        "atleast_2d",
-        "atleast_3d",
-        "average",
-        "bartlett",
-        "base_repr",
-        "binary_repr",
-        "bincount",
-        "bitwise_and",
-        "bitwise_not",
-        "bitwise_or",
-        "bitwise_xor",
-        "blackman",
-        "block",
-        "bmat",
-        "bool_",
-        "broadcast",
-        "broadcast_arrays",
-        "broadcast_shapes",
-        "broadcast_to",
-        "busday_count",
-        "busday_offset",
-        "busdaycalendar",
-        "byte",
-        "byte_bounds",
-        "bytes_",
-        "can_cast",
-        "cbrt",
-        "cdouble",
-        "ceil",
-        "cfloat",
-        "character",
-        "chararray",
-        "choose",
-        "clip",
-        "clongdouble",
-        "clongfloat",
-        "column_stack",
-        "common_type",
-        "complex128",
-        "complex256",
-        "complex64",
-        "complexfloating",
-        "compress",
-        "concatenate",
-        "conj",
-        "conjugate",
-        "convolve",
-        "copy",
-        "copysign",
-        "copyto",
-        "corrcoef",
-        "correlate",
-        "cos",
-        "cosh",
-        "count_nonzero",
-        "cov",
-        "cross",
-        "csingle",
-        "cumprod",
-        "cumsum",
-        "datetime64",
-        "datetime_as_string",
-        "datetime_data",
-        "deg2rad",
-        "degrees",
-        "delete",
-        "deprecate",
-        "deprecate_with_doc",
-        "diag",
-        "diag_indices",
-        "diag_indices_from",
-        "diagflat",
-        "diagonal",
-        "diff",
-        "digitize",
-        "divide",
-        "divmod",
-        "dot",
-        "double",
-        "dsplit",
-        "dstack",
-        "dtype",
-        "ediff1d",
-        "einsum",
-        "einsum_path",
-        "empty",
-        "empty_like",
-        "equal",
-        "errstate",
-        "exp",
-        "exp2",
-        "expand_dims",
-        "expm1",
-        "extract",
-        "eye",
-        "fabs",
-        "fill_diagonal",
-        "find_common_type",
-        "finfo",
-        "fix",
-        "flatiter",
-        "flatnonzero",
-        "flip",
-        "fliplr",
-        "flipud",
-        "float128",
-        "float16",
-        "float32",
-        "float64",
-        "float_power",
-        "floating",
-        "floor",
-        "floor_divide",
-        "fmax",
-        "fmin",
-        "fmod",
-        "format_float_positional",
-        "format_float_scientific",
-        "frexp",
-        "fromfunction",
-        "full",
-        "full_like",
-        "gcd",
-        "geomspace",
-        "get_printoptions",
-        "geterr",
-        "geterrcall",
-        "geterrobj",
-        "gradient",
-        "greater",
-        "greater_equal",
-        "half",
-        "hamming",
-        "hanning",
-        "heaviside",
-        "histogram",
-        "histogram2d",
-        "histogram_bin_edges",
-        "histogramdd",
-        "hsplit",
-        "hstack",
-        "hypot",
-        "i0",
-        "identity",
-        "iinfo",
-        "imag",
-        "in1d",
-        "indices",
-        "inexact",
-        "inner",
-        "insert",
-        "int16",
-        "int32",
-        "int64",
-        "int8",
-        "int_",
-        "intc",
-        "integer",
-        "interp",
-        "intersect1d",
-        "intp",
-        "invert",
-        "is_busday",
-        "isclose",
-        "iscomplex",
-        "iscomplexobj",
-        "isfinite",
-        "isfortran",
-        "isin",
-        "isinf",
-        "isnan",
-        "isnat",
-        "isneginf",
-        "isposinf",
-        "isreal",
-        "isrealobj",
-        "isscalar",
-        "issctype",
-        "issubdtype",
-        "issubsctype",
-        "iterable",
-        "kaiser",
-        "kron",
-        "lcm",
-        "ldexp",
-        "left_shift",
-        "less",
-        "less_equal",
-        "lexsort",
-        "linspace",
-        "log",
-        "log10",
-        "log1p",
-        "log2",
-        "logaddexp",
-        "logaddexp2",
-        "logical_and",
-        "logical_not",
-        "logical_or",
-        "logical_xor",
-        "logspace",
-        "longcomplex",
-        "longdouble",
-        "longfloat",
-        "longlong",
-        "mask_indices",
-        "mat",
-        "matmul",
-        "matrix",
-        "max",
-        "maximum",
-        "maximum_sctype",
-        "may_share_memory",
-        "mean",
-        "median",
-        "meshgrid",
-        "min",
-        "min_scalar_type",
-        "minimum",
-        "mintypecode",
-        "mod",
-        "modf",
-        "moveaxis",
-        "msort",
-        "multiply",
-        "nan_to_num",
-        "nanargmax",
-        "nanargmin",
-        "nancumprod",
-        "nancumsum",
-        "nanmax",
-        "nanmean",
-        "nanmedian",
-        "nanmin",
-        "nanpercentile",
-        "nanprod",
-        "nanquantile",
-        "nanstd",
-        "nansum",
-        "nanvar",
-        "ndarray",
-        "ndenumerate",
-        "ndim",
-        "ndindex",
-        "nditer",
-        "negative",
-        "nested_iters",
-        "nextafter",
-        "nonzero",
-        "not_equal",
-        "number",
-        "obj2sctype",
-        "ones",
-        "ones_like",
-        "outer",
-        "packbits",
-        "pad",
-        "partition",
-        "percentile",
-        "piecewise",
-        "place",
-        "poly",
-        "poly1d",
-        "polyadd",
-        "polyder",
-        "polydiv",
-        "polyfit",
-        "polyint",
-        "polymul",
-        "polysub",
-        "polyval",
-        "positive",
-        "power",
-        "printoptions",
-        "prod",
-        "product",
-        "promote_types",
-        "ptp",
-        "put",
-        "put_along_axis",
-        "putmask",
-        "quantile",
-        "rad2deg",
-        "radians",
-        "ravel",
-        "ravel_multi_index",
-        "real",
-        "real_if_close",
-        "recarray",
-        "reciprocal",
-        "record",
-        "remainder",
-        "repeat",
-        "require",
-        "reshape",
-        "resize",
-        "result_type",
-        "right_shift",
-        "rint",
-        "roll",
-        "rollaxis",
-        "roots",
-        "rot90",
-        "round",
-        "row_stack",
-        "sctype2char",
-        "searchsorted",
-        "select",
-        "set_printoptions",
-        "set_string_function",
-        "setbufsize",
-        "setdiff1d",
-        "seterr",
-        "seterrcall",
-        "setxor1d",
-        "shape",
-        "shares_memory",
-        "short",
-        "sign",
-        "signbit",
-        "signedinteger",
-        "sin",
-        "sinc",
-        "single",
-        "sinh",
-        "size",
-        "sort",
-        "sort_complex",
-        "spacing",
-        "split",
-        "sqrt",
-        "square",
-        "squeeze",
-        "std",
-        "subtract",
-        "sum",
-        "swapaxes",
-        "take",
-        "take_along_axis",
-        "tan",
-        "tanh",
-        "tensordot",
-        "tile",
-        "timedelta64",
-        "trace",
-        "transpose",
-        "trapz",
-        "tri",
-        "tril",
-        "tril_indices",
-        "tril_indices_from",
-        "trim_zeros",
-        "triu",
-        "triu_indices",
-        "triu_indices_from",
-        "true_divide",
-        "trunc",
-        "typename",
-        "ubyte",
-        "uint",
-        "uint16",
-        "uint32",
-        "uint64",
-        "uint8",
-        "uintc",
-        "uintp",
-        "ulonglong",
-        "union1d",
-        "unique",
-        "unpackbits",
-        "unravel_index",
-        "unwrap",
-        "ushort",
-        "vander",
-        "var",
-        "vdot",
-        "vectorize",
-        "vsplit",
-        "vstack",
-        "where",
-        "who",
-        "zeros",
-        "zeros_like"
-    ]
-
-```
-<a href="https://numpy.org/doc/stable/reference/index.html#reference" >Learn more</a>.
-
-### pandas
-
-```
-"pandas": [
-        "BooleanDtype",
-        "Categorical",
-        "CategoricalDtype",
-        "CategoricalIndex",
-        "DataFrame",
-        "DateOffset",
-        "DatetimeIndex",
-        "DatetimeTZDtype",
-        "Flags",
-        "Float32Dtype",
-        "Float64Dtype",
-        "Grouper",
-        "Index",
-        "Int16Dtype",
-        "Int32Dtype",
-        "Int64Dtype",
-        "Int8Dtype",
-        "Interval",
-        "IntervalDtype",
-        "IntervalIndex",
-        "MultiIndex",
-        "NamedAgg",
-        "Period",
-        "PeriodDtype",
-        "RangeIndex",
-        "Series",
-        "SparseDtype",
-        "StringDtype",
-        "Timedelta",
-        "TimedeltaIndex",
-        "Timestamp",
-        "UInt16Dtype",
-        "UInt32Dtype",
-        "UInt64Dtype",
-        "UInt8Dtype",
-        "array",
-        "bdate_range",
-        "concat",
-        "cut",
-        "date_range",
-        "describe_option",
-        "eval",
-        "factorize",
-        "from_dummies",
-        "get_dummies",
-        "get_option",
-        "infer_freq",
-        "interval_range",
-        "isna",
-        "isnull",
-        "json_normalize",
-        "lreshape",
-        "melt",
-        "merge",
-        "merge_asof",
-        "merge_ordered",
-        "notna",
-        "notnull",
-        "option_context",
-        "period_range",
-        "qcut",
-        "reset_option",
-        "set_eng_float_format",
-        "set_option",
-        "test",
-        "timedelta_range",
-        "to_datetime",
-        "to_numeric",
-        "to_timedelta",
-        "unique",
-        "value_counts",
-        "wide_to_long"
-    ]
-```
-<a href="https://pandas.pydata.org/docs/reference/index.html" >Learn more</a>.
-
-### collections
-
-```
-"collections": [
-        "ChainMap",
-        "Counter",
-        "OrderedDict",
-        "UserDict",
-        "UserList",
-        "UserString",
-        "defaultdict",
-        "deque",
-        "namedtuple"
-    ]
-```
-<a href="https://docs.python.org/3/library/collections.html" >Learn more</a>.
-
-### math
-
-```
-"math": [
-        "acos",
-        "acosh",
-        "asin",
-        "asinh",
-        "atan",
-        "atan2",
-        "atanh",
-        "ceil",
-        "comb",
-        "copysign",
-        "cos",
-        "cosh",
-        "degrees",
-        "dist",
-        "erf",
-        "erfc",
-        "exp",
-        "expm1",
-        "fabs",
-        "factorial",
-        "floor",
-        "fmod",
-        "frexp",
-        "fsum",
-        "gamma",
-        "gcd",
-        "hypot",
-        "isclose",
-        "isfinite",
-        "isinf",
-        "isnan",
-        "isqrt",
-        "ldexp",
-        "lgamma",
-        "log",
-        "log10",
-        "log1p",
-        "log2",
-        "modf",
-        "perm",
-        "pow",
-        "prod",
-        "radians",
-        "remainder",
-        "sin",
-        "sinh",
-        "sqrt",
-        "tan",
-        "tanh",
-        "trunc"
-    ]
-```
-<a href="https://docs.python.org/3/library/math.html" >Learn more</a>.
-
-### cmath
-
-```
-"cmath": [
-        "acos",
-        "acosh",
-        "asin",
-        "asinh",
-        "atan",
-        "atanh",
-        "cos",
-        "cosh",
-        "exp",
-        "isclose",
-        "isfinite",
-        "isinf",
-        "isnan",
-        "log",
-        "log10",
-        "phase",
-        "polar",
-        "rect",
-        "sin",
-        "sinh",
-        "sqrt",
-        "tan",
-        "tanh"
-    ]
-```
-<a href="https://docs.python.org/3/library/cmath.html" >Learn more</a>.
-
-### statistics
-
-```
-"statistics": [
-        "Counter",
-        "Decimal",
-        "Fraction",
-        "NormalDist"
-    ]
-```
-<a href="https://docs.python.org/3/library/statistics.html" >Learn more</a>.
-
-### random
-
-```
- "random": [
-        "Random",
-        "SystemRandom",
-        "betavariate",
-        "choice",
-        "choices",
-        "expovariate",
-        "gammavariate",
-        "gauss",
-        "getrandbits",
-        "getstate",
-        "lognormvariate",
-        "normalvariate",
-        "paretovariate",
-        "randbytes",
-        "randint",
-        "random",
-        "randrange",
-        "sample",
-        "seed",
-        "setstate",
-        "shuffle",
-        "triangular",
-        "uniform",
-        "vonmisesvariate",
-        "weibullvariate"
-    ]
-```
-<a href="https://docs.python.org/3/library/random.html" >Learn more</a>.
-
-<hr />
-
-## String Manipulation Libraries
-
-### re
-
-```
- "re": [
-        "compile",
-        "error",
-        "escape",
-        "findall",
-        "finditer",
-        "fullmatch",
-        "match",
-        "purge",
-        "search",
-        "split",
-        "sub",
-        "subn",
-        "template"
-    ]
-```
-<a href="https://docs.python.org/3/library/re.html" >Learn more</a>.
-
-### textwrap
-
-```
- "textwrap": [
-        "TextWrapper",
-        "dedent",
-        "fill",
-        "indent",
-        "shorten",
-        "wrap"
-    ]
-```
-<a href="https://docs.python.org/3/library/textwrap.html" >Learn more</a>.
-
-<hr />
-
-## Date-time Libraries
-
-### datetime
-
-```
-"datetime": [
-        "date",
-        "datetime",
-        "time",
-        "timedelta",
-        "timezone",
-        "tzinfo"
-    ]
-```
-<a href="https://docs.python.org/3/library/datetime.html" >Learn more</a>.
-
-### time
-
-```
- "time": [
-        "asctime",
-        "clock_gettime",
-        "clock_gettime_ns",
-        "ctime",
-        "gmtime",
-        "localtime",
-        "mktime",
-        "monotonic",
-        "monotonic_ns",
-        "perf_counter",
-        "perf_counter_ns",
-        "process_time",
-        "process_time_ns",
-        "strftime",
-        "strptime",
-        "struct_time",
-        "time",
-        "time_ns",
-        "tzset"
-    ]
-```
-<a href="https://docs.python.org/3/library/time.html" >Learn more</a>.
-
-### calendar
-
-```
- "calendar": [
-        "Calendar",
-        "HTMLCalendar",
-        "IllegalMonthError",
-        "IllegalWeekdayError",
-        "LocaleHTMLCalendar",
-        "LocaleTextCalendar",
-        "TextCalendar",
-        "calendar",
-        "different_locale",
-        "firstweekday",
-        "format",
-        "formatstring",
-        "isleap",
-        "leapdays",
-        "month",
-        "monthcalendar",
-        "monthrange",
-        "prcal",
-        "prmonth",
-        "setfirstweekday",
-        "timegm",
-        "weekday",
-        "weekheader"
-    ]
-```
-<a href="https://docs.python.org/3/library/calendar.html" >Learn more</a>.
-
-<hr />
-
-## Itertools
-
-```
-"itertools": [
-
-        "accumulate",
-        "chain",
-        "combinations",
-        "combinations_with_replacement",
-        "compress",
-        "count",
-        "cycle",
-        "dropwhile",
-        "filterfalse",
-        "groupby",
-        "islice",
-        "permutations",
-        "product",
-        "repeat",
-        "starmap",
-        "takewhile",
-        "tee",
-        "zip_longest"
-    ]
-```
-<a href="https://docs.python.org/3/library/itertools.html" >Learn more</a>.
-
-<hr />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+{/* Check if the below is covered in triggers article */}
+
+<!-- Documented in /ai-for-process/workflows/triggers-and-access.mdx -->
 # Start Node - Automate Workflow Initiation
 
 The Start node is the mandatory entry point for every workflow. When you create a new workflow, the Start node is automatically added to the canvas. Every workflow must begin with this node to function properly.
@@ -5138,6 +3319,7 @@ Steps to configure the node:
 
 
 
+<!-- Documented in /ai-for-process/nodes.mdx -->
 # Evaluate Guardrails for Efficiency
 
 After adding and configuring the necessary scanners, you can verify that they adhere to the specified standards. Test the effectiveness of an individual scanner or a group of scanners and then tweak the scanner's settings if required.
@@ -5169,6 +3351,7 @@ Steps to test the Guardrails or Scanners:
 
 
 
+<!-- Documented in /ai-for-process/nodes.mdx -->
 # Text to Image Node: Turn Text into Stunning Visuals
 
 The **Text to Image** node is a powerful AI component that enables you to generate images dynamically within your automation flows using natural language input. By providing descriptive text and keywords, you can define what the image should include or exclude, and produce multiple high-quality variants in a single run. 
@@ -5378,6 +3561,7 @@ The **Debug** window generates the flow log and results, as shown below. [Learn 
 
 <img src="../images/debug-window-text-to-image.png" alt="debug window" title="debug window"/>
 
+<!-- Documented in /ai-for-process/nodes.mdx -->
 # Text to Text Node - Automate Text Transformation
 
 The Text to Text node is part of the AI node family in the Workflow Builder, enabling the dynamic transformation of input text into a desired text output within a single workflow step. It leverages large language models (LLMs) to produce content that adheres to specific tone, structure, and instructions defined via prompts. This node is ideal for tasks involving summarization, rewriting, generation, and formatting of text data.
@@ -5521,6 +3705,7 @@ The node’s output is stored in a context variable. You can access the variable
 
 <Note> AI for Process can automatically recognize variables and outputs. To do so, type "context.steps." and you will see available variables and nodes, including the nodes' outputs.</Note>
 
+<!-- Documented in /ai-for-process/workflows/triggers-and-access.mdx -->
 # Triggers
 
 The Triggers page provides a detailed view of all configured triggers for your workflows. It helps you monitor trigger activity, understand their configuration, and manage workflows effectively.
@@ -5562,6 +3747,7 @@ The Triggers page provides a detailed view of all configured triggers for your w
 * **Last Run / Next Run**: Execution history and upcoming scheduled run.
 
 
+<!-- Documented in /ai-for-process/workflows/monitor-and-debug.mdx -->
 # Understanding Workflow Monitor
 
 The Workflow Monitor capabilities are shown on the following tabs:
@@ -5822,6 +4008,7 @@ The table below lists the errors that can occur in the **Workflow Monitoring** d
 
 
 
+<!-- Documented in /ai-for-process/workflows/monitor-and-debug.mdx -->
 # Track Events and Actions For a Workflow
 
 Audit Logs provides full visibility into user actions and system interactions, tracking logins, role changes, and model updates through dynamic time-stamped logs and tracking capabilities.
@@ -5864,6 +4051,7 @@ The Audit Logs dashboard displays the following information to collectively prov
 * **Date and Time:** Represents when the event occurred.
 * **Description:** Provides detailed information about what was done.
 
+<!-- Documented in /ai-for-process/workflows/monitor-and-debug.mdx -->
 # Workflow Change Log
 
 The workflow change log enables admins to track, audit, and review changes made to an workflow over time. This feature enables transparency and accountability by providing a history of all actions taken within the flow, including updates to node properties, user changes, and version-specific modifications, making it ideal for monitoring workflow evolution and managing collaborative work.
