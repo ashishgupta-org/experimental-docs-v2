@@ -144,7 +144,7 @@ When enabled, the external agent's response is delivered directly to the user, b
 
 ---
 
-## Step 3: Configure Delegation
+#### Configure Delegation
 
 **Applies to:** Apps using the **Adaptive Network** orchestration pattern only.
 
@@ -152,17 +152,17 @@ Add delegation rules to define how this agent routes tasks to other agents in th
 
 ---
 
-## Review and Create
+#### Review and Create
 
 Review all configuration settings, then click **Create** to register the external agent in your application.
 
 ---
 
-## Request and Response Formats
+#### Request and Response Formats
 
 The proxy agent communicates with external agents using a defined structure. Your external agent must accept requests and return responses in the formats described below.
 
-### Request Format
+** Request Format**
 
 The proxy agent sends requests to the external agent in the following structure:
 
@@ -205,7 +205,7 @@ The proxy agent sends requests to the external agent in the following structure:
 
 See the full field reference in [Execute API](../apis/agentic-apps/execute).
 
-### Response Format
+**Response Format**
 
 The external agent must return responses in the following structure:
 
@@ -253,7 +253,7 @@ The external agent must return responses in the following structure:
 
 ---
 
-## Handling Format Variations
+#### Handling Format Variations
 
 If your external agent does not follow the expected request or response format, create an adapter service between the Platform and your external agent:
 
@@ -265,7 +265,7 @@ If your external agent does not follow the expected request or response format, 
 
 
 
-## Key Characteristics
+#### Key Characteristics
 
 | Feature | Description |
 |---------|-------------|
