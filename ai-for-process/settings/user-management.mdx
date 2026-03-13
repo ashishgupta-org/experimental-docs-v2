@@ -1,2712 +1,482 @@
+---
+title: Invite and Manage Account Users
+description: Manage users in your AI for Process account — invite individuals or import in bulk, synchronize from Active Directory, assign roles, monitor status, and unlock accounts.
+---
+
 # Invite and Manage Account Users
 
-The **Users** feature simplifies account administration through centralized workflows for inviting, importing, and managing users. The workflows work together to streamline user administration and ensure efficient collaboration, access control, and status monitoring.
+The **Users Management** module in the **Settings** console provides centralized workflows for inviting, importing, and managing users. As an admin, you can:
 
-**Key Features**
+- Invite users via email or bulk-import from a file.
+- Synchronize users from your organization's Active Directory (AD).
+- Assign and change roles to control access and permissions.
+- Monitor and manage user statuses — active, inactive, and locked.
+- Configure user profile fields for your domain.
 
-* **User Invitation**: Easily invite individual users or groups via email.
-* **Invitation Management**: Resend invitations for users who haven't yet joined.
-* **Bulk Import**: Add multiple users efficiently by uploading CSV or TXT files.
-* **Active Directory Sync**: Synchronize user data directly from your organization's Active Directory.
-* **Role Management**: Assign and reassign user roles to control access and permissions.
-* **Status Tracking**: Monitor user statuses (active, inactive, locked) from a centralized dashboard.
-* **Account Unlocking**: Quickly unlock user accounts that have been locked due to failed login attempts.
-* **User Search**: Easily find specific users using the search functionality.
-* **User Deletion**: Remove individual or multiple users from your AI for Process account as needed.
+<Warning>Only users with the Admin role or higher (with Users Management permissions) can access the **Settings** console.</Warning>
 
-**Best Practices**
+**Best practices:**
 
-* Regularly review and update user roles.
-* Use bulk import to add multiple users efficiently.
-* Monitor the locked users and inactive invitations.
-* Maintain users for effective account management.
+- Regularly review and update user roles.
+- Use bulk import to add multiple users efficiently.
+- Monitor locked users and inactive invitations.
+
+---
 
 ## Users Dashboard
 
-The dashboard displays user counts by status:
+The dashboard displays user counts by status and detailed user information including name, email, role, and status.
 
-* **Active**: Users with active accounts who can interact with other AI for Process users.
-* **Inactive**: Users invited by the admin but who have yet to join or accept the invitation.
-* **Locked**: Users who have exceeded 5 failed login attempts and their accounts have been locked.
+**User status types:**
 
-<img src="../images/users-count.png" alt="users count" title="users count"/>
+| Status   | Description                                                                  |
+|----------|------------------------------------------------------------------------------|
+| Active   | Users with active accounts who can interact with other AI for Process users. |
+| Inactive | Invited users who have not yet accepted the invitation.                      |
+| Locked   | Users who exceeded 5 failed login attempts and are locked out.               |
 
-It also shows detailed user information, including name, email, role, and status. For information on default system roles, click [here](../user-management/role-management.md#system-defined-roles).
+![users count](/ai-for-process/images/users-count.png)
 
-## Add a New User
+For information on default system roles, see [System-defined Roles](/ai-for-process/settings/role-management#system-defined-roles).
 
-The **Settings** Console provides two ways to add a new user to the system:
+---
 
-* Email invitation
-* Import _.txt_ or _.csv_ file with user information in the pre-defined format.
+## Add Users
 
-### Invite (Email Invitation)
+You can add users via email invitation or by importing a file.
 
-See [Invite a User](../user-management/invite-a-user.md) to learn how to add a user to your account via email invitation.
-
-### Import (Bulk Import)
-
-The import feature allows administrators to add multiple users at once using .txt or .csv files. To ensure compatibility, download the sample CSV file, add your user details to this file, and upload the file.
-
-**Key Considerations**
-
-* Valid file types are _.txt_ or _.csv_. No other file types are allowed.
-* The file must contain the required user information, such as name, email ID, and status, to create a user profile in your AI for Process account.
-* Each row should contain information for ONE user.
-* You can use accepted delimiters like Comma (","), Pipe ("|"), Semi-Colon (";"), and Tab in the file.
-* The first row in the file should be the field name used to identify the user data.
-* "*" indicates mandatory fields in the sample file. Please ensure mandatory fields are provided.
-* The **User Status** indicates the user’s status after import, and the corresponding actions are taken for *New*, *Update*, and *Delete* statuses.
-* Entries with invalid email formats, missing domain name, or wrong email IDs are ignored during import.
-* Once an entry in the file is validated, an email request is sent out to the user to activate their account.
-* If a user is already active (joined admin’s account), the email invitation is not sent.
-
-#### Import User Data File
-
-The steps mentioned below, allow you to import users' data from a designated file into AI for Process.
-
-1. Log in → In AI for Process Modules top menu → Click **Settings**.
-   <img src="../images/aip-settings-access.png" alt="access settings" title="access settings"/>
-
-2. On the **Users** dashboard, click **Add New User**, and select **Import**.
-   <img src="../images/add-new-user-aip.png" alt="add user" title="add user"/>
-
-3. Perform one of the following actions on the **Import Users** page:
-
-* Click **Upload File**, then select and upload the user info file from your system.
-<img src="../images/click-upload-file.png" alt="click upload file" title="click upload file"/>
-
-* Drag and drop the file from your system into the **Upload File** window.
-
-**Key Suggestions**
-
-* Click and download the sample ._csv_ file for reference.
-
-    <img src="../images/click-download-sample-file.png" alt="download sample file" title="download sample file"/>
-
-* The fields are pre-defined in the sample file, and the data requirements are shown below:
-<img src="../images/pre-defined-fields.png" alt="pre-defined fields" title="pre-defined fields"/>
-
-* Ensure the column names and field mandates match your uploaded file and the sample file. Any mismatch results in an error, as shown in the screenshot below.
-<img src="../images/mismatch-error.png" alt="fields mismatch error" title="fields mismatch error"/>
-
-4. A preview window displays the file’s data with a file uploaded success message. Click **Continue** to import the file.
-<img src="../images/success-import.png" alt="click settings" title="click settings"/>
-
-5. Click **Continue** once the import is complete, and the following message appears.
-<img src="../images/import-completed.png" alt="import completed" title="import completed"/>
-
-6. The system validates the file for errors. If the user data contains errors, a window is displayed showing the import status and the reason for the errors.
-<img src="../images/failed-import-entries.png" alt="failed import entries" title="failed import entries"/>
-
-Correct the highlighted values based on the reason, and upload the file again. Then, follow **Steps 4 and 5** above.
-
-The file takes a few minutes to import. You can see the progress in the dialog window. When completed, the following message is displayed.
-
-<img src="../images/file-imported-successfully.png" alt="file imported successfully" title="file imported successfully"/>
-
-Click **OK** to see the imported users on the dashboard. 
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The imported users are assigned the <b>Viewer</b> system role by default, which you can change. <a href="../role-management/#system-defined-roles" >Learn more</a>.</p> 
-</div>
-
-<img src="../images/imported-entries.png" alt="imported entries" title="imported entries"/>
-
-You can see the success/failed import status on the dashboard as highlighted below:
-
-<img src="../images/success-failed-import-status.png" alt="success and failed import status" title="success and failed import status"/>
-
-**Failed Import** 
-
-The following message is displayed if the user data in the uploaded file fails to import:
-
-<img src="../images/failed-import-message.png" alt="failed import message" title="failed import message"/>
-
-You can identify which user data failed to import, review the actions completed by the user, and understand the reason for the failure. 
-
-Once you know the cause, you can retry importing the corrected user data.
-
-**Cancel Import**
-
-The system cancels the import for data that fails due to validation errors, such as an incorrect email address. A window is displayed showing the import status and reason after the import is canceled.
-<img src="../images/import-canceled.png" alt="import canceled" title="import canceled"/>
-
-#### Import History
-
-Click **Import History** in the **Import Users** window to view and analyze the import history of users in your account.
-<img src="../images/click-import-history.png" alt="click import history" title="click import history"/>
-
-The following window is displayed with the import date and time, the importing user, and the summary of successful and failed imports.
-<img src="../images/import-history.png" alt="import history" title="import history"/>
-
-## Delete a User/Bulk Delete
-
-The **Delete** feature removes a user you’re managing from your AI for Process account.
-
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Only users included as Admin in the system with the required permissions can access the <b>Settings</b> Console.</p>
-<p><ul><li>Deleting a user revokes their access and removes their data from your account. However, the user can still access their personal account on AI for Process. To rejoin your account, you must invite them again via email.</li>
-<li>You cannot delete users if they have created and manage workflows in your account. The user must first remove all active workflows before they can be deleted.</li></ul></p></div>
-
-**Steps to delete a user**
-
-1. Click **Users Management** > **Users** on the left menu to access the **Users** dashboard.
-2. Hover over the user entry you want to delete.
-3. Click the **Delete** icon.
-<img src="../images/single-delete.png" alt="single delete" title="single delete"/>
-
-**Updated Screen**
-
-<img src="../images/single-delete-result.png" alt="single delete result" title="single delete result"/>
-
-**Bulk Delete**
-
-1. Select the required users, and click the **Delete** icon at the bottom of the screen to delete multiple users in the list.
-<img src="../images/click-delete-icon.png" alt="click delete icon" title="click delete icon"/>
-
-2. Click **Remove** in the **Remove users** window.
-
-    <img src="../images/click-remove.png" alt="click remove" title="click remove"/>
-
-When a user's account and role assignments are permanently deleted, the user is removed from the list, and the **Total Users** and **Active Users** counts on the dashboard are updated accordingly.
-
-**Updated Screen**
-
-<img src="../images/bulk-delete-result.png" alt="bulk delete result" title="bulk delete result"/>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Using <b>Delete</b> removes the user permanently.</p>
-</div>
-
-## Search User 
-
-Use the search field to find users by name:
-
-1. Navigate to the **Users** dashboard.
-2. Click the **Search** text field.
-3. Enter the user’s **name** you want to search.
-
-All the matching results are displayed. 
-
-<img src="../images/all-matching-results.png" alt="matching results" title="matching results"/>
-
-The following message is displayed if the user does not exist.
-<img src="../images/user-does-not-exist.png" alt="user does not exist" title="user does not exist"/>
-
-## Unlock a Locked User
-
-Locked users cannot access their accounts without unlocking them on the **Settings** console. 
-
-**Steps to unlock a locked user**
-
-1. Navigate to **Settings** > **Users Management** > **Users** page.
-2. Hover over the user entry with the status highlighted as “**_Locked_**.” 
-3. Click the **Unlock** button.
-<img src="../images/click-unlock.png" alt="click unlock" title="click unlock"/>
-
-4. Click **Confirm** in the confirmation dialog.
-
-The user’s account is unlocked successfully, and the status changes to _Active_.
-
-## Change User Role
-
-On the **Users** dashboard, you can change the account-level role for one or more users. Only the role allowed for the user type (admin or account) can be assigned. 
-
-Changing the user role automatically assigns the designated permissions and access levels defined in the system.
-
-To change a user’s role, follow the steps mentioned [here](../user-management/role-management.md#reassign-an-alternative-role-to-active-users).
-
-### Bulk Role Change
-
-You can change and assign the same role to multiple users. However, to assign different roles, individual role changes must be made, as discussed in the previous section.
-
-To perform bulk role change, follow the steps below:
-
-1. Select the required users on the **Users** dashboard.
-2. Click the **Role** dropdown and select the required option in the bottom pane.
-<img src="../images/select-for-role-change.png" alt="select for role change" title="select for role change"/>
-
-The role is updated for the selected users.
-<img src="../images/bulk-role-changed.png" alt="select for role change" title="select for role change"/>
-
-## Related Information
-
-* **Settings Console** - [Learn more](../overview.md) about other AI for Process admin features.
-* **Role Management** - [Learn more](../user-management/role-management.md) about managing default and custom roles in your account.
-* **Monitoring: Audit Logs** - [Learn more](../monitoring/audit-logs.md) about tracking events and user activity in your account.
-
-
-
-
-
-
-
-
-
-# Invite a User to Your Account
-
-As an account owner, you can invite new users into your organization and collaborate with them.
-
-To invite a user, follow the steps below:
+### Invite via Email
 
 1. Click **Settings** on the top navigation bar.
 2. Click **Users Management** > **Users** > **Add New User**.
-    <img src="../images/add-new-user-aip.png" alt="invite user" title="invite user"/>
+
+   ![add user](/ai-for-process/images/add-new-user-aip.png)
 
 3. Click **Invite**.
-4. Enter a valid email address of the user you want to invite. 
+4. Enter a valid email address.
+5. Select a role from the dropdown to define the user's access.
 
-<ol start="5"><li>Select a role from the dropdown to define the user’s access to modules and features.
-   <img src="../images/role-drop-down.png" alt="role selection" title="role selection"/></li>
- 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>System-defined and custom roles available in the inviter’s account can be assigned. <a href="../role-management/" >Learn more</a> about roles and permissions.</p></div></ol>
+   ![role selection](/ai-for-process/images/role-drop-down.png)
 
-<ol start="6"><li>To invite multiple users, click <b>+ Add another member</b>. Then, follow steps 4 and 5.
+   <Note>System-defined and custom roles available in your account can be assigned. [Learn more](/ai-for-process/settings/role-management) about roles and permissions.</Note>
 
-   To remove an invitation row, click the <b>Delete</b> icon.
+6. To invite multiple users, click **+ Add another member** and repeat steps 4–5. To remove an invitation row, click the **Delete** icon.
 
-   <img src="../images/delete-email-row.png" alt="delete email row" title="delete email row"/></li></ol>
+   ![delete email row](/ai-for-process/images/delete-email-row.png)
 
-**Key Information On Adding Email Addresses**
+7. Click **Send invitation(s)**. The count updates as you add or remove invites.
 
-Please note the following when adding an email address:
+   ![send invitation](/ai-for-process/images/send-invitation-to-member.png)
 
-* The **Email address** field should not be empty.
-* The system does not accept a space in front, between, or after the mail ID.
-* Enter a valid email address, including a domain (e.g., <code>[john@doe.com](mailto:john@doe.com)</code>), which must be provided. 
+A success message appears when the invite is sent. If it fails, check the highlighted email addresses and try again.
 
-    <img src="../images/valid-email-address.png" alt="valid email address error" title="valid email address error"/></ol>
+**Email address requirements:**
 
-* Double-check the recipient’s email address before sending the invite.
-* Duplicate invitations are not allowed. The system displays: “*This email has already been added*."
-    
-    <img src="../images/duplicate-invitation.png" alt="duplicate invitation" title="duplicate invitation"/>
+- The field must not be empty.
+- No spaces before, between, or after the email address.
+- Must include a valid domain (for example, `john@doe.com`).
 
-<ol start="7"><li>Click <b>Send invitation(s)</b>. As you add or remove invites, the displayed count of invited persons updates accordingly.
-<img src="../images/send-invitation-to-member.png" alt="send invitation" title="send invitation"/></li></ol>
+  ![valid email address error](/ai-for-process/images/valid-email-address.png)
 
-You’ll see a success message when the invite is sent. If it fails, check the highlighted email addresses and try again.
+- Duplicate invitations are not allowed. The system displays: *"This email has already been added."*
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>Users receive an email invitation to join your account, which expires 15 days after it is sent.</li>
-<li>Until the recipient accepts your invitation to join, the user status is set to <b><i>Inactive</i></b>. Once the invitation is accepted, the status changes to <b><i>Active</i></b>.</li></ul></p></div>
+  ![duplicate invitation](/ai-for-process/images/duplicate-invitation.png)
 
+<Note>
+- Invitations expire 15 days after being sent.
+- The user status is **Inactive** until the invitation is accepted, then changes to **Active**.
+</Note>
 
+### Bulk Import
 
+The bulk import feature lets administrators add multiple users at once using `.txt` or `.csv` files.
 
+**Requirements:**
 
+- Valid file types: .txt or .csv only.
+- Required fields: name, email ID, and status.
+- Each row must contain information for one user.
+- Accepted delimiters: comma (`,`), pipe (`|`), semicolon (`;`), and tab.
+- The first row must contain field names.
+- Mandatory fields are marked with `*` in the sample file.
+- The **User Status** field determines the post-import action: *New*, *Update*, or *Delete*.
+- Entries with invalid email formats or missing domains are skipped during import.
+- Once validated, an email invitation is sent to activate the user's account.
+- If a user is already active in your account, no invitation email is sent.
 
+#### Import Users from a File
 
+1. Click **Settings** on the top navigation bar.
 
+   ![access settings](/ai-for-process/images/aip-settings-access.png)
 
-# Overview on Account Users, Roles, and Active Directory
+2. On the **Users** dashboard, click **Add New User** > **Import**.
 
-The **Users Management** module is crucial for handling user-related activities within your organization. This module provides capabilities for the following:
+   ![add user](/ai-for-process/images/add-new-user-aip.png)
 
-- **Managing Users**: Add users to your account, assign a default user role, view user status, unlock a locked user, and delete one or more user from your account. [Learn more](../user-management/users.md).
-- **Managing Roles, and Permissions**: Assign and configure roles, set module-wise account/workflow permissions, and manage user access efficiently. [Learn more](./role-management.md).
-- **Active Directory (AD) Synchronization (Sync)**: Integrate and synchronize your AD with organizational user data. [Learn more](./settings/active-directory.md).
-- **Configuring User Profile Fields**: Set visibility and modification rules for user profile fields specific to your domain. [Learn more](./settings/active-directory.md#step-3-specify-user-attributes-and-configure-rules-for-selective-import-from-ad).
-- **Email Notifications**: Configure email notifications for users depending on whether they joined your account by invitation or through AD sync. [Learn more](./settings/active-directory.md#sync-status-email-notifications).
+3. On the **Import Users** page, upload the file by either:
+   - Clicking **Upload File** and selecting the file from your system.
 
-This [Users](./users.md) page provides detailed instructions and guidelines on various capabilities available within the **Users Management** module for administering user-related operations, such as the following:
+     ![click upload file](/ai-for-process/images/click-upload-file.png)
 
-- Role and permissions management for different modules. [Learn more](./role-management.md).
-- AD sync and user profile configuration. [Learn more](./settings/active-directory.md#active-directory-configuring-automatic-user-data-synchronization).
+   - Dragging and dropping the file into the **Upload File** window.
 
-**Users Management** streamlines user administration and enhances operational efficiency. 
+   **Tip:** Download the sample `.csv` file for reference. The fields are pre-defined with data requirements.
 
-It also supports various administrative features influenced by the roles and permissions assigned at the account or workflow level. This includes actions you can perform on both external and existing users:
+   ![download sample file](/ai-for-process/images/click-download-sample-file.png)
 
-- **System Roles**: Pre-defined roles with default permissions for basic system functionality. [Learn more](./role-management.md#manage-system-roles).
-- **Custom Roles**: User-defined roles tailored to specific needs with customized access definitions for module-wise permissions. [Learn more](./role-management.md#manage-custom-roles).
+   ![pre-defined fields](/ai-for-process/images/pre-defined-fields.png)
 
-For example, a *Master Admin* role is assigned by default to the account owner. Similarly, a *Workflow Admin* role is assigned to a user who creates a workflow and has complete control over it.
+   Ensure column names and field mandates match the sample file. A mismatch causes an error:
 
-**Users Management** operates on two distinct levels discussed [here](../../settings/overview.md#levels-of-users-management).
+   ![fields mismatch error](/ai-for-process/images/mismatch-error.png)
 
-Once you invite a user or import users data, you can change their roles, assign/unassign permissions, delete users. and do more using the [Roles Management](../../settings/user-management/role-management.md) and [Users](./users.md) features on the **Settings** console.
+4. A preview window shows the file data with a success message. Click **Continue**.
 
+   ![import preview](/ai-for-process/images/success-import.png)
 
+5. When the import completes, click **Continue**.
 
-# Active Directory: Configuring Automatic User Data Synchronization
+   ![import completed](/ai-for-process/images/import-completed.png)
 
-By configuring Active Directory (AD) import, you can seamlessly bring your organizational user information into the Settings console and keep it in sync with a single source of truth. This bulk import eliminates the need for email invitations or manual user info file imports, making the process more efficient. 
+6. If validation errors exist, a window shows the import status and error reasons.
 
-Moreover, the automatic synchronization (auto sync) feature ensures that Settings always has the most up-to-date user information, even reflecting deleted and modified records in the AD.
+   ![failed import entries](/ai-for-process/images/failed-import-entries.png)
 
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>An AD professional with the necessary technical expertise should handle the auto sync process.</p>
-</div>
+   Correct the highlighted values and re-upload. Then repeat steps 4–5.
 
-**Key Steps for Configuring AD Import**
+The file takes a few minutes to import. A progress dialog shows the status. When complete:
 
-1. [Set up the Connection](./active-directory.md#step-1-set-up-the-connection): Connect the **Settings** Console to your organization's AD to enable data import.
-2. [Select and Import the Organizational Units (OUs)](./active-directory.md#step-2-import-organization-units): Choose specific OUs or all OUs from which to import key user information.
-3. [Specify User Attributes and Configure Rules for Selective Import from AD](./active-directory.md#step-3-specify-user-attributes-and-configure-rules-for-selective-import-from-ad): Define desired user attributes (profile fields) that need to be imported from your active directory. Configure the inclusion and exclusion rules to control the information you need.
-4. [Schedule Automatic AD Sync](./active-directory.md#step-4-schedule-automatic-ad-sync): Set up automatic or periodic sync schedules to keep user data current and reflect any changes or deletions from AD.
+![file imported successfully](/ai-for-process/images/file-imported-successfully.png)
 
-## Steps to Configure AD Sync 
+Click **OK** to view imported users on the dashboard.
 
-1. Log in → In AI for Process Modules top menu → Click **Settings**.
-   <img src="../images/aip-settings-access.png" alt="access settings" title="access settings"/>
+<Note>Imported users are assigned the **Viewer** role by default. You can change this later. [Learn more](/ai-for-process/settings/role-management#system-defined-roles).</Note>
 
-2. On the **Users** dashboard, click the **Configure Directory** button in the **Configure sync with directory** section.
-<img src="../images/configure-directory-button.png" alt="configure directory" title="configure directory"/>
+![imported entries](/ai-for-process/images/imported-entries.png)
 
-3. Complete the setup by following the steps below in the **Configure Directory** window:
+The dashboard shows success and failed import statuses:
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul><li>The left panel gives you complete control over the configuration process. Completed steps are marked by a check, and steps in progress are indicated by a dot, offering a clear and intuitive visual guide.</li>
-<li>To complete the configuration, perform each step in order without skipping any.</li></ul>
-</div>
+![success and failed import status](/ai-for-process/images/success-failed-import-status.png)
+
+**Failed import**
+
+If user data fails to import, the following message appears:
+
+![failed import message](/ai-for-process/images/failed-import-message.png)
+
+Review which users failed, the actions attempted, and the reason. Then retry with corrected data.
+
+**Canceled import**
+
+The system cancels imports for entries that fail validation (for example, an invalid email address). A window shows the import status and cancellation reason:
+
+![import canceled](/ai-for-process/images/import-canceled.png)
+
+#### Import History
+
+Click **Import History** in the **Import Users** window to view past imports.
+
+![click import history](/ai-for-process/images/click-import-history.png)
+
+The history shows the import date and time, the importing user, and a summary of successful and failed imports.
+
+![import history](/ai-for-process/images/import-history.png)
+
+---
+
+## Manage Users
+
+### Search for a User
+
+1. Go to the **Users** dashboard.
+2. Click the **Search** text field.
+3. Enter the user's name.
+
+Matching results appear automatically.
+
+![matching results](/ai-for-process/images/all-matching-results.png)
+
+If no match is found:
+
+![user does not exist](/ai-for-process/images/user-does-not-exist.png)
+
+### Unlock a Locked User
+
+Locked users cannot access their accounts until an admin unlocks them.
+
+1. Go to **Settings** > **Users Management** > **Users**.
+2. Hover over the user with status **Locked**.
+3. Click **Unlock**.
+
+   ![click unlock](/ai-for-process/images/click-unlock.png)
+
+4. Click **Confirm**.
+
+The account is unlocked and the status changes to **Active**.
+
+### Change User Role
+
+On the **Users** dashboard, you can change the account-level role for one or more users. Only roles allowed for the user type (admin or account) can be assigned. When you change a user's role, the corresponding permissions and access levels apply automatically.
+
+To change an individual user's role, see [Reassign an Alternative Role to Active Users](/ai-for-process/settings/role-management#reassign-an-alternative-role-to-active-users).
+
+**Bulk role change**
+
+To assign the same role to multiple users simultaneously:
+
+1. Select the required users on the **Users** dashboard.
+2. Click the **Role** dropdown in the bottom pane and select the role.
+
+   ![select for role change](/ai-for-process/images/select-for-role-change.png)
+
+The role updates for all selected users.
+
+![bulk role changed](/ai-for-process/images/bulk-role-changed.png)
+
+<Note>To assign different roles to multiple users, change roles individually.</Note>
+
+### Delete a User
+
+<Warning>
+
+- Deleting a user revokes their access and removes their data from your account. The user can still access their personal AI for Process account. To rejoin, you must invite them again.
+- You cannot delete users who own active workflows. The user must remove all active workflows before deletion.
+
+</Warning>
+
+**Delete a single user:**
+
+1. Click **Users Management** > **Users** on the left menu.
+2. Hover over the user entry you want to delete.
+3. Click the **Delete** icon.
+
+   ![single delete](/ai-for-process/images/single-delete.png)
+
+   ![single delete result](/ai-for-process/images/single-delete-result.png)
+
+**Bulk delete:**
+
+1. Select the required users and click the **Delete** icon at the bottom of the screen.
+
+   ![click delete icon](/ai-for-process/images/click-delete-icon.png)
+
+2. Click **Remove** in the **Remove users** window.
+
+   ![click remove](/ai-for-process/images/click-remove.png)
+
+The users are removed from the list and the **Total Users** and **Active Users** counts update.
+
+![bulk delete result](/ai-for-process/images/bulk-delete-result.png)
+
+<Note>Deleting a user is permanent.</Note>
+
+---
+
+## Active Directory Sync
+
+By configuring Active Directory (AD) import, you can sync your organizational user information into the Settings console from a single source of truth, eliminating the need for email invitations or manual file imports.
+
+The auto sync feature keeps user data in AI for Process current, including deletions and modifications in the AD.
+
+<Warning>An AD professional with the necessary technical expertise should handle the auto sync configuration process.</Warning>
+
+**Configuration steps overview:**
+
+1. [Set up the Connection](#step-1-set-up-the-connection): Connect the Settings console to your organization's AD.
+2. [Import Organization Units](#step-2-import-organization-units): Choose the OUs from which to import user data.
+3. [Specify User Attributes and Configure Rules](#step-3-specify-user-attributes-and-configure-rules-for-selective-import): Define user profile fields and inclusion/exclusion rules for selective import.
+4. [Schedule Automatic AD Sync](#step-4-schedule-automatic-ad-sync): Set up scheduled sync to keep user data current.
+
+### Steps to Configure AD Sync
+
+1. Click **Settings** on the top navigation bar.
+
+   ![access settings](/ai-for-process/images/aip-settings-access.png)
+
+2. On the **Users** dashboard, click **Configure Directory** in the **Configure sync with directory** section.
+
+   ![configure directory](/ai-for-process/images/configure-directory-button.png)
+
+3. Complete the setup in the **Configure Directory** window by following each step in order.
+
+   <Note>
+
+   - The left panel tracks your progress — completed steps show a check mark, and in-progress steps show a dot.
+   - Complete each step in order without skipping.
+
+   </Note>
 
 ### Step 1: Set up the Connection
 
-1. Configure the AD connection by providing the following mandatory fields:
+1. Provide the following fields to configure the AD connection:
 
-<ul><li><b>Host Name</b>: The domain's hostname or IP address where AD services run.</li>
-<li><b>Server Port</b>: The network port number used by the domain host to communicate over the network.</li>
-<li><b>Base DN</b>: The server location for users and groups in a domain.</li>
-<li><b>User ID</b>: The identity used to log into the AD.</li>
-<li><b>Password</b>: The password used to log into the AD.</li>
-<li><b>(Optional) SSL</b>: Enable this option to secure communications over the web, particularly for services and applications that interact with AD via HTTPS.</li>
-<img src="../images/configure-ad-connection.png" alt="configure ad connection" title="configure ad connection"/></ul>
+   | Field              | Description                                                |
+   |--------------------|------------------------------------------------------------|
+   | **Host Name**      | The domain's hostname or IP address where AD services run. |
+   | **Server Port**    | The network port number used by the domain host.           |
+   | **Base DN**        | The server location for users and groups in the domain.    |
+   | **User ID**        | The identity used to log into the AD.                      |
+   | **Password**       | The password used to log into the AD.                      |
+   | **SSL** (Optional) | Enable to secure communications over HTTPS.                |
 
-<ol start="2"><li>Click <b>Next</b> to confirm the credentials before proceeding. If validation errors occur, they will be displayed on the screen so you can correct them before continuing.</li></ol>
+   ![configure ad connection](/ai-for-process/images/configure-ad-connection.png)
+
+2. Click **Next** to validate the credentials before proceeding. Validation errors appear on screen so you can correct them.
 
 ### Step 2: Import Organization Units
 
-Follow the steps below to configure and import user data from key organizational units such as Sales, Finance, or Operations in your AD:
+1. Select one of the following options:
 
-1. Select one of the following options based on your requirements:
+   - **Import all organization units**: Imports user data from all OUs.
+   - **Do not import organization units**: No user data is imported from any OUs.
+   - **Import only the following organization units**: Imports user data only from the selected OUs.
 
-<ul><li><b>Import all organization units</b>: Imports user information from all the organization units.</li>
-<li><b>Do not import organization units</b>: Do not import user information from any organization units in the AD.</li>
-<li><b>Import only the following organization units</b>: Imports user information only from the organization unit you select.</li></ul>
+2. Click **Next** to proceed to user profile fields mapping.
 
-<ol start="2"><li>Click <b>Next</b> to proceed to user profile fields mapping.
-<img src="../images/org-units.png" alt="manage org units" title="manage org units"/></li></ol>
+   ![manage org units](/ai-for-process/images/org-units.png)
 
-### Step 3: Specify User Attributes and Configure Rules for Selective Import from AD
+### Step 3: Specify User Attributes and Configure Rules for Selective Import
 
-In this configuration step, you can do the following:
+In this step, you can:
 
-* Define the LDAP user attributes (profile fields) to be imported from the AD.
-* Establish inclusion and exclusion rules to filter data and import the necessary information. **Inclusion rules** define which user data to include in auto sync or import, focusing on relevant users who meet certain conditions. **Exclusion rules** determine which user data to exclude from the AD import.
+- Define the LDAP user attributes (profile fields) to import from the AD.
+- Set inclusion and exclusion rules to filter which users are imported.
+  - **Inclusion rules**: Define which users to include in sync or import based on criteria.
+  - **Exclusion rules**: Define which users to exclude from the AD import.
 
-To define both default (pre-defined) and custom fields during setup, follow the steps below:
+**To configure user attributes:**
 
-1. (Optional) Select **Import users from active directory** to fetch the user default fields from the AD.
-2. Click the **User Attributes** tab and select the value from the dropdown to map the field from the AD to the user attribute for all the fields under **Default Fields**.
-<img src="../images/default-fields.png" alt="default fields" title="default fields"/>
+1. (Optional) Select **Import users from active directory** to fetch default fields from the AD.
+2. Click the **User Attributes** tab and map each field under **Default Fields** to the corresponding AD attribute from the dropdown.
 
-3. (Optional) In addition to the default fields, you can add custom fields for your user profile information and map them to a corresponding field in the AD. To add a custom field mapping, follow the steps below:
+   ![default fields](/ai-for-process/images/default-fields.png)
 
-<ul><li>Click <b>Add Field</b> in the <b>Custom Fields</b> section.</li>
-<li>Enter the custom field you want to map to your user profile in the <b>Custom field name</b> textbox.</li>
-<li>Enter the corresponding AD field in the <b>Field from Active Directory</b> textbox.</li>
-<li>(Optional) Click the <b>tag</b> icon to set the custom field as the primary field. However, to delete this field, you must first remove the primary field tag.</li>
-<li>Click <b>Next</b> to complete user profile fields' mapping and proceed.</li>
-<img src="../images/custom-field-management.png" alt="manage custom field" title="manage custom field"/>
-</ul>
+3. (Optional) To add custom field mappings in the **Custom Fields** section:
+   - Click **Add Field**.
+   - Enter the custom field name in **Custom field name**.
+   - Enter the corresponding AD field in **Field from Active Directory**.
+   - (Optional) Click the **tag** icon to set the custom field as the primary field. To delete this field, you must first remove the primary field tag.
+   - Click **Next** to complete the mapping.
 
-To remove a field, click the **Delete** icon as shown below.
+   ![manage custom field](/ai-for-process/images/custom-field-management.png)
 
-<img src="../images/delete-custom-field.png" alt="delete custom field" title="delete custom field"/>
+   To remove a field, click the **Delete** icon.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Deleting a custom field is allowed only if you have added multiple fields.</p>
-</div>
+   ![delete custom field](/ai-for-process/images/delete-custom-field.png)
 
-<ol start="4"><li>Next, define the rules and sync criteria to import specific users from your AD server. To do this, click the <b>Manage Inclusion & Exclusion Rules</b> tab.</li>
-<li>Under <b>Inclusion Rules</b>, you can sync specific users from your AD Server by defining criteria or filters using profile parameters. Enter the rule expression using the user profile parameters in the <b>Rule Definition</b> textbox according to the LDAP filter syntax mentioned <a href="https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx" >here</a>.</li>
-<img src="../images/manage-rules.png" alt="manage rules" title="manage rules"/></ol>
+   <Note>Deleting a custom field is only allowed if multiple fields exist.</Note>
 
-<ol start="6"><li>(Optional) An <b>Exclusion Rule</b> includes the <b>AD/LDAP field</b>, <b>Match Type</b>, and <b>Value</b>. You must set <b>Match Type</b> for one of the following options:</li></ol>
+**To configure inclusion and exclusion rules:**
 
-* **Exact Match**: The user profile AD field must exactly match the **Value** field you specify. For example, if **Employee Vertical** must precisely match “Sales,” use this option.
-* **Partial Match**: The user profile AD field can partially match or include the **Value** field you specify. For instance, if **Employee Vertical** should match part of “Product Sales” (such as “Product” or “Sales”), choose this option.
-* **Multiple Matches**: The user profile AD field must match all the values you set in the **Value** field. For example, if **Employee Vertical** should match both “Product Sales” and “Service Sales,” select this option.
+4. Click the **Manage Inclusion & Exclusion Rules** tab.
+5. Under **Inclusion Rules**, enter the rule expression using user profile parameters in the **Rule Definition** textbox, following LDAP filter syntax.
 
-**Steps to Set Exclusion Rules**
+   ![manage rules](/ai-for-process/images/manage-rules.png)
 
-To set an **Exclusion Rules**, follow the steps below:
+6. (Optional) Under **Exclusion Rules**, set the **AD/LDAP field**, **Match Type**, and **Value**. Match Type options:
 
-1. Click **+Add exclusion** to add a new rule entry.
-2. Select the entry to enable the exclusion rule.
-3. Click **Next** to proceed. 
+   | Match Type       | Description                                           |
+   |------------------|-------------------------------------------------------|
+   | Exact Match      | The AD field must exactly match the specified value.  |
+   | Partial Match    | The AD field can partially match the specified value. |
+   | Multiple Matches | The AD field must match all specified values.         |
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All mandatory fields must be filled in before you can proceed to the next step.Deleting a custom field is allowed only if you have added multiple fields.</p>
-</div>
+   **Steps to set exclusion rules:**
 
-<img src="../images/add-exclusion.png" alt="add exclusion" title="add exclusion"/>
+   1. Click **+ Add exclusion** to add a new rule entry.
+   2. Select the entry to enable the exclusion rule.
+   3. Click **Next** to proceed.
 
-To delete a rule, hover over the entry and click the **Delete** icon.
+   <Note>All mandatory fields must be filled in before you can proceed to the next step.</Note>
 
-<img src="../images/delete-rule.png" alt="delete rule" title="delete rule"/>
+   ![add exclusion](/ai-for-process/images/add-exclusion.png)
+
+   To delete a rule, hover over the entry and click the **Delete** icon.
+
+   ![delete rule](/ai-for-process/images/delete-rule.png)
 
 ### Step 4: Schedule Automatic AD Sync
 
-To finish configuring your directory, schedule auto sync for your AD. Enabling auto sync is **_optional_** but highly recommended to keep your AD data on AI for Process up-to-date. 
+Enabling auto sync is optional but recommended to keep your AD data on AI for Process current.
 
-Auto sync will ensure that any changes in AD, such as user additions or deletions, are automatically reflected on AI for Process.
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When Auto Sync is disabled, you must manually initiate AD sync by clicking the <b>Sync Now</b> button under <b>Configure Sync with Directory</b>.</p>
-</div>
-
-To enable and configure auto sync, follow the steps below:
+<Note>When auto sync is disabled, initiate AD sync manually by clicking **Sync Now** under **Configure Sync with Directory**.</Note>
 
 1. Click the **Enable auto-sync** toggle.
-<img src="../images/enable-auto-sync.png" alt="enable auto sync" title="enable auto sync"/>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can run AD-Sync anytime by choosing the run now option on the settings page.</p>
-</div>
+   ![enable auto sync](/ai-for-process/images/enable-auto-sync.png)
 
-<ol start="2"><li>Select the following sync fields:</li></ol>
+2. Configure the following sync fields:
 
-* **Sync Frequency**: Select from _daily,_ _weekly_, _monthly_, or _other _sync periods. The default selection is _Daily_.
-* **Sync Start**: Click the Calendar icon and choose a date from the widget to start the AD sync. The default selection is the current date. 
-* **Time**: According to the selected sync frequency, select when the AD sync should occur. The default setting is 12:00 PM.
+   | Field              | Options                           | Default      |
+   |--------------------|-----------------------------------|--------------|
+   | **Sync Frequency** | Daily, Weekly, Monthly, Other     | Daily        |
+   | **Sync Start**     | Any future date (calendar picker) | Current date |
+   | **Time**           | Based on selected frequency       | 12:00 PM     |
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul><li>You can select only one date from the calendar for weekly and monthly syncs.</li>
-<li>You can schedule the sync only with a future date and time from the default selections.</li></ul>
-</div>
+   <Note>
 
-**Daily**
+   - For weekly and monthly syncs, you can select only one date from the calendar.
+   - You can only schedule sync with a future date and time.
 
-Selecting the Daily option means user data from AD synchronizes everyday starting from the date specified for **Start Sync** and continuing for the duration of the AD connection.
+   </Note>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The default selection for <b>Start Sync</b> is the current date, which you can change.</p>
-</div>
+   **Frequency options:**
 
-For example, the data syncs daily from 10 June 2024 at 12:00 PM.
+   - **Daily**: Syncs every day starting from the **Sync Start** date.
 
-<img src="../images/daily-schedule.png" alt="daily schedule" title="daily schedule"/>
+     *Example:* Syncs daily from 10 June 2024 at 12:00 PM.
 
-**Weekly**
+     ![daily schedule](/ai-for-process/images/daily-schedule.png)
 
-Selecting the **Weekly** option means user data from AD synchronizes on the selected day every week (**Repeat On** option), starting from the date you set for Start Sync and continuing for the duration of the AD connection.
+   - **Weekly**: Syncs on the selected day (**Repeat On**) every week, starting from the **Sync Start** date.
 
-For example, the data syncs every Thursday from 10 June 2024, at 12:00 PM.
+     *Example:* Syncs every Thursday from 10 June 2024 at 12:00 PM.
 
-<img src="../images/weekly-schedule.png" alt="weekly schedule" title="weekly schedule"/>
+     ![weekly schedule](/ai-for-process/images/weekly-schedule.png)
 
-**Monthly**
+   - **Monthly**: Syncs on the designated day of each month, starting from the **Sync Start** date.
 
-Selecting **monthly** triggers synchronizes user data from the AD on the designated day of each month, starting from the specified **Start Sync** date and continuing throughout the duration of the AD connection.
+     *Example:* Syncs on the 15th of each month, starting 10 June 2024 at 12:00 PM.
 
-For example, the data syncs on the 15th of each month, starting from 10 June 2024, at 12:00 PM.
+     ![monthly schedule](/ai-for-process/images/monthly-schedule.png)
 
-<img src="../images/monthly-schedule.png" alt="monthly schedule" title="monthly schedule"/>
+   - **Other**: Syncs at custom intervals (for example, every 60 days or weeks) starting from the **Sync Start** date and time.
 
-**Other**
+     *Example:* Syncs every 60 days, starting 10 June 2024 at 12:00 PM.
 
-Select **Other** to schedule AD syncs at intervals different from Daily, Weekly, or Monthly. This option allows you to schedule syncs that repeat after a specified number of days/weeks. The periodic sync occurs at the specified time starting from the selected start date.
+     ![other schedule](/ai-for-process/images/other-schedule.png)
 
-For example, the data sync repeats every 60 days or weeks, starting 10 June 2024 at 12:00 PM.
+3. Click **Save**.
 
-<img src="../images/other-schedule.png" alt="other schedule" title="other schedule"/>
+   ![save schedule](/ai-for-process/images/save-schedule.png)
 
-<ol start="3"><li>Click <b>Save</b>.</li>
-<img src="../images/save-schedule.png" alt="save schedule" title="save schedule"/>
-</ol>
+   If auto sync is disabled, **Save** only saves the configuration. Enabling auto sync saves the configuration and initiates sync at the scheduled time.
 
-If auto sync is disabled, clicking **Save** only saves the AD sync configuration. Enabling auto-sync saves the configuration and initiates syncing at the scheduled date and time.
+### After Setup
 
-When you set up AD sync for the first time, the following options appear under **Configure sync with directory**:
+After configuring AD sync, the following options appear under **Configure sync with directory**:
 
-* **Sync now**: Performs an ad hoc AD sync. Select this option if you do not want to perform a scheduled sync.
-* **Sync History**: Displays the history of AD syncs, including the comprehensive summary of the following:
-  * **Date and Time**: Timestamp indicating when the sync occurred.
-  * **By**: Identification of the individual who initiated the sync.
-  * The number of **successful** and **failed** user records that got synced.
-  <img src="../images/sync-history.png" alt="sync history" title="sync history"/>
+| Option                    | Description                                                                                                                          |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| **Sync now**              | Performs an ad hoc AD sync without waiting for the schedule.                                                                         |
+| **Sync History**          | Displays the history of AD syncs, including date and time, the initiating user, and a count of successful and failed records synced. |
+| **Manage directory sync** | Opens the **Configure Directory** window to edit existing configurations.                                                            |
+| **Reset**                 | Resets the AD sync configuration but retains the last sync data on AI for Process.                                                   |
+| **Sync Status**           | Shows the date of last sync, total users and OUs synchronized, and any errors encountered.                                           |
 
-* **Manage directory sync**: Displays the **Configure Directory** window where you can edit the existing configurations.
-* **Reset**: Resets the AD sync configurations but retains the last sync data on AI for Process.
-* **Sync Status**: This information summary displays the date of last sync, the total number of users and organization units synchronized, and any errors/issues encountered during the process. 
+<Note>Even if auto sync is off, click the **Change** link in Sync Status to access and schedule auto sync on the configuration page.</Note>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Even if auto sync is turned off, you can click on the <b>Change</b> link in the sync status to access and schedule an auto sync on the configuration page.</p>
-</div>
+![sync history](/ai-for-process/images/sync-history.png)
 
-<img src="../images/configure-sync-with-directory.png" alt="configure sync with directory" title="configure sync with directory"/>
+![configure sync with directory](/ai-for-process/images/configure-sync-with-directory.png)
 
 ### Sync Status Email Notifications
 
-For a **successful** sync, you will receive the following email:    
+For a **successful** sync:
 
-<img src="../images/success-sync.png" alt="success sync" title="success sync"/>
+![success sync](/ai-for-process/images/success-sync.png)
 
-For a **failed** sync, you will receive the following email:    
+For a **failed** sync:
 
-<img src="../images/failed-sync.png" alt="failed sync" title="failed sync"/>
-
-An alternative way to add users to your account (without using AD sync) is to invite them via email. 
-
-
-
-
-
-
-
-# Manage Roles, Permissions and Access Levels
-
-AI for Process’ **Role Management** feature in the **Settings** console helps implement Role-based Access Control (RBAC) for account, workflow, and agentic app features on the platform. 
-
-Thus, the roles can be classified based on the role types. [Learn more](./role-management.md#role-types).
-
-When you invite or add a user to your account, you must assign a [default role](./role-management.md#system-defined-roles) to them to define their [module-wise permissions and access levels](./role-management.md#module-wise-permissions-and-access-levels). You can later [reassign a different role](./role-management.md#reassign-an-alternative-role-to-active-users) to the user, including a [default/system-defined](./role-management.md#system-defined-roles) or [custom](./role-management.md#custom-roles) role. [Learn more](../user-management/overview.md) about **Users Management**.
-
-**Key Points**
-
-1. **App Owner**: When you create an Agentic App, you automatically become the app owner and are assigned this role which provides administrative access on all features and configurations across the Platform.
-
-2. **Master Admin Role**
-
-    * When you create an account, you automatically become the account owner and are assigned the **Master Admin** role. [Learn more](./role-management.md#system-defined-roles).
-
-    * As the Master Admin, you have the highest level of access, allowing you to create, modify, and delete permissions for custom roles and manage users in your account.
-
-3. **Assigning Roles**
-
-    * Once a user joins your account, assign them a role based on their responsibilities and job functions. By default, the **Viewer** role is assigned to new users joining your account, providing the minimum level of account access required. [Learn more](./role-management.md#system-defined-roles). This role can be changed later in the **Settings** console. [Learn more](./role-management.md#reassign-an-alternative-role-to-active-users).
-
-4. **Default and Custom Roles**
-
-    * Each role comes with specific permissions and access levels to determine what features the user can access, modify, or manage. [Learn more](./role-management.md#module-wise-permissions-and-access-levels). 
-
-    AI for Process supports the following roles in the **Settings** console:
-
-    * **Default Role**: A system-generated role with internally defined set of permissions and access levels. [Learn more](./role-management.md#system-defined-roles).
-
-    * **Custom Role**: Allows you to customize permissions and access levels for your users. [Learn more](./role-management.md#custom-roles).
-
-5. **Role Management Benefits**
-
-    * Enables better control over user actions in your account.
-    * Facilitates updating roles when job functions or responsibilities change.
-    * Ensures prompt revocation of access when a user leaves the organization or no longer requires access.
-
-## Roles and Modules
-
-The modules for which permissions and access levels can be defined for a role include the following:
-
-* Agentic Apps
-* workflows
-* Models
-* Prompts
-* Data
-* Evaluations/Evaluators
-* Settings including Integrations, User Management, Security and Control, Monitoring, Guardrails, and Billing.
-
-**workflow Level**
-
-To learn more about permissions and access levels around features, click [here](./role-management.md#module-wise-permissions-and-access-levels).
-
-Access to module-level permissions can either be disabled (no access) or enabled with **Full**, **Custom**, or **View** privileges. [Learn more](./role-management.md#access-levels).
-
-### Roles
-
-A Role groups users according to their job functions, streamlining permission management. 
-
-*Example*
-
-A **Master Admin** has complete control over the account's core functionalities such as models, workflows, integrations, users, etc.
-
-A **tool admin** has complete control over the core functionalities of workflows, such as deployment, configuration, sharing, deletion, monitoring, etc.
-
-An **App Admin** has full access to almost all the core Platform features relating to Agentic Apps.
-
-AI for Process supports the following roles:
-
-#### System-defined Roles
-
-Also called **Default** roles, these are inbuilt in the system at the agentic app, account and workflow levels defined in the system. The scopes, permissions, and access levels for these roles are preset based on what users commonly require and **cannot be modified** in the application. Also, system roles cannot be deleted.
-
-To modify a user's scope and permissions, you must add a [custom](./role-management.md#custom-roles) agentic app/account/workflow-type role. [Learn more](./role-management.md#add-a-role).
-
-System-defined, system-generated, or default roles provide baseline control over the core features and functionalities and streamline the user management process for administrators. 
-
-For example, The **Admin** role typically has full access to all workflow/account features and functionalities within the system. Administrators have the highest privileges and can manage other users, configure settings, and perform administrative tasks.
-
-The following table summarizes the scope for different system roles supported for Account, workflow, and Agentic App types:
-
-<table>
-  <tr>
-   <td colspan="2" ><strong>Account</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Role</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Master Admin</strong>
-   </td>
-   <td>Users have complete control over workflow and model management, and access to all the core features and functionalities of the Settings console.</td>
-  </tr>
-  <tr>
-   <td><strong>Admin</strong>
-   </td>
-   <td>Users have access to all the permissions except model deletion, billing, and connectors.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Member</strong>
-   </td>
-   <td>Users can create workflows, add external models, and modify only specific integrations.</td>
-  </tr>
-  <tr>
-   <td><strong>Viewer</strong>
-   </td>
-   <td>Users can only view the modules across the platform.
-   </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-   <td colspan="2" ><strong>workflow</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Role</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>tool admin</strong>
-   </td>
-   <td>Users have complete control over workflow management, versioning, sharing, deployment, deletion, configuration, monitoring, and API key creation.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>tool manager</strong>
-   </td>
-   <td>Users have access to all the permissions except for workflow deletion.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>tool editor</strong>
-   </td>
-   <td>Users can create new versions and deploy, monitor, and export workflows.
-   </td>
-  </tr>
-  <tr>
-   <td><strong>tool viewer</strong>
-   </td>
-   <td>Users can only view the node details and generate output in the workflow.
-   </td>
-  </tr>
-    <tr>
-   <td colspan="2" ><strong>App</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Role</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>App Owner</strong>
-   </td>
-   <td>Users have complete administrative access across all Platform features and configurations. This user cannot be removed from the system, and can manage all other roles.
-   </td>
-  </tr>
-    <tr>
-   <td><strong>App Admin</strong>
-   </td>
-   <td>Users have full administrative access across most system features of Agentic Apps. This user has privileges similar to the owner. The app admins can modify all the other roles except the permissions of the app owner.</td>
-  </tr>
-  <tr>
-   <td><strong>App Developer</strong>
-   </td>
-   <td>Users have full access to core development features of Agentic Apps including configurations, workflows, guardrails, and data. There is limited access to the admin features.
-   </td>
-  </tr>
-    <tr>
-   <td><strong>App Viewer</strong>
-   </td>
-   <td>Users have basic view-only access to specific and essential features of Agentic Apps including configurations, workflows, guardrails, and simulation capabilities.
-   </td>
-  </tr>
-      <tr>
-   <td><strong>App Tester</strong>
-   </td>
-   <td>Users have view-only access to most system features of Agentic Apps allowing them to observe and test agents and analytics. The user cannot write or modify the production features.
-   </td>
-  </tr>
-</table>
-
-#### Custom Roles 
-
-The admin can assign only **Account** and **Workflow** role types to custom roles. The scopes, permissions, and access levels can be custom-configured. Custom user roles allow for more fine-grained control over what actions different users can perform for at the account and workflow levels.
-
-Organizations can tailor access levels to their specific needs and organizational structure. This customization helps assign only the required permissions to specific users and improve security through role-based access. 
-
-For example, a custom role, “_Banking workflow Conversation Moderator_,” can be customized for full access to a workflow guardrail configuration permission and no access to create and deploy a workflow.
-
-#### Key Considerations
-
-* After creating a custom role, it will appear in the dropdown menu of the email invitation template. You can then select and assign this role to the user you invite to your account.
-<img src="../images/custom-role-listing.png" alt="custom role listing" title="custom role listing"/>
-
-* You cannot delete a custom role if it is currently assigned to active users or included in an email invitation. The system displays an error message, as shown in the screenshot below.
-<img src="../images/error-custom-role.png" alt="error custom role deletion" title="error custom role deletion"/>
-
-To proceed, you must first unassign the role or assign an alternative role to these users, and then you can delete the custom role.
-
-### Permissions
-
-A **Permission** is a specific action or a set of actions the user can perform for a module i.e., **Admin**, **Workflow**, or **Evaluation** based on the defined access level (*Full*, *Edit*, or *View*), assigned role type (*Account*, *workflows*, or *Agentic Apps*) and role category (*Admin*, or *workflows*). An example includes the system providing *full* access to *create a workflow version* to the *tool admin* role of the *workflow* role type.
-
-### Access Levels
-
-The **Settings** console supports two types of access: “_Yes_” indicates the user role has access to a module’s permission, and “_No_” means the user has no access. When the system/custom user role has access, the extent/level of access at the account or workflow level is defined by the following presets: 
-
-* **View**: The user can only view the module feature but does not have the permission to edit or delete it.
-* **Custom**: The user can view, add, and edit the module data, but not delete it.
-* **Full**: The user can view, add, edit, and delete the module data. 
-* **No Access**: The user cannot access the module's features.
-
-[Learn more](./role-management.md#module-wise-permissions-and-access-levels) about Module-wise permissions and access levels.
-
-### Role Types 
-
-A **Role Type** defines the module-wise scope and access level for the defined permissions and associated actions.
-
-Roles are auto-assigned by the system based on the following Role Types. Please refer to [this](./role-management.md#system-defined-roles) table for more information on the roles.
-
-* **Account**:  Users invited to the account must be assigned an Account role (default or custom). The role type manages access to users, integrations, and security permissions.
-* **Workflow**:  When a user is invited to a workflow, they receive a workflow role. The role type manages access to workflow configurations and deployments.
-* **App**: When a user is invited to the AI for Process at the agentic app level, they are assigned this role. This role type manages access to the core features,  configurations, and deployments of autonomous AI applications (agentic apps) that handle specialized business tasks and processes. The admin must assign this role type to any user with whom they intend to share an agentic app.
-
-**Account Role**
-
-* The user who creates an AI for Process account is assigned the *Master Admin* role by default.
-* The *Master Admin* can assign other account roles to users added to their account.
-
-**workflow Role**
-
-* The user who creates a workflow is assigned the *tool admin* role by default.
-* The *tool admin* can assign other workflow roles to users they invite to their workflow.
-
-**App Role**
-
-* The user who creates an agentic app is assigned the *App Owner* role by default.
-* The *App Owner* can assign other Agentic App roles to users who have access to their agentic apps.
-
-### Module-wise Permissions and Access Levels
-
-The following table summarizes the module-wise permissions and access levels for default admin, workflow, and evaluation roles.
-
-<b>Admin Role</b>
-
-<table>
-  <tr bgcolor="#ECECEC">
-   <td rowspan="3" ><strong>Module</strong>
-   </td>
-   <td rowspan="3" ><strong>Permission</strong>
-   </td>
-   <td colspan="4" ><strong>Default Admin Role</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Master Admin</strong>
-   </td>
-   <td><strong>Admin</strong>
-   </td>
-   <td><strong>Member</strong>
-   </td>
-   <td><strong>Viewer</strong>
-   </td>
-  </tr>
-  <tr bgcolor="#ECECEC">
-   <td colspan="4" ><strong>Access Level</strong>
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="2"><strong>workflows</strong>
-<p>
-<strong> </strong>
-   </td>
-   <td>Create a workflow
-   </td>
-   <td>Yes
-<p>
- 
-   </td>
-   <td>Yes
-<p>
- 
-   </td>
-   <td>Yes
-<p>
- 
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-     <td>Workflow Import
-   </td>
-   <td>Yes
-<p>
- 
-   </td>
-   <td>Yes
-<p>
- 
-   </td>
-   <td>Yes
-<p>
- 
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="9" ><strong>Models</strong>
-   </td>
-   <td>Access to Model (“View” is the default access for a custom role)
-   </td>
-   <td>Full
-   </td>
-   <td>Custom
-   </td>
-   <td>Custom
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td>Add an external model
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Create a custom model and perform fine tuning
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Add open-source model
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Deployment - deploy/undeploy/redeploy
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Create or Delete an API Key for a model
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Export Model
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Delete Model
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Model Configuration
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="5" ><strong>Prompts</strong>
-   </td>
-   <td>Access to a Prompt
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-  </tr>
-  <tr>
-   <td>Create an Experiment
-<p>
- 
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Access to Settings</strong> (Only if the settings permission is 'Yes' the user will see all the permissions)
-   </td>
-   <td>Full
-   </td>
-   <td>Custom
-   </td>
-   <td>Custom
-   </td>
-   <td>No Access
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Access to guardrails at the account level</strong>
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-  </tr>
-    <tr>
-   <td><strong>Access to Integrations</strong> (“Full” is the default access)
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>Custom
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="6" ><strong>Integrations</strong>
-   </td>
-   <td>Access
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>Custom
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td>Delete an Integration
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Test an Integration
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Update an Integration
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Create an Integration
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td>Disable an Integration
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="11" ><strong>Users Management</strong>
-   </td>
-   <td>Access
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>No access
-   </td>
-   <td>No access
-   </td>
-  </tr>
-  <tr>
-   <td>Invite User (via email or import)
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Bulk Import Users via files
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Assign/revoke system roles to users & manage profile and status
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Groups
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Enrolment
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Directory Sync to enroll users
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Workflow Roles (Create and edit Custom roles), assign/revoke users
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Admin Roles (Create and edit Custom roles), assign/revoke users
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Remove Users
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td><strong>Manage User Settings (profile fields): </strong>Users with the permissions to manage user settings can bulk change permissions.
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="5"><strong>Security and Control</strong>
-   </td>
-   <td>Access
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No</td>
-   <td>No</td>
-  </tr>
-  <tr>
-   <td>Create API App
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Delete API App
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Update API App
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td>Create or Delete an API Key
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td><b>Monitoring</b>
-   </td>
-   <td>All actions</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-<p>
-   </td>
-  </tr>
-  <tr>
-   <td><b>Billing: Plans, invoice, subscribe & unsubscribe, token usage</b>
-   </td>
-   <td>All actions</td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td><b>Workflow Management</b>
-   </td>
-   <td>All actions</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="5"><strong>Evaluations</strong>
-   </td>
-   <td>Access</td>
-   <td>Full
-   </td>
-   <td>Custom
-   </td>
-   <td>Custom
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td>Create projects
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Create Global Evaluators.</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Delete Global Evaluators
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Edit Global Evaluators</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-   <tr>
-   <td rowspan="8"><strong>Manage Custom Scripts</strong>
-   </td>
-   <td>Access</td>
-   <td>Full
-   </td>
-   <td>Custom
-   </td>
-   <td>Custom
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td>Import New Custom Script
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Deploy/Re-deploy custom script</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Undeploy Custom Script
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Delete Custom Script</td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Export Project</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  <td>No</td>
-   </tr>
-     <tr>
-   <td>Overview and Other Details</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-  <td>Yes</td>
-   </tr>
-       <tr>
-   <td>Create/Delete an API Key</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  <td>No
-   </td>
-   </tr>
-  </table>
-
-<b>Workflow Role</b>
-
-<table>
-  <tr bgcolor="#ECECEC">
-   <td rowspan="3" ><strong>Module</strong>
-   </td>
-   <td rowspan="3" ><strong>Permission</strong>
-   </td>
-   <td colspan="4" ><strong>Default workflow Role</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>tool admin</strong>
-   </td>
-   <td><strong>tool manager</strong>
-   </td>
-   <td><strong>tool editor</strong>
-   </td>
-   <td><strong>tool viewer</strong>
-   </td>
-  </tr>
-  <tr bgcolor="#ECECEC">
-   <td colspan="4" ><strong>Access Level</strong>
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="10" ><strong>workflows</strong>
-   </td>
-   <td><strong>Access to workflow </strong>(“Custom” is the default access for a custom role)
-   </td>
-   <td>Full
-   </td>
-   <td>Custom
-   </td>
-   <td>Custom
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td>Create a workflow Version
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Import as a Version
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Share workflows/ Unshare workflows/ Assign workflow Roles/ Remove users
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Delete workflow
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Export workflow
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Monitoring Trace of a workflow
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-  </tr>
-  <tr>
-   <td>Editing Workflow</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>workflow configurations
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Create/Delete an API Key
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Deployment</strong>
-   </td>
-   <td>Manage Deployment - deploy/undeploy/redeploy
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Guardrails</strong>
-   </td>
-   <td>Manage Guardrails Configuration
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Monitoring</strong>
-   </td>
-   <td>Audit Log
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-</table>
-
-
-<b>App Role - Agentic Apps</b>
-
-<table>
-  <tr bgcolor="#ECECEC">
-   <td rowspan="3" ><strong>Permission</strong>
-   </td>
-   <td colspan="5" align="center"><strong>Default App Role</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>App Owner</strong>
-   </td>
-   <td><strong>App Admin</strong>
-   </td>
-   <td><strong>App Developer</strong>
-   </td>
-   <td><strong>App Tester</strong>
-   </td>
-   <td><strong>App Viewer</strong>
-   </td>
-  </tr>
-  <tr bgcolor="#ECECEC">
-   <td colspan="5" align="center"><strong>Access Level</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>App Configuration
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td>Agents
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td>Code workflows
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td>Simulate
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td>Analytics
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Environments
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>API Keys
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Audit Logs
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Guardrails
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td>Sharing & Permissions
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Versions
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>workflows Library
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>View
-   </td>
-  </tr>
-  <tr>
-   <td>Export workflow
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>Full
-   </td>
-   <td>View
-   </td>
-   <td>No
-   </td>
-  </tr>
-</table>
-
-
-
-<table>
-  <tr bgcolor="#ECECEC">
-   <td rowspan="3" ><strong>Module</strong>
-   </td>
-   <td rowspan="3" ><strong>Permission</strong>
-   </td>
-   <td colspan="5" align="center"><strong>Default Role</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>App Owner</strong>
-   </td>
-   <td><strong>App Admin</strong>
-   </td>
-   <td><strong>App Developer</strong>
-   </td>
-   <td><strong>App Tester</strong>
-   </td>
-   <td><strong>App Viewer</strong>
-   </td>
-  </tr>
-  <tr>
-   <td colspan="5" bgcolor="#ECECEC" align="center"><strong>Access</strong>
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="2" >App Configurations
-   </td>
-   <td>View Profile, View Config, view app versions
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-  </tr>
-  <tr>
-   <td>Edit Profile, Edit Config, Import App version, Delete App version
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="2" >Agents
-   </td>
-   <td>View Agent
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-  </tr>
-  <tr>
-   <td>Add Agent, Edit Agent, Link workflows, Unlink workflows, Restore Agent Version, Restore App Version, Create Agent Version
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="2" >workflows
-   </td>
-   <td>View workflow
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-  </tr>
-  <tr>
-   <td>Add workflow, Edit workflow, Create In-line workflow, Edit Inline workflow, Delete Inline workflow
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Simulate
-   </td>
-   <td>Test
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-  </tr>
-  <tr>
-   <td>Analytics
-   </td>
-   <td>View Sessions, Traces, Generations
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="2" >Environments
-   </td>
-   <td>View Environment
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Create Environment, Delete Environment, Deploy Version
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="2" >API Keys
-   </td>
-   <td>View List
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Add Key
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Audit Logs
-   </td>
-   <td>View Logs
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="2" >Guardrails
-   </td>
-   <td>View Guardrails
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-  </tr>
-  <tr>
-   <td>Add Guardrails, Edit Guardrails
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="2" >Sharing & Permissions
-   </td>
-   <td>View Users
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Add Users, Update Role
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-</table>
-
-<b>Evaluation Role</b>
-
-<table>
-  <tr bgcolor="#ECECEC">
-   <td><strong>Permission</strong>
-   </td>
-   <td><strong>Full</strong>
-   </td>
-      <td><strong>Edit</strong>
-   </td>
-      <td><strong>View</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Edit a project.</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Share a project.</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>User management - invite/delete users from project</td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td>Delete a project.</td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Create/delete custom evaluators</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Create/rename evaluations</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-      <tr>
-   <td>Delete Evaluations</td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Run an Evaluation</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Add, edit and delete evaluator columns and run evaluation</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Create a custom evaluator</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td>Save as a global evaluator</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td>Export evaluation</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td>Automate evaluation</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td>Import rows</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td>Add, edit and delete evaluator columns and run evaluation</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td>Add production data(model traces)</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td>Run a prompt</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>No
-   </td>
-  </tr>
-    <tr>
-   <td>Table options(user specific)</td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-   <td>Yes
-   </td>
-  </tr>
-  </table>
-
-### Role Management Dashboard
-
-The **Role Management** Dashboard displays key information related to system and custom roles and their permissions available on the AI for Process.
-
-To access the dashboard, follow the steps below:
-
-1. Log in → In AI for Process Modules top menu → Click **Settings**.
-   <img src="../images/aip-settings-access.png" alt="access settings" title="access settings"/>
-
-2. In the **Users Management** section on the left menu, click **Role Management**.
-
-The **Role Management** dashboard displays the following:
-
-1. The summary of counts for the following:
-
-    * **Total Roles**: The total count of system and custom roles in the system.
-    * **System Roles**: The count of the pre-defined, system-generated user roles.
-    * **Custom Roles**: The count of the user roles created and configured by the system admin.
-    <img src="../images/summary-of-counts.png" alt="summary of counts" title="summary of counts"/>
-
-2. A Table view of the following system and custom role details:
-
-    * **Role**: The name of the system-generated role or the custom role you have created.
-    * **Role Type**: The role type defines its scope, including **Account**, **Workflow**, and **Agentic App**.
-    * **Description**: This is the description of the role. System roles are pre-defined, while you must provide custom role descriptions. Hover over the description text to view the entire description.
-    * **Created by**: For system-generated roles, _System_ is displayed. For custom roles, the name of the user who created the role is displayed, as shown in the image below. This user can be the account owner or another user in the admin’s account.
-    <img src="../images/custom-and-system-roles.png" alt="custom and system roles" title="custom and system roles"/>
-
-    * **Last Updated On**: The local time and date when the custom role was last updated are displayed. This information does not appear for system roles, as they cannot be modified.
-
-### Search a Role
-
-To look up a system or custom role, follow the steps below:
-
-1. [Navigate](../user-management/role-management.md#role-management-dashboard) to the **Role Management** dashboard.
-2. Click the **Search** text field.
-3. Enter the role you want to search for. All the matching results are displayed.
-<img src="../images/search-role.png" alt="search role" title="search role"/>
-
-   If no results are found, the following message is displayed.
-   <img src="../images/no-results-found.png" alt="no results found" title="no results found"/>
-
-### Manage System Roles
-
-You can perform the following actions on the [system-generated roles](./role-management.md#system-defined-roles).
-
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>System roles cannot be created, modified, or deleted since the role and its permissions are pre-defined in the system. However, they can be duplicated as <b>Custom Roles</b> and modified.</p>
-</div>
-
-#### View Role Information
-
-To view the details of a [system-defined role](./role-management.md#system-defined-roles), follow the steps below.
-
-1. [Navigate](../user-management/role-management.md#role-management-dashboard) to the **Role Management** dashboard,
-2. Click the **Ellipses** icon for a system role.
-3. Select **View**.
-<img src="../images/click-view.png" alt="select view" title="select view"/>
-
-The following information is displayed:
-
-* Role Title along with Role Type.
-* Role Name
-* Role Description
-* Configuration panel to enable/disable access and set access levels for the listed permissions at the account/workflow level. Click [here](./role-management.md#module-wise-permissions-and-access-levels) to see the module-wise permissions and access levels for different roles.
-<img src="../images/module-wise-permissions-new.png" alt="module-wise permissions" title="module-wise permissions"/>
-
-#### Duplicate System Role
-
-If you want to add a custom role by copying the scope and permissions of a system role, you can use the Duplicate functionality. This feature automatically duplicates the system role, copying its name, role type, and permission/access configurations, and creates it as a custom role. You can then modify, delete, or duplicate this custom role to create multiple copies and add module-wise permissions/access for each.
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>The changes you make to the duplicate role do not apply to the original system role.</li>
-<li>The Last Updated On value is displayed for duplicate roles and shows the date and time when the duplicate was created.</li></ul></p>
-</div>
-
-**Steps to Create a Duplicate Role**
-
-To duplicate a system role, follow the steps below:
-
-1. [Navigate](../user-management/role-management.md#role-management-dashboard) to the **Role Management** dashboard.
-2. Click the **Ellipses** icon for a system role.
-3. Select **Duplicate**.
-<img src="../images/select-duplicate.png" alt="select duplicate" title="select duplicate"/>
-
-The duplicate custom role displays the system role name followed by a suffix “**_copy_**,” as shown below. You can edit the name if required.
-<img src="../images/duplicate-role.png" alt="duplicate role" title="duplicate role"/>
-
-### Manage Custom Roles
-
-[Custom roles](../user-management/role-management.md#custom-roles) can be edited, deleted, or duplicated on the Settings console. They help customize a set of [permissions](../user-management/role-management.md#permissions) and set [access levels](../user-management/role-management.md#access-levels) according to enterprise's requirements.
-
-#### Add a Role
-
-To add a custom role, follow the steps below:
-
-
-1. [Navigate](../user-management/role-management.md#role-management-dashboard) to **Role Management** on the **Settings** console.
-2. Click **Add New Role**.
-<img src="../images/add-new-role.png" alt="add new role" title="add new role"/>
-
-3. Follow the steps below in the **New Role** window:
-
-    * Enter **Role Name** (should be unique) & **Role Description**.
-    <img src="../images/enter-role-name-and-description.png" alt="enter role name and description" title="enter role name and description"/>
-    * Select the **Role Type** from the dropdown.
-    <img src="../images/select-role-type.png" alt="select role type" title="select role type"/>
-    * Follow the steps below if you select **Role Type** as **_Account_**.
-        * Enable/select the access level for module-wise permissions in the **Enable/Disable workflow access** section. [Learn more](../user-management/role-management.md#module-wise-permissions-and-access-levels) about module-wise permissions and access levels you can configure for a custom role.
-        * If you select *Custom*, Select the checkbox to enable the permissions (set to _Yes_) or unselect to disable (set to _No_) for the following:
-
-            * Create and Import workflow
-            * Create agentic apps
-            * Models
-                * Add External models
-                * Fine-tune a model
-                * Delete a model
-                * Manage Deployment - deploy/undeploy
-                * Create an API key for a model
-                * Export model
-            * Prompts
-            * Settings
-                * Integrations
-                  * Weights and Biases
-                  * Hugging Face
-                  * S3 Bucket
-               * User Management
-                  * Invite user
-                  * Bulk import users
-                  * Assign roles to users
-                  * Directory Sync
-                  * Manage admin roles
-                  * Manage workflow roles
-                  * Remove users
-                  * Manage user settings
-            * Security and Control Settings
-            * Manage Guardrail Models
-            * Monitoring
-            * Billing
-
-          <img src="../images/enable-permissions.png" alt="enable permissions" title="enable permissions"/>       
-
-       * Select the access level for **Models**, **Settings**, **Integrations**, and **User Management** from the following options:
-        * **Full**: The users can access all the module permissions (view & edit).
-        * **Custom**: The users can select only the required permissions for the module to customize the role.
-        * **View**: The users can only view the configured module permissions.
-        * **No Access**: The user cannot view/customize the module permissions.
-            
-**Important Considerations**
-
-* First, select the access level for **Models** to enable its permissions.
-<img src="../images/select-access-for-models.png" alt="set models access" title="set models access"/>
-
-    Missing this step automatically disables the permissions.
-
-* Selecting **_Full_** automatically selects all the module permissions.
-<img src="../images/select-full-auto-select.png" alt="full auto select" title="full auto select"/>
-
-* Selecting **_Custom_** allows you to enable only the required module permissions.  <img src="../images/select-custom-access.png" alt="select custom access" title="select custom access"/>
-
-* Selecting **_View_** and **_No Access_** disables permissions selection.
-<img src="../images/select-view-and-no-access.png" alt="select view and no access" title="select view and no access"/>       
-
-* Selecting **_Full_** for **Settings** automatically sets the access levels of **Integrations** and **User Management** to **_Full_**.
-
-<img src="../images/select-full-access.png" alt="select full access" title="select full access"/>
-
-Additionally, it automatically enables all the permissions for the following modules:
-
-   * Integrations (View is always enabled by default as it is the minimum required permission).
-   * User Management
-   * Security and Control Settings
-   * Manage Guardrail Models
-   * Monitoring
-   * Billing
-
-* Selecting **_No Access_** for **Settings** automatically sets the access levels of **Integrations** to **_View_** and **User Management** to **_No Access_**.
-<img src="../images/select-no-access.png" alt="no access" title="no access"/>
-
-Additionally, it disables all the permissions for the following modules:
-
-   * Integrations (The **View** permission is always enabled by default).
-   * User Management
-   * Security and Control Settings
-   * Manage Guardrail Models
-   * Monitoring
-   * Billing
-  
-Selecting **_Custom_** for **Settings** automatically sets the **Integrations** and **User Management** access levels to **_Custom_** where you can select or unselect the listed permissions based on your requirement for the following modules:
-
-* Integrations
-* User Management
-* Security and Control Settings
-* Manage Guardrail Models
-* Monitoring
-* Billing
-
-<img src="../images/select-custom.png" alt="select custom" title="select custom"/>
-
-You can change **_Custom_** to **_Full_** or **_View_** for **Integrations** and **_Full_** or **_No Access_** for **User Management**.
-
-
-If you select **Role Type** as **_workflow_**, follow the steps below:
-
-* Select **_Custom_**, **_View_**, or **_Full_** for **Access**. [Learn more](../user-management/role-management.md#access-levels). 
-
-**_Custom_** is the default selection.
-<img src="../images/access-options.png" alt="access options" title="access options"/>
-                     
-* Set up the workflow permissions as follows in the **Enable/Disable workflow access** section:
-* If you select **_View_** for **Access**, all the permissions are automatically disabled.
-* If you select **_Full_** for **Access**, all the permissions are automatically enabled.
-* If you select **_Custom_** for **Access**, you can select the required workflow permissions to enable them and customize the role.                 
-
-4. Click **Create**.
-
-The new custom role is created and listed on the **Role Management** dashboard.
-
-<img src="../images/list-new-custom-role.png" alt="list new custom role" title="list new custom role"/>
-
-#### Edit a Custom Role
-
-You can modify the role name, description, and access levels for account type or workflow type roles’ permissions on the Settings console.
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><ul><li>The system does not allow changing the <b>Role Type</b> once it is set. You must create a new custom role to assign a different role type.</li>
-<li>When a custom role is updated, it changes the permissions for the assigned users.</li></ul></p>
-</div>
-
-To update a role, follow the steps below:
-
-1. [Navigate](../user-management/role-management.md#role-management-dashboard) to the **Role Management** dashboard on the **Settings** console.
-2. Click the **Ellipses** icon for the custom role you want to modify.
-3. Select **Edit**.
-<img src="../images/edit-role.png" alt="edit role" title="edit role"/>
-
-4. Edit the required values for the following In the **Update Role** window:
-
-    * Role Name
-    * Role Description
-    * Access: Select either *Custom*, *Full*, or *View*.
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You cannot reset the access levels for module-wise Permissions in the <b>Enable/disable workflow access</b> section.</p>
-</div> 
-
-<ol start="5"><li>Click <b>Update</b>.</li>
-<img src="../images/update-role-window.png" alt="update role window" title="update role window"/></ol>
-
-A success message is displayed upon completing the role edit, and the updated role details appear on the dashboard.
-
-<img src="../images/role-updated-message.png" alt="role updated message" title="role updated message"/>
-
-#### Delete a Custom Role
-
-You can delete a custom role if you want to permanently remove it from the system and unassign it from users.
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can only delete one role at a time. Bulk delete is not supported.</p>
-</div> 
-
-**Prerequisite**
-
-Before you delete a role, ensure that the custom role is not assigned to any active users. If the role is assigned, do one of the following:
-
-* Reassign an alternative role to the active users. [Learn more](../user-management/role-management.md#reassign-an-alternative-role-to-active-users).
-
-* Remove Inactive users to whom this role is assigned.
-
-To delete a role, follow the steps below:
-
-1. [Navigate](../user-management/role-management.md#role-management-dashboard) to the **Role Management** dashboard on the **Settings** console.
-2. Click the **Ellipses** icon for the custom role you want to delete.
-3. Select **Delete**.
-<img src="../images/select-delete-role.png" alt="select delete role" title="select delete role"/>
-
-4. Click **Confirm** in the **Delete Role** confirmation window.
-<img src="../images/delete-role-confirm.png" alt="confirm delete role" title="confirm delete role"/>
-
-A success message is displayed, and the role is deleted from the **Role Management** dashboard.
-
-#### Role Deletion Error and Workaround 
-
-The **Settings** console allows you to delete only unassigned roles. If a role is assigned to active/inactive users during deletion, the following error message is displayed.
-<img src="../images/role-deletion-error.png" alt="role deletion error" title="role deletion error"/>
-
-You must perform one of the following workarounds.
-
-##### Reassign an Alternative Role to Active Users
-
-1. [Navigate](../user-management/role-management.md#role-management-dashboard) to **Users Management** > **Users** on the **Settings** Console.
-2. Click the **Account Role** entry for the user.
-3. Select the role you want to reassign.
-<img src="../images/select-role-to-reassign.png" alt="reassign role" title="reassign role"/>
-
-Once you reassign the role for the user, go to the **Role Management** dashboard and delete the role using the steps mentioned [here](../user-management/role-management.md#delete-a-custom-role).
-
-The role is deleted successfully from the **Role Management** dashboard and the count for custom roles is updated (decreased).
-<img src="../images/custom-role-deleted.png" alt="custom role deleted" title="custom role deleted"/>
-
-##### Delete Assigned Users
-
-[Navigate](../user-management/role-management.md#role-management-dashboard) to the **Users Management** dashboard and follow the steps mentioned in the **Delete Users** section to delete all the assigned users individually or in bulk. Once the user is deleted, go to the **Role Management** dashboard and [delete](../user-management/role-management.md#delete-a-custom-role) the required custom role.
-
-Deleting the assigned users removes their association with the role you want to delete.
-
-#### Duplicate a Custom Role
-
-Like a system role, you can duplicate a custom role, which copies the name, role type, and configurations for permissions and access. Follow the steps mentioned [here](../user-management/role-management.md#duplicate-system-role) to complete the process for a custom role.
-<img src="../images/duplicate-custom-role.png" alt="duplicate custom role" title="duplicate custom role"/>
-
-## Related Information
-
-* **Settings Console** - [Learn more](../overview.md) about other AI for Process admin features.
-* **Users Management** - [Learn more](../user-management/users.md) about managing users in your account.
-* **Monitoring: Audit Logs** - [Learn more](../monitoring/audit-logs.md) about tracking events and user activity in your account.
+![failed sync](/ai-for-process/images/failed-sync.png)
