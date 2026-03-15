@@ -2,6 +2,7 @@
 title: Installing the BotKit SDK
 sidebarTitle: Installing the BotKit SDK
 ---
+<Badge icon="arrow-left" color="gray">[Back to Web SDK Overview](/ai-for-service/sdk/botkit-sdk)</Badge>
 
 The BotKit SDK runs as a Node.js application. You can add a reverse proxy, firewall, and load balancer to meet your availability, scalability, and performance requirements.
 
@@ -96,12 +97,11 @@ Set the following keys in `config.json`:
 }
 ```
 
-<Note>The default JWT token expiry is 60 seconds. Override with the KoreConfig setting:
+The default JWT token expiry is 60 seconds. Override with the KoreConfig setting:
 
 ```json
 "botkit": { "jwt_expiry": 300 }
 ```
-</Note>
 
 ---
 
@@ -117,8 +117,3 @@ Requires Node.js version 10 or higher.
 
 ---
 
-## Related
-
-- [SDK App Registration](app-registration.mdx) — Get your Client ID and Secret
-- [BotKit SDK Deployment Guide](botkit-sdk-deployment-guide.mdx) — Production architecture and best practices
-- [Installing BotKit in AWS](installing-botkit-in-aws.mdx) — Automated AWS deployment steps
