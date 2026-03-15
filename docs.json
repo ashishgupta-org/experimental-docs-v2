@@ -349,7 +349,15 @@
                   "/ai-for-service/apis/api-list"
                 ]
                 },
-                "/ai-for-service/apis/automation/koreutil-libraries"
+                {
+                  "group": "SDKs",
+                    "pages": [
+                    "/ai-for-service/sdk/bot-sdk-introduction",
+                    "/ai-for-service/sdk/web-sdk",
+                    "/ai-for-service/sdk/botkit-sdk"
+                    ]
+                },
+                 "/ai-for-service/apis/automation/koreutil-libraries"
                 ]
               }
             ]
