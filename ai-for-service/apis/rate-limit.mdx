@@ -5,6 +5,11 @@ sidebarTitle: Rate Limits
 
 The Platform enforces rate limits to restrict the number of API requests a user, account, or application can make within a timeframe. It helps prevent a single user or service from consuming disproportionate resources that could degrade the service for others.
 
+When a rate limit is exceeded, subsequent requests will fail with one of the following error messages:
+
+- Minute-based Limit: *"You've exceeded the per-minute rate limit. Please wait for sometime before retrying."*
+- Hour-based Limit: *"You've exceeded the hourly rate limit. Please wait for sometime before retrying."*
+
 | **Section** | **Description** |
 |---|---|
 | [Automation AI](#automation-ai) | Rolling rate limits across 60-second and 1-hour windows for bot, account, and request-level APIs. |
@@ -16,11 +21,6 @@ The Platform enforces rate limits to restrict the number of API requests a user,
 ## Automation AI
 
 The Platform enforces rolling rate limits within a dynamic timeframe. Requests are monitored against both sixty-second and one-hour limits. As long as neither limit is exceeded, the application can continue making requests. However, if the one-hour limit is breached, all further requests are blocked, even if the sixty-second limit is still within bounds.
-
-When a rate limit is exceeded, subsequent requests will fail with one of the following error messages:
-
-- Minute-based Limit: *"You've exceeded the per-minute rate limit. Please wait for sometime before retrying."*
-- Hour-based Limit: *"You've exceeded the hourly rate limit. Please wait for sometime before retrying."*
 
 ### API Rate Limit Matrix
 
@@ -36,9 +36,6 @@ When a rate limit is exceeded, subsequent requests will fail with one of the fol
 
 Contact Center AI enforces rate limits to restrict the number of API requests an account/application can make within a timeframe. Requests are monitored against a sixty-second limit. As long as the limit is not exceeded, the account/application can continue making requests.
 
-When the rate limit is exceeded, subsequent requests will fail with the following error message:
-
-*"You've exceeded the per-minute rate limit. Please wait for sometime before retrying."*
 
 ### API Rate Limit Matrix
 
@@ -50,9 +47,6 @@ When the rate limit is exceeded, subsequent requests will fail with the followin
 
 Case Management enforces rate limits to restrict the number of API requests an account/application can make within a timeframe. Requests are monitored against a sixty-second limit. As long as the limit is not exceeded, the account/application can continue making requests.
 
-When the rate limit is exceeded, subsequent requests will fail with the following error message:
-
-*"You've exceeded the per-minute rate limit. Please wait for sometime before retrying."*
 
 ### API Rate Limit Matrix
 
@@ -64,9 +58,6 @@ When the rate limit is exceeded, subsequent requests will fail with the followin
 
 Quality AI enforces rate limits to restrict the number of API requests an account/application can make within a timeframe. Requests are monitored against a sixty-second limit. As long as the limit is not exceeded, the account/application can continue making requests.
 
-When the rate limit is exceeded, subsequent requests will fail with the following error message:
-
-*"You've exceeded the per-minute rate limit. Please wait for sometime before retrying."*
 
 ### API Rate Limit Matrix
 
