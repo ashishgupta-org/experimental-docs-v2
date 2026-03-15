@@ -354,7 +354,7 @@
                     "pages": [
                     "/ai-for-service/sdk/bot-sdk-introduction",
                     "/ai-for-service/sdk/web-sdk",
-                    "/ai-for-service/sdk/web-sdk"
+                    "/ai-for-service/sdk/botkit-sdk"
                     ]
                 },
                  "/ai-for-service/apis/automation/koreutil-libraries"
