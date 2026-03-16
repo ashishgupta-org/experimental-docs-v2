@@ -73,7 +73,7 @@ To enable SSO on the **Settings** console:
 
 1. Access the **Single sign on** page.
 2. If no SSO is enabled, click **Enable SSO**.
-![enable sso](../images/enable-sso.png)
+![enable sso](/ai-for-process/settings/images/enable-sso.png)
 
 3. If SSO is already enabled for a provider, click the **Enable SSO** tab and do one of the following:
 
@@ -91,10 +91,10 @@ To enable SSO on the **Settings** console:
 6. Click **Save**.
 
 A success message is displayed once the SSO setup is complete.
-![sso updated successfully message](../images/sso-configuration-updated-successfully.png)
+![sso updated successfully message](/ai-for-process/settings/images/sso-configuration-updated-successfully.png)
 
 Additionally, the timestamp of when you enabled SSO is displayed as shown below:
-![sso timestamp](../images/sso-timestamp.png)
+![sso timestamp](/ai-for-process/settings/images/sso-timestamp.png)
 
 ### SAML
 
@@ -120,19 +120,19 @@ To configure SSO using SAML and Okta:
 1. Go to AI for Process' **Single sign-on** page.
 2. Select the **Enable SSO** tab.
 3. Select **SAML** for **Sign-on protocol** and **Okta** for **SSO provider**.
-![saml-okta-selection](../images/saml-okta-selection.png)
+![saml-okta-selection](/ai-for-process/settings/images/saml-okta-selection.png)
 
 <Note>If you already have the required parameters for Okta, move directly to Step 18.</Note>
 
 4. Log in to the [Okta developer portal](https://developer.okta.com/login/).
 5. On the dashboard, click **Applications** on the left menu.
 6. Click **Create App Integration**.
-![okta create app integration](../images/okta-create-app-integration.png)
+![okta create app integration](/ai-for-process/settings/images/okta-create-app-integration.png)
 
 7. In the **Create a new app integration** window, select **SAML 2.0** and click **Next**.
-   ![create a new app integration](../images/create-a-new-app-integration.png)
+   ![create a new app integration](/ai-for-process/settings/images/create-a-new-app-integration.png)
 8. On the **Create SAML Integration** page, provide the **App Name** under **General Settings**, and click **Next**.
-   ![create saml integration](../images/create-saml-integration.png)
+   ![create saml integration](/ai-for-process/settings/images/create-saml-integration.png)
 9. Copy the following values from AI for Process' SSO setup page and paste them into Okta under **Configure SAML**:
    * **ACS url for SP initiated SAML flow**: Paste into *Single sign-on URL*.
    * **ACS url for IDP initiated SAML flow**: Paste into *Audience URI (SP Entity ID)*.
@@ -148,14 +148,14 @@ To configure SSO using SAML and Okta:
 13. On the **How to Configure SAML 2.0** for `<app-name>` application page, do the following from Okta into AI for Process:
     * Copy the **Identity Provider Single Sign-On URL** value and paste it into the **Okta Single Sign-On URL**.
     * Copy the **Identity Provider Issuer** value into the **Identity provider issuer**.
-    ![copy identity provider issuer](../images/copy-Identity-Provider-Issuer.png)
+    ![copy identity provider issuer](/ai-for-process/settings/images/copy-Identity-Provider-Issuer.png)
 14. Go to **Sign On** > **SAML Signing Certificates** on your Okta app.
 15. Click **Download certificate** under **Actions** for the required certificate.
-    ![download certificate](../images/download-certificate-saml.png)
+    ![download certificate](/ai-for-process/settings/images/download-certificate-saml.png)
 16. Once the certificate is downloaded, open it in Notepad and copy the data between the **BEGIN CERTIFICATE** header and **END CERTIFICATE** footer.
-    ![okta certificate](../images/okta-certificate-notepad.png)
+    ![okta certificate](/ai-for-process/settings/images/okta-certificate-notepad.png)
 17. Paste the value into the **Certificate** field on AI for Process' SSO setup page.
-    ![paste okta certificate](../images/paste-okta-certificate.png)
+    ![paste okta certificate](/ai-for-process/settings/images/paste-okta-certificate.png)
 
 To add a new certificate, click **+ Add new**.
 
@@ -163,7 +163,7 @@ To add a new certificate, click **+ Add new**.
 
 18. Click **Save**.
     Once SSO for Okta is complete, the system will redirect to the **Okta Sign in** page for AI for Process account authentication.
-    ![okta sign in page](../images/okta-sign-in-page.png)
+    ![okta sign in page](/ai-for-process/settings/images/okta-sign-in-page.png)
 
 #### OneLogin Configuration
 
@@ -174,7 +174,7 @@ To configure SSO using SAML and OneLogin:
 3. Select **SAML** for **Sign-on protocol** and **OneLogin** for **SSO provider**.
 4. Log in to the [OneLogin developer portal](https://app.onelogin.com/login).
 5. Go to **Applications** > **Add Apps** to access your app.
-![onelogin add app](../images/onelogin-add-app.png)
+![onelogin add app](/ai-for-process/settings/images/onelogin-add-app.png)
 
    * To learn how to **add a new app**, see [Add a new app](https://onelogin.service-now.com/support?id=kb_article&sys_id=9bf39e0047ccbd509d8dfd1f536d431c&kb_category=e9866930db185340d5505eea4b9619b7#manage-add).
    * To learn how to **configure apps**, see [Configure apps](https://onelogin.service-now.com/support?id=kb_article&sys_id=9bf39e0047ccbd509d8dfd1f536d431c&kb_category=e9866930db185340d5505eea4b9619b7#config).
@@ -184,28 +184,28 @@ To configure SSO using SAML and OneLogin:
 8. Copy the following values from **SSO** > **Enable SAML2.0** on OneLogin and paste them into the relevant fields on AI for Process' SSO setup page:
    * **OneLogin SAML 2.0 Endpoint (HTTP)**: Paste into **SAML 2.0 endpoint**.
    * **OneLogin Issuer URL**: Paste into **Issuer URL**.
-   ![paste one login issuer url](../images/paste-onelogin-issuer-url.png)
+   ![paste one login issuer url](/ai-for-process/settings/images/paste-onelogin-issuer-url.png)
 9. In the **OneLogin X.509 Certificate** field, click **View Details**. The **Standard Strength Certificate (2048-bit)** page is displayed.
-   ![one login view details](../images/onelogin-view-details.png)
+   ![one login view details](/ai-for-process/settings/images/onelogin-view-details.png)
 10. In the **X.509 Certificate** section, copy the certificate data and then paste it into the **X.509 Certificate** field on AI for Process' SSO setup page.
 
 <Note>Copy data after the **BEGIN CERTIFICATE** header and before the **END CERTIFICATE** footer.</Note>
 
 To add a new certificate, click **+Add new**.
-![add new x 509 certificate](../images/add-new-x-509-certificate.png)
+![add new x 509 certificate](/ai-for-process/settings/images/add-new-x-509-certificate.png)
 
 <Note>When multiple certificates are provided, the system uses the latest one. If the latest certificate is invalid, it automatically switches to other available certificates.</Note>
 
 11. Copy the following field values from AI for Process' SSO setup page into the relevant fields in OneLogin:
     * ACS URL for SP Initiated SAML Flow.
     * ACS URL for IDP Initiated SAML Flow.
-    ![copy acs urls](../images/copy-acs-urls.png)
+    ![copy acs urls](/ai-for-process/settings/images/copy-acs-urls.png)
 
 12. Click **Save** on AI for Process and OneLogin.
 
 Once SSO for OneLogin is complete, the system redirects to the **OneLogin Sign in** page for AI for Process account authentication.
 
-![one login sign in page](../images/onelogin-sign-in-page.png)
+![one login sign in page](/ai-for-process/settings/images/onelogin-sign-in-page.png)
 
 #### Other SAML Providers
 
@@ -214,13 +214,13 @@ To configure SSO using SAML for other IDPs:
 1. Go to AI for Process' **Single sign-on** page.
 2. Select the **Enable SSO** tab.
 3. Select **SAML** for **Sign-on protocol** and **Other** for **SSO provider**.
-![other sso provider](../images/other-sso-provider.png)
+![other sso provider](/ai-for-process/settings/images/other-sso-provider.png)
 
 4. Fetch the necessary SSO configuration parameters listed in the [Configuration Parameters](#configuration-parameters) table from your app's **Settings** page within the IDP developer portal.
 5. Paste them into the relevant fields on AI for Process' SSO setup page.
 
 To add a new certificate, click **+Add new**.
-![paste parameters for other provider](../images/paste-parameters-other-configuration.png)
+![paste parameters for other provider](/ai-for-process/settings/images/paste-parameters-other-configuration.png)
 
 <Note>When multiple certificates are provided, the system uses the latest one. If the latest certificate is invalid, it automatically switches to other available certificates.</Note>
 
@@ -250,11 +250,11 @@ To configure SSO using WS-Federation and Windows Azure:
 3. Select **WS-Federation** for **Sign-on protocol** and **Windows Azure** to **Configure SSO for WS-Federation**.
 4. Open **Server Manager** on the computer running AD FS, then choose **AD FS** > **Workflows** > **AD FS Management**.
 5. Copy **IdP URL** from your IdP metadata (FederationMetadata.xml). You can find your ADFS Federation Metadata file URL on the AD FS server through **ADFS Management** in **ADFS** > **Service** > **Endpoints** > **Metadata**. It should look like this:
-![copy idp url](../images/copy-idp-url.png)
+![copy idp url](/ai-for-process/settings/images/copy-idp-url.png)
 
 6. Paste this value into the **Azure AD sign-on end point url** field on AI for Process' SSO setup page.
 7. Copy and paste [this](https://login.microsoftonline.com/common/FederationMetadata/2007-06/FederationMetadata.xml) URL link into the **Azure AD federation metadata document** field on AI for Process' SSO setup page.
-![paste azure parameters](../images/paste-azure-parameters.png)
+![paste azure parameters](/ai-for-process/settings/images/paste-azure-parameters.png)
 
 8. Click **Save**.
 
@@ -267,7 +267,7 @@ To configure SSO using WS-Federation for other IDPs:
 3. Select **WS-Federation** for **Sign-on protocol** and **Other** to **Configure SSO for WS-Federation**.
 4. Copy and paste the SSO endpoint URL from the IDP's portal into **AD sign-on end point url** on AI for Process' SSO setup page.
 5. Copy and paste the URL for the WS-Federation metadata document from the IDP's portal into the **AD federation metadata document url** on AI for Process' SSO setup page.
-![paste ws federation data](../images/paste-ws-federation-data.png)
+![paste ws federation data](/ai-for-process/settings/images/paste-ws-federation-data.png)
 
 6. Click **Save**.
 
@@ -293,7 +293,7 @@ To configure SSO using OpenID Connect and Google:
 1. Go to AI for Process's **Single sign-on** page.
 2. Select the **Enable SSO** tab.
 3. Select **OpenId Connect** for **Sign-on protocol** and **Sign in with Google** to **Configure SSO for OpenId connect**.
-![sign in with google](../images/sign-in-with-google.png)
+![sign in with google](/ai-for-process/settings/images/sign-in-with-google.png)
 
 4. Click **Save**.
 
@@ -307,13 +307,13 @@ You can still view the previously configured SSO parameters for a specific proto
 
 1. [Access](#enable-sso) the **Single sign on** page.
 2. Click the **Disable SSO** tab.
-![click disable sso](../images/click-disable-sso.png)
+![click disable sso](/ai-for-process/settings/images/click-disable-sso.png)
 
 3. In the **Disable SSO** confirmation window, click **Yes**.
-![disable sso screen](../images/disable-sso-screen.png)
+![disable sso screen](/ai-for-process/settings/images/disable-sso-screen.png)
 
 The following screen is displayed after SSO is disabled.
-![enable sso screen](../images/enable-sso-screen.png)
+![enable sso screen](/ai-for-process/settings/images/enable-sso-screen.png)
 
 ### Exclude Users from SSO
 
@@ -337,10 +337,10 @@ To exclude a user from the SSO requirement, follow the steps below:
 
 1. [Navigate](#enable-sso) to the **Single Sign-on** page.
 2. Type and add an email address or select from the dropdown in the **Manage Users** textbox.
-![manage sso users](../images/manage-users-sso.png)
+![manage sso users](/ai-for-process/settings/images/manage-users-sso.png)
 
 You can add multiple users to the list, as shown below:
-![exclude multiple users](../images/add-multiple-users-to-exclude.png)
+![exclude multiple users](/ai-for-process/settings/images/add-multiple-users-to-exclude.png)
 
 3. Click **Save**.
 
@@ -349,18 +349,18 @@ A success message is displayed, and the SSO sign-in is made optional for the use
 #### Sign-In Flow for Excluded Users
 
 During sign-in, the following screen is displayed for the excluded user.
-![screen for excluded user](../images/screen-for-excluded-user.png)
+![screen for excluded user](/ai-for-process/settings/images/screen-for-excluded-user.png)
 
 When the user clicks **Continue**, one of the following happens:
 
 When **SSO is enabled**, the following page is displayed.
-![login with sso](../images/login-with-sso.png)
+![login with sso](/ai-for-process/settings/images/login-with-sso.png)
 
 The user can do one of the following:
 
 * Click **Continue** to log in using the configured SSO provider service's sign-in page, for example, OKTA, as shown below:
 
-![connect to okta](../images/connect-to-okta.png)
+![connect to okta](/ai-for-process/settings/images/connect-to-okta.png)
 
 * Click "**Having trouble logging in with SSO?**" to sign in using the default option (email and password, Google, Windows, etc.) set during AI for Process sign-up.
 
@@ -421,7 +421,7 @@ By using API-scoped apps and API keys, the bank minimizes the risk of data expos
 To access **API Scopes**:
 
 1. Log in → In AI for Process Modules top menu → Click **Settings**.
-   ![access settings](../images/aip-settings-access.png)
+   ![access settings](/ai-for-process/settings/images/aip-settings-access.png)
 2. Click **Security & Control** > **API Scopes** on the left navigation menu.
 
 The key steps to implement API scoping include:
@@ -434,19 +434,19 @@ The key steps to implement API scoping include:
 To create an app:
 
 1. Click **Create an API App** or **Create an App**.
-   ![create api app](../images/create-an-api-app.png)
+   ![create api app](/ai-for-process/settings/images/create-an-api-app.png)
 
 2. Click **Untitled app** and provide the app name.
-    ![provide app name](../images/provide-app-name.png)
+    ![provide app name](/ai-for-process/settings/images/provide-app-name.png)
 
 3. Select the required scopes from the list.
-    ![select scopes](../images/scopes-selection.png)
+    ![select scopes](/ai-for-process/settings/images/scopes-selection.png)
 
 4. Click **Next**.
 
     A success message is displayed, and the following window is displayed. Follow the steps in [Create an API Key](#create-an-api-key) to complete the process.
 
-     ![success app creation](../images/api-app-creation-success.png)
+     ![success app creation](/ai-for-process/settings/images/api-app-creation-success.png)
 
 #### Create an API Key
 
@@ -454,10 +454,10 @@ To complete the app creation, create an API key:
 
 1. Click **Create API Key**.
 2. In the **Create new API key** dialog, provide a name and click **Generate Key**.
-    ![generate new api key](../images/generate-your-new-api-key.png)
+    ![generate new api key](/ai-for-process/settings/images/generate-your-new-api-key.png)
 
 3. Once the key is successfully generated, click **Copy and Close** to copy the API key.
-   ![create new api key](../images/create-new-api-key-window.png)
+   ![create new api key](/ai-for-process/settings/images/create-new-api-key-window.png)
 
 A success message is displayed once the key is copied.
 
@@ -470,7 +470,7 @@ You'll need to revoke the old key and **generate a new one**. This could disrupt
 </Note>
 
 The API key is listed for the app, as shown below.
-![api keys list](../images/api-keys-list-for-apps.png)
+![api keys list](/ai-for-process/settings/images/api-keys-list-for-apps.png)
 
 4. Click **Done**.
 
@@ -480,7 +480,7 @@ The app summary displays:
 * **Scopes**: The selected API scopes.
 * **Created by**: The name of the user who created the app.
 * **Created on**: The date when the app was created.
-![apps list](../images/api-apps-list.png)
+![apps list](/ai-for-process/settings/images/api-apps-list.png)
 
 ### Manage API Apps and Keys
 
@@ -491,21 +491,21 @@ You can edit or delete an API app, including its name and scopes. However, you c
 To edit an API app:
 
 1. Hover over and click the **Edit** icon for the required app.
-    ![access edit icon](../images/hover-edit-api-scopes.png)
+    ![access edit icon](/ai-for-process/settings/images/hover-edit-api-scopes.png)
 
 2. In the App's configuration window, do the following:
 
     * To change the app name, click and modify the title.
     * To change the scopes, click the **API Scopes** tab and select/unselect the listed scopes.
-        ![change api config](../images/edit-api-app-name.png)
+        ![change api config](/ai-for-process/settings/images/edit-api-app-name.png)
 
     * To delete an API key, follow the steps below:
          * Click the **API Keys** tab.
          * Hover over and click the **Delete** icon for the required key.
-           ![access delete icon](../images/hover-delete-api-key.png)
+           ![access delete icon](/ai-for-process/settings/images/hover-delete-api-key.png)
          * Click **Delete** in the confirmation window.
 
-            ![delete api keys](../images/del-api-key.png)
+            ![delete api keys](/ai-for-process/settings/images/del-api-key.png)
 
             <Warning>The key you are deleting will no longer function if it is in use. You must generate a new key.</Warning>
 
@@ -515,18 +515,18 @@ To edit an API app:
 
 A success message is displayed once the app is edited. The changes are updated in the summary page.
 
-![edit success message](../images/edit-success-message-api-app.png)
+![edit success message](/ai-for-process/settings/images/edit-success-message-api-app.png)
 
 #### Delete App
 
 To delete an API app:
 
 1. Hover over and click the **Delete** icon for the required app.
-   ![access delete](../images/delete-api-app-icon.png)
+   ![access delete](/ai-for-process/settings/images/delete-api-app-icon.png)
 
 2. Click **Delete** in the confirmation window.
 
-      ![delete api app](../images/delete-api-app.png)
+      ![delete api app](/ai-for-process/settings/images/delete-api-app.png)
 
 A success message is displayed, and the app is removed from the list.
 
@@ -548,7 +548,7 @@ Key capabilities of managing Auth Profiles on AI for Process include:
 To access **Authorization Profiles**:
 
 1. Log in → In AI for Process Modules top menu → Click **Settings**.
-   ![access settings](../images/aip-settings-access.png)
+   ![access settings](/ai-for-process/settings/images/aip-settings-access.png)
 2. Click **Security & Control** > **Authorization profile** on the left navigation menu.
 
 ### Supported Auth Types
@@ -590,27 +590,27 @@ The Client Credentials flow is one of the OAuth 2.0 authorization grant types. I
 To add an auth profile:
 
 1. Click **Create Authorization Profile** if this is your first auth profile.
-![create auth profile](../images/click-create-auth-profile.png)
+![create auth profile](/ai-for-process/settings/images/click-create-auth-profile.png)
 
    Otherwise, click **Add new auth**.
-![add new auth profile](../images/add-new-auth-profile.png)
+![add new auth profile](/ai-for-process/settings/images/add-new-auth-profile.png)
 
 2. In the **New Authorization Mechanism** dialog, select the required option for **Authorization Type**.
-   ![select oauth v2](../images/select-oauthv2.png)
+   ![select oauth v2](/ai-for-process/settings/images/select-oauthv2.png)
 3. In the **Identity Provider Name** field, enter a name for the authorization type, which is mandatory.
-   ![identity provider](../images/identity-provider.png)
+   ![identity provider](/ai-for-process/settings/images/identity-provider.png)
 4. Provide the values for the mandatory authorization fields. For details, refer to [Define Authorization Fields](#define-authorization-fields).
 
    If the mandatory fields are left blank, validation error messages appear, as shown below.
 
-   ![validation errors](../images/form-validation-errors.png)
+   ![validation errors](/ai-for-process/settings/images/form-validation-errors.png)
 5. (Optional) Click **+ Add Additional Field** to add additional fields for authorization. See [Add Additional Fields](#add-additional-fields).
 
 <Note>If the default **Username** and **Password** fields do not meet your authorization requirements, you can add **custom fields** using additional fields or authorization IDP form fields to the authorization process. For example, if a **PIN code** is required in addition to the standard login fields, you can include it as an extra input for the end user.</Note>
 
 6. (OAuth V2 only) Click **+ Add Authorization Field** to add additional auth fields to your profile. For more information, see [Add Authorization Fields](#add-authorization-fields).
 7. Click **Save new Auth**.
-   ![save new auth](../images/save-new-auth.png)
+   ![save new auth](/ai-for-process/settings/images/save-new-auth.png)
 
 A success message is displayed, and the new auth profile is added to the **Authorization Profile** page.
 
@@ -645,7 +645,7 @@ To add additional fields:
 
 1. Click **+ Add Additional Field** in the **New Authorization Mechanism** window and enter one or more key-value pairs.
 
-    ![add additional field](../images/add-additional-field-click.png)
+    ![add additional field](/ai-for-process/settings/images/add-additional-field-click.png)
 
 2. Add values for the following fields:
 
@@ -655,10 +655,10 @@ To add additional fields:
 | **Field Value** | The value for the additional field. | Required          | 2344567  |
 
 3. Click **Done**.
-    ![add additional field form](../images/add-additional-field-form.png)
+    ![add additional field form](/ai-for-process/settings/images/add-additional-field-form.png)
 
 The new field is added to the additional fields list. You can edit or delete this custom field.
-![new additional field](../images/new-additional-field.png)
+![new additional field](/ai-for-process/settings/images/new-additional-field.png)
 
 #### Add Authorization Fields
 
@@ -667,7 +667,7 @@ Authorization fields are data fields used in API requests to verify the identity
 To add auth fields:
 
 1. Click **+ Add Authorization Field** in the **New Authorization Mechanism** window and enter one or more key/value pairs.
-![add new auth field](../images/add-auth-field-new.png)
+![add new auth field](/ai-for-process/settings/images/add-auth-field-new.png)
 
 2. Add values for the following fields:
 
@@ -679,10 +679,10 @@ To add auth fields:
 
 3. Click **Done**.
 
-![auth field form](../images/auth-field-form.png)
+![auth field form](/ai-for-process/settings/images/auth-field-form.png)
 
 The new field is added to the Authorization Fields list. You can edit or delete this custom field.
-![new auth field](../images/new-auth-field-listing.png)
+![new auth field](/ai-for-process/settings/images/new-auth-field-listing.png)
 
 ### Authorization Profile Summary
 
@@ -693,7 +693,7 @@ The **Authorization Profile** window displays the following for each profile:
 * **Test auth**: Click the **Test** button corresponding to a configured profile to check if it establishes a connection with an external service based on the configured profile.
 * **Status**: Displays **Configured** or **Not Configured** based on the configuration status.
 
-![auth profile summary](../images/auth-profile-summary.png)
+![auth profile summary](/ai-for-process/settings/images/auth-profile-summary.png)
 
 ### Test an Auth Profile
 
@@ -701,7 +701,7 @@ Once all fields are provided in the **New authorization mechanism** window, clic
 
 A successful connection is shown below:
 
-![successful connection](../images/successful-oauth-connection.png)
+![successful connection](/ai-for-process/settings/images/successful-oauth-connection.png)
 
 If the connection fails, edit the auth profile with the correct information and test the connection again.
 
@@ -713,11 +713,11 @@ Edit or delete a configured auth profile as needed.
 
 1. Click the **Ellipses** icon for an Auth profile on the **Authorization Profile** page.
 2. Click **Edit**.
-![edit auth profile](../images/edit-auth-profile.png)
+![edit auth profile](/ai-for-process/settings/images/edit-auth-profile.png)
 
 3. Modify the required fields in the **Update authorization mechanism** window.
 4. Click **Update new auth**.
-![update new auth](../images/update-new-auth.png)
+![update new auth](/ai-for-process/settings/images/update-new-auth.png)
 
 <Note>The **Authorization Type** and **Name** fields cannot be edited, but all other parameters can be modified.</Note>
 
@@ -728,11 +728,11 @@ A success message appears when the auth profile information is updated.
 To delete an auth profile:
 
 1. Click the **Ellipses** icon and select **Delete**.
-![delete auth profile](../images/delete-auth-profile.png)
+![delete auth profile](/ai-for-process/settings/images/delete-auth-profile.png)
 
 2. Click **Delete** in the following window.
 
-    ![confirm delete auth profile](../images/confirm-deletion.png)
+    ![confirm delete auth profile](/ai-for-process/settings/images/confirm-deletion.png)
 
 A success message is displayed, and the profile is removed from the **Authorization profile** page.
 
