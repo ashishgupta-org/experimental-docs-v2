@@ -1,16 +1,16 @@
 ---
 title: Model Analytics and Traces
-description: Analyze model performance with the Analytics Dashboard and investigate individual runs with Model Traces. Track latency, requests, scaling, credits, and run-level metadata.
+description: Track aggregate model performance with the Analytics Dashboard and investigate individual runs with Model Traces — covering latency, requests, scaling, credits, and run metadata.
 sidebarTitle: Model Analytics and Traces
 ---
 
 # Model Analytics and Traces
 
-The **Model Analytics Dashboard** provides aggregate performance metrics for all model types in your account. **Model Traces** offers run-level analysis for each model request, including inputs, outputs, and metadata. Use the dashboard for trend analysis and the traces view for troubleshooting individual runs.
+The **Model Analytics Dashboard** provides aggregate performance metrics for all model types in your account. **Model Traces** provides run-level analysis for each model request, including inputs, outputs, and metadata. Use the dashboard for trend analysis and Model Traces for troubleshooting individual runs.
 
 ## Model Analytics Dashboard
 
-The **Model Analytics Dashboard** tracks performance for [fine-tuned](/ai-for-process/models/fine-tune-models/create-a-fine-tuned-model.md), [open-source](/ai-for-process/models/open-source-models/configure-your-open-source-model.md), and [external models](/ai-for-process/models/external-models/add-an-external-model-using-easy-integration.md) in your account. It measures:
+The **Model Analytics Dashboard** tracks performance for [fine-tuned](/ai-for-process/models/fine-tuned-model), [open-source](/ai-for-process/models/open-source-models), and [external models](/ai-for-process/models/external-models) in your account. It measures:
 
 - Model latency and response times.
 - Request success and failure rates.
@@ -19,16 +19,16 @@ The **Model Analytics Dashboard** tracks performance for [fine-tuned](/ai-for-pr
 
 ### Access the Dashboard
 
-1. Log in. In the AI for Process top menu, click **Settings**.
+1. In the AI for Process top menu, click **Settings**.
 
-   <img src="/ai-for-process/settings/monitoring/images/aip-settings-access.png" alt="access settings" title="access settings"/>
+   ![access settings](/ai-for-process/settings/images/aip-settings-access.png)
 
 2. On the left menu, select **Monitoring** > **Analytics**.
 3. Click the **Model Analytics** tab.
 
-The dashboard loads with data for the last 7 days by default. To load the latest data at any time, click the **Refresh** icon.
+The dashboard loads with data for the last 7 days by default. Click the **Refresh** icon to load the latest data.
 
-<img src="/ai-for-process/settings/monitoring/images/model-analytics-dashboard-refresh.png" alt="dashboard refresh" title="dashboard refresh"/>
+![dashboard refresh](/ai-for-process/settings/images/model-analytics-dashboard-refresh.png)
 
 ### Key Metrics
 
@@ -38,28 +38,27 @@ The dashboard displays account-level and model-specific metrics.
 
 These metrics summarize credit usage and model counts across your account for the selected period.
 
-- **Credits consumed in deployment**: Credits deducted from your account for deploying models.
-- **Credits consumed in fine-tuning**: Credits deducted from your account for fine-tuning models.
-- **Number of Deployed Models**: Total models deployed in your account.
-- **Number of Fine-tuned Models**: Total models fine-tuned in your account.
+| Metric | Description |
+|---|---|
+| **Credits consumed in deployment** | Credits deducted from your account for deploying models. |
+| **Credits consumed in fine-tuning** | Credits deducted from your account for fine-tuning models. |
+| **Number of Deployed Models** | Total models deployed in your account. |
+| **Number of Fine-tuned Models** | Total models fine-tuned in your account. |
 
 <Note>Hover over the **i** icon to view a summary for each metric.</Note>
 
-<img src="/ai-for-process/settings/monitoring/images/hover-over-icon.png" alt="hover over icon" title="hover over icon"/>
+![hover over icon](/ai-for-process/settings/images/hover-over-icon.png)
 
 #### Model-Specific Metrics
 
-**Fine-tuned and Open-source models**
+Available metrics vary by model type.
 
-- **Model Latency**: Per-request latency for a 24-hour or 7-day period. For date ranges longer than 7 days, average daily latency is shown. See [Model Latency](#model-latency).
-- **Requests**: Success and failure trends, total requests, and average credits per request. See [Requests](#requests).
-- **Model Scaling and Usage**: Number of replicas and hardware configuration during deployment. See [Model Scaling and Usage](#model-scaling-and-usage).
-
-**External models**
-
-- **Tokens**: Bar chart of input and output tokens for the selected period. See [Tokens](#tokens).
-- **Model Latency**: Same as above for fine-tuned and open-source models.
-- **Requests**: Same as above, but without average credits per request.
+| Metric | Fine-tuned and Open-source | External |
+|---|---|---|
+| **Model Latency** | Per-request latency for a 24-hour or 7-day period. For longer ranges, average daily latency is shown. See [Model Latency](#model-latency). | Same as fine-tuned and open-source. |
+| **Requests** | Success and failure trends, total requests, and average credits per request. See [Requests](#requests). | Same, but without average credits per request. |
+| **Model Scaling and Usage** | Replica count and hardware configuration during deployment. See [Model Scaling and Usage](#model-scaling-and-usage). | Not available. |
+| **Tokens** | Not available. | Input and output token bar chart for the selected period. See [Tokens](#tokens). |
 
 ### Filter Dashboard Data
 
@@ -67,11 +66,11 @@ Combine [Global Timeline Filters](#global-timeline-filters) and [Model Performan
 
 #### Global Timeline Filters
 
-The filter options are identical to those on the Workflows Analytics Dashboard. See [Global Timeline Filters](/ai-for-process/settings/monitoring/workflows-analytics-dashboard.mdx#global-timeline-filters) for available options and usage.
+The filter options are identical to those on the Workflows Analytics Dashboard. See [Global Timeline Filters](/ai-for-process/settings/monitoring/workflows-analytics#global-timeline-filters) for available options and usage.
 
 #### Model Performance Filters
 
-These filters apply only to [model-specific metrics](#model-specific-metrics) and work alongside a global timeline selection. The available filters depend on the selected model type.
+These filters apply only to [model-specific metrics](#model-specific-metrics) and work alongside a global timeline selection. Available filters depend on the selected model type.
 
 <Note>If multiple deployments exist for the same model name, they are listed with their respective deployment timestamps.</Note>
 
@@ -86,14 +85,14 @@ These filters apply only to [model-specific metrics](#model-specific-metrics) an
   - By default, data for all model versions is shown unless you select a specific version.
   </Note>
 
-  <img src="/ai-for-process/settings/monitoring/images/fine-tuned-model-filters.png" alt="model name and version filter" title="model name and version filter"/>
+  ![model name and version filter](/ai-for-process/settings/images/fine-tuned-model-filters.png)
 
 **External models**
 
 - **Select Model (Model Name)**: Select the deployed model.
 - **Select Connection**: Select the third-party service connection name.
 
-  <img src="/ai-for-process/settings/monitoring/images/external-model-filters.png" alt="model name and version filter" title="model name and version filter"/>
+  ![external model filter](/ai-for-process/settings/images/external-model-filters.png)
 
 ### Performance Widgets
 
@@ -101,9 +100,9 @@ To load data in the widgets:
 
 1. Select a date or date range using the [Global Timeline Filters](#global-timeline-filters).
 2. Select the model type tab: **Fine-tuned**, **Open-source**, or **External**.
-3. For fine-tuned or open-source models, select the model name, and optionally the deployment name and version. For external models, select the model name and connection name.
+3. Select the model name, and optionally the deployment name and version (fine-tuned or open-source) or the connection name (external models).
 
-The widgets update automatically. Selecting a single day shows hourly data; selecting a date range shows daily data.
+The widgets update automatically. A single-day selection shows hourly data; a date range shows daily data.
 
 <Warning>
 - Widgets show data only for periods the model was deployed. For example, if a model was active for 4 days and undeployed for 3 days in a 7-day view, only the 4 active days appear.
@@ -114,13 +113,13 @@ The widgets update automatically. Selecting a single day shows hourly data; sele
 
 Available for **Fine-tuned**, **Open-source**, and **External** models. This widget shows a line graph of the selected model version's latency during the selected period.
 
-- The Y-axis shows **Latency** in milliseconds and scales automatically.
-- The X-axis shows the date.
-- A blue line shows per-request latency for periods of 24 hours or 7 days. For date ranges longer than 7 days, the graph shows average daily latency.
+- Y-axis: **Latency** in milliseconds (auto-scaled).
+- X-axis: Date.
+- A blue line shows per-request latency for 24-hour or 7-day periods. For longer date ranges, the graph shows average daily latency.
 
-Hover over a data point to view the latency for a specific request (for 24-hour or 7-day periods) or the average latency for a specific date and time (for longer ranges).
+Hover over a data point to view the latency for a specific request (24-hour or 7-day periods) or the average latency for a specific date and time (longer ranges).
 
-<img src="/ai-for-process/settings/monitoring/images/hover-over-info.png" alt="hover over info" title="hover over info"/>
+![hover over info](/ai-for-process/settings/images/hover-over-info.png)
 
 Use this widget to:
 
@@ -133,17 +132,17 @@ Use this widget to:
 
 Available for **Fine-tuned**, **Open-source**, and **External** models. This widget shows successful and failed requests as two line graphs for the selected period.
 
-- The Y-axis shows **Number of Requests** and scales automatically.
-- The X-axis shows the date.
-- Successful requests are displayed in green; failed requests in red.
-- **Total Requests**: The combined count of successful and failed requests for the selected period.
+- Y-axis: **Number of Requests** (auto-scaled).
+- X-axis: Date.
+- Successful requests appear in green; failed requests in red.
+- **Total Requests**: Combined count of successful and failed requests for the selected period.
 - **Avg. credits per request**: Total credits consumed divided by total responses generated.
 
 <Note>Avg. credits per request is not shown for external models.</Note>
 
-Hover over a data point to view the count of successful or failed requests at that specific date and time, and the total count for the full selected period.
+Hover over a data point to view the count of successful or failed requests at that date and time, and the total count for the full selected period.
 
-<img src="/ai-for-process/settings/monitoring/images/requests-hover-info.png" alt="requests hover info" title="requests hover info"/>
+![requests hover info](/ai-for-process/settings/images/requests-hover-info.png)
 
 Use this widget to:
 
@@ -155,21 +154,21 @@ Use this widget to:
 
 Available for **Fine-tuned** and **Open-source** models only. This widget shows a step graph of the number of replicas with a specific hardware configuration deployed for the selected model version.
 
-- The Y-axis shows **Number of Replicas** and adjusts based on deployed replicas.
-- The X-axis shows the date.
-- Each upward step represents additional replicas being generated. Each downward step represents replicas being undeployed.
+- Y-axis: **Number of Replicas** (adjusts based on deployed replicas).
+- X-axis: Date.
+- Each upward step represents additional replicas being generated; each downward step represents replicas being undeployed.
 
 <Note>**Multiple Hardware** is shown when replicas with more than one hardware configuration are deployed across a date range.</Note>
 
 Hover over a data point to view the timestamp, deployment version name, replica count, and hardware configuration at that point.
 
-<img src="/ai-for-process/settings/monitoring/images/model-scaling-hover-info.png" alt="model scaling hover info" title="model scaling hover info"/>
+![model scaling hover info](/ai-for-process/settings/images/model-scaling-hover-info.png)
 
 **Maximum replicas limit**
 
-For a single-day selection, the widget displays a red line indicating the maximum number of replicas configured during model deployment.
+For a single-day selection, a red line indicates the maximum number of replicas configured during model deployment.
 
-<img src="/ai-for-process/settings/monitoring/images/max-replicas.png" alt="max replicas" title="max replicas"/>
+![max replicas](/ai-for-process/settings/images/max-replicas.png)
 
 Use this widget to:
 
@@ -181,16 +180,16 @@ Use this widget to:
 
 Available for **External** models only. This widget shows a stacked bar graph of input and output tokens for the selected period.
 
-- The Y-axis shows **Number of Tokens** (in thousands, *K*) and scales automatically.
-- The X-axis shows the date.
-- Input and output tokens are shown in two shades in a stacked bar, displaying them as parts of the total tokens used.
+- Y-axis: **Number of Tokens** (in thousands, *K*; auto-scaled).
+- X-axis: Date.
+- Input and output tokens appear in two shades in a stacked bar, showing them as parts of the total tokens used.
 - The widget shows the total sum of input and output tokens.
 
-<img src="/ai-for-process/settings/monitoring/images/input-output-tokens.png" alt="input output tokens" title="input output tokens"/>
+![input output tokens](/ai-for-process/settings/images/input-output-tokens.png)
 
-Hover over a data point to view the timestamp and the input and output token counts at that point.
+Hover over a data point to view the timestamp and input and output token counts at that point.
 
-<img src="/ai-for-process/settings/monitoring/images/tokens-hover-info.png" alt="tokens hover info" title="tokens hover info"/>
+![tokens hover info](/ai-for-process/settings/images/tokens-hover-info.png)
 
 Use this widget to:
 
@@ -198,9 +197,9 @@ Use this widget to:
 - Track token-based credit consumption and optimize usage.
 - Identify processing bottlenecks and usage patterns over time.
 
-### Expanded Widget View
+### Expand a Widget
 
-Expand any widget for a drill-down view of analytics. Each expanded view has its own [Global Timeline](#global-timeline-filters) and [Model Performance](#model-performance-filters) filters.
+Expand any widget for a drill-down view with its own [Global Timeline](#global-timeline-filters) and [Model Performance](#model-performance-filters) filters.
 
 <Warning>
 - Filter changes in the expanded view don't affect the main dashboard or global filters.
@@ -209,25 +208,23 @@ Expand any widget for a drill-down view of analytics. Each expanded view has its
 
 To expand a widget, hover over its top-right corner and click the **double-arrow** icon.
 
-<img src="/ai-for-process/settings/monitoring/images/model-latency-info.png" alt="model latency expand arrow" title="model latency expand arrow"/>
+![model latency expand arrow](/ai-for-process/settings/images/model-latency-info.png)
 
 **Model Latency**
 
-<img src="/ai-for-process/settings/monitoring/images/model-latency-time-filter.png" alt="model latency time filter" title="model latency time filter"/>
+![model latency time filter](/ai-for-process/settings/images/model-latency-time-filter.png)
 
 **Requests**
 
-<img src="/ai-for-process/settings/monitoring/images/requests-expanded-view.png" alt="requests expanded view" title="requests expanded view"/>
+![requests expanded view](/ai-for-process/settings/images/requests-expanded-view.png)
 
 **Model Scaling and Usage**
 
-<img src="/ai-for-process/settings/monitoring/images/model-scaling-and-usage-expanded-view.png" alt="model scaling expanded view" title="model scaling expanded view"/>
+![model scaling expanded view](/ai-for-process/settings/images/model-scaling-and-usage-expanded-view.png)
 
 **Tokens**
 
-<img src="/ai-for-process/settings/monitoring/images/tokens-expanded-view.png" alt="tokens expanded view" title="tokens expanded view"/>
-
----
+![tokens expanded view](/ai-for-process/settings/images/tokens-expanded-view.png)
 
 ## Model Traces
 
@@ -235,18 +232,18 @@ To expand a widget, hover over its top-right corner and click the **double-arrow
 
 ### Access Model Traces
 
-1. Log in. In the AI for Process top menu, click **Settings**.
+1. In the AI for Process top menu, click **Settings**.
 
-   <img src="/ai-for-process/settings/monitoring/images/aip-settings-access.png" alt="access settings" title="access settings"/>
+   ![access settings](/ai-for-process/settings/images/aip-settings-access.png)
 
 2. On the left menu, select **Monitoring** > **Model Traces**.
-3. If this is your first time using the feature, select a model from the dropdown menu.
+3. If this is your first visit, select a model from the dropdown menu.
 
-   <img src="/ai-for-process/settings/monitoring/images/get-started-model-traces.png" alt="get started with model traces" title="get started with model traces"/>
+   ![get started with model traces](/ai-for-process/settings/images/get-started-model-traces.png)
 
 The feature loads with data for the last 30 days by default. On return visits, it preloads data from your previous model selection for the same 30-day default.
 
-<img src="/ai-for-process/settings/monitoring/images/preload-model-traces-data.png" alt="preload model traces data" title="preload model traces data"/>
+![preload model traces data](/ai-for-process/settings/images/preload-model-traces-data.png)
 
 ### Select a Model and Time Period
 
@@ -258,11 +255,11 @@ Select the model to monitor using the **Model Name** filter:
 
 - For open-source and fine-tuned models, select from available deployment names, including version options.
 
-  <img src="/ai-for-process/settings/monitoring/images/traces-os.png" alt="model name filter" title="model name filter"/>
+  ![model name filter](/ai-for-process/settings/images/traces-os.png)
 
 - For commercial models, select the default connection linked to the model.
 
-  <img src="/ai-for-process/settings/monitoring/images/traces-external.png" alt="external filter" title="external filter"/>
+  ![external filter](/ai-for-process/settings/images/traces-external.png)
 
 **Time-based filter**
 
@@ -273,52 +270,54 @@ Use the time selection filter to scope data to a specific period for targeted an
 - Data appears only if the model processed requests during the selected period.
 </Note>
 
-Available time periods:
-
-- **All Time**: All runs since the account was created.
-- **Today**: Data for the current day.
-- **Yesterday**: Data for the previous day.
-- **This Week**: Data for all days in the current week.
-- **This Month**: Data for all days in the current month.
-- **Last Month**: Data for all days in the previous month.
-- **Last 30 Days**: Data for the past 30 days from today (default).
-- **Last 90 Days**: Data for the past 90 days from today.
-- **This Year**: Data for all days in the current year.
-- **Last Year**: Data for all days in the previous year.
+| Time period | Description |
+|---|---|
+| **All Time** | All runs since the account was created. |
+| **Today** | Data for the current day. |
+| **Yesterday** | Data for the previous day. |
+| **This Week** | Data for all days in the current week. |
+| **This Month** | Data for all days in the current month. |
+| **Last Month** | Data for all days in the previous month. |
+| **Last 30 Days** | Data for the past 30 days from today (default). |
+| **Last 90 Days** | Data for the past 90 days from today. |
+| **This Year** | Data for all days in the current year. |
+| **Last Year** | Data for all days in the previous year. |
 
 To set the time range:
 
-1. Click the time selection button (displays **Last 30 Days** by default).
+1. Click the time selection button (shows **Last 30 Days** by default).
 
-   <img src="/ai-for-process/settings/monitoring/images/time-selection-button.png" alt="time selection button" title="time selection button"/>
+   ![time selection button](/ai-for-process/settings/images/time-selection-button.png)
 
 2. Select a period from the left panel, or select a specific date on the calendar widget.
 3. Click **Apply**.
 
-   <img src="/ai-for-process/settings/monitoring/images/select-and-apply.png" alt="select date" title="select date"/>
+   ![select date](/ai-for-process/settings/images/select-and-apply.png)
 
-The selected date range is shown at the bottom of the calendar widget. You can navigate months using the forward and backward arrows, or select a specific month or year from the dropdown lists.
+The selected date range is shown at the bottom of the calendar widget. Navigate months using the forward and backward arrows, or select a specific month or year from the dropdown lists.
 
-<img src="/ai-for-process/settings/monitoring/images/date-range-display.png" alt="date range display" title="date range display"/>
+![date range display](/ai-for-process/settings/images/date-range-display.png)
 
-<img src="/ai-for-process/settings/monitoring/images/calendar-widget.png" alt="calendar widget" title="calendar widget"/>
+![calendar widget](/ai-for-process/settings/images/calendar-widget.png)
 
 To set a custom date range, click a start date on the calendar. The current day is set as the end date by default.
 
-<img src="/ai-for-process/settings/monitoring/images/default-calendar-selection.png" alt="default selection" title="default selection"/>
+![default selection](/ai-for-process/settings/images/default-calendar-selection.png)
 
 ### Performance Metrics Summary
 
 The metrics summary at the top of the page shows key performance data for the selected model and period.
 
-- **Total Requests**: Total runs serviced by the model since deployment. Reflects processing speed and efficiency.
-- **Response Time**: P90 and P99 thresholds — the response times below which 90% and 99% of requests fall, respectively. Lower values indicate consistent speed; higher values indicate potential issues.
-- **Failure Rate**: Percentage of requests that failed or were not serviced out of total requests. For example, 5 failed requests out of 100 equals a 5% failure rate.
-- **Hosting Credits**: Credits consumed by the deployed model based on usage, for comparison against actual utilization.
+| Metric | Description |
+|---|---|
+| **Total Requests** | Total runs serviced by the model since deployment. Reflects processing speed and efficiency. |
+| **Response Time** | P90 and P99 thresholds — the response times below which 90% and 99% of requests fall. Lower values indicate consistent speed; higher values indicate potential issues. |
+| **Failure Rate** | Percentage of requests that failed out of total requests. For example, 5 failed out of 100 equals a 5% failure rate. |
+| **Hosting Credits** | Credits consumed by the deployed model based on usage, for comparison against actual utilization. |
 
 <Note>Hosting Credits apply only to AI for Process open-source and fine-tuned models. This metric is not shown for external models.</Note>
 
-<img src="/ai-for-process/settings/monitoring/images/hosting-credits.png" alt="hosting credits" title="hosting credits"/>
+![hosting credits](/ai-for-process/settings/images/hosting-credits.png)
 
 ### Model Traces Table
 
@@ -326,33 +325,33 @@ The table displays all runs for the selected model, sorted from the latest to th
 
 Successful requests are marked with a green check icon; failed requests with a red alert icon.
 
-<img src="/ai-for-process/settings/monitoring/images/success-failed-requests.png" alt="success and failed requests" title="success and failed requests"/>
+![success and failed requests](/ai-for-process/settings/images/success-failed-requests.png)
 
-The table includes the following columns:
+| Column | Description |
+|---|---|
+| **Status** | Success or failure icon for the run. |
+| **Request ID** | Unique identifier for the run record. |
+| **Response Time** | Time taken by the model to respond. |
+| **Deployment Version** | Model version deployed in your account. |
+| **Source Type** | Type of source that initiated the request. |
+| **Source** | Specific source name that sent the request. |
+| **Executed on** | Run execution timestamp. Click the **Sort** icon to reorder records by ascending or descending date. |
+| **Input** | Input text provided for the run. |
+| **Output** | Output text or response generated by the model. |
 
-- **Status**: Success or failure icon for the run.
-- **Request ID**: Unique identifier for the run record.
-- **Response Time**: Time taken by the model to respond.
-- **Deployment Version**: Model version deployed in your account.
-- **Source Type**: The type of source that initiated the request.
-- **Source**: The specific source name that sent the request.
-- **Executed on**: Run execution timestamp. Click the **Sort** icon in this column to reorder records by ascending or descending date.
-- **Input**: Input text provided for the run.
-- **Output**: Output text or response generated by the model.
-
-<img src="/ai-for-process/settings/monitoring/images/model-traces-sort.png" alt="model traces sort" title="model traces sort"/>
+![model traces sort](/ai-for-process/settings/images/model-traces-sort.png)
 
 To view the detailed trace for a run, click its row in the table.
 
-<img src="/ai-for-process/settings/monitoring/images/detailed-trace-information.png" alt="click traces record" title="click traces record"/>
+![click traces record](/ai-for-process/settings/images/detailed-trace-information.png)
 
 ### Customize the Table View
 
-Use the **Visibility Filter** to add or remove columns from the table. Toggle a column on to show it and off to hide it.
+Use the **Visibility Filter** to add or remove columns. Toggle a column on to show it and off to hide it.
 
-<img src="/ai-for-process/settings/monitoring/images/visibility-icon.png" alt="visibility icon" title="visibility icon"/>
+![visibility icon](/ai-for-process/settings/images/visibility-icon.png)
 
-<img src="/ai-for-process/settings/monitoring/images/visibility-filter.png" alt="visibility filters" title="visibility filters"/>
+![visibility filters](/ai-for-process/settings/images/visibility-filter.png)
 
 <Note>
 - All columns are visible by default.
@@ -364,45 +363,44 @@ Use the **Visibility Filter** to add or remove columns from the table. Toggle a 
 
 Enter a **Request ID** or a string value in the **Search** field to locate specific runs.
 
-<img src="/ai-for-process/settings/monitoring/images/search-record-model-traces.png" alt="search model traces record" title="search model traces record"/>
+![search model traces record](/ai-for-process/settings/images/search-record-model-traces.png)
 
 ### Filter by Column
 
-Apply column filters to narrow down the records displayed. You can filter by a single column or combine multiple columns using AND/OR operators.
+Apply column filters to narrow down the records displayed. Combine multiple columns using AND/OR operators.
 
 **Add a filter**
 
-1. Navigate to **Model Traces**.
-2. Click the **Filter** icon.
-3. Click **+ Add Filter**.
+1. Navigate to **Model Traces** and click the **Filter** icon.
+2. Click **+ Add Filter**.
 
-   <img src="/ai-for-process/settings/monitoring/images/click-add-filter.png" alt="add filter" title="add filter"/>
+   ![add filter](/ai-for-process/settings/images/click-add-filter.png)
 
-4. In the **Filter By** window, select values from the **Select Column**, **Operator**, and **Value** dropdown lists. For some columns, you must enter the value manually.
+3. In the **Filter By** window, select values from the **Select Column**, **Operator**, and **Value** dropdown lists. For some columns, enter the value manually.
 
-   <img src="/ai-for-process/settings/monitoring/images/filter-selection-model-traces.png" alt="filter selection" title="filter selection"/>
+   ![filter selection](/ai-for-process/settings/images/filter-selection-model-traces.png)
 
-5. Click **Apply**.
+4. Click **Apply**.
 
-   <img src="/ai-for-process/settings/monitoring/images/apply-filter-model-traces.png" alt="apply filter" title="apply filter"/>
+   ![apply filter](/ai-for-process/settings/images/apply-filter-model-traces.png)
 
-The table displays matching records. The number of active filters is shown on the **Filter** icon.
+The table displays matching records. The number of active filters appears on the **Filter** icon.
 
-<img src="/ai-for-process/settings/monitoring/images/number-of-filters.png" alt="number of filters" title="number of filters"/>
+![number of filters](/ai-for-process/settings/images/number-of-filters.png)
 
 To clear all filters, click **Clear All**.
 
-<img src="/ai-for-process/settings/monitoring/images/clear-all-link.png" alt="clear all" title="clear all"/>
+![clear all](/ai-for-process/settings/images/clear-all-link.png)
 
 The following table summarizes available filter columns, supported operators, and values.
 
 | Column | Description | Operators | Input Type | Value |
-|--------|-------------|-----------|------------|-------|
+|---|---|---|---|---|
 | **Status** | Run status | Is Equals To, Is Not Equals To | List | Failed, Success |
 | **Request ID** | Unique run identifier | Is Equals To, Is Not Equals To, Contains | Enter manually | Any value |
 | **Response Time** | Model response time for the request | Is Equals To, Is Not Equals To, Is Greater Than, Is Less Than, Is Greater Than Equals To, Is Less Than Equals To | Enter manually | `m:s:ms` (minutes:seconds:milliseconds) |
 | **Deployment Version** | Model version deployed for the run | Is Equals To, Is Not Equals To, Contains | Enter manually | Any value |
-| **Source Type** | Source type that sent the request | Is Equals To, Is Not Equals To, Contains | List | [Workflow](/ai-for-process/workflows/overview.md), [Prompts](/prompts/using-prompt-studio/), [API Key](/ai-for-process/models/open-source-models/generate-an-api-key-open-source/) |
+| **Source Type** | Source type that sent the request | Is Equals To, Is Not Equals To, Contains | List | [Workflow](/ai-for-process/workflows/overview), [Prompts](/ai-for-process/prompts), [API Key](/ai-for-process/models/open-source-models#generate-an-api-key) |
 | **Source** | Specific request origin | Is Equals To, Is Not Equals To, Contains | List | Custom user-defined values |
 
 **Add multiple filters**
@@ -416,38 +414,38 @@ Combine filters using AND or OR operators for targeted, multi-level filtering.
 - To remove a filter step, click the **Delete** icon.
 </Warning>
 
-<img src="/ai-for-process/settings/monitoring/images/delete-filter-icon.png" alt="delete filter" title="delete filter"/>
+![delete filter](/ai-for-process/settings/images/delete-filter-icon.png)
 
 To add multiple filters:
 
-1. Follow steps 1–3 from [Add a filter](#add-a-filter) above.
+1. Follow steps 1–2 from [Add a filter](#add-a-filter) above.
 2. In the **Filter By** window, select the **AND** or **OR** operator tab.
 
-   <img src="/ai-for-process/settings/monitoring/images/select-operator-filter.png" alt="select operator" title="select operator"/>
+   ![select operator](/ai-for-process/settings/images/select-operator-filter.png)
 
-3. Follow steps 4–5 from [Add a filter](#add-a-filter) above.
+3. Follow steps 3–4 from [Add a filter](#add-a-filter) above.
 
 ### Export Data
 
-Click **Export** to generate a CSV file of model traces records based on the selected date range and filters. All eight table columns are included in the export regardless of the current visibility filter settings.
+Click **Export** to generate a CSV file of model traces records based on the selected date range and filters. All eight table columns are included regardless of current visibility filter settings.
 
-<img src="/ai-for-process/settings/monitoring/images/click-export.png" alt="export" title="export"/>
+![export](/ai-for-process/settings/images/click-export.png)
 
 The UI shows export progress while the file is being prepared.
 
-<img src="/ai-for-process/settings/monitoring/images/export-progress-status.png" alt="export progress" title="export progress"/>
+![export progress](/ai-for-process/settings/images/export-progress-status.png)
 
 Once downloaded, a confirmation message appears.
 
-<img src="/ai-for-process/settings/monitoring/images/export-model-traces-success.png" alt="export success" title="export success"/>
+![export success](/ai-for-process/settings/images/export-model-traces-success.png)
 
-If an error occurs during export, an error notification is displayed.
+If an error occurs, an error notification is displayed.
 
-<img src="/ai-for-process/settings/monitoring/images/export-failed-notification.png" alt="export error" title="export error"/>
+![export error](/ai-for-process/settings/images/export-failed-notification.png)
 
 The file is saved automatically using the format `modelname_traces_data` — for example, `GPT4_traces_data`.
 
-<img src="/ai-for-process/settings/monitoring/images/export-schema.png" alt="export schema" title="export schema"/>
+![export schema](/ai-for-process/settings/images/export-schema.png)
 
 <Note>
 - Each user's export runs independently. One user's cancellation or adjustment doesn't affect another user's export.
@@ -467,11 +465,11 @@ Plain text is the default display format. Enable **JSON mode** to view the compl
 
 <Note>In the JSON code editor, the model name shown includes the deployment version for open-source and fine-tuned models, and the connection name for external models.</Note>
 
-<img src="/ai-for-process/settings/monitoring/images/json-editor-model-traces.png" alt="json editor" title="json editor"/>
+![json editor](/ai-for-process/settings/images/json-editor-model-traces.png)
 
-The text and JSON code in the editor are read-only. To use the content for debugging, click the **Copy** icon to copy it to your clipboard.
+The text and JSON code in the editor are read-only. Click the **Copy** icon to copy content to your clipboard.
 
-<img src="/ai-for-process/settings/monitoring/images/copy-input.png" alt="copy input" title="copy input"/>
+![copy input](/ai-for-process/settings/images/copy-input.png)
 
 #### Metadata Panel
 
@@ -479,19 +477,21 @@ The metadata panel shows run-specific information to support performance analysi
 
 **Fine-tuned and Open-source models**
 
-- **Request ID**: Unique identifier for the request.
-- **Base model**: The platform-hosted or imported model that handled the request.
-- **Deployment name**: The deployment name of the model.
-- **Deployment version**: Version deployed for the run.
-- **Response time**: Time taken to generate a response.
-- **Input tokens**: Token count in the request input.
-- **Output tokens**: Token count in the model's response.
-- **Executed on**: Date and time of the run.
-- **Source type**: Type of source that sent the request.
-- **Source**: Specific origin of the request.
-- **User ID**: Identifier of the user who initiated the request.
+| Field | Description |
+|---|---|
+| **Request ID** | Unique identifier for the request. |
+| **Base model** | The platform-hosted or imported model that handled the request. |
+| **Deployment name** | The deployment name of the model. |
+| **Deployment version** | Version deployed for the run. |
+| **Response time** | Time taken to generate a response. |
+| **Input tokens** | Token count in the request input. |
+| **Output tokens** | Token count in the model's response. |
+| **Executed on** | Date and time of the run. |
+| **Source type** | Type of source that sent the request. |
+| **Source** | Specific origin of the request. |
+| **User ID** | Identifier of the user who initiated the request. |
 
-<img src="/ai-for-process/settings/monitoring/images/os-metadata.png" alt="metadata" title="metadata"/>
+![metadata](/ai-for-process/settings/images/os-metadata.png)
 
 **External models**
 
@@ -499,11 +499,4 @@ Includes all fields above (excluding **Deployment name** and **Deployment versio
 
 - **Connection name**: The deployed connection name for the model.
 
-<img src="/ai-for-process/settings/monitoring/images/external-metadata.png" alt="external model metadata" title="external model metadata"/>
-
-## Related Information
-
-- [Settings Console](/ai-for-process/settings/overview.md) — Learn about other AI for Process admin features.
-- [Monitoring: Audit Logs](/ai-for-process/settings/monitoring/audit-logs.md) — Track activities and events in your account.
-- [Monitoring: Workflows Analytics Dashboard](/ai-for-process/settings/monitoring/workflows-analytics) — Get insights into workflow performance metrics.
-- [Billing](/ai-for-process/settings/billing-and-usage) — Manage resource consumption and track usage trends.
+![external model metadata](/ai-for-process/settings/images/external-metadata.png)
