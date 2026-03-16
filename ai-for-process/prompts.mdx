@@ -197,49 +197,7 @@ The output area displays:
 
 ## Advanced Features
 
-### Import and Generate Test Data
-
-Prompt Studio provides two ways to work with test data:
-
-- **Import test data**: Upload a CSV file to populate prompt variables automatically.
-- **Generate test data**: Create synthetic datasets based on your prompt and variables.
-
-#### Import Test Data
-
-The system reads up to 10 rows from the CSV and maps column names to variables (case-sensitive). Ensure column names match variable names exactly—for example, `{{Name}}` requires a column named "Name." Data must start from the first row and column of the file.
-
-<Note>You can import a maximum of 10 rows of data simultaneously.</Note>
-
-1. On the prompt canvas, click **Test data > Import test data**.
-
-2. In the **Import test data** dialog, upload a CSV from your computer or select an existing dataset.
-
-   ![Import test data dialog](/images/import_test_data.png)
-
-3. Review the data preview and click **Proceed**.
-
-   ![Import test data preview](/images/import_test_data_preview.png)
-
-Variable values populate in the Variables window and are substituted during prompt execution.
-
-#### Generate Test Data
-
-Generate synthetic test datasets without manually creating data. The system analyzes your prompt and variables to produce contextually relevant values.
-
-<Note>You can generate a maximum of 5 rows of data simultaneously.</Note>
-
-<Note>Only OpenAI and Anthropic models are supported for test data generation.</Note>
-
-1. In the prompt canvas, enter your prompt. For example: "Generate a job description with job title, experience, and location."
-2. Add variables in double curly braces: `{{Job Title}}`, `{{Experience}}`, `{{Location}}`. The **Test data** option appears.
-3. Click **Test data > Generate test data**. Select a model, specify the number of rows, and click **Generate**.
-
-   ![Generate test data dialog](/images/generate_test_data_dialog.png)
-
-4. Preview the generated dataset.
-5. Click **Apply value to the variables** to populate the prompt canvas.
-
-   ![Test data applied to prompt canvas](/images/generate_test_data_values_applied.png)
+To create, import, and manage data, see [manage dataset](/ai-for-process/settings/data/import-and-manage).
 
 ### Bookmark a Model
 
