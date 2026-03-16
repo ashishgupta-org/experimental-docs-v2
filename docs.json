@@ -364,14 +364,12 @@
                     ]
                   },
                   "/ai-for-process/nodes",
-                  "/ai-for-process/inbox",
-                  "/ai-for-process/prompts"
+                  "/ai-for-process/inbox"
                 ]
               },
               {
                 "group": "Platform Services",
                 "pages": [
-                  "ai-for-process/prompts",
                   { 
                     "group": "Models",
                     "pages": [
@@ -382,25 +380,31 @@
                       "/ai-for-process/models/supported-models"
                     ]
                   },
+                  "ai-for-process/prompts",                  
                   { 
                     "group": "Monitoring and Analytics",
                     "pages": [
                       "/ai-for-process/settings/monitoring-overview",
-                      "/ai-for-process/settings/audit-logs",
                       "/ai-for-process/settings/monitoring/analytics/workflows-analytics",
                       "/ai-for-process/settings/monitoring/model-analytics-and-traces",
                       "/ai-for-process/settings/monitor-custom-scripts"
 
                     ]
-                  }
+                  },
+                  "/ai-for-process/settings/audit-logs"
                 ]
               },
               {
                 "group": "Administration",
                 "pages": [
                   "/ai-for-process/admin-settings",
+                {
+                  "group": "User and Role Management",
+                  "pages": [
                   "/ai-for-process/settings/user-management",
-                  "/ai-for-process/settings/role-management",
+                  "/ai-for-process/settings/role-management"
+                  ]
+                },
                   "/ai-for-process/settings/security-control",
                   "/ai-for-process/settings/billing-and-usage"
                 ]
