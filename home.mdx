@@ -50,7 +50,7 @@ export const HeroSection = () => {
 }
 
 export const DocsFooter = () => (
-  <div className="mt-16 border-t border-zinc-200 dark:border-zinc-800 pt-8 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400">
+  <div className="mt-6 border-t border-zinc-200 dark:border-zinc-800 pt-4 pb-2 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400">
     <span>© 2026 Kore.ai, Inc.</span>
     <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
       <a href="https://kore.ai/acceptable-use-policy/" className="hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors no-underline">Acceptable Use Policy</a>
@@ -116,7 +116,7 @@ export const ProductCard = ({ href, icon, title, description, badge }) => (
 
 <HeroSection />
 
-<div style={{ background: "#f0f4ff", minHeight: "100vh", margin: "-32px -32px -32px -32px", padding: "32px 32px 32px 32px" }}>
+<div style={{ background: "#f0f4ff", margin: "-32px -32px -32px -32px", padding: "32px 32px 32px 32px" }}>
 
 <SectionLabel>Core Products</SectionLabel>
  <CardGroup cols={4}>
@@ -196,6 +196,8 @@ export const ProductCard = ({ href, icon, title, description, badge }) => (
     </CardGroup>
   </Tab>
 </Tabs>
+
+<br />
 
 <DocsFooter />
 
