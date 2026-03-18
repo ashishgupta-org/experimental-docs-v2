@@ -12,6 +12,25 @@
     "dark": "/assets/favicon.png"
   },
   "navigation": {
+    "global":  {
+      "anchors": [
+        {
+          "anchor": "Academy",
+          "icon": "graduation-cap",
+          "href": "https://academy.kore.ai/"
+        },
+        {
+          "anchor": "Community",
+          "icon": "user-group",
+          "href": "https://community.kore.ai/"
+        },
+        {
+          "anchor": "Support",
+          "icon": "hands-holding",
+          "href": "https://support.kore.ai/"
+        }
+      ]
+    },
         "tabs": [
           {
             "tab": "Home",
@@ -24,7 +43,7 @@
             "pages": [
               "/agent-platform/index",
               "/agent-platform/concepts",
-              "/agent-platform/getting-started",              
+              "/agent-platform/getting-started",
               "/agent-platform/release-notes/recent-updates",
               {
                 "group": "Building Agents",
@@ -115,7 +134,7 @@
                   "group": "User and Role Management",
                   "pages": [
                     "/agent-platform/administration/user-management",
-                    "/agent-platform/administration/role-management"  
+                    "/agent-platform/administration/role-management"
                   ]
                 },
                   "/agent-platform/administration/security-and-control",
@@ -286,7 +305,7 @@
                       "/ai-for-service/quality",
                       "/ai-for-service/quality-ai/configurations",
                       "/ai-for-service/quality-ai/analyze",
-                      "ai-for-service/quality-ai/coaching"                      
+                      "ai-for-service/quality-ai/coaching"
                     ]
                   }
                 ]
@@ -315,7 +334,7 @@
                   ]
                 }  
                 ]
-                }, 
+                },
                 {
                   "group": "Integrations",
                   "pages": [
@@ -323,7 +342,7 @@
                   "/ai-for-service/contact-center/integrations/overview"
                   ]
                 },
-                "/ai-for-service/channels",
+				"/ai-for-service/channels",
                 "/ai-for-service/deployment/overview",
                 "/ai-for-service/analytics/overview" 
                 ]
@@ -445,6 +464,14 @@
   "logo": {
     "light": "/assets/koreailogo.svg",
     "dark": "/assets/koreailogo.svg"
+  },
+  "navbar": {
+    "links": [
+     { "label": "Academy", "href": "https://academy.kore.ai/" },
+     { "label": "Community", "href": "https://community.kore.ai/" },
+     { "label": "Support", "href": "https://support.kore.ai/" }
+
+    ]
   },
   "contextual": {
     "options": [
