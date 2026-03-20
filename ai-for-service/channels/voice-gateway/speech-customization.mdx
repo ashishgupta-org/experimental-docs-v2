@@ -111,6 +111,23 @@ TTS services also use a selected voice (for example, female or male) to respond.
 | `node.alternativeLanguages` | Array    | Defines alternate languages, providers, and voices for dynamic switching during conversations.   | `See example below`           |
 | `azureAudioLogging`         | Boolean  | Enables or disables audio logging for Azure Speech services.                                     | `true`                        |
 
+Example for node.alternativeLanguages
+
+```
+node.alternativeLanguages: [
+  {
+    "language": "es-ES",
+    "voiceName": "es-ES-ArabellaMultilingualNeural"
+  },
+  {
+    "language": "en-IN",
+    "voiceName": "en-IN-PrabhatNeural",
+    "ttsLabel": "microsoft2",
+    "ttsProvider": "microsoft",
+    "sttProvider": "microsoft2"
+  }
+]
+```
 
 ### Use Cases and Benefits
 
