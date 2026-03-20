@@ -556,7 +556,6 @@
     { "source": "https://docs.kore.ai/xo/flows/introduction-to-flows/", "destination": "https://docs.kore.ai/ai-for-service/flows/create-and-manage-flows" },
     { "source": "https://docs.kore.ai/xo/release-notes/11.x/voice-gateway/", "destination": "https://docs.kore.ai/ai-for-service/release-notes/11.x/voice-gateway" },
     { "source": "https://docs.kore.ai/xo/searchai/content-sources/introduction/", "destination": "https://docs.kore.ai/ai-for-service/searchai/content-sources" },
-    { "source": "https://docs.kore.ai/xo/searchai/content-extraction/extraction/", "destination": "https://docs.kore.ai/xo/searchai/content-extraction/extraction/" },
     { "source": "https://docs.kore.ai/agent-platform/ai-agents/tools/workflow-tools/", "destination": "https://docs.kore.ai/agent-platform/tools/workflow" },
     { "source": "https://docs.kore.ai/xo/generative-ai-tools/prompts-library/", "destination": "https://docs.kore.ai/ai-for-service/generative-ai-tools/prompts-library" },
     { "source": "https://docs.kore.ai/xo/console/conversation-tray/", "destination": "https://docs.kore.ai/ai-for-service/contact-center/agent-console" },
