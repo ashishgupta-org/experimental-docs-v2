@@ -12,25 +12,6 @@
     "dark": "/assets/favicon.png"
   },
   "navigation": {
-    "global":  {
-      "anchors": [
-        {
-          "anchor": "Academy",
-          "icon": "graduation-cap",
-          "href": "https://academy.kore.ai/"
-        },
-        {
-          "anchor": "Community",
-          "icon": "user-group",
-          "href": "https://community.kore.ai/"
-        },
-        {
-          "anchor": "Support",
-          "icon": "hands-holding",
-          "href": "https://support.kore.ai/"
-        }
-      ]
-    },
         "tabs": [
           {
             "tab": "Home",
