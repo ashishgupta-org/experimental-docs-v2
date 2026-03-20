@@ -463,7 +463,6 @@
   },
   "redirects": [
     { "source": "https://docs.kore.ai/xo/home/", "destination": "https://docs.kore.ai/ai-for-service" },
-    { "source": "https://docs.kore.ai/xo/home/", "destination": "https://docs.kore.ai/ai-for-service" },
     { "source": "https://docs.kore.ai/xo/automation/about-automation-ai/", "destination": "https://docs.kore.ai/ai-for-service/automationai" },
     { "source": "https://docs.kore.ai/xo/apis/automation/api-list/", "destination": "https://docs.kore.ai/ai-for-service/apis/automation/api-introduction" },
     { "source": "https://docs.kore.ai/agent-platform/home/", "destination": "https://docs.kore.ai/agent-platform" },
