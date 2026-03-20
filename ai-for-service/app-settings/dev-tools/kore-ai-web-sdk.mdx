@@ -222,8 +222,8 @@ For example, a user may start a conversation with an anonymous or randomly gener
 
 ```json
 {
- "iat": 1611810186883,
- "exp": 1611813786.883,
+ "iat": 161181018xxxx,
+ "exp": 1611813xxx.883,
  "aud": "https://idproxy.kore.com/authorize",
  "iss": "cs-d3042d3e-7da4-55da-a94d-78334927xxxx",
  "sub": "john.doe@example.com ",
@@ -250,7 +250,7 @@ Due to the above identity behavior, the following changes occur:
 
 ### Custom Meta Tags via webSDK
 
-From ver8.0 of the platform, you can directly add Custom Meta Tags from all supported internal channels (Web SDK/IVR/IVRVoice/Webhook channels). Define Session, User, and Message level meta-tags. These tags are added to the Conversation Session as soon as it is created.
+From ver8.0 of the platform, you can directly add Custom Meta Tags from all supported internal channels (Web SDK/IVR/IVRVoice/Webhook channels). Define Session, User, and Message level meta-tags. These tags are added to the Conversation Session as soon as it's created.
 
 ```js
 botOptions.botInfo = {
