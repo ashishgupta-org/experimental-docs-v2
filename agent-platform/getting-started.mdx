@@ -9,15 +9,15 @@ The Agent Platform is available on our US Cloud at [https://agent-platform.kore.
 
 ---
 
-## Outbound IP Addresses
+## Allowlist IPs
 
-The Platform sends requests from a fixed set of IP addresses. If your systems use IP allowlisting, add these IPs to your allowlist so the Platform's traffic is permitted.
+The Platform sends requests to a fixed set of IP addresses. If your systems use IP restrictions, then add the following IPs to your allowlist to permit Platform traffic.
 
-Outbound IP Addresses (SaaS instance: [https://agent-platform.kore.ai](https://agent-platform.kore.ai)):
-
-- 34.201.194.187
-- 44.216.129.184
-- 54.225.127.87
+| Region  | IPs                                                                                  |
+|---------|--------------------------------------------------------------------------------------|
+| USA     | 54.225.127.87, 44.216.129.184, 34.201.194.187, Lambda IPs for code build: 52.7.57.24 |
+| Germany | 3.75.73.144, 18.198.171.44, 63.176.211.25, Lambda IPs for code build: 52.57.41.155   |
+| Japan   | 18.180.133.211, Lambda IP for code build: 18.179.141.6                               |
 
 ---
 
