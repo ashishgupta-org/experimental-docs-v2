@@ -52,7 +52,7 @@ Designed specifically for extracting data from HTML files, including tables, ima
    | Tokens        | Max tokens per chunk                       | 100 - 1000 | 300     |
    | Chunk Overlap | Overlapping tokens between adjacent chunks | 10 - 100   | —       |
 
-> **Note:** Documents with content shorter than 60 characters are skipped when using the General template.
+<Note>Documents with content shorter than 60 characters are skipped when using the General template.</Note>
 
 #### Markdown Extraction
 
@@ -73,7 +73,7 @@ Handles complex PDFs with non-textual layouts such as forms, tables, or visually
 
 Supported formats: PDF files
 
-**Note:** Requires image-based embedding model selection in Vector Configuration. Answer generation not supported by XO GPT with this strategy. This strategy is supported for a limited set of languages. [Learn More](/ai-for-service/searchai/tips-and-faqs#multilingual-support). 
+<Note>Requires image-based embedding model selection in Vector Configuration. Answer generation not supported by XO GPT with this strategy. This strategy is supported for a limited set of languages. [Learn More](/ai-for-service/searchai/tips-and-faqs#multilingual-support).</Note>
 
 #### Custom Extraction
 
@@ -484,7 +484,7 @@ Each **Field Combination** has three components:
 - **File Types** — Select supported file types (e.g., PDF, HTML).
 - **Fields** — Select one or more chunk fields (e.g., Chunk Text, Chunk Title, Record Title) for embedding generation.
 
-> **Note:** The order of selected fields influences the generated embedding. Semantically rich fields improve embedding quality and search accuracy.
+<Note>The order of selected fields influences the generated embedding. Semantically rich fields improve embedding quality and search accuracy.</Note>
 
 **Example:** To use a custom summary field (`cfs1`) for uploaded PDFs:
 - Source: Files
@@ -577,7 +577,7 @@ Required only when using the **Image-Based Document Extraction** strategy.
 | Vector Model | VDR embedding model (selected by default)                   |
 | Prompt       | Select or create a prompt for image-based vector generation |
 
-> **Note:** Changes to the prompt here are automatically reflected in the **Vector Generation - Image** feature on the Gen AI page.
+<Note>Changes to the prompt here are automatically reflected in the **Vector Generation - Image** feature on the Gen AI page.</Note>
 
 ---
 
