@@ -224,7 +224,7 @@ Invokes external APIs to modify, enrich, or analyze content during transformatio
 - **Headers:** Key-value pairs for authentication
 - **Request Body:** Content to send (use `{{field_name}}` for dynamic values). Example: `"content": "{{content}}"`.
 
-**Testing:** Click **Test** to send a sample request and validate configuration. Use the **Response** tab to view returned data and map API response fields to Search AI schema fields. 
+**Testing:** Click **Test** to send a sample request and validate configuration. Use the **Response** tab to view returned data and map API response fields to Search AI schema fields.
 
 **Note:** Only POST APIs and Sync APIs are supported. You can map one or more API response fields to the Search AI schema fields corresponding to the content.
 
@@ -265,7 +265,7 @@ Leverages external LLMs to refine, update, or enrich content (summarization, rea
 #### Stage Operations
 
 - **Testing a Stage**: Click Simulate on the Transform page, select the stage and number of documents to test with. Results appear in the Viewer as a JSON object. Any transformation errors are listed under `simulate_errors`.
-- **Enable/Disable:** Use ellipsis menu or status toggle. Disabling a stage does not delete or remove it permanently. When a stage is disabled, the output of the previous stage in the sequence is directly sent as input to the next stage.
+- **Enable/Disable:** Use ellipsis menu or status toggle. Disabling a stage doesn't delete or remove it permanently. When a stage is disabled, the output of the previous stage in the sequence is directly sent as input to the next stage.
 - **Delete:** Permanently removes the stage.
 - **Sequencing**: Stages execute top-down. The output of each stage becomes the input of the next — so order directly affects outcomes. Use the drag handle to reorder stages. 
 
@@ -294,12 +294,12 @@ Example: To prevent confidential information from appearing in answers, set up a
 
 ### Content Transformation vs Enrichment
 
-|                       | **Transform**                                                                 | **Enrich**                                                    |
+|                       | **Transform**                                                                 | Enrich                                                        |
 |-----------------------|-------------------------------------------------------------------------------|---------------------------------------------------------------|
 | **Where in pipeline** | Operates on **raw documents** — immediately after extraction, before chunking | Operates on **extracted chunks** — after chunking is complete |
-| **Input**             | Full source documents/pages                                                   | Individual chunks                                             |
+| **Input**             | Full source documents or pages                                                | Individual chunks                                             |
 | **Purpose**           | Clean and enrich the document-level content before it becomes chunks          | Refine and enhance chunk-level content before indexing        |
-| **Accessibility**     | **Index > Enrich** (Transform page)                                           | **Index > Enrich** (Workbench page)                           |
+| **Accessibility**     | **Index** > **Enrich** (Transform page)                                       | **Index** > **Enrich** (Workbench page)                       |
 
 ### Adding Workbench Stages
 
@@ -335,7 +335,7 @@ The Workbench includes a built-in simulator for testing stage behavior before de
 **Running a Simulation**
 
 1. Click **Simulate** option on the Workbench page.
-2. Select stage(s) to test.
+2. Select the stages to test.
 3. Choose number of documents for testing.
 4. View results in JSON format in the Chunk Viewer.
 
@@ -346,8 +346,7 @@ The Workbench includes a built-in simulator for testing stage behavior before de
 - Temporarily disable other stages to test individual stage behavior
 - Errors during transformation appear in the `simulate_errors` object
 
-**Tip:** Use the Workbench Simulator frequently during configuration to catch errors early.
-
+<Tip> Use the Workbench Simulator frequently during configuration to catch errors early.</Tip>
 
 ## Content Browser
 
@@ -370,6 +369,7 @@ Navigate to **Index > Browse** to view all chunks. Each chunk displays:
 - Summary information
 
 Click **Details** to view:
+
 - **Document Title:** Source document/page title
 - **Chunk Title:** Title assigned to the chunk
 - **Chunk Text:** Content of the chunk
@@ -391,22 +391,18 @@ Click **Details** to view:
 
 Alternatively, use the **Edit** option directly from the browser home page.
 
-> **Note:** When documents are updated, all related chunks are deleted and recreated, losing manual edits.
+<Note> When documents are updated, all related chunks are deleted and recreated, losing manual edits.</Note>
 
 ### Search and Filter
 
 **Search:** Use the search bar to find chunks by properties (chunkTitle, chunkText, source, etc.)
 
 **Filter:** Advanced search using multiple chunk properties:
+
 - Source types
 - Extraction strategy
 - Content keywords
 - And more
-
-**Example:** Find all chunks from "Kore blogs" containing "virtual assistant":
-- Set Source Name = "Kore blogs"
-- AND chunkText contains "virtual assistant"
-
 
 ## Vector Configuration
 
@@ -416,7 +412,7 @@ Navigate to **Index** > **Index Configuration** to configure this.
 
 The platform supports embedding models including BGE-M3, VDR, and custom models.
 
-> Note: By default, new applications use the BGE-M3 model for vector generation.
+By default, new applications use the BGE-M3 model for vector generation.
 
 **Key Features**
 
@@ -426,29 +422,27 @@ The platform supports embedding models including BGE-M3, VDR, and custom models.
 
 ### Glossary
 
-| Term               | Description                                                                                                                |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------|
-| Vector / Embedding | A numerical representation of data that captures its semantic meaning                                                      |
-| Embedding Model    | A machine learning model that converts text or images into vectors                                                         |
-| Multi-Vector       | Generating multiple vectors per chunk, each using different fields to capture distinct semantic aspects                    |
-| Field Combination  | The specific set of fields (e.g., Chunk Title, Chunk Text, Record Title) selected to generate a vector                     |
-| Vector Column      | The data column that stores embeddings for a specific vector. In a 3-vector setup, there are three vector columns          |
-| Vector Weight      | A percentage value assigned to each vector to control its influence on retrieval scoring                                   |
-| Vision Models      | AI models designed to interpret and analyze visual data such as images                                                     |
-| Rebalancing        | When a vector is unavailable for a chunk, its weight is proportionally redistributed among the remaining available vectors |
+| Term               | Description                                                                                                                 |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Vector / Embedding | A numerical representation of data that captures its semantic meaning.                                                      |
+| Embedding Model    | A machine learning model that converts text or images into vectors.                                                         |
+| Multi-Vector       | Generating multiple vectors per chunk, each using different fields to capture distinct semantic aspects.                    |
+| Field Combination  | The specific set of fields (for example, Chunk Title, Chunk Text, Record Title) selected to generate a vector.              |
+| Vector Column      | The data column that stores embeddings for a specific vector. In a 3-vector setup, there are three vector columns.          |
+| Vector Weight      | A percentage value assigned to each vector to control its influence on retrieval scoring.                                   |
+| Vision Models      | AI models designed to interpret and analyze visual data such as images.                                                     |
+| Rebalancing        | When a vector is unavailable for a chunk, its weight is proportionally redistributed among the remaining available vectors. |
 
 ---
 
 ### Prerequisites
 
-The **Kore.ai XO GPT model** is configured for vector generation by default. To verify or change the embedding model:
+The **XO GPT model** is configured for vector generation by default. To verify or change the embedding model:
 
-1. Navigate to **Generative AI Tools > Model Library**.
+1. Navigate to **Generative AI Tools** > **Model Library**.
 2. Confirm that vector generation is enabled for the desired model.
 
 All configured embedding models appear in the **Vector Configuration** page drop-down.
-
----
 
 ### Vector Configuration for Textual Data
 
@@ -459,9 +453,7 @@ Configure the following fields:
 | Vector Model | Embedding model for vector generation. Options: BGE-M3 or a custom model               |
 | Prompt       | Prompt used by the model. For custom models, create a new prompt using **+New Prompt** |
 
-> **Note:** The model and prompt selected on the Gen AI page are applied here by default. Changes made here are also reflected in the **Vector Generation - Text** feature on the Gen AI page.
-
----
+<Note>The model and prompt selected on the Gen AI page are applied here by default. Changes made here are also reflected in the **Vector Generation - Text** feature on the Gen AI page.</Note>
 
 ### Multi-Vector Search
 
@@ -472,8 +464,6 @@ Search AI supports generating up to **three vectors per chunk**, each configured
 1. **Configure vectors** — Define up to three vectors, each targeting specific sources, file types, and fields.
 2. **Assign weights** — Set a percentage weight per vector to control its influence on the final relevance score.
 3. **Retrieval** — At query time, the user query is converted to a vector and matched against all configured vectors, calculating a similarity score corresponding to each vector. Each similarity score is multiplied by its weight, and scores are summed to produce a final relevance ranking. Chunks are ranked based on these final scores, and the most relevant results are returned.
-
----
 
 ### Configuring Vectors
 
@@ -489,6 +479,7 @@ Generate and assign up to three different vectors per chunk.
 | Field Combination | Defines which content the vector applies to and which fields are used |
 
 Each **Field Combination** has three components:
+
 - **Source** — Select the content source (e.g., uploaded files, connectors). Use the AND operator to narrow the scope further.
 - **File Types** — Select supported file types (e.g., PDF, HTML).
 - **Fields** — Select one or more chunk fields (e.g., Chunk Text, Chunk Title, Record Title) for embedding generation.
