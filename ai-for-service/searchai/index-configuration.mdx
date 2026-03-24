@@ -3,17 +3,15 @@ title: Index Configuration Guide
 sidebarTitle: Index Configuration
 ---
 
-
 Configure and manage the Search AI index, including content extraction, transformation, workbench processing, and content browsing.
-
 
 ## Overview
 
 The Index Configuration in Search AI encompasses the complete data processing pipeline that transforms raw content into searchable, high-quality chunks optimized for answer generation. This pipeline consists of three main phases:
 
-1. **Extraction** – Breaking down source content into manageable chunks using various extraction strategies
-2. **Transformation** – Enriching and refining extracted content through configurable processing stages
-3. **Indexing** – Storing processed chunks with vector embeddings for efficient retrieval
+1. **Extraction** - Breaking down source content into manageable chunks using various extraction strategies
+2. **Transformation** - Enriching and refining extracted content through configurable processing stages
+3. **Indexing** - Storing processed chunks with vector embeddings for efficient retrieval
 
 
 ## Content Extraction
@@ -27,8 +25,10 @@ Content extraction segments ingested data into smaller chunks to organize and ef
 Combines NLP and machine learning techniques based on tokenization, where text is segmented into smaller units. 
 
 **Configuration Options:**
+
 - **Chunk Size (Pages):** Treats every page as a single chunk
 - **Chunk Size (Tokens):** Prepares chunks using:
+
   - **Tokens:** Maximum tokens per chunk (up to 5000). Smaller chunks suit granular tasks; larger chunks better preserve context.
   - **Chunk Overlap:** Number of tokens overlapping between consecutive chunks
 
@@ -41,7 +41,7 @@ Extracts data by considering content layout and structure, improving precision f
 
 #### Advanced HTML Extraction
 
-Designed specifically for extracting data from HTML files, including tables, images, and textual content. Videos are included in chunks but transcripts are not extracted.
+Designed specifically for extracting data from HTML files, including tables, images, and textual content. Videos are included in chunks but transcripts aren't extracted.
 
 **Configuration Templates:**
 - **General:** Identifies different components and classes within HTML documents. Tables and images present between the content are also extracted and stored as chunks. 
@@ -58,7 +58,7 @@ Designed specifically for extracting data from HTML files, including tables, ima
 
 Transforms each page of a source document into structured Markdown format before processing. Effective for preserving semantic structure.
 
-**Supported formats:** PDF files (uploaded directly or via connectors)
+Supported formats: PDF files (uploaded directly or via connectors).
 
 #### Image-Based Document Extraction
 
@@ -66,14 +66,14 @@ Handles complex PDFs with non-textual layouts such as forms, tables, or visually
 
 **How it works:**
 
-- Each PDF page is converted to an image, preserving visual structure and layout.
+- Each page in the PDF document is converted to an image, preserving visual structure and layout.
 - Pages are processed using a **VDR embedding model** that captures both textual and visual semantics.
 - Page contents are also extracted in **standard chunk format** alongside the visual embedding.
 - Each extracted chunk includes a `page_image_url` field referencing its corresponding page image.
 
-**Supported formats:** PDF files
+Supported formats: PDF files
 
-> **Note:** Requires image-based embedding model selection in Vector Configuration. Answer generation not supported by XO GPT with this strategy. This strategy is supported for a limited set of languages. [Learn More](/ai-for-service/searchai/tips-and-faqs#multilingual-support). 
+**Note:** Requires image-based embedding model selection in Vector Configuration. Answer generation not supported by XO GPT with this strategy. This strategy is supported for a limited set of languages. [Learn More](/ai-for-service/searchai/tips-and-faqs#multilingual-support). 
 
 #### Custom Extraction
 
@@ -86,16 +86,17 @@ Enables integration with third-party services for custom content processing.
 - Search AI indexes the returned chunks for search and retrieval.
 
 **Configuration:**
+
 - **Endpoint:** URL for sending content (POST endpoint).
 - **Concurrency:** Maximum API calls per second.
-- **Headers:** Additional request headers.  Default headers will be added automatically and can't be edited. 
+- **Headers:** Additional request headers. Default headers will be added automatically and can't be edited. 
 - **Request Body:** Content fields to send to the service.
 
 Click **Test** to send a sample request using the configured headers and body. Once invoked successfully:
 
 - Generated Response — displays the response returned via the callback URL.
 - Response Path — provide the JSON path to locate extracted chunks within the response.
- -Response Comparison — validates the actual response against the expected structure. An error is shown if they don't match.
+- Response Comparison — validates the actual response against the expected structure. An error is shown if they don't match.
 
 ### Default Extraction Strategies
 
@@ -103,7 +104,7 @@ By default, every application has a Default Strategy that uses different extract
 
 | Content Source | Content Type               | Extraction Strategy      |
 |----------------|----------------------------|--------------------------|
-| WebPages       | HTML                       | Advanced HTML Extraction |
+| WebPages       | html                       | Advanced HTML Extraction |
 | Documents      | pdf, doc, docx             | Markdown Extraction      |
 | Documents      | pptx, txt                  | Text Extraction          |
 | Connectors     | pdf, doc, docx, html, aspx | Markdown Extraction      |
@@ -116,9 +117,10 @@ By default, every application has a Default Strategy that uses different extract
 
 #### Adding a Strategy
 
-1. Navigate to **Index > Extract**
-2. Click **+Add Strategy**
+1. Navigate to **Index** > **Extract**.
+2. Click **+Add Strategy**.
 3. Configure:
+
    - **Strategy Name:** Unique identifier
    - **Define Source:** Select data sources and content types using filters
    - **Extraction Model:** Choose the extraction method
@@ -135,12 +137,13 @@ When multiple strategies exist, they apply based on their sequence in the list -
 Default on top → applies to all content; web pages strategy is never triggered.
 Web pages strategy on top → processes HTML first; default handles the rest.
 
-To reorder, drag and drop strategies up or down as needed.
+To reorder, drag strategies above or below as needed.
 
 #### Managing Strategies:
+
 - **Enable/Disable:** Toggle from the strategy page. Use it for testing purposes to evaluate alternative extraction strategies or when it's no longer needed.
-- **Delete:** Use the Delete button (does not affect existing chunks)
-- **Reorder:** Drag and drop to change sequence
+- **Delete:** Use the Delete button (doesn't affect existing chunks).
+- **Reorder:** Drag to change sequence.
 
 
 ## Content Transformation
@@ -151,9 +154,9 @@ Example use case: A crawled blog page may contain ads, recent post references, a
 
 ### Benefits
 
-- **Improved Data Quality:** Fix errors, standardize fields, add contextual information
-- **Enhanced Control:** Adapt enrichment to specific business needs
-- **Bulk Transformation:** Apply rules to all applicable content simultaneously
+- **Improved Data Quality:** Fix errors, standardize fields, add contextual information.
+- **Enhanced Control:** Adapt enrichment to specific business needs.
+- **Bulk Transformation:** Apply rules to all applicable content simultaneously.
 
 ### Transformation Stages
 
@@ -162,10 +165,14 @@ Example use case: A crawled blog page may contain ads, recent post references, a
 Adds, updates, or deletes specific fields from input content. Useful for ensuring uniformity across pages, for example, adding a title to pages where it's missing.
 
 **Configuration:**
+
 - **Name:** Unique stage identifier
 - **Condition:** Rules for selecting content
+
   - Field Name, Operator, Value
+
 - **Outcome:** Actions to perform:
+
   - **Set:** Sets value for target field
   - **Delete:** Removes target field
   - **Copy:** Copies value between fields
@@ -177,6 +184,7 @@ Implements custom JavaScript transformations for specific business needs. For ex
 <Note>For this stage, sub-conditions and outcomes are defined together within the same script.</Note>
 
 **Configuration:**
+
 - **Outcome:** JavaScript defining transformations. 
 - **View Fields**: Lists all the fields of the schema.
 
@@ -199,9 +207,10 @@ context.total_pages = temp_total_pages;
 Filters out unnecessary or irrelevant content before ingestion.
 
 **Configuration:**
-- **Field:** Document field for condition (e.g., creation date, file type)
-- **Operator:** Comparison operator (greater than, less than, equals)
-- **Value:** Comparison value
+
+- **Field:** Document field for condition (for example, creation date and file type).
+- **Operator:** Comparison operator (greater than, less than, equals).
+- **Value:** Comparison value.
 
 Example: To exclude documents older than a specific date, set Field = Created On, Operator = less than, Value = [cutoff date].
 
@@ -209,16 +218,15 @@ Example: To exclude documents older than a specific date, set Field = Created On
 
 Invokes external APIs to modify, enrich, or analyze content during transformation. Useful for metadata extraction, summarization, or translation via custom models.
 
-
 **Configuration:**
+
 - **Endpoint:** POST endpoint URL (supports dynamic fields with `{{field_name}}`). Example: `https://api.example.com/meta/{{chunkTitle}}?type={{cfs1}}`
 - **Headers:** Key-value pairs for authentication
-- **Request Body:** Content to send (use `{{field_name}}` for dynamic values). Example: "content": `{{content}}`.
+- **Request Body:** Content to send (use `{{field_name}}` for dynamic values). Example: `"content": {{content}}`.
 
 **Testing:** Click **Test** to send a sample request and validate configuration. Use the **Response** tab to view returned data and map API response fields to Search AI schema fields. 
 
-> **Note:** Only POST APIs and Sync APIs are currently supported. You can map one or more API response fields to the Search AI schema fields corresponding to the content.
-
+**Note:** Only POST APIs and Sync APIs are supported. You can map one or more API response fields to the Search AI schema fields corresponding to the content.
 
 #### LLM Stage
 
@@ -230,6 +238,7 @@ Leverages external LLMs to refine, update, or enrich content (summarization, rea
 3. [Enable the feature in Gen AI features page](/ai-for-service/generative-ai-tools/genai-features-searchai).
 
 **Configuration:**
+
 - **LLM:** Select the language model.
 - **Prompt:** Select the custom prompt.
 - **Target Field:** Field for storing enriched content.
@@ -238,7 +247,7 @@ Leverages external LLMs to refine, update, or enrich content (summarization, rea
 
 | Strategy                        | Field Mapping | Custom Script | Exclude Documents | API Stage | LLM Stage |
 |---------------------------------|---------------|---------------|-------------------|-----------|-----------|
-| Text Extraction                 | ✓            | ✓             | ✓                 | ✓        | ✓         |
+| Text Extraction                 | ✓            | ✓             | ✓                 | ✓         | ✓         |
 | Advanced HTML Extraction        | Yes           | Yes           | Yes               | Yes       | ✓         |
 | Layout Aware Extraction         | NA            | NA            | NA                | NA        | NA        |
 | Markdown Extraction             | NA            | NA            | NA                | NA        | NA        |
@@ -259,7 +268,6 @@ Leverages external LLMs to refine, update, or enrich content (summarization, rea
 - **Enable/Disable:** Use ellipsis menu or status toggle. Disabling a stage does not delete or remove it permanently. When a stage is disabled, the output of the previous stage in the sequence is directly sent as input to the next stage.
 - **Delete:** Permanently removes the stage.
 - **Sequencing**: Stages execute top-down. The output of each stage becomes the input of the next — so order directly affects outcomes. Use the drag handle to reorder stages. 
-
 
 ## Content Enrichment Using Workbench
 
@@ -293,27 +301,26 @@ Example: To prevent confidential information from appearing in answers, set up a
 | **Purpose**           | Clean and enrich the document-level content before it becomes chunks          | Refine and enhance chunk-level content before indexing        |
 | **Accessibility**     | **Index > Enrich** (Transform page)                                           | **Index > Enrich** (Workbench page)                           |
 
----
-
 ### Adding Workbench Stages
 
-1. Navigate to **Index > Enrich**
-2. Click **+New Stage**
-3. Select stage type
+1. Navigate to **Index** > **Enrich**.
+2. Click **+New Stage**.
+3. Select stage type.
 4. Configure:
+
    - Unique stage name
-   - Condition(s) for content selection
-   - Outcome(s) defining transformations
-5. Click **Save**
+   - Conditions for content selection
+   - Outcomes defining transformations
+
+5. Click **Save**.
 
 ### Stage Management
 
-**Ordering:** Data processes through stages sequentially. The sequence directly affects the cumulative output. Use drag-and-drop to reorder.
+**Ordering:** Data processes through stages sequentially. The sequence directly affects the cumulative output. Drag to reorder.
 
 **Enable/Disable:** Toggle stages on/off without deleting. When disabled, the stage is skipped and the previous stage's output passes directly to the next active stage. Example: With three stages where stage 2 is disabled — data flows through stage 1, then directly to stage 3, skipping stage 2 entirely.
 
 **Deleting:** Permanently removes the stage from the Workbench.
-
 
 ### Workbench Simulator
 
@@ -327,10 +334,10 @@ The Workbench includes a built-in simulator for testing stage behavior before de
 
 **Running a Simulation**
 
-1. Click **Simulate** button on the Workbench page
-2. Select stage(s) to test
-3. Choose number of documents for testing
-4. View results in JSON format in the Chunk Viewer
+1. Click **Simulate** option on the Workbench page.
+2. Select stage(s) to test.
+3. Choose number of documents for testing.
+4. View results in JSON format in the Chunk Viewer.
 
 **Key Points:**
 
@@ -339,7 +346,7 @@ The Workbench includes a built-in simulator for testing stage behavior before de
 - Temporarily disable other stages to test individual stage behavior
 - Errors during transformation appear in the `simulate_errors` object
 
-> **Tip:** Use the Workbench Simulator frequently during configuration to catch errors early.
+**Tip:** Use the Workbench Simulator frequently during configuration to catch errors early.
 
 
 ## Content Browser
