@@ -629,7 +629,8 @@
     }
   },
   "seo": {
-    "indexing": "all"
+    "indexing": "all",
+    "metatags": {     "canonical": "https://docs.kore.ai/"   }
   },
   "api": {
     "playground": {
