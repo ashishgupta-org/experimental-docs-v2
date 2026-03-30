@@ -1,0 +1,91 @@
+---
+title: BigTinCan Connector
+sidebarTitle: BigTinCan Connector
+---
+
+<Badge icon="arrow-left" color="gray">[Back to Search AI connectors list](/ai-for-service/searchai/content-sources#supported-connectors)</Badge>
+
+BigTinCan is a cloud-based sales enablement and training platform used by organisations to deliver and manage learning content, including courses and presentations. You can configure Search AI to connect to BigTinCan to enable users to fetch query results using the content from training courses.
+
+## Specifications
+
+| Specification | Details |
+|---------------|---------|
+| Repository type | Cloud |
+| Supported content | Training Courses |
+| Content filtering | No |
+| RACL support | Yes |
+
+## Authorization Support
+
+Search AI supports **Username** and **Password-based** authentication for communicating with BigTinCan. Authentication is established using a **Login Directory**, **Username**, and **Password** associated with your BigTinCan account.
+
+## Integration Steps
+
+To configure BigTinCan as a content source, complete the following steps.
+
+* Configure the BigTinCan connector in Search AI
+* Set up Permissions
+* Configure Content Scope
+* Schedule Sync
+
+## Step 1: Configure the BigTinCan Connector in Search AI
+
+Go to Connectors under the Sources page and select BigTinCan. On the Authorization tab, enter the following details and click Connect.
+
+* Name — Unique name for the connector.
+* Login Directory — The login directory associated with your BigTinCan account (for example, Citrix).
+* Username — The username used to log in to BigTinCan.
+* Password — The password associated with your BigTinCan account.
+
+Once successfully authenticated, the status shows as Connected.
+
+## Step 2: Set Up Permissions
+
+Go to the Permissions tab to configure access control for the ingested content. The following options are available.
+* Same users as in the source system (Restricted Access) — Automatically applies the same permissions from BigTinCan, ensuring secure and seamless access to ingested content.
+* Everyone (Public Access) — All users are granted full access to the ingested content, overriding any previous restrictions in the connector.
+
+<Note>To enforce restrictions across all connectors in your workspace, contact support. Once enabled, these settings become locked and can only be changed via a support ticket.</Note>
+
+## Step 3: Configure Content Scope
+
+Go to the Content Scope tab under Connector Setup to define the scope of content ingestion.
+
+* All content — Ingests all available content from the selected object types without applying any filters.
+
+## Step 4: Sync Content
+
+After configuring the connector, go to Schedule Sync to initiate and manage content synchronization.
+
+* Use the Sync button for an immediate, on-demand sync.
+* Enable Schedule Sync to set up automated, recurring syncs.
+
+The Schedule Sync table displays a log of all sync activity with the following details.
+
+| Field        | Description                                                   |
+|--------------|---------------------------------------------------------------|
+| Sync Scope   | The scope of the sync (for example, Full Sync).               |
+| Sync Type    | Indicates whether the sync was On-Demand or Scheduled.        |
+| Sync Status  | The result of the sync (for example, Successful).             |
+| Triggered By | The user who initiated the sync.                              |
+| Started On   | The date and time the sync started.                           |
+| Completed On | The date and time the sync completed.                         |
+
+## Content Ingestion
+
+Once the sync is complete, go to the Content tab to review the ingested content. The tab displays the count of files that are Successful, Failed, and Skipped, along with the total number of Accessible Files.
+
+Each ingested course entry shows the following details.
+
+* Title — The name of the training course.
+* Size — File size of the ingested content.
+* Last Updated — The date and time the content was last updated.
+
+Search AI ingests training courses from BigTinCan. Course content — including presentation text and metadata — is indexed and made available for search. Separate file attachments are not ingested.
+
+## RACL Support
+
+Search AI supports permission-aware search for BigTinCan content when RACL is enabled. The sys_racl field is used to associate content with authorized users, ensuring that only permitted users can access specific training courses in search results.
+
+<Note>Automatic permission sync from BigTinCan is not supported. Permissions are enforced using the platform's RACL configuration.</Note>
