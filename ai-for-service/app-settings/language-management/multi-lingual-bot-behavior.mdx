@@ -2,6 +2,7 @@
 title: Multilingual AI Agent Behavior
 sidebarTitle: Multilingual Behavior
 ---
+
 <Badge icon="arrow-left" color="gray">[Back to App Settings](/ai-for-service/app-settings)</Badge>
 
 In the case of multi-lingual AI Agent, while much of the AI Agent behavior doesn't change with the language, language semantics does impose some restrictions. This document lists the different behaviors that are language-dependent, so you as app developer can cater for such scenarios.
@@ -21,8 +22,8 @@ Patterns can also be used in [Small Talk](/ai-for-service/automation/intelligenc
 | **word1 * word2** - 0 to infinite number of additional words between the specified words/phrases | All languages | - | Yes | Yes | Yes |
 | **word1 *n word2** - Exactly _n_ number of additional words between the specified words/phrases | All languages | - | Yes | Yes | Yes |
 | **word1 *0 word2** - To disable wildcards between two tokens. | All languages | - | Yes | Yes | Yes |
-| **word1 &lt; word2** - Indicates the match for word2 should start from the beginning of a sentence. | All languages | - | Yes | Yes | Yes |
-| **word1 &gt; word2** - Indicates the end of the sentence and no words are allowed after it. | All languages | - | Yes | Yes | Yes |
+| **word1 \< word2** - Indicates the match for word2 should start from the beginning of a sentence. | All languages | - | Yes | Yes | Yes |
+| **word1 \> word2** - Indicates the end of the sentence and no words are allowed after it. | All languages | - | Yes | Yes | Yes |
 | **!abc** - Indicates the word/concept "abc" shouldn't exist anywhere in the user utterance after this token | All languages | - | Yes | Yes | Yes |
 | **!!abc** - The very next word/concept shouldn't be "abc" | All languages | - | Yes | Yes | Yes |
 | **[ … ]** - Used to define a group of words/concepts and the match should be against exactly one of the group declared in [ ]. | All languages | - | Yes | Yes | Yes |
