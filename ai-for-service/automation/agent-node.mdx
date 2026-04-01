@@ -58,7 +58,7 @@ Changes here apply to this node across **all** dialog tasks.
 |---|---|
 | **Model** | LLM to use. Supports OpenAI, Azure OpenAI, Amazon Bedrock, Custom LLM. See [Model and Supported Features](../../generative-ai-tools/genai-features.md#automation-ai-genai-features). |
 | **Prompt/Instructions** | Feature-specific instructions or context for the model. |
-| **Conversation History Length** | Number of recent messages sent as context. Default: 10. (Custom prompts only.) |
+| **Conversation History Length** | Number of recent messages sent as context. Default: 10. (Custom prompts only). Maximum limit: 50. |
 | **Temperature** | Controls output randomness. Higher = more creative; lower = more focused. |
 | **Max Tokens** | Total tokens per API call. Affects cost and response time. |
 | **Fallback Behavior** | Action on LLM failure or Guardrail violation: trigger Task Execution Failure Event, or skip node and jump to a specified node (default: End of Dialog). |
