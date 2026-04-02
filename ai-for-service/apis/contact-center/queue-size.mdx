@@ -26,16 +26,26 @@ To get the queueDetails by giving queueId and filters with the given `streamId`.
 
 ## Sample Request
 
-```
+```bash
 curl --location 'https://{{host}}/agentassist/api/v1/public/{{streamId}}/monitor/queueStatsById/{{queueId}}/' \
 --header 'auth: <token>' \
 --header 'accountId: {{accountId}}' \
 --header 'Content-Type: application/json' \
+--header 'iId: {{streamId}}' \
 --data '{
 "languages": ["en", "es"],
 "channels": ["rtm", "msteams"]
 }'
 ```
+
+## Header Parameters
+
+| **Header**        | **Description**                                             | **Optional/Required** |
+|-------------------|-------------------------------------------------------------|-----------------------|
+| `accountid`      | Unique account identifier.         | Required              |
+| `auth`              | JWT authentication token.                                     | Required              |
+| `content-type`      | Request body format (application/json;charset=UTF-8)         | Required              |
+| `iId`               | Stream or application id.                                     | Required              |
 
 ## Request Parameters
 

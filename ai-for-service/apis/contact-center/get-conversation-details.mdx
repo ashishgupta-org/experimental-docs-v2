@@ -36,6 +36,7 @@ curl --location --request GET 'https://{{host}}/agentassist/api/v1/public/{{botI
 --header 'content-type: application/json;charset=UTF-8' \
 --header 'referer: https://staging-smartassist.kore.ai/smartassist/config/queues' \
 --header 'auth: <JWT-token>' \
+--header 'iId: {{streamId}}' \
 --data '{
     "startDate":"2024-10-24",
     "endDate":"2024-10-28",
@@ -43,12 +44,13 @@ curl --location --request GET 'https://{{host}}/agentassist/api/v1/public/{{botI
 }'
 ```
 
-## Headers
+## Header Parameters
 
-| **Header**      | **Description** | **Type** |
+| **Header**      | **Description** | **Optional**/**Required** |
 |------------------|-----------------|-----------|
-| `accept`        | Supported response type. Must be `application/json`. | string, required |
-| `accountid`     | Identifies the customer account. | string, required |
+| `accept`        | Supported response type. Must be `application/json`. | Required |
+| `accountid`     | Identifies the customer account. | Required |
+| `iId`           | Stream or application ID. For example, `st-e19dd469-90f5-5655-b0b2-858de901xxxx`    | Required |
 
 ## Request Body Parameters
 
