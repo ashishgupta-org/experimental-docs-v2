@@ -281,6 +281,7 @@ Barge-In lets the Voice Gateway to detect and respond when a user interrupts the
 These parameters control how long the Voice Gateway waits for user input (speech or DTMF).
 
 <Note>All timeout-related parameters apply at the node level.</Note>
+
 | **Parameter**                        | **Type**                  | **Scope** | Description                                                                                                                                       | **Example**                        |
 | -------------------------------- | --------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
 | `userNoInputTimeoutMS`           | Number (milliseconds) | All   | Maximum wait time to receive user input. If set to `0`, Voice Gateway waits indefinitely.                                                         | `"userNoInputTimeoutMS": 20000 → waits 20 seconds before timeout.` |
@@ -313,7 +314,7 @@ These parameters control how long the Voice Gateway waits for user input (speech
 | `sttEndpointID` | String |—| Specifies a custom Microsoft endpoint instead of the default regional endpoint. | `"sttEndpointID": "custom-endpoint-id-12345"`|
 | `azurePostProcessing` | String |—| Enables final transcript enhancements such as text normalization, punctuation, or custom formatting. | `"azurePostProcessing": "enabled"` |
 | `azureSpeechRecognitionMode` | String (Enum: `AtStart`, `Continuous`) |—| - `AtStart`: Starts transcription at first detected input and stops after the utterance ends.
-- `Continuous`: Keeps transcribing without stopping. Ideal for long sessions. | `"azureSpeechRecognitionMode": "Continuous"` |
+| `Continuous`: Keeps transcribing without stopping. Ideal for long sessions. | `"azureSpeechRecognitionMode": "Continuous"` |
 | `profanityOption` | String (Enum: `masked`, `removed`, `raw`) |—| Controls how profane words appear in the transcript. Default: `raw`. | `"profanityOption": "masked"` |
 | `initialSpeechTimeoutMs` | Number (milliseconds) |—| Sets how long the system waits for the user to start speaking before timing out. | `"initialSpeechTimeoutMs": 3000` |
 | `requestSnr` | Boolean |—| If set to `true`, includes signal-to-noise ratio in the response. | `"requestSnr": true`|
@@ -404,6 +405,58 @@ These parameters control how long the Voice Gateway waits for user input (speech
 | `eot_timeout_ms`         | Integer               | —                       | Specifies the maximum duration of silence, in milliseconds, before the system forces an `EndOfTurn` event regardless of confidence. Default value is `5000 ms`. Supported range is `500-10000 ms`.                                                                                                                                                                                                   | —                                      |
 | `mipOptOutType`         | Boolean               | —                       | Specifies whether a user opts out of a specific feature or service.                                                                                                                                                                                                   | —                                      |
 | `entityPromptType`         | String               | —                       | Specifies  the type of prompt used for entities, which may influence how information is presented or requested during interactions.                                                                                                                                                                                                   | —                                      |
+
+### Deepgram Flux ASR
+
+The Deepgram Flux model is a real-time speech-to-text model optimized for low-latency conversational voice AI.
+
+It improves response time in voice interactions by detecting when a speaker finishes speaking and enabling the system to respond faster.
+
+**Key Benefits**
+
+* Smart turn detection-Identifies when the speaker finishes speaking
+* Ultra-low latency-~260ms end-of-turn detection
+* Faster responses-Enables quicker AI agent replies
+* Clean transcripts-Turn-based conversation structure
+* Natural interruptions-Supports barge-in scenarios
+* High accuracy-Built on Deepgram Nova-3 transcription engine
+
+[Deepgram Documentation](https://developers.deepgram.com/docs/flux/quickstart)
+
+**How to Configure Flux**
+
+Customers can enable Flux using the following Call Control Parameters.
+
+1. Select **Deepgram ASR ** from the ASR provider list.
+2. Configure Call Control Parameters
+
+  `sttProvider: deepgramflux`
+  `sttLanguage: en`
+  `deepgramEotThreshold: 0.8`
+  `deepgramEotTimeoutMs: 3000`
+
+  **Parameter Details**
+
+  | Parameter | Range | Default | Description |
+|-----------|-------|---------|-------------|
+| `deepgramEotThreshold` | 0.5–0.9 | 0.7 | Confidence required to trigger EndOfTurn detection. Lower values detect turns faster. |
+| `deepgramEotTimeoutMs` | 500–10000 ms | 5000 | Maximum silence before forcing EndOfTurn detection. |
+
+**Recommended Configuration**
+
+For most conversational AI use cases:
+
+| Parameter | Recommended Value |
+|-----------|-------------------|
+| `deepgramEotThreshold` | 0.7 |
+| `deepgramEotTimeoutMs` | 3000 |
+
+This provides a good balance between speed and reliability.
+
+**Limitations**
+
+* Flux doesn't support smart formatting for numbers.
+* `eager_eot_threshold` isn't yet supported on the platform.
 
 ### Azure ASR
 
