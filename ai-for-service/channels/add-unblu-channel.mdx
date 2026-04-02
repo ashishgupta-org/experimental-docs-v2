@@ -40,9 +40,7 @@ The Unblu Bot can be directly created from the Kore.ai XO Platform.
 4. **Enable** the channel.
 ![unblu integration](/ai-for-service/channels/images/unblu.png)
 
-After enabling the channel and verifying all the configurations, you can optionally publish the assistant for the new channel. Learn more about[ Publishing your App](../deploy/publishing-bot.md).
-
-To learn more about working with Channels within the Kore.ai XO Platform, please see [Channel Enablement.](../channels/adding-channels-to-your-bot.md)
+After enabling the channel and verifying all the configurations, you can optionally publish the assistant for the new channel. Learn more about [Publishing your App](/ai-for-service/deployment/publishing-app).
 
 ## Additional Instructions
 
@@ -237,7 +235,7 @@ There are multiple functionalities that can be achieved by the integration of Un
 * When mapping a named area to a bot, _multiple named areas_ can be mapped. This way a single Kore.ai assistant has the ability to accept Unblu dialog offer requests from different origins like SDKs or namedAreas.
 * Also, the named area mapping is optional if you are enabling the Unblu channel for a single Kore.ai assistant.
 * You can redirect user conversations to agents by adding an _agent transfer_ node in the dialog flow, note that you need not enable the Agent Transfer or BotKit specifically for this Channel. Having an agent transfer node is sufficient.
-* The user information for each message from Unblu is available in the `usercontext.customData` and you can use it for further processing. This information includes _deviceInfo_, _authInfo_, _joinedTime_ of the user. [See here for how to use context object](../automation/intelligence/context-object.md).
+* The user information for each message from Unblu is available in the `usercontext.customData` and you can use it for further processing. This information includes _deviceInfo_, _authInfo_, _joinedTime_ of the user. [See here for how to use context object](/ai-for-service/automation/agent-flows#context-object).
 
 ## Using Unblu supported message templates
 
