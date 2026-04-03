@@ -636,7 +636,7 @@
   "seo": {
     "indexing": "all",
     "metatags": {
-      "canonical": "https://docs.kore.ai/"
+      "canonical": "https://docs.kore.ai"
       }
   },
   "api": {
