@@ -300,11 +300,56 @@ Authorization (Auth) Profiles define how the Platform authenticates with externa
 | Token Request URL | Endpoint to exchange an auth code for an access token | Yes | Both |
 | Scope | Level of access requested, e.g., `read_profile` | No | Both |
 | Refresh Token URL | Endpoint to get a new access token when the current one expires | No | OAuth V2 only |
+| Token Request Headers | Custom HTTP headers attached to token endpoint requests (e.g., tenant ID) | Yes | OAuth V2 only |
+| Mutual TLS | Client certificate and key settings for mTLS handshake at token/API calls | Yes | OAuth V2 only |
 | Auth Error Status Code | HTTP status code returned on authorization failure | No | Both |
 | Additional Fields | Extra key-value pairs for the end user (e.g., PIN code) | No | OAuth V2 only |
 | Authorization Fields | Token-passing fields: Header, Payload, Query String, or Path Param | No | OAuth V2 only |
 
 <Note>If the Refresh Token URL or refresh token expires, the auth profile will fail wherever it is used. The admin receives an email notification to reconfigure.</Note>
+
+### Token Request Headers
+
+Attach custom HTTP headers to every token endpoint request for this profile.  
+Use this when your authorization server requires additional metadata — such as a tenant ID or correlation ID — alongside the standard OAuth parameters.
+
+**Steps to Add Token Request Headers:**
+1. Click **+ Add Request Header** in the New Authorization Mechanism window.  
+2. Enter a **Field Name** (e.g., `X-Tenant-ID`) and **Field Value** (e.g., `12345`).  
+3. Click **Done**.  
+4. The header appears in the Token Request Headers list where you can edit or delete it.
+
+<Note>  
+- Up to **20 headers** can be defined per profile.  
+- Headers are sent in the order listed, **after** the platform’s standard headers (`Content-Type`, `Authorization`, etc.), which cannot be overridden.  
+- Values support `{{context.*}}` variable placeholders (for example, `{{context.clientId}}`) resolved at request time.  
+- Unresolved variables are replaced with an empty string and logged as a warning; the token request still proceeds.  
+</Note>
+
+### Mutual TLS (mTLS)
+
+mTLS enables the platform to present a client certificate during the TLS handshake when calling enterprise systems that require it — at the token endpoint, for downstream API requests, or both.
+
+**Steps to Configure Mutual TLS:**
+1. Upload **Client Certificate (PEM)** — file types: `.pem`, `.crt`, `.cer`.  
+   - If the file includes the full chain (leaf + intermediates + root), no separate CA certificate is needed.  
+   - On upload, the platform displays Subject CN, Issuer CN, validity dates, and a status badge (OK, Expiring Soon ≤ 30 days, or Expired).  
+2. Upload **Client Private Key (PEM)** — file type: `.pem`, `.key`.  
+   - The platform validates that the key matches the leaf certificate’s public key.  
+3. Enter **Private Key Passphrase** — required only if the private key is encrypted.  
+4. Upload **CA Certificate / Chain (PEM)** — required only if your certificate chain is separate from the client certificate.  
+5. Configure **Apply mTLS To** — choose where the client certificate is presented:  
+   - **Token Endpoint & API Requests (default):** presented at both token endpoint and outbound API calls.  
+   - **Token Endpoint Only:** presented only when acquiring tokens.  
+   - **API Requests Only:** presented only on outbound API calls.  
+6. Enter **Certificate Alias** — up to 100 characters, used to identify the certificate. Does not affect authentication behavior.
+
+<Note>  
+- Ensure the private key matches the uploaded certificate.  
+- Certificates with validity ≤ 30 days are flagged as **Expiring Soon**.  
+- Expired certificates must be replaced to maintain connectivity.  
+- Alias is for identification only and does not impact authentication.  
+</Note>
 
 ### Add Additional Fields
 
