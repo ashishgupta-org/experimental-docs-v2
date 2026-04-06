@@ -9,7 +9,7 @@ Deletes a specific execution result of a Batch Test Suite.
 | Property | Value |
 |---|---|
 | **Method** | DELETE |
-| **Endpoint** | `https://{host}/api/public/bot/{botId}/testsuite/{testSuiteName}/{testRunId}` |
+| **Endpoint** | `https://{{host}}/api/public/bot/{{botId}}/testsuite/{{testSuiteName}}/{{testRunId}}` |
 | **Content Type** | `application/json` |
 | **Authorization** | `auth: {{JWT}}` — See [How to generate the JWT Token](/ai-for-service/apis/automation/api-introduction/#generating-the-jwt-token). |
 | **API Scope** | App Builder: Batch Tests Management; Admin Console: Batch Tests Management |
@@ -25,11 +25,11 @@ Deletes a specific execution result of a Batch Test Suite.
 
 ## Sample Request
 
-```json
+```bash
 curl --location --request DELETE \
-     'https://{host}/api/public/bot/{botId}/testsuite/{testSuiteName}/{testRunId}' \
-      --header 'auth: {YOUR_JWT_ACCESS_TOKEN}' \
-      --header 'bot-language: {language-code}'
+     'https://{{host}}/api/public/bot/{{botId}}/testsuite/{{testSuiteName}}/{{testRunId}}' \
+      --header 'auth: {{YOUR_JWT_ACCESS_TOKEN}}' \
+      --header 'bot-language: {{language-code}}'
 ```
 
 ## Body Parameters
