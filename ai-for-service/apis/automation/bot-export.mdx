@@ -29,7 +29,7 @@ This API only initiates the export process. Use the [Export Status API](/ai-for-
 
 ```json
 curl --location 'https://{host}/api/public/bot/{BotID}/export' \
---header 'auth: {YOUR_JWT_ACCESS_TOKEN}' \
+--header 'auth: {{YOUR_JWT_ACCESS_TOKEN}}' \
 --header 'content-type: application/json' \
 --data '{
     "exportType": "published",

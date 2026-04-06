@@ -30,7 +30,7 @@ To retrieve audit logs from the Admin Console.
 ```bash
 curl --location --request GET \
 'https://{{host}}/api/public/auditlogs?size=50&offset=0&fromDate=2021-07-07T11:11:18.464Z&toDate=2021-06-30T11:11:18.469Z' \
---header 'auth: YOUR_JWT_ACCESS_TOKEN' \
+--header 'auth: {{YOUR_JWT_ACCESS_TOKEN}}' \
 --header 'Content-Type: application/json'
 ```
 

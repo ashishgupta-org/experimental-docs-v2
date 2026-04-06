@@ -26,11 +26,11 @@ The deletion doesn't proceed if the requested user is:
 
 ## Sample Request
 
-```json
+```bash
 curl -X DELETE \
   'https://{{host}}/api/public/bot/eraseUsersData' \
   --header 'Content-Type: application/json' \
-  --header 'auth: YOUR_JWT_ACCESS_TOKEN' \
+  --header 'auth: {{YOUR_JWT_ACCESS_TOKEN}}' \
   --data '{
     "userIds": ["u-xxxxxxxx-xxxx-xxx-xxxx-xxxxxxxxxxx"],
     "botIds": ["st-xxxxxxxx-xxxx-xxx-xxxx-xxxxxxxxxxxx"],
