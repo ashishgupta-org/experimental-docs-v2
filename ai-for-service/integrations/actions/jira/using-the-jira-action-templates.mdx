@@ -11,11 +11,11 @@ Use prebuilt JIRA action templates to auto-create dialog tasks for managing issu
 1. Go to **Automation AI** > **Use Cases** > **Dialogs** and click **Create a Dialog Task**.
 2. Under **Integration**, select **JIRA**.
 
-   ![Integration - JIRA](../images/jira-action-img14-tem-img2.png)
+   ![Integration - JIRA](/ai-for-service/integrations/actions/images/jira-action-img14-tem-img2.png)
 
 3. If no integration is configured, click **Explore Integrations** to set one up. See [Actions Overview](../actions.md).
 
-   ![Explore Integrations](../images/jira-tem-img3.png)
+   ![Explore Integrations](/ai-for-service/integrations/actions/images/jira-tem-img3.png)
 
 ---
 
@@ -36,14 +36,14 @@ Use prebuilt JIRA action templates to auto-create dialog tasks for managing issu
 1. Install the template from [JIRA Action Templates](configuring-the-jira-action.md#step-2-install-the-jira-action-templates).
 2. The _Create an issue_ dialog task is added with the following components:
 
-   ![Create an issue dialog task is added](../images/jira-tem-img4.png)
+   ![Create an issue dialog task is added](/ai-for-service/integrations/actions/images/jira-tem-img4.png)
 
    - **createIssue** - User intent to create an issue.
    - **projectKey**, **summary**, **issueTypeName** - Entity nodes for issue details.
    - **getResourceIdService** - Bot action service to get JIRA site resource ID.
    - **createIssueService** - Bot action service to create an issue. Click **Edit Request**:
 
-     ![Edit Request](../images/jira-tem-img5.png)
+     ![Edit Request](/ai-for-service/integrations/actions/images/jira-tem-img5.png)
 
      **Sample Request:**
      ```json
@@ -70,7 +70,7 @@ Use prebuilt JIRA action templates to auto-create dialog tasks for managing issu
 
 3. Click **Train**, then **Talk to Bot** to test:
 
-   ![VA prompt to create issue](../images/jira-tem-img6.png)
+   ![VA prompt to create issue](/ai-for-service/integrations/actions/images/jira-tem-img6.png)
 
 ---
 
@@ -79,14 +79,14 @@ Use prebuilt JIRA action templates to auto-create dialog tasks for managing issu
 1. Install the template from [JIRA Action Templates](configuring-the-jira-action.md#step-2-install-the-jira-action-templates).
 2. The _Get Issues by Key_ dialog task is added with the following components:
 
-   ![Get Issues by Key dialog task is added](../images/jira-tem-img7.png)
+   ![Get Issues by Key dialog task is added](/ai-for-service/integrations/actions/images/jira-tem-img7.png)
 
    - **getIssuebyKey** - User intent to find an issue by key.
    - **issueKey** - Entity node for the issue key.
    - **getResourceIdService** - Bot action service to get JIRA site resource ID.
    - **getIssuebyKeyService** - Bot action service to find an issue. Click **+Add Response**:
 
-     ![Add response](../images/jira-tem-img8.png)
+     ![Add response](/ai-for-service/integrations/actions/images/jira-tem-img8.png)
 
      **Sample Response:** (truncated)
      ```json
@@ -104,7 +104,7 @@ Use prebuilt JIRA action templates to auto-create dialog tasks for managing issu
 
 3. Click **Train**, then **Talk to Bot** to test:
 
-   ![VA prompt to find issue by key](../images/jira-tem-img9.png)
+   ![VA prompt to find issue by key](/ai-for-service/integrations/actions/images/jira-tem-img9.png)
 
 ---
 
@@ -113,13 +113,13 @@ Use prebuilt JIRA action templates to auto-create dialog tasks for managing issu
 1. Install the template from [JIRA Action Templates](configuring-the-jira-action.md#step-2-install-the-jira-action-templates).
 2. The _Get All Issues_ dialog task is added with the following components:
 
-   ![Get All Issues dialog task is added](../images/jira-tem-img10.png)
+   ![Get All Issues dialog task is added](/ai-for-service/integrations/actions/images/jira-tem-img10.png)
 
    - **getAllIssues** - User intent to view all issues.
    - **getResourceIdService** - Bot action service to get JIRA site resource ID.
    - **getAllIssuesService** - Bot action service to fetch all issues. Click **+Add Response**:
 
-     ![Add response](../images/jira-tem-img11.png)
+     ![Add response](/ai-for-service/integrations/actions/images/jira-tem-img11.png)
 
      **Sample Response:** (truncated)
      ```json
@@ -141,7 +141,7 @@ Use prebuilt JIRA action templates to auto-create dialog tasks for managing issu
 
 3. Click **Train**, then **Talk to Bot** to test:
 
-   ![VA prompt to view all issues](../images/jira-tem-img12.png)
+   ![VA prompt to view all issues](/ai-for-service/integrations/actions/images/jira-tem-img12.png)
 
 ---
 
@@ -150,18 +150,18 @@ Use prebuilt JIRA action templates to auto-create dialog tasks for managing issu
 1. Install the template from [JIRA Action Templates](configuring-the-jira-action.md#step-2-install-the-jira-action-templates).
 2. The _Update an Issue_ dialog task is added with the following components:
 
-   ![Update an Issue dialog task is added](../images/jira-tem-img13.png)
+   ![Update an Issue dialog task is added](/ai-for-service/integrations/actions/images/jira-tem-img13.png)
 
    - **updateIssue** - User intent to update an issue.
    - **issueKey**, **chooseField**, **updatedSummary**, **newLabel** - Entity nodes for update details.
    - **prepareUpdateIssuePayloadScript** - Bot action script to prepare update payload:
 
-     ![prepareUpdateIssuePayloadScript](../images/jira-tem-img14.png)
+     ![prepareUpdateIssuePayloadScript](/ai-for-service/integrations/actions/images/jira-tem-img14.png)
 
    - **getResourceIdService** - Bot action service to get JIRA site resource ID.
    - **updateIssueService** - Bot action service to update an issue. Click **Edit Request**:
 
-     ![Edit Request](../images/jira-tem-img15.png)
+     ![Edit Request](/ai-for-service/integrations/actions/images/jira-tem-img15.png)
 
      **Sample Request:**
      ```json
@@ -178,7 +178,7 @@ Use prebuilt JIRA action templates to auto-create dialog tasks for managing issu
 
 3. Click **Train**, then **Talk to Bot** to test:
 
-   ![VA prompt to update an issue](../images/jira-tem-img16.png)
+   ![VA prompt to update an issue](/ai-for-service/integrations/actions/images/jira-tem-img16.png)
 
 ---
 
@@ -189,14 +189,14 @@ Use prebuilt JIRA action templates to auto-create dialog tasks for managing issu
 1. Install the template from [JIRA Action Templates](configuring-the-jira-action.md#step-2-install-the-jira-action-templates).
 2. The _Delete an Issue_ dialog task is added with the following components:
 
-   ![Delete an Issue dialog task is added](../images/jira-tem-img17.png)
+   ![Delete an Issue dialog task is added](/ai-for-service/integrations/actions/images/jira-tem-img17.png)
 
    - **deleteIssue** - User intent to delete an issue.
    - **issueKey** - Entity node for the issue key.
    - **getResourceIdService** - Bot action service to get JIRA site resource ID.
    - **deleteIssueService** - Bot action service to delete an issue. Click **Edit Request**:
 
-     ![Edit request](../images/jira-tem-img18.png)
+     ![Edit request](/ai-for-service/integrations/actions/images/jira-tem-img18.png)
 
    - **deleteIssueMessage** - Message node to display responses.
 

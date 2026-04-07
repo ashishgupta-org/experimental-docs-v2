@@ -11,11 +11,11 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 1. Go to **Automation AI** > **Use Cases** > **Dialogs** and click **Create a Dialog Task**.
 2. Under **Integration**, select **ServiceNow**.
 
-   ![Integration - Servicenow](../images/servicenow-tem-img2.png)
+   ![Integration - Servicenow](/ai-for-service/integrations/actions/images/servicenow-tem-img2.png)
 
 3. If no integration is configured, click **Explore Integrations** to set one up. See [Actions Overview](../actions.md).
 
-   ![Explore integrations](../images/servicenow-tem-img3.png)
+   ![Explore integrations](/ai-for-service/integrations/actions/images/servicenow-tem-img3.png)
 
 ---
 
@@ -41,13 +41,13 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 1. Install the template from [ServiceNow Action Templates](configuring-the-servicenow-action.md#step-2-install-the-servicenow-action-templates).
 2. The _Create a Incident_ dialog task is added with the following components:
 
-   ![Create an Incident dialog task](../images/servicenow-tem-img4.png)
+   ![Create an Incident dialog task](/ai-for-service/integrations/actions/images/servicenow-tem-img4.png)
 
    - **createIncident** - User intent to create an incident.
    - **createIncidentShortDescription** and **createIncidentDescription** - Entity nodes for incident details.
    - **createIncidentService** - Bot action service to create an incident. Click **Edit Request**:
 
-     ![Edit request](../images/servicenow-tem-img5.png)
+     ![Edit request](/ai-for-service/integrations/actions/images/servicenow-tem-img5.png)
 
      **Sample Request:**
      ```json
@@ -59,7 +59,7 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 
      Click **+Add Response**:
 
-     ![Add response](../images/servicenow-tem-img6.png)
+     ![Add response](/ai-for-service/integrations/actions/images/servicenow-tem-img6.png)
 
      **Sample Response:** (truncated)
      ```json
@@ -81,15 +81,15 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 
 3. Click **Train**, then **Talk to Bot** to test:
 
-   ![VA prompts to create an incident](../images/servicenow-tem-img7.png)
+   ![VA prompts to create an incident](/ai-for-service/integrations/actions/images/servicenow-tem-img7.png)
 
 4. The new incident is created in ServiceNow:
 
-   ![New incident created](../images/servicenow-tem-img8.png)
+   ![New incident created](/ai-for-service/integrations/actions/images/servicenow-tem-img8.png)
 
 5. Click **View Incident** to see incident details:
 
-   ![View incident details](../images/servicenow-tem-img9.png)
+   ![View incident details](/ai-for-service/integrations/actions/images/servicenow-tem-img9.png)
 
 ---
 
@@ -98,27 +98,27 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 1. Install the template from [ServiceNow Action Templates](configuring-the-servicenow-action.md#step-2-install-the-servicenow-action-templates).
 2. The _Update an Incident_ dialog task is added with the following components:
 
-   ![Update an Incident dialog task added](../images/servicenow-tem-img10.png)
+   ![Update an Incident dialog task added](/ai-for-service/integrations/actions/images/servicenow-tem-img10.png)
 
    - **Update Incident** - User intent to update an incident.
    - **SysId**, **updateRecordFields**, **updatedShortDescription**, **updatedDescription** - Entity nodes for update details.
    - **prepareUpdatePayloadScript** - Bot action script to update an incident.
 
-     ![prepareUpdatePayloadScript bot action component properties](../images/servicenow-tem-img11.png)
+     ![prepareUpdatePayloadScript bot action component properties](/ai-for-service/integrations/actions/images/servicenow-tem-img11.png)
 
    - **updateIncidentService** - Bot action service to update an incident.
 
-     ![updateIncidentService bot action component properties](../images/servicenow-tem-img12.png)
+     ![updateIncidentService bot action component properties](/ai-for-service/integrations/actions/images/servicenow-tem-img12.png)
 
    - **updateIncidentMessage** - Message node to display responses.
 
 3. Click **Train**, then **Talk to Bot** to test:
 
-   ![VA prompts to update incident](../images/servicenow-tem-img13.png)
+   ![VA prompts to update incident](/ai-for-service/integrations/actions/images/servicenow-tem-img13.png)
 
 4. Enter all incident update details when prompted. The incident is updated in ServiceNow:
 
-   ![Incident updated](../images/servicenow-tem-img14.png)
+   ![Incident updated](/ai-for-service/integrations/actions/images/servicenow-tem-img14.png)
 
 ---
 
@@ -127,18 +127,18 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 1. Install the template from [ServiceNow Action Templates](configuring-the-servicenow-action.md#step-2-install-the-servicenow-action-templates).
 2. The _List All Incidents_ dialog task is added with the following components:
 
-   ![List All Incidents dialog task added](../images/servicenow-tem-img15.png)
+   ![List All Incidents dialog task added](/ai-for-service/integrations/actions/images/servicenow-tem-img15.png)
 
    - **List All Incidents** - User intent to list all incidents.
    - **listAllIncidentsService** - Bot action service to fetch all incidents. Click **+Add Response**:
 
-     ![Add response](../images/servicenow-tem-img16.png)
+     ![Add response](/ai-for-service/integrations/actions/images/servicenow-tem-img16.png)
 
    - **listAllIncidentsMessage** - Message node to display responses.
 
 3. Click **Train**, then **Talk to Bot** to test:
 
-   ![VA prompt to view all incidents](../images/servicenow-tem-img17.png)
+   ![VA prompt to view all incidents](/ai-for-service/integrations/actions/images/servicenow-tem-img17.png)
 
 ---
 
@@ -147,20 +147,20 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 1. Install the template from [ServiceNow Action Templates](configuring-the-servicenow-action.md#step-2-install-the-servicenow-action-templates).
 2. The _Find an Incident_ dialog task is added with the following components:
 
-   ![Find an Incident dialog task added](../images/servicenow-tem-img18.png)
+   ![Find an Incident dialog task added](/ai-for-service/integrations/actions/images/servicenow-tem-img18.png)
 
    - **Find Incident** - User intent to find an incident.
    - **findRecordFields**, **findRecordSysId**, **findRecordNumber**, **findShortDescription**, **findDescription** - Entity nodes for finding an incident.
    - **prepareSearchingFieldScript** - Bot action script to prepare search fields.
 
-     ![prepareSearchingFieldScript bot action component properties](../images/servicenow-tem-img19.png)
+     ![prepareSearchingFieldScript bot action component properties](/ai-for-service/integrations/actions/images/servicenow-tem-img19.png)
 
    - **findSearchingFieldScript** - Bot action service to search incidents.
    - **findIncidentMessage** - Message node to display responses.
 
 3. Click **Train**, then **Talk to Bot** to test:
 
-   ![VA prompt to view an incident](../images/servicenow-tem-img20.png)
+   ![VA prompt to view an incident](/ai-for-service/integrations/actions/images/servicenow-tem-img20.png)
 
 ---
 
@@ -169,7 +169,7 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 1. Install the template from [ServiceNow Action Templates](configuring-the-servicenow-action.md#step-2-install-the-servicenow-action-templates).
 2. The _Delete an Incident_ dialog task is added with the following components:
 
-   ![Delete an Incident dialog task added](../images/servicenow-tem-img21.png)
+   ![Delete an Incident dialog task added](/ai-for-service/integrations/actions/images/servicenow-tem-img21.png)
 
    - **Delete Incident** - User intent to delete an incident.
    - **SysId** - Entity node for the incident ID.
@@ -178,7 +178,7 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 
 3. Click **Train**, then **Talk to Bot** to test:
 
-   ![VA prompt to delete an incident](../images/servicenow-tem-img22.png)
+   ![VA prompt to delete an incident](/ai-for-service/integrations/actions/images/servicenow-tem-img22.png)
 
 <Note>If you enter an incorrect ID, the _404 - No Record Found_ error message is displayed.</Note>
 
@@ -189,13 +189,13 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 1. Install the template from [ServiceNow Action Templates](configuring-the-servicenow-action.md#step-2-install-the-servicenow-action-templates).
 2. The _Create Request_ dialog task is added with the following components:
 
-   ![Create Request dialog task added](../images/servicenow-tem-img23.png)
+   ![Create Request dialog task added](/ai-for-service/integrations/actions/images/servicenow-tem-img23.png)
 
    - **Create Request** - User intent to create a request.
    - **createRequestShortDescription** and **createRequestDescription** - Entity nodes for request details.
    - **createRequestService** - Bot action service to create a request. Click **Edit Request**:
 
-     ![Edit Request](../images/servicenow-tem-img24.png)
+     ![Edit Request](/ai-for-service/integrations/actions/images/servicenow-tem-img24.png)
 
      **Sample Request:**
      ```json
@@ -209,11 +209,11 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 
 3. Click **Train**, then **Talk to Bot** to test:
 
-   ![VA prompt to create new request](../images/servicenow-tem-img25.png)
+   ![VA prompt to create new request](/ai-for-service/integrations/actions/images/servicenow-tem-img25.png)
 
 4. Click **View Request** to see request details in ServiceNow:
 
-   ![View request](../images/servicenow-tem-img26.png)
+   ![View request](/ai-for-service/integrations/actions/images/servicenow-tem-img26.png)
 
 ---
 
@@ -222,14 +222,14 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 1. Install the template from [ServiceNow Action Templates](configuring-the-servicenow-action.md#step-2-install-the-servicenow-action-templates).
 2. The _Update a Request_ dialog task is added with the following components:
 
-   ![Update a Request dialog task added](../images/servicenow-tem-img27.png)
+   ![Update a Request dialog task added](/ai-for-service/integrations/actions/images/servicenow-tem-img27.png)
 
    - **Update Request** - User intent to update a request.
    - **SysId**, **updateRecordFields**, **updatedShortDescription**, **updatedDescription** - Entity nodes for update details.
    - **prepareUpdatePayloadScript** - Bot action script to update a request.
    - **updateRequestService** - Bot action service to update a request.
 
-     ![updateRequestScript bot action component properties](../images/servicenow-tem-img28.png)
+     ![updateRequestScript bot action component properties](/ai-for-service/integrations/actions/images/servicenow-tem-img28.png)
 
    - **updateRequestMessage** - Message node to display responses.
 
@@ -242,12 +242,12 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 1. Install the template from [ServiceNow Action Templates](configuring-the-servicenow-action.md#step-2-install-the-servicenow-action-templates).
 2. The _List All Requests_ dialog task is added with the following components:
 
-   ![List All Requests dialog task added](../images/servicenow-tem-img29.png)
+   ![List All Requests dialog task added](/ai-for-service/integrations/actions/images/servicenow-tem-img29.png)
 
    - **List All Requests** - User intent to list all requests.
    - **listAllRequestsService** - Bot action service to fetch all requests.
 
-     ![listAllRequestService bot action component properties](../images/servicenow-tem-img30.png)
+     ![listAllRequestService bot action component properties](/ai-for-service/integrations/actions/images/servicenow-tem-img30.png)
 
    - **listAllRequestsMessage** - Message node to display responses.
 
@@ -260,14 +260,14 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 1. Install the template from [ServiceNow Action Templates](configuring-the-servicenow-action.md#step-2-install-the-servicenow-action-templates).
 2. The _Find a Request_ dialog task is added with the following components:
 
-   ![Find a Request dialog task added](../images/servicenow-tem-img31.png)
+   ![Find a Request dialog task added](/ai-for-service/integrations/actions/images/servicenow-tem-img31.png)
 
    - **Find Request** - User intent to find a request.
    - **findRecordFields**, **findRecordSysId**, **findRecordNumber**, **findShortDescription**, **findDescription** - Entity nodes for finding a request.
    - **prepareSearchingFieldScript** - Bot action script to prepare search fields.
    - **findRequestService** - Bot action service to search requests.
 
-     ![findRequestService bot action component properties](../images/servicenow-tem-img32.png)
+     ![findRequestService bot action component properties](/ai-for-service/integrations/actions/images/servicenow-tem-img32.png)
 
    - **findRequestMessage** - Message node to display responses.
 
@@ -280,13 +280,13 @@ Use prebuilt ServiceNow action templates to auto-create dialog tasks for managin
 1. Install the template from [ServiceNow Action Templates](configuring-the-servicenow-action.md#step-2-install-the-servicenow-action-templates).
 2. The _Delete a Request_ dialog task is added with the following components:
 
-   ![Delete a Request dialog task added](../images/servicenow-tem-img33.png)
+   ![Delete a Request dialog task added](/ai-for-service/integrations/actions/images/servicenow-tem-img33.png)
 
    - **Delete Request** - User intent to delete a request.
    - **SysId** - Entity node for the request ID.
    - **deleteRequestService** - Bot action service to delete a request.
 
-     ![deleteRequestService bot action component properties](../images/servicenow-tem-img34.png)
+     ![deleteRequestService bot action component properties](/ai-for-service/integrations/actions/images/servicenow-tem-img34.png)
 
    - **deleteRequestMessage** - Message node to display responses.
 
