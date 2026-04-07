@@ -22,13 +22,13 @@ Users must have appropriate permissions to:
 - Access Agentic Apps or Tools
 - Configure API scopes
 
-Without required permissions, API keys and scopes will not be visible or usable. [Learn More](/agent-platform/administration/security-and-control#api-scopes).
+Without required permissions, API keys and scopes are not accessible in Apps and Tools. [Learn More](/agent-platform/administration/security-and-control#api-scopes).
 
-2. Agentic App-Level API Access:Each Agentic App has its own API scope and corresponding API keys. These are required to access Agentic app APIs. 
+2. Agentic App-Level API Access: Each Agentic App has its own API scope and corresponding API keys. These are required to access Agentic app APIs. 
 
 <Note>API keys generated at this level are scoped only to that specific Agentic App.</Note>
 
-3. Tool-Level API Access
+3. Tool-level API Access
 
 Workflow Tools in the library can also be deployed and accessed independently. Use when:
 
@@ -39,9 +39,7 @@ Workflow Tools in the library can also be deployed and accessed independently. U
 
 **API Scope Hierarchy**
 
-API access in the Agent Platform is scoped based on the resource being accessed:
-
-| Level        | Scope Applies To | Key Characteristics                          |
+| Level        | Scope Applies To | Purpose                         |
 |--------------|----------------|----------------------------------------------|
 | Account      | Entire platform | Controls visibility and permissions          |
 | Agentic App  | Individual app | Used for app execution and management APIs               |
@@ -164,7 +162,7 @@ An API key serves as a unique identifier for the client or application accessing
 * Authenticate requests - Verify the identity of the client.
 * Control access - Restrict API usage based on permissions or rate limits.
 * Monitor usage - Track API calls for analytics, billing, or debugging.
-* Prevent abuse - Protect against unauthorized or excessive use.
+* Prevent misuse - Protect against unauthorized or excessive use.
 
 API keys are typically included in request headers or parameters to validate access.
 
