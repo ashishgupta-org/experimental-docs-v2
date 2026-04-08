@@ -1,10 +1,9 @@
 ---
 title: Get Started using AI for Process
 sidebarTitle: Get Started
-description: Set up a workspace, configure AI models, and build your first AI-powered workflow in AI for Process.
 ---
 
-Use this guide to set up AI for Process and build your first AI-powered workflow.
+Set up a workspace, configure AI models, and build your first AI-powered workflow in AI for Process..
 
 ## Prerequisites
 
@@ -13,6 +12,9 @@ Use this guide to set up AI for Process and build your first AI-powered workflow
 - (Optional) API credentials for external integrations.
 
 ## Access AI for Process
+
+AI for Process is currently available on our US Cloud at https://process.kore.ai/. To request access for your customers, partners, or prospects, [contact the Sales team](https://kore.ai/contact-us/).
+
 
 1. Navigate to the Platform.
 2. Select **AI for Process** from the product menu.
@@ -41,9 +43,74 @@ Workspaces organize workflows, models, and users:
    - **Reviewer** — Process Inbox tasks.
    - **Viewer** — Read-only access.
 
-## Quick Starts
+## Workflow Setup
 
-The following scenarios walk you through common starting points. Follow one or all based on your use case.
+Set up your AI-powered Workflows in three steps:
+
+<div class="ascii-art">
+
+┌─────────────────────────────┐
+│ Step 1: Configure Models    │
+│ Set up AI model providers   │
+└──────────────┬──────────────┘
+│              ▼              │
+┌─────────────────────────────┐
+│  Step 2: Build a Workflow   │
+│  Create and deploy an       │
+│  AI-powered workflow        │
+└──────────────┬──────────────┘
+│              ▼              │
+┌─────────────────────────────┐
+│  Step 3: Add Human Review   │
+│  Insert approval steps for  │
+│  AI-generated outputs       │
+└─────────────────────────────┘
+
+</div>
+
+### Configure Models
+
+**View available models**
+
+1. Navigate to **Models** → **Model Hub**.
+2. View available models:
+
+   - **Open-source** — Hugging Face models.
+   - **External** — OpenAI, Anthropic, Google.
+   - **Fine-tuned** — Your custom models.
+
+**Add an external model**
+
+1. Go to **External Models**.
+2. Click **Add Provider**.
+3. Configure credentials:
+
+For example:
+
+```yaml
+Provider: OpenAI
+API Key: sk-...
+Models:
+  - gpt-4
+  - gpt-4o
+  - gpt-3.5-turbo
+```
+
+**Use the model in a workflow**
+
+Select the model when configuring AI nodes:
+
+For example:
+
+```yaml
+AI Node Configuration:
+  model_source: external
+  provider: openai
+  model: gpt-4
+  temperature: 0.7
+  max_tokens: 500
+```
+
 
 ### Build a workflow
 
@@ -70,6 +137,8 @@ Build your workflow by adding nodes:
 **Step 3: Configure the AI node**
 
 Configure the Text-to-Text node:
+
+For example: 
 
 ```yaml
 Node: Summarize Document
@@ -113,6 +182,8 @@ Modify the workflow to include human approval:
 1. Add **Human Node** after AI node.
 2. Configure review settings:
 
+For example: 
+
 ```yaml
 Human Node: Review Summary
 Task type: approval
@@ -138,51 +209,4 @@ Timeout: 24h
 4. Approve, edit, or reject.
 5. Workflow continues after action.
 
-### Configure the Model Hub
-
-**View available models**
-
-1. Navigate to **Models** → **Model Hub**.
-2. View available models:
-
-   - **Open-source** — Hugging Face models.
-   - **External** — OpenAI, Anthropic, Google.
-   - **Fine-tuned** — Your custom models.
-
-**Add an external model**
-
-1. Go to **External Models**.
-2. Click **Add Provider**.
-3. Configure credentials:
-
-```yaml
-Provider: OpenAI
-API Key: sk-...
-Models:
-  - gpt-4
-  - gpt-4o
-  - gpt-3.5-turbo
-```
-
-**Use the model in a workflow**
-
-Select the model when configuring AI nodes:
-
-```yaml
-AI Node Configuration:
-  model_source: external
-  provider: openai
-  model: gpt-4
-  temperature: 0.7
-  max_tokens: 500
-```
-
-## Next Steps
-
-| Goal                    | Resources                               |
-|-------------------------|-----------------------------------------|
-| Build complex workflows | [Workflows](/ai-for-process/workflows)  |
-| Explore node types      | [Workflow Nodes](/ai-for-process/nodes) |
-| Manage human tasks      | [Inbox](/ai-for-process/inbox)          |
-| Deploy custom models    | [Model Hub](/ai-for-process/models)     |
-| Design prompts          | [Prompts](/ai-for-process/prompts)      |
+---
