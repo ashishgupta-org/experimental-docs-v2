@@ -461,6 +461,7 @@
    ]
   },
   "redirects": [
+    { "source": "/ai-for-service/searchai/chunk-browser/", "destination": "/ai-for-service/searchai/index-configuration#content-browser" },
     { "source": "/ai-for-service/release-notes/11.x/automation-ai", "destination": "/ai-for-service/release-notes/automation-ai" },
     { "source": "/ai-for-service/release-notes/11.x/platform-services/", "destination": "/ai-for-service/release-notes/platform-services" },
     { "source": "/ai-for-service/release-notes/11.x/voice-gateway/", "destination": "/ai-for-service/release-notes/voice-gateway" },
