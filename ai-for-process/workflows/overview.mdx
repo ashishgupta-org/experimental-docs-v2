@@ -56,7 +56,7 @@ The Start node defines:
 |:--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Input variables     | Data passed into the workflow at runtime.                                                                                                             |
 | Output variables    | Variables captured from the workflow's results.                                                                                                       |
-| Event triggers      | Automatic initiation when a specific event occurs in a connected third-party application—for example, a new Jira issue or a Salesforce record update. |
+| Event triggers      | Automatic initiation when a specific event occurs in a connected third-party application. |
 | Scheduled execution | Time-based initiation using daily, weekly, monthly, cron, or custom intervals.                                                                        |
 
 Event triggers and schedulers can be used independently or together on the same workflow. When an event trigger fires, event data and metadata are passed into the workflow as variables for downstream nodes to reference.
@@ -133,33 +133,24 @@ AI nodes are multimodal components powered by LLMs from the Model Hub. They supp
 
 Each AI node accepts a prompt—built using static text and `{{context}}` references—and returns a structured or unstructured response stored in the context object for downstream nodes.
 
-## Relationship Between Workflows, Nodes, Models, and Agents
 
-The platform separates concerns across four layers that work together to automate a process end to end.
+## Workflow Management
 
-| Layer    | Role in automation                                                                             |
-|:---------|:-----------------------------------------------------------------------------------------------|
-| Workflow | Orchestrates the overall process—defines order, conditions, and data flow.                     |
-| Nodes    | Perform individual tasks within the workflow.                                                  |
-| Models   | Provide inference for AI nodes; configured and managed in [Model Hub](/ai-for-process/models). |
-| Agents   | Autonomous reasoning components integrated via Agentic App nodes.                              |
+The Platform provides features for end-to-end workflow implementation and maintenance.
 
-### How they connect
+| Section                                                                      | Description                                                                                                                                                                              |
+|:-----------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Workflow Builder](/ai-for-process/workflows/workflow-builder)              | Visual no-code/low-code builder for creating and managing workflows and workflow versions. Build from scratch or import existing ones.                                                   |
+| [Sharing and Permissions](/ai-for-process/workflows/overview#collaborate-on-workflows)                               | Invite users to collaborate on specific workflows. Invited users see only the workflows they're invited to.                                                                             |
+| [Workflow Endpoint](/ai-for-process/workflows/overview#workflow-endpoints)                                     | Deploy a workflow to generate a dedicated API endpoint for integration with external systems.                                                                                             |
+| [API Keys](/ai-for-process/workflows/overview#api-keys-and-workflow-access)                                              | Create API keys to enable secure access to deployed workflows.                                                                                                                           |
+| [Monitoring](/ai-for-process/workflows/monitor-and-debug#workflow-monitor)                                      | Track and analyze workflow executions across multiple runs to identify issues and optimize performance.                                                                                  |
+| [Guardrails](https://example.com)                                           | Apply guardrail models to scan LLM inputs and outputs, enforcing safety and content policies.                                                                                              |
+| [Audit Logs](https://example.com)                                           | View detailed audit logs for all workflow activities for troubleshooting and traceability.                                                                                                |
+| [Configurations](/ai-for-process/workflows/overview#configure-a-workflow)                                     | Manage workflow metadata, define reusable values using environment variables, and control workflow deployment.                                                                           |
 
-- A workflow contains nodes connected by transitions. The workflow determines what runs, when, and in what order.
-- AI nodes call models. The model processes the input and returns an output stored in the context object for downstream nodes.
-- Agentic App nodes invoke a deployed AI agent. Unlike a static AI node, an agent can reason, plan, and use tools autonomously. The workflow passes input to the agent and receives structured output after the agent completes its task. The Agentic App node performs one turn of communication per execution.
-- The context object acts as the data bus: nodes read from it and write to it, passing information downstream without manual wiring.
+Create a workflow to automate a business process, then configure its runtime behavior, environment variables, and lifecycle settings.
 
-### When to use agents within workflows
-
-Use an Agentic App node when a workflow step requires:
-
-- Reasoning over unstructured or ambiguous input.
-- Multi-tool decision-making that can't be expressed as a fixed node sequence.
-- Dynamic task decomposition—for example, incident triage or invoice exception handling.
-
-For deterministic, structured tasks, use standard AI nodes or Function nodes instead. Agentic nodes add flexibility but also add latency, as the agent must fully complete before the workflow continues.
 
 ## Create a Workflow
 
@@ -171,7 +162,11 @@ For deterministic, structured tasks, use standard AI nodes or Function nodes ins
 3. Enter a name and a brief description for the workflow.
 4. Select **Create**. The workflow is created and the **Workflow** page opens. You can now build your workflow in the Flow Builder.
 
-### Collaborate on Workflows
+To start building workflows by using nodes, see [Workflow Builder](/ai-for-process/workflows/workflow-builder)
+
+---
+
+## Collaborate on Workflows
 
 Account owners can invite users to collaborate on specific workflows. They can invite only those users who already have access to their account. The invited users can access the Models and Data modules for the account but can only see the workflows they're invited to.
 
@@ -186,6 +181,201 @@ To invite users to a workflow, follow these steps:
 5. Enter the users' email addresses and click **Invite** to grant them access.
 
    ![Invite Users](./images/invite-users.png)
+
+---
+
+## Workflow Endpoints
+
+After deployment, the platform generates sync and async poll endpoints automatically. An async push endpoint requires additional configuration.
+
+![Workflow endpoints](/ai-for-process/workflows/images/new_endpoint.png)
+
+| Endpoint type | Behavior                                                                                                                                         |
+|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|
+| Synchronous   | The client waits for the workflow to complete and returns the response immediately. Suitable for real-time operations.                           |
+| Async poll    | The workflow processes the request independently. The client periodically polls the integration to retrieve the response.                        |
+| Async push    | The workflow pushes the response to a client-specified callback URL as soon as processing is complete. Requires a callback URL and access token. |
+
+**To enable an async push endpoint:**
+
+1. On the **Workflow endpoint** page, click the **Async push** tab and click **Enable / Settings**.
+
+   ![Enable async push settings](/ai-for-process/workflows/images/enable-settings.png)
+
+2. Turn on the **Enable async** toggle.
+3. Enter the callback URL of the external application that will receive the response.
+4. Enter the access token generated by the external application.
+5. Set the timeout:
+   - **Set timeout**: 60 - 600 seconds (default: 180 seconds).
+   - **No timeout**: The workflow runs without a time limit.
+
+   ![Async mode configuration](/ai-for-process/workflows/images/async-mode-configuration.png)
+
+6. Click **Save**. The async push endpoint is created.
+
+   ![Async push endpoint created](/ai-for-process/workflows/images/async-push-endpoint.png)
+
+<Note>Timeout precedence: Workflow timeout > Node timeout > Model timeout.</Note>
+
+If you change the sync/async mode after deployment, you must redeploy the workflow for the change to take effect.
+
+---
+
+## API Keys and Workflow Access
+
+When you deploy a workflow, the platform generates a dedicated API endpoint. External systems call this endpoint to invoke the workflow. API keys control who can access the endpoint.
+
+To create an API key:
+
+1. In the Platform, select your workflow and click **API keys** in the left sidebar.
+1. Click **Create a new API key**. The **Create new API key** dialog opens.
+1. Enter a descriptive name for the key and click **Generate key**. The key is displayed once.
+1. Click **Copy and close** to save the key to your clipboard.
+
+<Warning>AI for Process doesn't display the API key after you close this dialog. Copy the key and keep it secure and confidential. Don't expose it in client-side code and don't share it with unauthorized users.</Warning>
+
+A list of all generated keys is displayed the **API keys** section for reference and management.
+
+![API keys list](/ai-for-process/workflows/images/api-keys-list.png)
+
+---
+
+## Monitoring
+
+### Trigger History
+
+The **Triggers** page shows all configured triggers for a deployed workflow and their recent activity.
+
+To access it: go to **Monitoring** > **Triggers** in the left navigation pane.
+
+Each trigger entry shows:
+
+**Event-based triggers**:
+
+- Provider, trigger name, description, setup time, and last run.
+
+**Schedule-based triggers**:
+
+- Frequency, description, setup time, start and end time, time zone, last run, and next scheduled run.
+
+Inactive triggers show a warning with recommended actions. If a trigger is inactive:
+
+- Redeploy the workflow to refresh connections.
+- Retest the auth profile in **Settings** > **Security & Control** > **Authorization profiles**.
+
+---
+
+### Workflow Monitor
+
+The **Workflow Monitor** gives you a time-based, run-level view of every execution of a deployed workflow. Use it to track performance, inspect inputs and outputs, diagnose failures, and review the history of runs and configuration changes.
+
+Monitoring is only available for workflows deployed to production. Workflows in design or debug phases are not tracked in the Workflow Monitor.
+
+The Workflow Monitor provides two analytics views:
+
+- **All runs**: Shows all workflow run instances, including runs triggered by events, schedules, or API calls.
+- **Model runs**: Shows individual AI node executions within each workflow run.
+
+Both tabs display summary metrics at the top:
+
+| Metric                    | Description                                                            |
+|---------------------------|------------------------------------------------------------------------|
+| **Total runs / requests** | Total number of workflow runs or AI node calls in the selected period. |
+| **Response time (P90)**   | The response time below which 90% of runs fall.                        |
+| **Response time (P99)**   | The response time below which 99% of runs fall.                        |
+| **Failure rate**          | Percentage of runs that ended in failure.                              |
+
+These metrics update dynamically when you apply filters or change the date range.
+
+#### Access the Workflow Monitor
+
+1. On the **Workflows** page, click the workflow you want to monitor. The workflow must be in **Deployed** status.
+2. In the left navigation pane, click **Workflow runs**.
+3. Click the **All runs** or **Model runs** tab.
+4. Click any row to open the detailed run panel on the right.
+
+#### All Runs Tab
+
+Each row in the **All runs** tab represents one workflow execution and shows:
+
+- **Run ID**: Unique identifier for the run.
+- **Status**: One of the following:
+  - **In Progress**: The run is actively executing.
+  - **Waiting**: Execution is paused, waiting for a response from an external system (typically an async API node).
+  - **Success**: The run completed without errors.
+  - **Failed**: The run did not complete successfully.
+- **Response time**: Total time from request to output.
+- **Nodes executed**: Number of nodes that ran in this execution.
+- **Start time / End time**: When the run began and ended.
+- **Type**: The trigger type—Event-based, Schedule-based, or API-based.
+- **Source**: The service or schedule that initiated the run (for example, Gmail for an event-based trigger).
+
+#### Model Runs Tab
+
+The **Model runs** tab tracks each AI node call separately. If a workflow has three AI nodes, each run produces three entries in this tab. The tab is empty if the workflow has no AI nodes.
+
+Each entry shows:
+
+- **Request ID**: Unique identifier for the AI node call.
+- **Status**: In Progress, Waiting, Success, or Failed.
+- **Node name**: The name of the AI node.
+- **Model name**: The AI model used.
+- **Connection / Deployment name**: The connection or deployment linked to the model.
+- **Response time**: Time taken for the AI node to complete.
+- **Start time / End time**: Execution window for the AI node.
+
+#### Viewing Execution Results
+
+Clicking any row in the Workflow Monitor opens a detailed run panel. This panel mirrors the **Run dialog** on the workflow canvas and shows:
+
+- **Run ID / Request ID**: Unique identifier for the run.
+- **Response time**: Total execution time.
+- **Debug icon**: Opens the debug log for the run.
+- **Input section**: The inputs passed to the workflow.
+- **Flow log**: Node-by-node execution log.
+  - **Success**: Shows the same debug output as in the canvas debug panel.
+  - **Failure**: Shows failure details and error information for the failed node. For AI nodes, you can expand the node to see scanner information.
+- **Output section**: The final output from the workflow (available for successful runs). You can copy the output and view token usage.
+
+---
+
+## Guardrails
+
+Enable safety scanning to enforce safety, policy, and compliance checks:
+
+```yaml
+guardrails:
+  input_scanning: true
+  output_scanning: true
+  scanners:
+    - toxicity
+    - pii_detection
+    - jailbreak_detection
+```
+
+Guardrails scan LLM inputs and outputs, prevent unsafe or non-compliant responses, and apply consistent enforcement across workflows.
+
+For more information, see [Guardrails](/ai-for-process/guardrails).
+
+## Audit Logs
+
+### Audit Logs
+
+Audit logs track all user actions and system events for a workflow, including logins, role changes, and configuration updates.
+
+To access audit logs: In the left navigation pane, click **Audit logs**.
+
+Each log entry includes:
+
+- **Event name**: The action or event that occurred.
+- **Category**: The module or entity affected.
+- **User name**: The user who performed the action.
+- **Date and time**: When the event occurred.
+- **Description**: Details about the action.
+
+You can filter audit logs by date range, category, event, or user.
+
+---
 
 ## Configure a Workflow
 
@@ -279,7 +469,7 @@ Deploying a workflow generates a dedicated API endpoint for integration with ext
 
       ![Async push endpoint](/ai-for-process/workflows/images/async-push-endpoint.png)
 
-## Redeploy a Workflow
+### Redeploy a Workflow
 
 The **Workflow endpoint** page shows the deployed version of your workflow's flow. Select **View the Flow** to view the deployed flow in read-only mode.
 
@@ -287,7 +477,7 @@ The **Workflow endpoint** page shows the deployed version of your workflow's flo
 
 To redeploy with an updated flow, select **Deploy** at the top right of the **Workflow endpoint** page. Redeployment does not change the workflow's endpoint URL.
 
-## Undeploy a Workflow
+### Undeploy a Workflow
 
 Undeploying a workflow disconnects it from all active instances immediately. Use this when you need to take a workflow offline without permanently removing it.
 
@@ -298,18 +488,3 @@ On the **Configurations** page, select **Proceed to undeploy** and follow the on
 You can only delete a workflow that is not deployed. Deleting a workflow removes the workflow and all its associated data permanently.
 
 On the **Configurations** page, select **Proceed to delete** and follow the on-screen instructions.
-
-## Workflow Management
-
-The Platform provides features for end-to-end workflow implementation and maintenance.
-
-| Phase                          | Feature                                                                      | Description                                                                                                                                                                              |
-|:-------------------------------|:-----------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Build and design               | [Workflow Builder](/ai-for-process/workflows/workflow-builder)                                        | Visual no-code/low-code builder for creating and managing workflows and workflow versions. Build from scratch or import existing ones.                                                   |
-| Configure and manage           | [Configurations](#configure-a-workflow)                                      | Manage workflow metadata, define reusable values using environment variables, and control workflow deployment.                                                                           |
-| Collaborate and control access | [Sharing and Permissions](https://example.com)                               | Invite users to collaborate on specific workflows. Invited users see only the workflows they're invited to.                                                                             |
-| Deploy and integrate           | [Workflow Endpoint](/ai-for-process/workflows/triggers-and-access#workflow-endpoints) and [API Keys](/ai-for-process/workflows/triggers-and-access#create-an-api-key) | Deploy a workflow to generate a dedicated API endpoint for integration with external systems. Create API keys to enable secure access to deployed workflows.                             |
-| Monitor and optimize           | [Workflow Monitor](/ai-for-process/workflows/monitor-and-debug#workflow-monitor)                                      | Track and analyze workflow executions across multiple runs to identify issues and optimize performance.                                                                                  |
-| Govern and audit               | [Guardrails](/ai-for-process/guardrails) and [Audit Logs](/ai-for-process/settings/audit-logs)      | Apply guardrail models to scan LLM inputs and outputs, enforcing safety and content policies. View detailed audit logs for all workflow activities for troubleshooting and traceability. |
-
-Create a workflow to automate a business process, then configure its runtime behavior, environment variables, and lifecycle settings.
