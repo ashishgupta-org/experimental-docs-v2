@@ -461,7 +461,7 @@
                   "/ai-for-process/settings/manage-dataset",
                   "/ai-for-process/settings/integrations"
                 ]
-              }
+              },
               {
                 "group": "Dashboards",
                 "pages": [
