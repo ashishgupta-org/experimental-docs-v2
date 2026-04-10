@@ -1,11 +1,9 @@
 ---
-title: Workflow Fundamentals and Management
+title: Workflow Overview
 sidebarTitle: Overview
 ---
 
 Workflows in AI for Process automate business processes by orchestrating AI models, integrations, and human decision points into a structured, executable sequence. Each workflow run is independent and stateless, producing predictable, repeatable outputs.
-
-The article covers the following use cases about Workflows.
 
 ```
 Create ──► Configure ──► Deploy ──► Redeploy ──► Undeploy ──► Delete ──► Workflow Management
@@ -120,15 +118,16 @@ To start building workflows by using nodes, see [Workflow Builder](/ai-for-proce
 
 ---
 
-Use the import and export features to transfer workflow configurations between environments, create workflows from existing definitions, or version-control your workflow setups.
-
 ## Import a Workflow
 
-Using the import functionality, you can create a new workflow or add it as a version to an existing workflow. 
+Use the import feature to transfer workflow configurations between environments, create workflows from existing definitions, or apply versioning to existing workflows.
 
-The import process preserves tool configuration - including prompts, properties, linked tools, and external/open-source models - while handling environment variables, errors, and role permissions.
+Using the import functionality, you can:
 
-**Note:** Users with only Viewer permissions cannot import workflows.
+* Create a new workflow. See [Import a New Workflow](/ai-for-process/workflows/overview/import-a-new-workflow)
+* Add a new version to an existing workflow. See [Import a Workflow as a Version](/ai-for-process/workflows/workflow-management/import-a-workflow-as-a-version)
+
+The import process preserves workflow configuration, including prompts, properties, linked workflows, and external or open-source models, while handling environment variables, errors, and role permissions.
 
 **Best Practices**
 
@@ -139,6 +138,7 @@ The import process preserves tool configuration - including prompts, properties,
     - Check environment variables and configuration files to prevent mismatches.
 - **Import the parent workflow and version**: After verifying dependencies, import the parent workflow and any associated versions. Ensure there are no conflicts with existing workflows.
 
+<Note>Users with only **Viewer** permissions cannot import a workflow.</Note>
 
 
 #### Import a New Workflow
@@ -170,4 +170,7 @@ Follow these steps to import a workflow and create a new workflow in your accoun
 * The imported workflow cannot be shared with other users.
 
 **Failure scenarios**: Import may fail due to an incompatible tool version, corrupt file, internal error, or missing guardrails—triggering an error notification.
+
+
+ 
 
