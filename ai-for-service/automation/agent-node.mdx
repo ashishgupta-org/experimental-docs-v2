@@ -107,6 +107,15 @@ Executes after every user input processed by the Agent Node, before the node exi
 
 <Note>If the Agent Node requires multiple user inputs, the post-processor runs for each one.</Note>
 
+#### Redaction of PII Data
+
+Controls how entity values flagged as PII appear in messages or responses. The global setting overrides the Agent Node configuration. Refer to [Redacting Personally Identifiable Information](/ai-for-service/app-settings/advanced-settings/pii-data-masking)
+
+- *Yes: End users see the original, unmasked value.
+- *No (default): End users see only a masked/redacted version; the original value is hidden.
+
+<Note>These options affect only the runtime display. PII data is always redacted in chat history and internal logs, regardless of this setting.</Note>
+
 ---
 
 ### Instance Properties
