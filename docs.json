@@ -468,6 +468,9 @@
    ]
   },
   "redirects": [
+    { "source": "/ai-for-service/release-notes/current-limitations", "destination": "/ai-for-service/release-notes"},
+    { "source": "/ai-for-service/quality-management/connectors/amazon-s3", "destination": "/ai-for-service/quality-ai/connectors/aws-s3-connector-setup-guide" },
+    { "source": "/ai-for-service/automation/intelligence/conversation-management/manage-interruptions", "destination": "/ai-for-service/automation/intelligence/conversation-management#manage-interruptions" },
     { "source": "/ai-for-service/flows/node-types/utils/", "destination": "/ai-for-service/flows/create-and-manage-flows#flow-nodes-and-node-types" },
     { "source": "/ai-for-service/flows/node-types/introduction-to-flow-nodes/", "destination": "/ai-for-service/flows/create-and-manage-flows#flow-nodes-and-node-types" },
     { "source": "/ai-for-service/automation/intelligence/sentiment-management/sentiment-management-overview/", "destination": "/ai-for-service/automation/intelligence/intelligence-overview#sentiment-management" },
