@@ -479,7 +479,6 @@
     { "source": "/ai-for-service/flows/node-types/ivr-digit-input/", "destination": "/ai-for-service/flows/node-types/ivr-digit-input" },
     { "source": "/ai-for-service/flows/node-types/set-queue/", "destination": "/ai-for-service/flows/node-types/set-queue" },
     { "source": "/ai-for-service/flows/node-types/check-agent-availability/", "destination": "/ai-for-service/flows/node-types/check-agent-availability" },
-    { "source": "/ai-for-service/flows/node-types/agent-transfer/", "destination": "/ai-for-service/flows/node-types/agent-transfer" },
     { "source": "/ai-for-service/flows/node-types/introduction-to-flow-nodes/", "destination": "/ai-for-service/flows/create-and-manage-flows#flow-nodes-and-node-types" },
     { "source": "/ai-for-service/flows/node-types/split/", "destination": "/ai-for-service/flows/node-types/split" },
     { "source": "/ai-for-service/flows/node-types/automation/", "destination": "/ai-for-service/flows/node-types/automation" },
