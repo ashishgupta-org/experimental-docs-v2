@@ -14,25 +14,27 @@ jobs:
 
       - name: Validate filenames
         run: |
-          violations=0
-          FOLDER_REGEX='^(docs/|help/|guides/|api/|reference/)'
+            violations=0
+            FOLDER_REGEX='^(docs/|help/|guides/|api/|reference/)'
 
-          while IFS= read -r file; do
-            if [[ "$file" =~ $FOLDER_REGEX ]]; then
-              
-              # Check for uppercase, spaces, and disallowed special characters
-              if [[ "$file" =~ [A-Z] || \
-                    "$file" =~ " " || \
-                    "$file" =~ [\(\)\[\]\&@#%+\*] ]]; then
-                
-                echo "Invalid filename: $file"
-                violations=1
+            while IFS= read -r file; do
+              if [[ "$file" =~ $FOLDER_REGEX ]]; then
+
+                if [[ "$file" =~ [A-Z] || "$file" =~ " " || \
+                      "$file" == *"("* || "$file" == *")"* || \
+                      "$file" == *"["* || "$file" == *"]"* || \
+                      "$file" == *"&"* || "$file" == *"@"* || \
+                      "$file" == *"#"* || "$file" == *"%"* || \
+                      "$file" == *"+"* || "$file" == *"*"* ]]; then
+
+                  echo "Invalid filename: $file"
+                  violations=1
+                fi
+
               fi
+            done < <(git diff --name-only origin/${{ github.base_ref }}...HEAD)
 
+            if [ $violations -ne 0 ]; then
+              echo "Filename convention violated."
+              exit 1
             fi
-          done < <(git diff --name-only origin/${{ github.base_ref }}...HEAD)
-
-          if [ $violations -ne 0 ]; then
-            echo "Filename convention violated."
-            exit 1
-          fi
