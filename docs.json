@@ -471,7 +471,7 @@
                     "group": "Evaluations",
                     "pages": [
                       "/agent-management-platform/policies",
-                      "/agent-management-platform/evaluations"
+                      "/agent-management-platform/simulation"
                     ]
                   },
                   "/agent-management-platform/dashboard"
