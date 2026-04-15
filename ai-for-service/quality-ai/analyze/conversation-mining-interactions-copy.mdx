@@ -59,3 +59,37 @@ The Interactions elements list displays the following for each conversation (eva
 ![Manual Audit Indicator](/ai-for-service/quality-ai/analyze/conversation-mining/images/manual-audit-indicator.png)
 
 <Note>You must create bookmarks in [Settings](/ai-for-service/quality-ai/configure/quality-ai-general-settings) before tagging interactions for future reference.</Note>
+
+
+### Filter by Behavior
+
+Filters based on agent conduct and interaction dynamics.
+
+| Filter | Description |
+|--------|-------------|
+| **Metric Name** | Filter by specific evaluation metrics using Pass/Fail radio buttons. |
+| **Metric Qualification** | Filters interactions by metric outcome. For Dynamic By Question metrics, you can select Pass, Fail, or N/A (trigger not detected; available only for Dynamic By Question metrics). |
+| **Language** | Select languages from the dropdown. |
+| **Empathy Score** | Measures how well the agent responds to the customer's emotional state. Higher = more empathetic. |
+| **Crutch Word Score** | Frequency of filler words used by the agent. Higher = more crutch words. |
+| **Agent Playbook Adherence** | Adherence percentage to Agent AI playbooks for the interaction. |
+| **Kore Evaluation Score** | Automated QA score based on the evaluation form assigned to the queue. |
+| **Validation Failure** | Shows interactions that fail validation and are not processed for evaluation. You can use Form, Channel, and Language to refine results. |
+
+
+### Filter by Keywords
+
+This enables you to search, filter, and review conversations using specific keywords or phrases. You can filter by included or excluded keywords and by speaker, with results linked directly to the QA audit screen.
+
+The following table explains the keyword inclusion, exclusion, and filtering options for Conversation Mining.
+
+| Category | Details |
+|----------|---------|
+| **Select Conditions (AND/OR)** |Select how the system combines multiple keywords in the Include section: **AND** requires all keywords to appear in the conversation, while **OR** requires at least one keyword to appear, with optional exclusions applied as defined.|
+| **Conversation Including Keywords** | Search by keyword or exact phrase with optional speaker filters (Agent only, Customer only, Both). Add up to 8 keywords. |
+| **Conversation Excluding Keywords** | Enter keywords that must not appear. Use speaker filters. Add up to 5 exclusion keywords. All exclusions use AND NOT logic. |
+| **Audit Navigation** | Supports transcript autoscroll and match relevance filtering. |
+| **Apply Keywords** | Select **Apply Keywords** to activate filters, then **Apply** to run the search. |
+| **Filtered Interactions** | Displays the count of interactions matching the selected keywords. |
+
+---
