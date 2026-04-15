@@ -1,5 +1,5 @@
 ---
-title: Dataset Management
+title: Datasets
 sidebarTitle: Datasets
 ---
 
@@ -40,7 +40,7 @@ Datasets help teams:
 
 ## Dataset Types
 
-AMP supports two dataset types.
+Agent Management Platform supports two dataset types.
 
 | | **Static Dataset** | **Auto-Update Dataset** |
 |---|---|---|
@@ -61,11 +61,9 @@ AMP supports two dataset types.
 3. Choose a dataset type: **Static** or **Auto-Update**.
 4. Configure the dataset details:
 
-   | Field | Static Dataset | Auto-Update Dataset |
-   |---|---|---|
-   | **Name** | Required. | Required. |
-   | **Description** | Optional. | Optional. |
-   | **Sessions** | Manually select sessions. | Define filter criteria such as date range, metrics, and tags. |
+   * Name and description
+   * For **Static** datasets: Manually select sessions.
+   * For **Auto-Update** datasets: Define filter criteria (date range, metrics, tags)
 
 5. Review the selected sessions in preview mode.
 6. Select **Save**.
@@ -86,6 +84,8 @@ Selecting a dataset opens its detail view, where you can explore and work with a
 | **Inspect Sessions** | Open a session's detailed view to review input, output, traces, metadata, and evaluation results. |
 | **Overview Tab** | Analyze aggregated metrics such as success rate, duration, and performance trends. |
 | **Filter Criteria** | View the filter rules used to automatically populate sessions. Auto-Update datasets only. |
+
+![Dataset Detail](/agent-management-platform/images/dataset_detail.png)
 
 ### Add Sessions (Static Datasets Only)
 
@@ -113,10 +113,10 @@ Multiple policies can run in parallel, allowing you to test different rules or m
 
 ### Edit a Dataset
 
-| Dataset Type | What You Can Edit |
-|---|---|
-| **Static** | Add or remove sessions. |
-| **Auto-Update** | Edit filter criteria. |
+Select the dataset you want to modify. Available edit options depend on the dataset type:
+
+- **Static** — Add or remove sessions.
+- **Auto-Update** — Edit filter criteria.
 
 ### Delete a Dataset
 
@@ -125,16 +125,9 @@ Multiple policies can run in parallel, allowing you to test different rules or m
 
 ### Export a Dataset
 
-Select **Export** to download a CSV summary of all datasets in the project. Use this for offline workflows, model training, or external analysis.
+You can export a dataset for offline workflows, model training, or external analysis.
+
+1. Select the **more options** menu (⋮) in the top-right corner of the dataset.
+2. Select an export format: **JSON**, **CSV**, or **JSONL**.
 
 ---
-
-## Summary
-
-| | Static Dataset | Auto-Update Dataset |
-|---|---|---|
-| **Primary Strength** | Controlled, repeatable testing. | Continuous monitoring and dynamic evaluation. |
-| **Versioning** | Supported. | Not supported. |
-| **Session Control** | Manual. | Filter-driven and automatic. |
-
-Together, Static and Auto-Update datasets support the full lifecycle of evaluation, benchmarking, and model improvement.

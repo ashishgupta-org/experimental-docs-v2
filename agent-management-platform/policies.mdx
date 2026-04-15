@@ -7,6 +7,8 @@ Policies define automated rules that govern AI agent behavior. They enable proac
 
 Policies can be applied in real time (live) on incoming telemetry traffic to enforce guardrails, or in batch (on demand) for historical analysis. Both modes support preconfigured templates for common industry standards.
 
+These capabilities make policies the governance backbone of the platform—providing a unified mechanism to evaluate, flag, or block agent behaviors across all workflows.
+
 ---
 
 ## Why Policies Matter
@@ -92,13 +94,14 @@ AMP supports three variants within Single Trace Checks:
 
 | Variant | Description | Example |
 |---|---|---|
-| **Natural Language (LLM-as-a-Judge)** | Uses an LLM to evaluate quality, compliance, and safety based on a natural-language prompt with placeholders such as Input, Transcript, or Output. Common metrics include PII Detection, Toxicity, and Completeness. | "Determine whether the response contains sensitive personal information. Return a score between 0 and 1." |
-| **Quantitative Rules** | Applies rule-based numeric checks per trace. Triggers immediately when a single trace violates the threshold. Common metrics include Cost, Latency, and Throughput. | "Fail the trace if Latency > 2000 ms." |
-| **Composite** | Combines multiple Natural Language and/or Quantitative checks into one policy. Supports ALL conditions or ANY condition logic. | "Response must not contain PII AND cost must be < $0.01." |
+| **Natural Language (LLM-as-a-Judge)** | Uses an LLM to evaluate quality, compliance, and safety based on a natural-language prompt with placeholders such as Input, Transcript, or Output.<br/>Common metrics: PII Detection, Toxicity, and Completeness. | "Determine whether the response contains sensitive personal information. Return a score between 0 and 1." |
+| **Quantitative Rules** | Applies rule-based numeric checks per trace. Triggers immediately when a single trace violates the threshold.<br/>Common metrics: Cost, Latency, and Throughput. | "Fail the trace if Latency > 2000 ms." |
+| **Composite Single Trace Policies** | Combines multiple Natural Language and/or Quantitative checks into one policy. Supports ALL conditions or ANY condition logic. | **NL + Quantitative:** "Response must not contain PII AND cost must be < $0.01."<br/>**Multi-metric quality:** "Hallucination score < 0.3 OR Toxicity score > 0.8." |
+
 
 ### Metric Trend Check
 
-Metric Trend Checks evaluate aggregated data over a specific time window. These policies detect trends rather than single-event issues, and always rely on numeric aggregation functions.
+Metric Trend Checks evaluate aggregated data over a specific time window (hours, days, weeks). These policies detect trends rather than single-event issues. Metric trend checks are always numeric/quantitative and rely on aggregated functions.
 
 **Supported aggregation functions:** AVG, SUM, COUNT, MEDIAN, P90, P95, P99, MIN, MAX, MODE, STDDEV.
 
@@ -112,7 +115,7 @@ Metric Trend Checks evaluate aggregated data over a specific time window. These 
 | Variant | Description | Example |
 |---|---|---|
 | **Quantitative Trend** | Applies rule-based numeric checks to aggregated metric values. Triggers when the aggregated value crosses the defined threshold. | "Trigger if AVG Completeness Score < 4 over the last 24 hours." |
-| **Composite Trend** | Combines multiple trend checks into a single policy. Supports ALL or ANY condition logic. | "Trigger if AVG latency > 1800 ms AND error rate > 2% over the last 6 hours." |
+| **Composite Metric Trend** | Combines multiple trend checks into a single policy. Supports ALL or ANY condition logic. | "Trigger if AVG latency > 1800 ms AND error rate > 2% over the last 6 hours." |
 
 ---
 
@@ -141,11 +144,9 @@ The platform continuously ingests telemetry from your AI agent at three levels:
 
 **Single Trace Check** (runs on individual Session, Trace, or Span):
 
-| Rule Type | How It Evaluates |
-|---|---|
-| **Natural Language (LLM-as-a-Judge)** | The configured model receives relevant context and returns a normalized score or Pass/Fail verdict. |
-| **Quantitative** | A numeric rule is applied directly to a metric value—for example, Latency > 2000 ms. |
-| **Composite** | Multiple rules are evaluated together using ALL or ANY conditions. |
+- **Natural Language (LLM-as-Judge)**: The configured model receives the relevant context (Input, Output, Transcript, Attributes, etc.) and returns a normalized score or Pass/Fail verdict based on the evaluation prompt.
+- **Quantitative**: A numeric rule is applied directly to a metric value (for example, *Latency > 2000ms*).
+- **Composite**: Multiple rules are evaluated together using ALL or ANY conditions.
 
 **Metric Trend Check** (runs over aggregated telemetry within a time window):
 
@@ -189,6 +190,8 @@ The Policies landing page is your central hub for managing all project policies 
 | **Quick Stats** | Cards show counts of total, active, and inactive policies, and templates. |
 | **Actions** | Create new policies or templates with one click. |
 
+![Policy list](/agent-management-platform/images/policies.png)
+
 <Note>
 Local policies can be edited by Project Admins. Global templates are managed by Account Admins.
 </Note>
@@ -213,6 +216,8 @@ Choose how the platform evaluates agent behavior:
 | **Single Trace Check** | Evaluates each request and response individually in real time. |
 | **Metric Trend Check** | Evaluates aggregated metrics over a time window (hours, days, or weeks). |
 
+For guidance on selecting the correct type, see [Choosing the Right Policy Type](#choosing-the-right-policy-type).
+
 Once selected, the builder updates automatically to show relevant configuration options.
 
 ### Step 3 — Select or Create Metrics
@@ -224,33 +229,55 @@ Policies are powered by metrics. Select a built-in metric or create a custom one
 | **Single Trace Check** | Standard numeric metrics, natural language metrics, custom natural language metrics. |
 | **Metric Trend Check** | Aggregated numeric metrics only, custom numeric metrics. |
 
-#### Metric Types Reference
+#### Selecting Metric Type
 
-| Metric Type | How It Works | Configuration Required |
-|---|---|---|
-| **Standard Numeric** | Uses numeric values already present in traces—such as latency, cost, token count. | Choose an operator (>, < or =) and set a threshold. |
-| **Custom Numeric** | Available for Metric Trend policies when you define additional numeric fields in telemetry. | Define field and threshold. |
-| **Standard Natural Language** | Built-in checks such as PII detection, toxicity, banned topics, or completeness. Includes predefined prompts and output formats. | Select and configure threshold. |
-| **Custom Natural Language** | Define your own prompt, scoring rules, and model configuration for use-case-specific evaluation. | Full configuration required (see below). |
+Agent Management Platform supports two metric types (Numeric and Natural-Language), and each type can be either standard or custom.
+
+**Numeric Metrics**
+
+Use numeric values already present in traces—such as latency, cost, token count, and throughput.
+
+- **Standard** — Provided automatically. Choose an operator (>, < or =) and set a threshold. No additional configuration required.
+- **Custom** — Available for Metric Trend policies when you define additional numeric fields in your telemetry.
+
+**Natural Language Metrics (LLM-Evaluated)**
+
+Use an LLM to evaluate a trace based on a prompt.
+
+- **Standard** — Built-in checks such as PII detection, toxicity, banned topics, or completeness. Includes predefined prompts and output formats.
+- **Custom** — Define your own prompt, scoring rules, and model configuration for use-case-specific evaluation.
 
 <Note>
 Natural language metrics can be used in Single Trace policies. They can also be used in Trend policies if they return a numeric score that can be aggregated.
 </Note>
 
+
 #### Creating a Custom Natural Language Metric
 
-Use this option when no built-in metric fits your evaluation needs.
+Use this option when no built-in metric fits your evaluation needs. This allows you to define your own evaluation prompt, scoring logic, and model configuration. 
+
+![Creating Custom Metric](/agent-management-platform/images/custom-metric.png)
+
+Agent Management Platform provides the settings needed to control how the LLM reviews each trace and returns a score or pass/fail judgment.
 
 | Field | Description | Example |
 |---|---|---|
-| **Metric Name** | Display name used across the platform. | "Tool Selection Accuracy" |
-| **Description** | (Optional) Explains what the metric evaluates and when to use it. | "Scores whether the agent selected the correct tool for the task." |
-| **Evaluation Prompt** | Natural-language instructions that guide the LLM's judgment. Reference placeholders such as `{{conversation_transcript}}`, `{{app_description}}`, and `{{actual_tool_calls}}`. The platform inserts real trace values at evaluation time. | "Evaluate whether the agent selected the correct tool and parameters. Return a score from 0 to 5 and explain your reasoning." |
-| **Structured Response Format** | JSON structure the LLM must return. The platform parses this output to extract the metric value. | `{"score": 0–5, "reasoning": "..."}` |
-| **Output Type** | Determines how the LLM's response is interpreted: Score-based (numeric scale) or Boolean (Pass/Fail). | Score-based |
-| **Maximum Score** | For score-based metrics, sets the upper bound of the scoring scale. The LLM must return a score within this range. | 5 |
-| **Pass Threshold** | For score-based metrics, defines the minimum score required for a trace to pass. | Score ≥ 3 |
-| **Model Configuration** | Choose and configure the LLM used for evaluation: model selection, temperature, max tokens, Top-P, and frequency/presence penalties. | Claude Sonnet, temperature 1.0 |
+| **Metric Name** | The display name used across the platform. | "Tool Selection Accuracy" |
+| **Description (optional)** | Explains what the metric evaluates and when to use it. | "Scores whether the agent selected the correct tool for the task." |
+| **Evaluation Prompt** | Natural-language instructions that guide the LLM's judgment.<br/><br/>For example, you can reference placeholders such as `{{conversation_transcript}}`, `{{app_description}}`, and `{{actual_tool_calls}}`.<br/><br/>The platform automatically inserts real trace values at evaluation time. | "Evaluate whether the agent selected the correct tool and parameters based on the transcript. Return a score from 0 to 5 and explain your reasoning." |
+| **Structured Response Format** | Defines the JSON structure the LLM must return. The platform parses this response/output (JSON) to extract the metric value. | `{"score": 0–5, "reasoning": "..."}` |
+| **Output Type** | Determines how the LLM's response is interpreted: Score-based (numeric scale) or Boolean (Pass/Fail).<br/><br/>If score-based, configure:<br/>- Maximum Score (default: 5)<br/>- Pass Threshold (e.g., score ≥ 3) | — |
+| **Maximum Score** | For score-based metrics, sets the upper bound of the scoring scale (commonly 1–5, 1–10, or 1–100). The LLM must return a score within this range. | 5 |
+| **Pass Threshold** | For score-based metrics, this defines the minimum score or condition required for a trace to pass. Policies use this pass/fail output to determine violations.<br/><br/>- Pass when score is greater than 3<br/>- Pass when score is less than 0.3<br/>- Pass when Boolean equals "yes" | score ≥ 3 |
+| **Model Configuration** | Choose and configure the LLM used for evaluation.<br/><br/>- Model selection (e.g., Anthropic, OpenAI)<br/>- Temperature (randomness)<br/>- Max tokens (output size limit)<br/>- Top-P (sampling diversity)<br/>- Frequency/Presence penalties (repetition control) | Claude Sonnet 4.5, temperature 1.0 |
+
+<Note>
+Each metric within an LLM-as-a-Judge policy can use a different model and have its own model parameters, such as temperature, max tokens, top-p, and frequency/penalty settings.
+
+Models must first be added in the **Models Registry** before they can be selected and configured per metric in a policy.
+</Note>
+
+![Model Configuration](/agent-management-platform/images/custom_metric_model.png)
 
 <Tip>
 When writing an evaluation prompt, structure it clearly to ensure consistent, reliable metric values. Include:
@@ -262,9 +289,6 @@ When writing an evaluation prompt, structure it clearly to ensure consistent, re
 - **Response format** — JSON specifying score, reasoning, and categories.
 </Tip>
 
-<Note>
-Each metric within an LLM-as-a-Judge policy can use a different model with its own parameters. Models must be added in the **Models Registry** before they can be selected here.
-</Note>
 
 #### Defining Trend Aggregation Settings (Metric Trend Policies Only)
 
@@ -295,6 +319,8 @@ Combine multiple metrics into a single policy for richer evaluation logic.
 
 ### Step 5 — Policy Details & Classification
 
+This section helps you classify and organize the policy.
+
 | Field | Description |
 |---|---|
 | **Policy Name** | A short, descriptive name for the policy. |
@@ -303,6 +329,8 @@ Combine multiple metrics into a single policy for richer evaluation logic.
 | **Description** | (Optional) Context explaining what the policy evaluates, when to use it, or any assumptions or special considerations. |
 
 ### Step 6 — Execution & Actions
+
+Use these settings to control how the policy runs and what actions occur when a violation is detected.
 
 | Setting | Description | When to Use |
 |---|---|---|
@@ -329,7 +357,7 @@ Choose how to save the policy:
 
 After a policy is created, you can control its lifecycle directly from the Policies table.
 
-### Activate or Deactivate
+### Activate or Deactivate a Policy
 
 Toggle a policy on or off without deleting it.
 
