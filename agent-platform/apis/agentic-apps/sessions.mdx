@@ -195,7 +195,7 @@ All fields are optional. Send {} to use defaults.
 
 | Field               | Type   | Description                                                                                                                   |
 |---------------------|--------|-------------------------------------------------------------------------------------------------------------------------------|
-| env_name            | string | Environment name. Case-insensitive. Defaults to **draft** if not provided.                                                     |
+| env_name            | string | Environment name (mandatory). Case-insensitive.                                                 |
 | start_time          | string | Start of the date range for session retrieval. Must be in ISO 8601 format (e.g., `2026-04-01T00:00:00.000Z`). Defaults to 24 hours before `end_time`. |
 | end_time            | string | End of the date range for session retrieval. Must be in ISO 8601 format. Defaults to the current time.                        |
 | user_reference_id   | string | Filter sessions by user reference.                                                                                             |
@@ -205,11 +205,11 @@ All fields are optional. Send {} to use defaults.
 
 
 ```
-curl -X POST 'https://your-domain.com/api/public/apps/aa-a9532f0f-ef54-46d0-ae1c-1ac0e4b86c2d/sessions/list' \
+curl -X POST 'https://your-domain.com/api/public/apps/:appId/sessions/list' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: YOUR_API_KEY_HERE' \
 --data '{
-  "env_name": "production",
+  "env_name": "draft",
   "start_time": "2026-04-01T00:00:00.000Z",
   "end_time": "2026-04-14T23:59:59.999Z",
   "user_reference_id": "user@example.com"
@@ -249,75 +249,6 @@ curl -X POST 'https://your-domain.com/api/public/apps/aa-a9532f0f-ef54-46d0-ae1c
     }
   ],
   "total_count": 1
-}
-```
-
-
-## Get Session
-
-Fetches the details of a given session. You must provide either a *sessionId* or a *sessionReference* to uniquely identify the session.
-
-
-| Field | Value |
-|:------ |:------ |
-| Method | GET |
-| Endpoint | `/apps/:appId/environments/<EnvName>/sessions?sessionId={sessionId}` <p> `/apps/:appId/environments/<EnvName>/sessions?sessionReference={sessionReference}` </p> |
-| Content-Type | application/json |
-| Authorization Header | `x-api-key: <API-KEY>` |
-
-
-
-### Path Parameters
-
-
-| Fields | Description |
-|:------ |:------ |
-| AppID | Unique Identifier for the app. |
-| EnvName | The name of the environment in which the application will run. |
-
-
-
-### Query Parameters
-
-
-| Fields | Description | Required |
-|:------ |:------ |:------ |
-| sessionId | Unique Identifier for the session. | Optional(One of two is required ) |
-| sessionReference | The reference associated with the session | Optional (one of the two is required) |
-
-
-<Note> Either sessionId or sessionReference must be provided to identify the session. </Note>
-
-### Sample Request
-
-```bash
-curl --location 'https://your-domain.com/apps/:appId/environments/<EnvName>/sessions?sessionId=s-123'
---header 'x-api-key: <API-KEY>'
-```
-
-
-### Sample Response
-
-
-```json
-{ "session": 
-  {
-    "sessionId": "string",
-    "sessionReference": "string",
-    "status": "string",
-    "userId": "string",
-    "appId": "string",
-    "createdAt": "string",
-    "events": "string[]",
-    "attachments": [
-      {
-        "fileId": "string",
-        "filename": "string",
-        "mimetype": "string",
-        "isActive": "string",
-      },
-    ]
-  }
 }
 ```
 
