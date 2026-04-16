@@ -1,5 +1,5 @@
 ---
-title: Sessions API
+title: Sessions List API
 ---
 
 <Badge icon="arrow-left" color="gray">[Back to API List](/agent-platform/apis)</Badge>
@@ -99,10 +99,13 @@ Returns details of the newly created session, which are required for managing an
       "type": "Welcome_Event",
       "content": {
         "messageToUser": "Welcome message"
+      },
+      "params": {
+        "reason": "User has initiated a new session"
       }
     }
   ],
-   "output": [
+  "output": [
     {
       "type": "text",
       "content": "Welcome message"
@@ -167,9 +170,9 @@ Returns details of the newly created session, which are required for managing an
 Lists sessions for the selected app and environment. Supports optional filters such as session ID, user reference, and date range.
 
 
-| Method | GET |
+| Field | Value |
 |:------ |:------ |
-| Endpoint | `/api/public/apps/<AppID>/sessions/list` |
+| Endpoint | `POST /api/public/apps/:appId/sessions/list` |
 | Content-type  | application/json |
 | Authorization Header | x-api-key: `<API-KEY>` |
 
