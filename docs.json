@@ -468,6 +468,15 @@
    ]
   },
   "redirects": [
+    { "source": "/ai-for-service/channels/voice-gateway/deployment-and-operations", "destination": "/ai-for-service/channels/voice-gateway/configure-voice-gateway" },
+    { "source": "/ai-for-service/automation/intelligence/event-overview", "destination": "/ai-for-service/automation/intelligence/events" },
+    { "source": "/ai-for-service/automation/use-cases/dialogs/node-types/nodes-transitions", "destination": "/ai-for-service/automation/dialogs/node-types/overview#how-do-nodes-and-transitions-work" },
+    { "source": "/ai-for-service/automation/use-cases/dialogs/dialog-tasks-overview", "destination": "/ai-for-service/automation/agent-flows#dialog-tasks" },
+    { "source": "/agent-platform/ai-agents/tools/tool-flows/perform-other-actions-on-the-flow-builder/run-the-flow", "destination": "/agent-platform/tools/workflow#running-and-testing-flows" },
+    { "source": "/agent-platform/ai-agents/agentic-apps/audit-logs", "destination": "/agent-platform/analytics#audit-logs" },
+    { "source": "/agent-platform/ai-agents/tools/tool-flows/types-of-nodes/ai-node", "destination": "/agent-platform/tools/nodes#ai-nodes" },
+    { "source": "/agent-platform/ai-agents/tools/manage-user-roles-and-permissions", "destination": "/agent-platform/tools/workflow#sharing-and-permissions"},
+    { "source": "/agent-platform/ai-agents/agentic-apps/howto/share-context-with-AIforService", "destination": "/agent-platform/howto/share-context-with-ai-for-service" },
     { "source": "/agent-platform/getting-started/tutorials/:slug*", "destination": "/agent-platform/getting-started#quick-start-video-tutorials" },    
     { "source": "/ai-for-service/searchai/language-support", "destination": "/ai-for-service/searchai/tips-and-faqs#multilingual-support" },
     { "source": "/ai-for-service/generative-ai-tools/dgpt-faq", "destination": "/ai-for-service/automation/dialoggpt" },
