@@ -17,11 +17,11 @@ AI for Work integrates with OpenAI, Azure OpenAI, and Google Gemini out of the b
 
 | Provider | Available Models | Access Method | Best For |
 |----------|-----------------|---------------|----------|
-| **OpenAI** | GPT-5.2, GPT-5.1, GPT-5, GPT-5-mini, GPT-5-nano, GPT-4.1, GPT-4.1-mini, GPT-4o, o3, o3-mini, o4-mini | OpenAI API key | General-purpose tasks, conversational AI, complex reasoning, content generation |
-| **Azure OpenAI** | GPT-5.2, GPT-5.1, GPT-5, GPT-5-mini, GPT-5-nano, GPT-4.1, GPT-4.1-mini, GPT-4o, o3, o3-mini, o4-mini | Azure Portal / Azure OpenAI Service | Enterprise deployments requiring Azure infrastructure, compliance, and enhanced security |
-| **Google Gemini** | Gemini 3 Pro (Preview), Gemini 3 Flash (Preview), Gemini 2.5 Pro (Recommended), Gemini 2.5 Flash (Recommended), Gemini 2.5 Flash Lite | Google Vertex AI / Gemini Studio | Multi-modal tasks, fast responses, Google Cloud deployments |
+| **OpenAI** | `gpt-5.2`, `gpt-5.1`, `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4o`, `o3`, `o3-mini`, `o4-mini` | OpenAI API key | General-purpose tasks, conversational AI, complex reasoning, content generation |
+| **Azure OpenAI** | `gpt-5.2`, `gpt-5.1`, `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4o`, `o3`, `o3-mini`, `o4-mini` | Azure Portal / Azure OpenAI Service | Enterprise deployments requiring Azure infrastructure, compliance, and enhanced security |
+| **Google Gemini** | `gemini-3-pro` (preview), `gemini-3-flash` (preview), `gemini-2.5-pro` (recommended), `gemini-2.5-flash` (recommended), `gemini-2.5-flash-lite` | Google Vertex AI / Gemini Studio | Multi-modal tasks, fast responses, Google Cloud deployments |
 
-<Note>Legacy OpenAI models (GPT-4-turbo, GPT-4, GPT-3.5-turbo variants) support basic function calling only and do not support native tools such as RAG, web search, or code execution. Gemini 2.0 Flash and Gemini 2.0 Flash Lite are deprecating; migrate to Gemini 2.5 or Gemini 3 models.</Note>
+<Note>Legacy OpenAI models (`gpt-4-turbo`, `gpt-4`, `gpt-3.5-turbo` variants) support basic function calling only and do not support native tools such as RAG, web search, or code execution. `gemini-2.0-flash` and `gemini-2.0-flash-lite` are deprecating; migrate to `gemini-2.5` or `gemini-3` models.</Note>
 
 ### Model Tiers
 
@@ -29,9 +29,9 @@ Select a tier based on task complexity and cost requirements.
 
 | Tier | Best For | Example Models |
 |------|----------|----------------|
-| **Basic** | High-volume, straightforward tasks — classification, simple Q&A, routine inquiries | GPT-4o-mini, Gemini 2.5 Flash, Gemini 2.5 Flash Lite |
-| **Standard** | Complex reasoning, multi-step workflows, deeper contextual understanding — recommended default for all system prompts and orchestrators | GPT-4.1, GPT-4o, Gemini 2.5 Pro |
-| **Premium** | Advanced reasoning and complex problem-solving requiring maximum AI capability | GPT-5, GPT-5.1, GPT-5.2, o3, o4-mini, Gemini 3 Pro |
+| **Basic** | High-volume, straightforward tasks — classification, simple Q&A, routine inquiries | `gpt-4o-mini`, `gemini-2.5-flash`, `gemini-2.5-flash-lite` |
+| **Standard** | Complex reasoning, multi-step workflows, deeper contextual understanding — recommended default for all system prompts and orchestrators | `gpt-4.1`, `gpt-4o`, `gemini-2.5-pro` |
+| **Premium** | Advanced reasoning and complex problem-solving requiring maximum AI capability | `gpt-5`, `gpt-5.1`, `gpt-5.2`, `o3`, `o4-mini`, `gemini-3-pro` |
 
 ### Tool Support by Provider
 
@@ -39,15 +39,15 @@ Different providers support different tool capabilities within AI for Work. Use 
 
 | Capability | OpenAI | Azure OpenAI | Gemini |
 |------------|--------|--------------|--------|
-| Prompt-based LLM | Yes | Yes | Yes |
-| Reasoning models | Yes | Yes | Yes |
-| Native embeddings | Yes | Yes | Yes |
-| Managed vector DB | Yes | Coming soon | Coming soon |
-| File search / RAG | Yes | Coming soon | Coming soon |
-| Web search | Yes (`web_search`) | Yes (`web_search`) | Yes (`google_search`) |
-| Code execution | Yes (`code_interpreter`) | Coming soon | Coming soon |
-| Container execution | Yes | Coming soon | — |
-| File generation (DOCX, PDF, XLSX, ZIP) | Yes | Coming soon | Coming soon |
+| Prompt-based LLM | ✓ | ✓ | ✓ |
+| Reasoning models | ✓ | ✓ | ✓ |
+| Native embeddings | ✓ | ✓ | ✓ |
+| Managed vector DB | ✓ | N/A | N/A |
+| File search / RAG | ✓ | N/A | N/A |
+| Web search | ✓ (`web_search`) | ✓ (`web_search`) | ✓ (`google_search`) |
+| Code execution | ✓ (`code_interpreter`) | N/A | N/A |
+| Container execution | ✓ | N/A | N/A |
+| File generation (docs, pdf, xlsx, zip) | ✓ | N/A | N/A |
 
 <Note>Gemini models are also available through Vertex AI Express Mode with the same capability support.</Note>
 
@@ -128,9 +128,9 @@ Both pre-built and custom embedding models are supported.
 
 | Provider | Embedding Models |
 |----------|------------------|
-| **OpenAI** | text-embedding-ada-002, text-embedding-3-small, text-embedding-3-large |
-| **Azure OpenAI** | text-embedding-ada-002, text-embedding-3-small, text-embedding-3-large |
-| **Google Gemini** | gemini-embedding-001 |
+| **OpenAI** | `text-embedding-ada-002`, `text-embedding-3-small`, `text-embedding-3-large` |
+| **Azure OpenAI** | `text-embedding-ada-002`, `text-embedding-3-small`, `text-embedding-3-large` |
+| **Google Gemini** | `gemini-embedding-001` |
 
 ### Known Limitations
 

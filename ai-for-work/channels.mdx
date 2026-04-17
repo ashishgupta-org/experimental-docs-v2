@@ -136,9 +136,9 @@ Enable the bot to send proactive notifications to users, which is essential for 
 
     **Required Permissions**: Add the following permissions for full functionality:
 
-    * `MS TeamsAppInstallation.ReadForUser.All`
-    * `MS TeamsAppInstallation.ReadWriteSelfForUser.All`
-    * `MS TeamsAppInstallation.ReadWriteForUser.All`
+    * `TeamsAppInstallation.ReadForUser.All`
+    * `TeamsAppInstallation.ReadWriteSelfForUser.All`
+    * `TeamsAppInstallation.ReadWriteForUser.All`
     * `User.Read.All`
     * `AppCatalog.Read.All`
 
@@ -180,28 +180,29 @@ By default, the Microsoft Teams app appears with the name **AI for Work**, the s
 
 During configuration, you are prompted to **Enable Copilot Integration**. We recommended you to enable this option so that Teams users can access the Platform features using Copilot.
 
-**Phase 7: Microsoft Teams Application Deployment**
+**Phase 7: Upload Custom App to Teams Admin Center**
 
-Deploy the Platform app to Microsoft Teams for user access.
+Upload the Platform app package to the Teams Admin Center so it is available within your organization.
 
-**Generate Application Manifest**
+**Generate Application Package**
 
-Upon configuring credentials in the Platform, generate and download the Microsoft Teams application manifest file. This manifest file contains all the necessary configurations for integrating with Microsoft Teams.
+Upon configuring credentials in the Platform, generate and download the Teams application package (ZIP file). This package contains the app manifest and all required configurations for the integration.
 
 ![teams_8](/ai-for-work/channels/images/teams_8.png "teams_8")
 
-**Upload to Microsoft Teams Admin Center**
+**Upload to Teams Admin Center**
 
-Ensure you have **Upload Custom App** permissions in the Microsoft Teams Admin Center. Verify organizational policies allow custom app installations.
+Ensure you have the necessary admin permissions in the Teams Admin Center. Verify organizational policies allow custom app uploads.
 
 1. Sign in to [Microsoft Teams Admin Center](https://admin.teams.microsoft.com/).
-2. Navigate to **Microsoft Teams apps** → **Manage apps.**
-3. Click **Upload new app**.
+2. Navigate to **Teams apps** → **Manage apps**.
+3. Click **Upload new app** and select the downloaded application package.
 
     ![teams_9](/ai-for-work/channels/images/teams_9.png "teams_9")
 
-4. Select the downloaded manifest file from the Platform.
-5. Wait for upload and validation to complete.
+4. Wait for upload and validation to complete.
+
+Once uploaded, the app appears as a custom app within your organization's Teams Admin Center. It is not published to the public Teams App Store.
 
 **Configure App Permissions and Policies**
 
@@ -209,17 +210,17 @@ Review the uploaded application details and configure app permission policies as
 
 **Phase 8: User Access Configuration**
 
-You can decide how to distribute the Platform app in Microsoft Teams:
+You can decide how to distribute the custom app within your organization:
 
-* **Add App for All Users** (Recommended) — Automatically adds the Platform app for all employees in the organization. All users receive a notification in Microsoft Teams and a **welcome message** when the app is added.
+* **Add App for All Users** (Recommended) — Automatically installs the custom app for all employees in the organization. All users receive a notification in Microsoft Teams and a **welcome message** when the app is added.
 
 <Note> Users must also be provisioned in the **Account Hub** of the Platform to access the app. </Note>
 
-* **Let Users Add App Themselves** — The app is available in the Microsoft Teams App Marketplace. Users need to search for the app in Microsoft Teams and add it manually. No automatic notifications or installations occur.
+* **Let Users Add the App Themselves** — The custom app is available in the organization's app catalog within Teams. Users need to search for the app in the **Apps** section in Teams and add it manually. No automatic notifications or installations occur.
 
 <Note> Users must be present in the **Account Hub** to use the app. </Note>
 
-* **Add App for Selected Users or User Groups** — Assigns the app only to specific users or security groups. Selected users are automatically notified in Microsoft Teams and receive the welcome message. Other users must find and install the app manually from the Marketplace.
+* **Add App for Selected Users or User Groups** — Uses app setup policies to assign the app only to specific users or security groups. Selected users are automatically notified in Microsoft Teams and receive the welcome message. Other users can find and install the app from the organization's app catalog if permitted by policy.
 
 <Note> Selected users must also exist in the **Account Hub** for access. </Note>
 
@@ -233,19 +234,19 @@ You can decide how to distribute the Platform app in Microsoft Teams:
 
 **Authentication Failures**
 
-* Confirm all required API permissions are granted with admin consent.
+* Confirm admin consent is granted for all required API permissions.
 * Verify client secrets are copied correctly (Value, not Secret ID).
 * Check tenant ID matches between configurations.
 
-**Manifest Upload Failures**
+**App Upload Failures**
 
-* Ensure you have proper permissions in the Microsoft Teams Admin Center.
-* Verify the manifest file is not corrupted during download.
-* Check organizational policies to allow custom app uploads.
+* Ensure you have proper admin permissions in the Teams Admin Center.
+* Verify the application package is not corrupted during download.
+* Check organizational policies allow custom app uploads.
 
 **Proactive Notifications Not Working**
 
-* Verify all required Microsoft Graph permissions are granted.
+* Verify that admin consent is granted for all required Microsoft Graph permissions.
 * Verify that the notification app registration client secret is valid.
 * Ensure JWT token generation is working correctly.
 
