@@ -29,6 +29,7 @@ jobs:
             --accept 200,429
             --exclude "https://localhost"
             --exclude "https://twitter.com"
+            --exclude '^(file://|/|\.{1,2}/)'
             "./**/*.mdx"
           fail: true
         env:
