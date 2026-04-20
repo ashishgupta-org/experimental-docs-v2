@@ -25,7 +25,7 @@ jobs:
             --root-dir .
             --verbose
             --no-progress
-            --remap "v^(/(.*[^/]))$ $$1.mdx"
+            --extension mdx
             --accept 200,429
             --exclude "https://localhost"
             --exclude "https://twitter.com"
