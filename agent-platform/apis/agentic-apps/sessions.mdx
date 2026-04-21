@@ -16,7 +16,7 @@ Establishes a new conversation session for a specific user with the Agentic App.
 
 | Method | POST |
 |:------ |:------ |
-| Endpoint | `/apps/<AppID>/environments/<EnvName>/sessions` |
+| Endpoint | `https://domain/api/v2/apps/{{appId}}/environments/{{envName}}/sessions` |
 | Content-type | application/json |
 | Authorization Header | x-api-key: `API-KEY>` |
 
@@ -324,7 +324,7 @@ Terminates a given session. It also deletes the associated session-specific memo
 
 | Method | POST |
 |:------ |:------ |
-| Endpoint | `/apps/<AppID>/environments/<EnvName>/sessions/terminate` |
+| Endpoint | `https://domain/api/v2/apps/{{appId}}/environments/{{envName}}/sessions/terminate` |
 | Content-type | application/json |
 | Authorization Header | x-api-key: `<API-KEY>` |
 
@@ -345,7 +345,7 @@ Terminates a given session. It also deletes the associated session-specific memo
 
 | Fields | Description | Mandatory |
 |:------ |:------ |:------ |
-| sessionIdentity | Provide the sessionReference or sessionId to uniquely identify the session to be terminated. | Yes |
+| sessionIdentity | Provide the **sessionReference** or **sessionId** to uniquely identify the session to be terminated. Do not use userReference. | Yes |
 
 
 
