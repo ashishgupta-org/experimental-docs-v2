@@ -628,7 +628,7 @@ Default: 30 sec |
 Example:
 ![Example Configuration](/ai-for-service/channels/voice-gateway/images/message-node-parameters.png)
 
-<Note>  `botNoInputSpeech` can contain multiple messages, including audio URLs. Example: `botNoInputSpeech` = [“this is first delay Msg”, “https://thisdummy.wav”, “ this is third textual Message”].</Note>
+<Note>  `botNoInputSpeech` can contain multiple messages, including audio URLs. Example: `botNoInputSpeech` = `[“this is first delay Msg”, https://thisdummy.wav, “ this is third textual Message”]`.</Note>
 #### Handle Delay Between Two Message Nodes
 
 Voice Gateway can only handle delays when it sends a response to the bot and waits for the bot's reply. If a delay occurs, Voice Gateway can handle it. If a delay occurs between a Message node or Script node where the user hasn’t spoken, Voice Gateway won’t be aware of the delay, and the bot developer must handle it manually.
