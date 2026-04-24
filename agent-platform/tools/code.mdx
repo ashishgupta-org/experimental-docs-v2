@@ -181,24 +181,13 @@ This is the core logic of the tool. This is the custom code that gets executed w
 
 **Using Input Parameters in the script**
 
-In JavaScript, parameters are injected directly as `$ParameterName` variables. Assign them to local variables at the top of your script before using them. 
+In JavaScript, parameters are injected directly as `$ParameterName` variables. Assign them to local variables at the top of your scrip - `myinput = $value; //input variable = value`.
 
-``` 
-myinput = $value; //input variable = value
-
-```
-
-In Python, parameters are passed as it is. 
-
-```
-containerId = value # input variable = value
-
-```
+In Python, parameters are passed as it's `containerId = value # input variable = value`
 
 **Returning a Response**
 
 Use `return` to pass the result back to the agent. 
-
 
 **Error Handling**
 
@@ -211,11 +200,7 @@ To read from or write to the memory store inside your script, refer to [Memory S
 
 **Working with Context Object**
 
-Refer to [this](/agent-platform/tools/context-object) to learn **context object structure**. Context object can be accessed as:
-
-```
-context.<variables>
-```
+Refer to [this](/agent-platform/tools/context-object) to learn **context object structure**. Context object can be accessed as `context.<variables>`.
 
 **Logging in scripts**
 
@@ -280,7 +265,6 @@ This tool is available with the app deployment. Once the app is deployed, the ag
 ### Access environment variables
 
 ```javascript
-
 const field = env.<field name>
 ```
 
